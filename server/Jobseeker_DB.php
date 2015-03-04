@@ -6,6 +6,7 @@
  * Time: 10:41 PM
  */
 
+
 include_once("config.php");
 
 class Jobseeker_DB {
