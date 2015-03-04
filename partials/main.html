@@ -1,0 +1,12 @@
+<div class="bs-example">
+    <form role="form" name="form1">
+
+        <div class="form-group">
+            <label for="word1">Word</label>
+            <input type="text" placeholder="Word to search" id="word1" class="form-control" ng-model="word" required>
+        </div>
+
+        <button class="btn btn-default" type="submit" ng-click="searchW(word)" ng-disabled="form1.$invalid">Press Here</button>
+        <p>{{msgTxt}}</p>
+    </form>
+</div>
