@@ -5,6 +5,7 @@
 angular.module('servicesModule').factory('postRequestsService', function($http,authenticationService) {
     return {
 
+        
         addPost: function(postEntity) {
             var request = {};
             request.opcode = "addPostRequest";
