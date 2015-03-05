@@ -39,16 +39,18 @@
 
 </head>
 <body ng-app="app" ng-controller="linkedInCtrl" id="appBody">
+<button class="btn btn-mini btn-primary"
+        style="margin-top: 6px;" type="button"
+        ng-click="logoutLinkedIn()">Logout</button>
 <!--<img src="imgs\job_seeking.JPG" id="background-image" />-->
-<!--<div class="page-content">-->
-    <!--<div ng-controller="AuthenticationCtrl">-->
-        <!--<div>-->
-            <!--<header ng-controller="HeaderCtrl" ng-include="'views/header.html'"-->
-                    <!--ng-show="userProfile.data.loggedIn"></header>-->
-        <!--</div>-->
-
-<!--<header ng-include="'views/header.html'"></header>-->
-
+<div class="page-content">
+    <div ng-controller="authenticationCtrl">
+        <div>
+            <header ng-controller="headerCtrl" ng-include="'views/header.html'"
+                    ng-show="userProfile.data.loggedIn"></header>
+        </div>
+    </div>
+</div>
 <!--Main_Libs-->
 
 
@@ -69,6 +71,10 @@
 <script src="scripts/controllers\linkedInAPI.js"></script>
 <script src="scripts/controllers\loginCtrl.js"></script>
 <script src="scripts/controllers\mainCtrl.js"></script>
+<script src="scripts/controllers\headerCtrl.js"></script>
+<script src="scripts/controllers\authenticationCtrl.js"></script>
+<script src="scripts/controllers\searchCtrl.js"></script>
+
 
 
 <!--End Controllers-->
@@ -78,6 +84,8 @@
 <script src="scripts/services\entitiesService.js"></script>
 <script src="scripts/services\postRequestsService.js"></script>
 <script src="scripts/services\linkedInService.js"></script>
+<script src="scripts/services\initiallyService.js"></script>
+
 
 <!--End Services-->
 
