@@ -12,7 +12,7 @@ angular.module('servicesModule').
             //basic profile
             getProfile : function (callback){
                 IN.API.Profile("me")
-                    .fields("firstName", "lastName", "id", "pictureUrl","publicProfileUrl","email-address")
+                    .fields("firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url",  "positions", "email-address", "educations", "date-of-birth","skills")
                     .result(function (result){
 
                         //profileData=result.values[0];
@@ -35,7 +35,7 @@ angular.module('servicesModule').
             },
             loginRequest : function(userEntity){
                 var msg = {};
-                msg.opcode = "validateJobSeekerRequest";
+                msg.opcode = "validateJobseekerRequest";
                 msg.Entity =userEntity;
                 var jobPromise=$http({
                     method : 'POST',

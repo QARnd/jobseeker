@@ -18,6 +18,25 @@ angular.module('servicesModule').factory('entitiesService', function() {
             comment.body=body;
             comment.date=date;
             return comment;
+        },
+        userEntity: function(firstName,lastName,email,linkedinId,profileUrl,pictureUrl,skills,educations,summary,industry,location) {
+
+            var user = {};     // new object
+
+            user.firstName=firstName;
+            user.lastName = lastName;
+            user.email = email;
+            user.linkedinId = linkedinId;
+            user.profileUrl = profileUrl;
+            user.pictureUrl = pictureUrl;
+
+            user.skills = skills;
+            user.educations = educations;
+            user.summary = summary;
+            user.industry = industry;
+            user.location = location;
+
+            return user;
         }
     };
 
