@@ -52,7 +52,7 @@ class Jobseeker_Form extends Jobseeker_DB {
                     break;
 
                 case 'addjobRequest':
-                    $this->add_job($request,$db);
+                    $this->add_job();
                     break;
             }
         }
@@ -102,7 +102,8 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
-    
+
+
 
     public function getSinglePost(){
 
@@ -143,19 +144,20 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function add_job($request,$db){
+    public function add_job(){
 //        $this->db_query()
 //        $post=new Post();
         $entity='Entity';
         $name='name';
-        $name=$request->$entity->$name;
+        $name=$GLOBALS['request']->$entity->$name;
 
 
 
         $sql='insert into job values(NULL, "'.$name.'")';
-        $db->db_query($sql);
+        $GLOBALS['db']->db_query($sql);
         print ($name);
     }
+
 
 
 
