@@ -47,6 +47,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'deletePostRequest':
                     $this->delete_post();
                     break;
+                case 'validateJobseekerRequest':
+                    $this->validateJobseekerRequest();
+                    break;
             }
         }
     }
@@ -112,18 +115,24 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
     public function delete_post(){
-
-
-
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
-
 
         $sql='delete from post where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));
+    }
 
+    public function validateJobseekerRequest(){
+        $entity='Entity';
+        $firstName='firstName';
+        $firstName=$GLOBALS['request']->$entity->$firstName;
+
+//        $sql='delete from post where id='.$postId;
+//        $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode($firstName));
     }
 
 

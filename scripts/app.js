@@ -10,8 +10,12 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/newsfeed/:postId', {templateUrl: 'views/singlePostView.html', controller: 'singlePostCtrl'});
 
 
+    $routeProvider.when('/login', {templateUrl: 'views/loginView.html', controller: 'loginCtrl'});
+    $routeProvider.when('/main', {templateUrl: 'views/mainView.html', controller: 'mainCtrl'});
 
 
-    $routeProvider.otherwise({redirectTo: '/'});
+
+    $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
+    $routeProvider.otherwise({redirectTo: '/login'});
 }]);
 

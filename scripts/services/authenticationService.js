@@ -13,7 +13,7 @@ angular.module('servicesModule').
             jobs:{},
             posts:{},
             deploymentLink:{link:'server/Jobseeker_Form.php'},
-            getNesFeedLength: function(){
+            getNewsFeedLength: function(){
                 var deferred = $q.defer();
                 $timeout(function(){
                     deferred.resolve(50);
