@@ -18,6 +18,7 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
             });
             return postPromise;
         },
+
         addJob: function(jobEntity) {
             var request = {};
             request.opcode = "addJobRequest";
