@@ -50,6 +50,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'validateJobseekerRequest':
                     $this->validateJobseekerRequest();
                     break;
+
+                case 'addjobRequest':
+                    $this->add_job($request,$db);
+                    break;
             }
         }
     }
@@ -134,6 +138,23 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         print(json_encode($firstName));
     }
+
+
+
+    public function add_job($request,$db){
+//        $this->db_query()
+//        $post=new Post();
+        $entity='Entity';
+        $name='name';
+        $name=$request->$entity->$name;
+
+
+
+        $sql='insert into job values(NULL, "'.$name.'")';
+        $db->db_query($sql);
+        print ($name);
+    }
+
 
 
 
