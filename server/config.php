@@ -2,8 +2,8 @@
 <?php
 $host='localhost';
 $username='root';
-$password='1';
-$database='job_seeker';
+$password='';
+$database='jobseeker';
 
 $db=new Jobseeker_DB($host,$username,$password,$database);
 
