@@ -14,7 +14,7 @@ angular.module('myApp').controller('addJobCtrl',
                     type: "success",
                     timer: 5000
                 });
-               
+
            }, function (d) {
                swal({
                    title: "Error!",
