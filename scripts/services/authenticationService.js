@@ -8,7 +8,7 @@ angular.module('servicesModule').
 
 
         return {
-            userProfile : {data:""},
+            userProfile : {firstName:"",lastName:"",email:"",linkedinId:"",profileUrl:"",pictureUrl:"",skills:"",educations:"",summary:"",industry:"",location:""},
             userLoggedIn : {status:""},
             jobs:{},
             posts:{},
