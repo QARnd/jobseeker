@@ -3,6 +3,7 @@ angular.module('myApp').controller('addJobCtrl',
     function($scope, entitiesService, postRequestsService, authenticationService) {
 
         $scope.addJob = function () {
+
             var jobEntity = entitiesService.jobEntity($scope.title,$scope.Body,$scope.tags);
 
             var jobPromise = postRequestsService.addJob(jobEntity);
