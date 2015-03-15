@@ -2,6 +2,7 @@
  * Created by Omayma Abulrub on 12/1/2014.
  */
 
+
 angular.module('myApp').controller('newsfeedCtrl',
     function($scope, entitiesService, postRequestsService, authenticationService) {
         console.log(authenticationService.userProfile.data);

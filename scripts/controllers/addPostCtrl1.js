@@ -6,6 +6,7 @@ angular.module('myApp').controller('addPostCtrl',
     function($scope, entitiesService, postRequestsService, authenticationService) {
 
             $scope.addPost = function () {
+                alert($scope.title);
             var postEntity = entitiesService.postEntity($scope.title,$scope.body);
 
             var postPromise = postRequestsService.addPost(postEntity);

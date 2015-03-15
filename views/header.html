@@ -50,7 +50,7 @@
 
                         <!--</form>-->
                     </ul>
-                    <!--<ul class="nav navbar-nav pull-right ">-->
+                    <ul class="nav navbar-nav pull-right ">
                         <!--<li ng-show="userProfile.data.userType==1"-->
                             <!--ng-click="select($index)"-->
                             <!--ng-class="{active: $index===selectedIndex}"><a-->
@@ -71,17 +71,18 @@
 						<!--</span>-->
                         <!--</li>-->
 
-                        <!--<li><img alt="140x140" src="{{userProfile.data.pictureUrl}}"-->
-                                 <!--class="img-circle" /></li>-->
-                        <!--<li><a ng-href="{{userProfile.data.publicProfileUrl}}">-->
-                            <!--<h5 style="margin-top: 3px;" class="text-left text-info">-->
-                                <!--{{userProfile.data.firstName}} {{userProfile.data.lastName}}</h5>-->
-                        <!--</a></li>-->
-                        <!--<li><button class="btn btn-mini btn-primary"-->
-                                    <!--style="margin-top: 6px;" type="button"-->
-                                    <!--ng-click="logoutLinkedIn()">Logout</button></li>-->
+                        <li><img alt="140x140" src="{{userProfile.data.pictureUrl}}"
+                                 class="img-circle" /></li>
+                        <li><a ng-href="{{userProfile.data.publicProfileUrl}}">
+                            <h5 style="margin-top: 3px;" class="text-left text-info">
+                                {{userProfile.data.firstName}} {{userProfile.data.lastName}}</h5>
+                        </a></li>
+                        <li><button class="btn btn-mini btn-primary"
+                                    style="margin-top: 6px;" type="button"
+                                    ng-click="logoutLinkedIn()">Logout</button></li>
 
-                    <!--</ul>-->
+                    </ul>
+
                 </div>
 
             </nav>

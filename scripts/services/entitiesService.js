@@ -12,6 +12,13 @@ angular.module('servicesModule').factory('entitiesService', function() {
             post.body=body;
             return post;
         },
+        jobEntity: function(title,body, tags) {
+            var job = {};     // new object
+            job.title = title;
+            job.body=body;
+            job.tags=tags;
+            return job;
+        },
         commentEntity: function(body,date) {
             var comment = {};     // new object
 
@@ -19,6 +26,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             comment.date=date;
             return comment;
         },
+
         userEntity: function(firstName,lastName,email,linkedinId,profileUrl,pictureUrl,skills,educations,summary,industry,location) {
 
             var user = {};     // new object

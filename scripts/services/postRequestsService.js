@@ -18,6 +18,7 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
             });
             return postPromise;
         },
+
         getAllPosts: function() {
             var request = {};
             request.opcode = "getAllPostsRequest";
