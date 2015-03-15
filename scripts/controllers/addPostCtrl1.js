@@ -1,6 +1,3 @@
-/**
- * Created by Omayma Abulrub on 12/1/2014.
- */
 
 angular.module('myApp').controller('addPostCtrl',
     function($scope, entitiesService, postRequestsService, authenticationService) {

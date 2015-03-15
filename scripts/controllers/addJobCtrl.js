@@ -1,12 +1,12 @@
 
 angular.module('myApp').controller('addJobCtrl',
-    function($scope, entitiesService, postRequestsService, authenticationService) {
+    function($scope, entitiesService, jobRequestsService, authenticationService) {
 
         $scope.addJob = function () {
 
             var jobEntity = entitiesService.jobEntity($scope.title,$scope.body,$scope.tags);
 
-            var jobPromise = postRequestsService.addJob(jobEntity);
+            var jobPromise = jobRequestsService.addJob(jobEntity);
 
            jobPromise.then(function (d) {
                 swal({
