@@ -11,6 +11,7 @@ angular.module('myApp').controller('addPostCtrl',
 
             var postPromise = postRequestsService.addPost(postEntity);
 
+                
             postPromise.then(function (d) {
                 swal({
                     title: "Success!",
