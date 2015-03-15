@@ -7,7 +7,7 @@ angular.module('myApp').controller('addPostCtrl',
 
             $scope.addPost = function () {
                 alert($scope.title);
-            var postEntity = entitiesService.postEntity($scope.title,$scope.body);
+            var postEntity = entitiesService.postEntity($scope.title,nl2br($scope.body));
 
             var postPromise = postRequestsService.addPost(postEntity);
 
