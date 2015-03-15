@@ -12,6 +12,13 @@ angular.module('servicesModule').factory('entitiesService', function() {
             post.body=body;
             return post;
         },
+       messageEntity: function(title,Body,toId) {
+            var message = {};     // new object
+           message.title = title;
+           message.body=Body;
+           message.toId=toId
+            return message;
+        },
         jobEntity: function(title,body, tags) {
             var job = {};     // new object
             job.title = title;
