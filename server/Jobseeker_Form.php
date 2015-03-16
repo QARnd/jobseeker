@@ -164,6 +164,17 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
 
+    public function delete_job(){
+        $jobId='id';
+        $postId=$GLOBALS['request']->$jobId;
+
+        $sql='delete from post where id='.$postId;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode("Done"));
+    }
+
+
 }
 
 $GLOBALS['request']=json_decode(file_get_contents('php://input'));
