@@ -1,22 +1,18 @@
 
-/**
- * Created by happy on 3/14/2015.
- */
 
 angular.module('myApp').controller('sendMessageCtrl',
-    function($scope, entitiesService, postRequestsService, authenticationService) {
+    function($scope, entitiesService, messageRequestsService, authenticationService) {
 
         $scope.sendMessage = function () {
 
-
             var messageEntity = entitiesService.messageEntity($scope.title,$scope.body,$scope.toId);
 
-            var messagePromise = postRequestsService.addJob(messageEntity);
+            var messagePromise = messageRequestsService.sendMessage(messageEntity);
 
             messagePromise.then(function (d) {
                 swal({
                     title: "Success!",
-                    text: "Your job Has been added! With name:"+d.data,
+                    text: "Your message Has been sent! With name:",
                     type: "success",
                     timer: 5000
                 });
