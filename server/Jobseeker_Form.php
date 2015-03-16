@@ -151,7 +151,6 @@ class Jobseeker_Form extends Jobseeker_DB {
         $title='title';
         $title=$GLOBALS['request']->$entity->$title;
 
-
         $Body='Body';
         $Body=$GLOBALS['request']->$entity->$Body;
 
@@ -163,9 +162,6 @@ class Jobseeker_Form extends Jobseeker_DB {
         $GLOBALS['db']->db_query($sql);
         print ($title);
     }
-
-
-
 
 
 }
