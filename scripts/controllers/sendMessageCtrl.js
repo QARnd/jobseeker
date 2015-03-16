@@ -11,6 +11,7 @@ angular.module('myApp').controller('sendMessageCtrl',
 
             messagePromise.then(function (d) {
                 swal({
+
                     title: "Success!",
                     text: "Your message Has been sent! With name:",
                     type: "success",
