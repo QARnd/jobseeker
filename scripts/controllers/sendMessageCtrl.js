@@ -4,8 +4,8 @@ angular.module('myApp').controller('sendMessageCtrl',
     function($scope, entitiesService, messageRequestsService, authenticationService) {
 
         $scope.sendMessage = function () {
-
-            var messageEntity = entitiesService.messageEntity($scope.title,$scope.body,$scope.toId);
+           var id= authenticationService.userProfile.data.id;
+            var messageEntity = entitiesService.messageEntity($scope.title,$scope.body,$scope.toId,id);
 
             var messagePromise = messageRequestsService.sendMessage(messageEntity);
 
