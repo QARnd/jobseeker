@@ -12,7 +12,7 @@ angular.module('servicesModule').
             //basic profile
             getProfile : function (callback){
                 IN.API.Profile("me")
-                    .fields("firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url",  "positions", "email-address", "educations", "date-of-birth","skills")
+                    .fields("id","firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url",  "positions", "email-address", "educations", "date-of-birth","skills")
                     .result(function (result){
 
                         //profileData=result.values[0];
