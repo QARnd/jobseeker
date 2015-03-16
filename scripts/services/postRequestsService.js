@@ -54,31 +54,6 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
                 data: request
             });
             return postPromise;
-        },
-        sendMessage: function(messageEntity) {
-            var request = {};
-            request.opcode = "sendMessageRequest";
-            request.Entity =messageEntity;
-            var messagePromise=$http({
-                method : 'message',
-                url : authenticationService.deploymentLink.link,
-                //url: 'server/Jobseeker_Form.php',
-                data: request
-            });
-            return messagePromise;
-        },
-        addJob: function(jobEntity) {
-            var request = {};
-            request.opcode = "addJobRequest";
-            request.Entity =jobEntity;
-            var jobPromise=$http({
-                method : 'POST',
-                url : authenticationService.deploymentLink.link,
-                //url: 'server/Jobseeker_Form.php',
-                data: request
-            });
-            return jobPromise;
         }
-
     }
 });
