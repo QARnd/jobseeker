@@ -6,7 +6,7 @@
 angular.module('myApp').controller('newsfeedCtrl',
     function($scope, entitiesService, postRequestsService, authenticationService) {
         console.log(authenticationService.userProfile.data);
-        console.log("Esmat");
+
         $scope.getNewsFeed=function(){
             $scope.posts=[
                 {title:"ttttt"},

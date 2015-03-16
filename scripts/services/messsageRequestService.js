@@ -2,7 +2,7 @@ angular.module('servicesModule').factory('messageRequestsService', function($htt
     return {
 
 
-        addJob: function (messageEntity) {
+        sendMessage: function (messageEntity) {
             var request = {};
             request.opcode = "sendMessageRequest";
             request.Entity = messageEntity;
