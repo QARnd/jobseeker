@@ -13,5 +13,21 @@ angular.module('servicesModule').factory('jobRequestsService', function($http,au
                 data: request
             });
             return jobPromise;
-        }
+        },
+
+        deleteJob: function(deleteJobEntity) {
+            var request = {};
+            request.opcode = "deleteJobRequest";
+            request.Entity =deleteJobEntity;
+            var deletePromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return deletePromise;
+        } ,
+
+
+
     }});

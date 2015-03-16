@@ -12,6 +12,12 @@ angular.module('servicesModule').factory('entitiesService', function() {
             post.body=body;
             return post;
         },
+
+        deleteJobEntity: function(id) {
+            var deleteJob = {};     // new object
+            deleteJob.id=id;
+            return deleteJob;
+        },
        messageEntity: function(title,Body,toId) {
             var message = {};     // new object
            message.title = title;
