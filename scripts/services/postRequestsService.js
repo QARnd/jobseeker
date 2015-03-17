@@ -45,7 +45,7 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
         },
         deletePost: function(postId) {
             var request = {};
-            
+
             request.opcode = "deletePostRequest";
             request.postId =postId;
             var postPromise=$http({
