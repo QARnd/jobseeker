@@ -82,7 +82,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $body='body';
         $body=$GLOBALS['request']->$entity->$body;
-        $sql='insert into post values(NULL,"'.$title.'","'.$body.'")';
+        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
     }
@@ -90,7 +90,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function get_posts(){
 
-        $sql='select * from post';
+        $sql='select * from posts';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -112,7 +112,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $postId=$GLOBALS['request']->$postId;
 
 
-        $sql='select * from post where id='.$postId;
+        $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
 
         $row = $GLOBALS['db']->db_assoc($result);
@@ -124,7 +124,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
 
-        $sql='delete from post where id='.$postId;
+        $sql='delete from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));
@@ -157,7 +157,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $tags=$GLOBALS['request']->$entity->$tags;
 
 
-        $sql='insert into job values(NULL,"'.$title.'","'.$Body.'","'.$tags.'")';
+        $sql='insert into jobs values(NULL,"'.$title.'","'.$Body.'","'.$tags.'")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
     }
