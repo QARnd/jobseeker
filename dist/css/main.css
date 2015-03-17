@@ -2,3 +2,18 @@ body{
     background-image: url("../../imgs/job-seeking.jpg");
     background-size:cover;
 }
+
+
+.sidebar-left .main{
+    float:right;
+}
+.idebar-left .sidebar{
+    float:left;
+}
+
+.sidebar-right .main{
+    float:left;
+}
+.idebar-right .sidebar{
+    float:right;
+}
