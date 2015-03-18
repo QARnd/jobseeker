@@ -51,8 +51,11 @@ class Jobseeker_Form extends Jobseeker_DB {
                     $this->validateJobseekerRequest();
                     break;
 
-                case 'addjobRequest':
+                case 'addJobRequest':
                     $this->add_job();
+                    break;
+                case 'sendMessageRequest':
+                    $this->send_message();
                     break;
             }
         }
@@ -164,7 +167,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function sendMessage(){
+    public function send_message(){
 
         $entity='Entity';
 
