@@ -165,26 +165,18 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
     public function sendMessage(){
-//        $this->db_query()
-//        $post=new Post();
+
         $entity='Entity';
-        $title='title';
-        $title=$GLOBALS['request']->$entity->$title;
 
-        $Body='Body';
-        $Body=$GLOBALS['request']->$entity->$Body;
-
-        $toId='toId';
-        $toId=$GLOBALS['request']->$entity->$toId;
-
-        $fromId='fromId';
-        $fromId=$GLOBALS['request']->$entity->$fromId;
-
-
-
-        $sql='insert into Message values(NULL,"'.$title.'","'.$Body.'","'.$toId.'")';
+        $content='content';
+        $content=$GLOBALS['request']->$entity->$content;
+        $to_id='to_id';
+        $to_id=$GLOBALS['request']->$entity->$to_id;
+        $from_id='from_id';
+        $from_id=$GLOBALS['request']->$entity->$from_id;
+        $sql='insert into messages values(NULL,"'.$content.'",now(),'.$from_id.','.$to_id.')';
         $GLOBALS['db']->db_query($sql);
-        print ($title);
+        print ($content);
     }
 
 
