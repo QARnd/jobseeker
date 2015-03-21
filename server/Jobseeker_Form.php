@@ -170,7 +170,6 @@ class Jobseeker_Form extends Jobseeker_DB {
     public function send_message(){
 
         $entity='Entity';
-
         $content='content';
         $content=$GLOBALS['request']->$entity->$content;
         $to_id='to_id';
