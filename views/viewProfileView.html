@@ -1,0 +1,35 @@
+<!--<div>-->
+    <!--view Profile-->
+    <!--id: <input type="text" placeholder="jobSeekerId" ng-model="jobSeekerId"><br>-->
+    <!--<button ng-click="viewProfile()">view</button>-->
+
+
+<!--</div>-->
+
+<div>
+    view Profile
+    id: <input type="text" placeholder="jobSeekerId" ng-model="jobSeekerId"><br>
+    <button ng-click="viewProfile()">view</button>
+
+    <ul>
+
+        <li ng-repeat="jobseeker in jobseekers" ng-show="jobseeker.jobseeker_id==jobSeekerId">
+
+            <div> {{jobseeker.first_name}}</div>
+
+
+
+
+        </li>
+
+
+
+
+
+
+
+
+
+    </ul>
+</div>
+

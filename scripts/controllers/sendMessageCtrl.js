@@ -1,5 +1,4 @@
 
-
 angular.module('myApp').controller('sendMessageCtrl',
     function($scope, entitiesService, messageRequestsService, authenticationService) {
 

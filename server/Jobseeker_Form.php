@@ -50,9 +50,11 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'validateJobseekerRequest':
                     $this->validateJobseekerRequest();
                     break;
-
                 case 'addjobRequest':
                     $this->add_job();
+                    break;
+                case 'viewProfileRequest':
+                    $this->viewProfile();
                     break;
             }
         }
@@ -90,27 +92,27 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function get_posts(){
 
-        $sql='select * from posts';
-        $result=$GLOBALS['db']->db_query($sql);
+        $result = db_query('SELECT COLUMN_NAME name FROM {users} WHERE linkedinid = 2');
+        while ( $obj = db_fetch_object ($result) ) {
+            print $obj->COLUMN_NAME;
+}
 
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
-            array_push($total, $row);
-        }
-        print(json_encode($total));
+////        $sql='select * from posts';
+//        $result=$GLOBALS['db']->db_query($sql);
+//
+//        $total=array();
+//        while($row = $GLOBALS['db']->db_assoc($result)){
+//            array_push($total, $row);
+//        }
+//        print(json_encode($total));
 
     }
 
 
-
-
     public function getSinglePost(){
-
-
 
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
-
 
         $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
@@ -185,6 +187,37 @@ class Jobseeker_Form extends Jobseeker_DB {
         $sql='insert into Message values(NULL,"'.$title.'","'.$Body.'","'.$toId.'")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
+    }
+
+
+//    public function viewProfile(){
+//        $jobSeekerId='jobSeekerId';
+//        $jobSeekerId=$GLOBALS['request']->$jobSeekerId;
+//
+//        $sql='select * from jobseekers where id='.$jobSeekerId;
+//        $result=$GLOBALS['db']->db_query($sql);
+//
+//
+//        $total=array();
+//        while($row = $GLOBALS['db']->db_assoc($result)){
+//            array_push($total, $row);
+//        }
+//        print(json_encode($total));
+//
+//    }
+
+
+    public function viewProfile(){
+
+        $postId='postId';
+        $postId=$GLOBALS['request']->$postId;
+
+        $sql='select * from posts where id='.$postId;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $row = $GLOBALS['db']->db_assoc($result);
+        print(json_encode($row));
+
     }
 
 
