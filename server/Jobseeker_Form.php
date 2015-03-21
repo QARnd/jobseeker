@@ -50,11 +50,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'validateJobseekerRequest':
                     $this->validateJobseekerRequest();
                     break;
-                case 'addjobRequest':
+
+                case 'addJobRequest':
                     $this->add_job();
                     break;
-                case 'viewProfileRequest':
-                    $this->viewProfile();
+                case 'sendMessageRequest':
+                    $this->send_message();
                     break;
             }
         }
@@ -92,27 +93,27 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function get_posts(){
 
-        $result = db_query('SELECT COLUMN_NAME name FROM {users} WHERE linkedinid = 2');
-        while ( $obj = db_fetch_object ($result) ) {
-            print $obj->COLUMN_NAME;
-}
+        $sql='select * from posts';
+        $result=$GLOBALS['db']->db_query($sql);
 
-////        $sql='select * from posts';
-//        $result=$GLOBALS['db']->db_query($sql);
-//
-//        $total=array();
-//        while($row = $GLOBALS['db']->db_assoc($result)){
-//            array_push($total, $row);
-//        }
-//        print(json_encode($total));
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
 
     }
 
 
+
+
     public function getSinglePost(){
+
+
 
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
+
 
         $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
@@ -166,42 +167,21 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function sendMessage(){
-//        $this->db_query()
-//        $post=new Post();
+    public function send_message(){
+
         $entity='Entity';
-        $title='title';
-        $title=$GLOBALS['request']->$entity->$title;
 
-        $Body='Body';
-        $Body=$GLOBALS['request']->$entity->$Body;
-
-        $toId='toId';
-        $toId=$GLOBALS['request']->$entity->$toId;
-
-        $fromId='fromId';
-        $fromId=$GLOBALS['request']->$entity->$fromId;
-
-
-
-        $sql='insert into Message values(NULL,"'.$title.'","'.$Body.'","'.$toId.'")';
+        $content='content';
+        $content=$GLOBALS['request']->$entity->$content;
+        $to_id='to_id';
+        $to_id=$GLOBALS['request']->$entity->$to_id;
+        $from_id='from_id';
+        $from_id=$GLOBALS['request']->$entity->$from_id;
+        $sql='insert into messages values(NULL,"'.$content.'",now(),'.$from_id.','.$to_id.')';
         $GLOBALS['db']->db_query($sql);
-        print ($title);
+        print ($content);
     }
 
-
-    public function viewProfile(){
-
-        $jobSeekerId='jobSeekerId';
-        $jobSeekerId=$GLOBALS['request']->$jobSeekerId;
-
-        $sql='select * from jobseekers where jobSeeker_id='.$jobSeekerId;
-        $result=$GLOBALS['db']->db_query($sql);
-
-        $row = $GLOBALS['db']->db_assoc($result);
-        print(json_encode($row));
-
-    }
 
 }
 
