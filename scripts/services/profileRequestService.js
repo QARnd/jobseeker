@@ -2,7 +2,7 @@
  * Created by rana on 3/17/2015.
  */
 
-angular.module('servicesModule').factory('profileRequestsService', function($http,authenticationService) {
+angular.module('servicesModule').factory('profileRequestService', function($http,authenticationService) {
     return {
 
 
@@ -10,12 +10,14 @@ angular.module('servicesModule').factory('profileRequestsService', function($htt
             var request = {};
             request.opcode = "viewProfileRequest";
             request.Entity = profileEntity;
-            var profilePromise = $http({
+            var viewPromise = $http({
                 method: 'POST',
                 url: authenticationService.deploymentLink.link,
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
-            return profilePromise;
+            return viewPromise;
         }
+
+
     }});

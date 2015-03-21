@@ -190,36 +190,18 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
 
-//    public function viewProfile(){
-//        $jobSeekerId='jobSeekerId';
-//        $jobSeekerId=$GLOBALS['request']->$jobSeekerId;
-//
-//        $sql='select * from jobseekers where id='.$jobSeekerId;
-//        $result=$GLOBALS['db']->db_query($sql);
-//
-//
-//        $total=array();
-//        while($row = $GLOBALS['db']->db_assoc($result)){
-//            array_push($total, $row);
-//        }
-//        print(json_encode($total));
-//
-//    }
-
-
     public function viewProfile(){
 
-        $postId='postId';
-        $postId=$GLOBALS['request']->$postId;
+        $jobSeekerId='jobSeekerId';
+        $jobSeekerId=$GLOBALS['request']->$jobSeekerId;
 
-        $sql='select * from posts where id='.$postId;
+        $sql='select * from jobseekers where jobSeeker_id='.$jobSeekerId;
         $result=$GLOBALS['db']->db_query($sql);
 
         $row = $GLOBALS['db']->db_assoc($result);
         print(json_encode($row));
 
     }
-
 
 }
 

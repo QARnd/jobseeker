@@ -39,12 +39,11 @@ angular.module('servicesModule').factory('entitiesService', function() {
             comment.date=date;
             return comment;
         },
-        profileEntity: function(id) {
+        profileEntity: function(jobSeekerId) {
             var profile = {};     // new object
-            profile.id = id;
+            profile.jobSeekerId = jobSeekerId;
             return profile;
         },
-
         userEntity: function(firstName,lastName,email,linkedinId,profileUrl,pictureUrl,skills,educations,summary,industry,location) {
 
             var user = {};     // new object

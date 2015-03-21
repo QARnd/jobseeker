@@ -3,25 +3,18 @@
  */
 
 
-
 angular.module('myApp').controller('viewProfileCtrl',
-    function($scope, entitiesService, profileRequestsService, authenticationService) {
+    function($scope, entitiesService, profileRequestService, authenticationService) {
 
         $scope.viewProfile = function () {
 
 
             var profileEntity = entitiesService.profileEntity($scope.jobSeekerId);
 
-            var profilePromise = profileRequestsService.viewProfile(profileEntity);
+            var profilePromise = profileRequestService.viewProfile(profileEntity);
 
             profilePromise.then(function (d) {
-                swal({
-
-                    title: "Success!",
-                    text: "You can see the profile",
-                    type: "success",
-                    timer: 5000
-                });
+                console.log(d.data);
 
             }, function (d) {
                 swal({
@@ -34,4 +27,5 @@ angular.module('myApp').controller('viewProfileCtrl',
         };
 
     });
+
 

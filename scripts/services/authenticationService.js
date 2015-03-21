@@ -2,7 +2,6 @@
  * Created by Omayma Abulrub on 12/4/2014.
  */
 
-
 angular.module('servicesModule').
     factory('authenticationService', function($q, $timeout){
 
@@ -24,4 +23,5 @@ angular.module('servicesModule').
 
         }
     });
+
 
