@@ -14,7 +14,11 @@ angular.module('myApp').controller('viewProfileCtrl',
             var profilePromise = profileRequestService.viewProfile(profileEntity);
 
             profilePromise.then(function (d) {
-                console.log(d.data);
+
+                console.log(d);
+                var profile= d.data;
+                $scope.jobSeekerId= profile.jobSeekerId;
+
 
             }, function (d) {
                 swal({

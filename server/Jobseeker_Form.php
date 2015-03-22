@@ -57,6 +57,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'sendMessageRequest':
                     $this->send_message();
                     break;
+                case 'viewProfileRequest':
+                    $this->viewProfile();
+                    break;
             }
         }
     }
@@ -182,6 +185,21 @@ class Jobseeker_Form extends Jobseeker_DB {
         print ($content);
     }
 
+    public function viewProfile(){
+        $jobSeekerId='jobSeekerId';
+        $jobSeekerId=$GLOBALS['request']->$jobSeekerId;
+
+        $sql='select * from jobseekers where id='.$jobSeekerId;
+        $result=$GLOBALS['db']->db_query($sql);
+
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
 
 }
 
