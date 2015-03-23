@@ -16,8 +16,8 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/viewProfile', {templateUrl: 'views/viewProfileView.html', controller: 'viewProfileCtrl'});
 
-    $routeProvider.when('/viewProfile', {templateUrl: 'views/viewProfileView.html', controller: 'viewProfileCtrl'});
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
+
     $routeProvider.otherwise({redirectTo: '/login'});
 }]);
 

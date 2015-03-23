@@ -18,6 +18,17 @@ angular.module('myApp').controller('viewProfileCtrl',
                 console.log(d);
                 var profile= d.data;
                 $scope.jobSeekerId= profile.jobSeekerId;
+                $scope.first_name= profile.first_name;
+                $scope.last_name= profile.last_name;
+                $scope.Email= profile.Email;
+                $scope.profileUrl= profile.profileUrl;
+                $scope.pictureUrl= profile.pictureUrl;
+                $scope.summary= profile.summary;
+                $scope.location= profile.location;
+                $scope.industry= profile.industry;
+                $scope.educations= profile.educations.split(',');
+                $scope.skills=profile.skills.split(',');
+
 
 
             }, function (d) {
