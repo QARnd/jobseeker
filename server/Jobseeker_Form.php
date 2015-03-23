@@ -165,6 +165,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         else{
             $sql='update jobseekers set first_name="'. $firstName.'", last_name="'. $lastName.'",Email="'.$emailAddress.'",skills="'.$skills.'",profileUrl="'. $publicProfileUrl.'",pictureUrl="'.$pictureUrl.'",educations="'.$education.'",summary="'.$summary.'",industry="'.$industry.'",location="'.$location.'" where linkedinId="'.$id.'"';
         }
+        
         $GLOBALS['db']->db_query($sql);
         print(json_encode($id));
     }
