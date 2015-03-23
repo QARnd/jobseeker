@@ -22,7 +22,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                     var userEntity=entitiesService.userEntity(result.values[0].firstName,result.values[0].lastName,
-                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,educationStr,educationStr,educationStr,educationStr,educationStr);
+                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,result.values[0].educations,result.values[0].skills,result.values[0].summary,result.values[0].location,result.values[0].industry);
                     var userPromise=linkedinService.loginRequest(userEntity);
 
                     userPromise.then(
