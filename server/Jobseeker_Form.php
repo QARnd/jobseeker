@@ -108,9 +108,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
     public function getSinglePost(){
-
-
-
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
 
@@ -139,13 +136,13 @@ class Jobseeker_Form extends Jobseeker_DB {
         $firstName=$GLOBALS['request']->$entity->$firstName;
         $lastName='lastName';
         $lastName=$GLOBALS['request']->$entity->$lastName;
-        $id='id';
+        $id='linkedinId';
         $id=$GLOBALS['request']->$entity->$id;
-        $emailAddress='emailAddress';
+        $emailAddress='email';
         $emailAddress=$GLOBALS['request']->$entity->$emailAddress;
         $pictureUrl='pictureUrl';
         $pictureUrl=$GLOBALS['request']->$entity->$pictureUrl;
-        $publicProfileUrl='publicProfileUrl';
+        $publicProfileUrl='profileUrl';
         $publicProfileUrl=$GLOBALS['request']->$entity->$publicProfileUrl;
         $industry='industry';
         $industry=$GLOBALS['request']->$entity->$industry;
@@ -155,29 +152,21 @@ class Jobseeker_Form extends Jobseeker_DB {
         $summary=$GLOBALS['request']->$entity->$summary;
         $location='location';
         $location=$GLOBALS['request']->$entity-> $location;
-        $education='education';
+        $education='educations';
         $education=$GLOBALS['request']->$entity-> $education;
-        $sql1='select linkedinId from jobseekers';
+        $sql1='select linkedinId from jobseekers where linkedinId="'.$id .'"';
         $result=$GLOBALS['db']->db_query($sql1);
 
-       $mark=0;
-        while($row=mysqli_fetch_array($result))
+        if (mysql_num_rows($result)==0)
         {
-            if($row[0]==$id)
-            {$mark=1;
-            }
-        }
-        if($mark==0)
-        {$sql='insert into jobseekers VALUES (NULL,'.$id.',"'. $firstName.'","'. $lastName.'","'.$emailAddress.'",
-        "'.$skills.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$education.'","'.$summary.'","'.$industry.'","'.$location.'")';
-            $GLOBALS['db']->db_query($sql);}
-        else{
-            $sql2='update jobseekers set first_name="'. $firstName.'", last_name="'. $lastName.'",Email="'.$emailAddress.'"
-            ,skills="'.$skills.'",profileUrl="'. $publicProfileUrl.'",pictureUrl="'.$pictureUrl.'",educations="'.$education.'",
-            summary="'.$summary.'",industry="'.$industry.'",location="'.$location.'"';
-           }
+            $sql='insert into jobseekers VALUES (NULL,"'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'.$skills.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$education.'","'.$summary.'","'.$industry.'","'.$location.'")';
 
-        print(json_encode($firstName));
+        }
+        else{
+            $sql='update jobseekers set first_name="'. $firstName.'", last_name="'. $lastName.'",Email="'.$emailAddress.'",skills="'.$skills.'",profileUrl="'. $publicProfileUrl.'",pictureUrl="'.$pictureUrl.'",educations="'.$education.'",summary="'.$summary.'",industry="'.$industry.'",location="'.$location.'" where linkedinId="'.$id.'"';
+        }
+        $GLOBALS['db']->db_query($sql);
+        print(json_encode($id));
     }
 
 

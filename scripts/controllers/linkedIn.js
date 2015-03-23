@@ -15,14 +15,21 @@ angular.module('myApp').controller('linkedInCtrl',
                     var educations=result.values[0].educations.values;
                     var educationStr='';
                     for(var i=0;i<educations.length;i++){
-                        educationStr+=educations[i].degree;
+                        educationStr+=educations[i].degree+",";
+                    }
+
+                    var skills=result.values[0].skills.values;
+                    var skillStr='';
+                    for(var i=0;i<skills.length;i++){
+                        skillStr+=skills[i].skill.name+",";
                     }
 
 
 
 
+
                     var userEntity=entitiesService.userEntity(result.values[0].firstName,result.values[0].lastName,
-                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,result.values[0].educations,result.values[0].skills,result.values[0].summary,result.values[0].location,result.values[0].industry);
+                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,skillStr,educationStr,result.values[0].summary,result.values[0].industry,result.values[0].location.name);
                     var userPromise=linkedinService.loginRequest(userEntity);
 
                     userPromise.then(
@@ -42,7 +49,8 @@ angular.module('myApp').controller('linkedInCtrl',
                             else{
                                 alert("error");
                                 $scope.logoutLinkedIn();
-                                $location.path("/login");}
+                                $location.path("/login");
+                            }
                         },
                         function(d){
                             alert("Login Error");
