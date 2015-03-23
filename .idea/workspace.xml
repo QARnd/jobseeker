@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c5bb5571-93ec-44ef-a7ee-769275590669" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Jobseeker_Form.php" afterPath="$PROJECT_DIR$/server/Jobseeker_Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/linkedIn.js" afterPath="$PROJECT_DIR$/scripts/controllers/linkedIn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/linkedInService.js" afterPath="$PROJECT_DIR$/scripts/services/linkedInService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" afterPath="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jobseeker.iws" />
@@ -33,28 +32,38 @@
       <file leaf-file-name="Jobseeker_Form.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17741935" vertical-offset="2473" max-vertical-offset="3995">
-              <caret line="155" column="55" selection-start-line="155" selection-start-column="55" selection-end-line="155" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.37096775" vertical-offset="1148" max-vertical-offset="3995">
+              <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
               <folding>
-                <marker date="1427142267738" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-                <marker date="1427142267738" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-                <marker date="1427142267738" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-                <marker date="1427142267738" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-                <marker date="1427142267738" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-                <marker date="1427142267738" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-                <marker date="1427142267738" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-                <marker date="1427142267738" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-                <marker date="1427142267738" expanded="true" signature="4858:4899" placeholder="..." />
-                <marker date="1427142267738" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-                <marker date="1427142267738" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-                <marker date="1427142267738" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-                <marker date="1427142267738" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-                <marker date="1427142267738" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-                <marker date="1427142267738" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-                <marker date="1427142267738" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-                <marker date="1427142267738" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-                <marker date="1427142267738" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+                <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+                <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+                <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
+                <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
+                <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
+                <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
+                <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
+                <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
+                <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
+                <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
+                <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
+                <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
+                <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
+                <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
+                <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
+                <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
+                <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
+                <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addPostView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/addPostView.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="11.115385" vertical-offset="340" max-vertical-offset="1615">
+              <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,8 +71,18 @@
       <file leaf-file-name="entitiesService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="674" max-vertical-offset="1275">
+            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1275">
               <caret line="61" column="25" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addPostCtrl1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+              <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -79,21 +98,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linkedInService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
+      <file leaf-file-name="postRequestsService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="1003">
-              <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="1122">
+              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <file leaf-file-name="linkedInService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="493">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="1003">
+              <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -116,26 +135,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authenticationService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="561">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addJobCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/addJobCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -172,6 +171,7 @@
         <option value="$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/services/linkedInService.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/linkedIn.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" />
         <option value="$PROJECT_DIR$/server/Jobseeker_Form.php" />
       </list>
     </option>
@@ -564,7 +564,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427051264470</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Rapish">
+      <created>1427142345217</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1427142345217</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -649,21 +655,14 @@
     <MESSAGE value="sendMessage Db" />
     <MESSAGE value="global DB" />
     <MESSAGE value="XML" />
-    <option name="LAST_COMMIT_MESSAGE" value="XML" />
+    <MESSAGE value="Rapish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rapish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="663">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/sendMessageView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="221">
@@ -693,24 +692,24 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1427142267738" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142267738" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
+            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
           </folding>
         </state>
       </provider>
@@ -741,24 +740,24 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
           <folding>
-            <marker date="1427142267738" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142267738" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
+            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
           </folding>
         </state>
       </provider>
@@ -812,24 +811,24 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
           <folding>
-            <marker date="1427142267738" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142267738" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
+            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
           </folding>
         </state>
       </provider>
@@ -883,24 +882,24 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
           <folding>
-            <marker date="1427142267738" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142267738" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
+            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
           </folding>
         </state>
       </provider>
@@ -956,13 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="289">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/addJobView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="221">
@@ -1002,14 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3536">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1122">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1104,6 +1088,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.115385" vertical-offset="340" max-vertical-offset="1615">
+          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="674" max-vertical-offset="1275">
@@ -1112,29 +1112,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1122">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17741935" vertical-offset="2473" max-vertical-offset="3995">
-          <caret line="155" column="55" selection-start-line="155" selection-start-column="55" selection-end-line="155" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.37096775" vertical-offset="1148" max-vertical-offset="3995">
+          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
           <folding>
-            <marker date="1427142267738" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142267738" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142267738" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142267738" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142267738" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142267738" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
+            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
+            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
+            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
+            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
+            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
           </folding>
         </state>
       </provider>

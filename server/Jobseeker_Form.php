@@ -85,7 +85,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $title=$GLOBALS['request']->$entity->$title;
         $body='body';
         $body=$GLOBALS['request']->$entity->$body;
-        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",1,"jkk")';
+        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",8,"jkk")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
     }
