@@ -132,12 +132,13 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function validateJobseekerRequest(){
         $entity='Entity';
+        $id='linkedinId';
+        $id=$GLOBALS['request']->$entity->$id;
         $firstName='firstName';
         $firstName=$GLOBALS['request']->$entity->$firstName;
         $lastName='lastName';
         $lastName=$GLOBALS['request']->$entity->$lastName;
-        $id='linkedinId';
-        $id=$GLOBALS['request']->$entity->$id;
+
         $emailAddress='email';
         $emailAddress=$GLOBALS['request']->$entity->$emailAddress;
         $pictureUrl='pictureUrl';
@@ -165,7 +166,6 @@ class Jobseeker_Form extends Jobseeker_DB {
         else{
             $sql='update jobseekers set first_name="'. $firstName.'", last_name="'. $lastName.'",Email="'.$emailAddress.'",skills="'.$skills.'",profileUrl="'. $publicProfileUrl.'",pictureUrl="'.$pictureUrl.'",educations="'.$education.'",summary="'.$summary.'",industry="'.$industry.'",location="'.$location.'" where linkedinId="'.$id.'"';
         }
-        
         $GLOBALS['db']->db_query($sql);
         print(json_encode($id));
     }
