@@ -14,14 +14,25 @@ angular.module('myApp').controller('linkedInCtrl',
                     //Arrays To Strings
                     var educations=result.values[0].educations.values;
                     var educationStr='';
-                    for(var i=0;i<educations.length;i++){
-                        educationStr+=educations[i].degree+",";
+                    try{
+                        for(var i=0;i<educations.length;i++){
+                            educationStr+=educations[i].degree+",";
+                        }
+                    }catch(err){
+                        educationStr='';
                     }
 
-                    var skills=result.values[0].skills.values;
+
+
                     var skillStr='';
-                    for(var i=0;i<skills.length;i++){
-                        skillStr+=skills[i].skill.name+",";
+                    try{
+                        var skills=result.values[0].skills.values;
+                        for(var i=0;i<skills.length;i++){
+                            skillStr+=skills[i].skill.name+",";
+                        }
+
+                    }catch(err){
+                        skillStr='';
                     }
 
 
