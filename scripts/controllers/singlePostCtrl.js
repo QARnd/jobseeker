@@ -10,6 +10,7 @@ angular.module('myApp').controller('singlePostCtrl',
 
         var postPromise = postRequestsService.getSinglePost($scope.postId );
 
+
         postPromise.then(function (d) {
             console.log(d);
             var post= d.data;
