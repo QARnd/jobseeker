@@ -85,7 +85,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $title=$GLOBALS['request']->$entity->$title;
         $body='body';
         $body=$GLOBALS['request']->$entity->$body;
-        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",8,"jkk")';
+        $jobseeker_id='jobseeker_id';
+        $jobseeker_id=$GLOBALS['request']->$entity->$jobseeker_id;
+        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"jkk")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
     }
@@ -95,7 +97,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $sql='select * from posts';
         $result=$GLOBALS['db']->db_query($sql);
-
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
@@ -110,8 +111,6 @@ class Jobseeker_Form extends Jobseeker_DB {
     public function getSinglePost(){
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
-
-
         $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
 
@@ -138,7 +137,6 @@ class Jobseeker_Form extends Jobseeker_DB {
         $firstName=$GLOBALS['request']->$entity->$firstName;
         $lastName='lastName';
         $lastName=$GLOBALS['request']->$entity->$lastName;
-
         $emailAddress='email';
         $emailAddress=$GLOBALS['request']->$entity->$emailAddress;
         $pictureUrl='pictureUrl';
@@ -155,7 +153,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $location=$GLOBALS['request']->$entity-> $location;
         $education='educations';
         $education=$GLOBALS['request']->$entity-> $education;
-        $sql1='select linkedinId from jobseekers where linkedinId="'.$id .'"';
+        $sql1='select * from jobseekers where linkedinId="'.$id .'"';
         $result=$GLOBALS['db']->db_query($sql1);
 
         if (mysql_num_rows($result)==0)
@@ -166,8 +164,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         else{
             $sql='update jobseekers set first_name="'. $firstName.'", last_name="'. $lastName.'",Email="'.$emailAddress.'",skills="'.$skills.'",profileUrl="'. $publicProfileUrl.'",pictureUrl="'.$pictureUrl.'",educations="'.$education.'",summary="'.$summary.'",industry="'.$industry.'",location="'.$location.'" where linkedinId="'.$id.'"';
         }
+        $jobseeker_id=$GLOBALS['db']->insert_id();
         $GLOBALS['db']->db_query($sql);
-        print(json_encode($id));
+        print(json_encode($jobseeker_id));
     }
 
 
@@ -205,20 +204,17 @@ class Jobseeker_Form extends Jobseeker_DB {
         $sql1='select jobseeker_id from jobseekers where linkedinId='.$from_id.'';
         $result=$GLOBALS['db']->db_query($sql1);
         $row=mysqli_fetch_array($result);
-        $sql='insert into messages values(NULL,"'.$content.'",now(),,'.$row[0].','.$to_id.')';
+        $sql='insert into messages values(NULL,"'.$content.'",now(),'.$row[0].','.$to_id.')';
         $GLOBALS['db']->db_query($sql);
 
         print ($content);
     }
 
     public function viewProfile(){
-        $jobSeekerId='jobSeekerId';
-        $jobSeekerId=$GLOBALS['request']->$jobSeekerId;
-
-        $sql='select * from jobseekers where id='.$jobSeekerId;
+        $jobseeker_id='jobseeker_id';
+        $jobseeker_id=$GLOBALS['request']->$jobseeker_id;
+        $sql='select * from jobseekers where id='.$jobseeker_id;
         $result=$GLOBALS['db']->db_query($sql);
-
-
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
