@@ -46,9 +46,11 @@ angular.module('myApp').controller('linkedInCtrl',
                     userPromise.then(
                         function(d){
                             console.log(d.data);
+
                             if(d.data.userStatus!="UnauthorizedUser")
                             {
-                                result.values[0].userId=d.data.userId;
+                                authenticationService.userProfile.jobseekerId=d.data;
+                                result.values[0].userId=d.data.jobseeker_id;
                                 result.values[0].loggedIn=true;
                                 authenticationService.userProfile.data=result.values[0];
                                 authenticationService.userLoggedIn.status=true;
