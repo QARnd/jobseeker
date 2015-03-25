@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c5bb5571-93ec-44ef-a7ee-769275590669" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Jobseeker_Form.php" afterPath="$PROJECT_DIR$/server/Jobseeker_Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" afterPath="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/newsfeedView.html" afterPath="$PROJECT_DIR$/views/newsfeedView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/singlePostView.html" afterPath="$PROJECT_DIR$/views/singlePostView.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jobseeker.iws" />
@@ -29,122 +31,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Jobseeker_Form.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21109124" vertical-offset="1956" max-vertical-offset="3536">
+              <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="singlePostView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/singlePostView.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.961538" vertical-offset="88" max-vertical-offset="799">
+              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsfeedView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/newsfeedView.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537" vertical-offset="1360" max-vertical-offset="3587">
+              <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/loginCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Jobseeker_Form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37096775" vertical-offset="1148" max-vertical-offset="3995">
-              <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+            <state vertical-scroll-proportion="-12.538462" vertical-offset="1697" max-vertical-offset="4454">
+              <caret line="124" column="47" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="47" />
               <folding>
-                <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-                <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-                <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-                <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-                <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-                <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-                <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-                <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-                <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
-                <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-                <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-                <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-                <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-                <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-                <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-                <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-                <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-                <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+                <marker date="1427291393360" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+                <marker date="1427291393360" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+                <marker date="1427291393360" expanded="true" signature="3331:3371" placeholder="select jobse..posts..." />
+                <marker date="1427291393360" expanded="true" signature="3513:3542" placeholder="select * fro..posts..." />
+                <marker date="1427291393360" expanded="true" signature="3826:3853" placeholder="delete from ..." />
+                <marker date="1427291393360" expanded="true" signature="4231:4290" placeholder="update posts..." />
+                <marker date="1427291393360" expanded="true" signature="4238:4290" placeholder="delete from ..." />
+                <marker date="1427291393360" expanded="true" signature="5491:5552" placeholder="select linke..jobseekers..." />
+                <marker date="1427291393360" expanded="true" signature="5673:5895" placeholder="insert into ..." />
+                <marker date="1427291393360" expanded="true" signature="5941:6259" placeholder="update jobse..." />
+                <marker date="1427291393360" expanded="true" signature="6717:6783" placeholder="insert into ..." />
+                <marker date="1427291393360" expanded="true" signature="7184:7237" placeholder="select jobse..jobseekers..." />
+                <marker date="1427291393360" expanded="true" signature="7357:7435" placeholder="insert into ..." />
+                <marker date="1427291393360" expanded="true" signature="7654:7688" placeholder="select * fro..jobseekers..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addPostView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/addPostView.html">
+      <file leaf-file-name="singlePostCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="11.115385" vertical-offset="340" max-vertical-offset="1615">
-              <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entitiesService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1275">
-              <caret line="61" column="25" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addPostCtrl1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-              <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="linkedIn.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedIn.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1394">
-              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="postRequestsService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="1122">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="linkedInService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="1003">
-              <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jobseeker_DB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/Jobseeker_DB.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.230769" vertical-offset="881" max-vertical-offset="1377">
-              <caret line="74" column="29" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="29" />
-              <folding>
-                <marker date="1425502775353" expanded="true" signature="1692:1713" placeholder="SELECT COUNT..table_and_query..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authenticationCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/authenticationCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="linkedInAPI.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedInAPI.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -164,24 +120,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/config.php" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js" />
-        <option value="$PROJECT_DIR$/scripts/services/linkedInService.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/linkedIn.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/viewProfileCtrl.js" />
+        <option value="$PROJECT_DIR$/views/newsfeedView.html" />
+        <option value="$PROJECT_DIR$/views/singlePostView.html" />
+        <option value="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" />
         <option value="$PROJECT_DIR$/server/Jobseeker_Form.php" />
       </list>
     </option>
   </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1317" />
-    <option name="height" value="784" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -354,7 +311,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jobseeker" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FullScreen" value="false" />
   </component>
@@ -382,7 +339,7 @@
       <node-options />
       <gulpfile />
       <tasks />
-      <pass-parent-env-vars>false</pass-parent-env-vars>
+      <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
     </configuration>
@@ -570,34 +527,40 @@
       <option name="project" value="LOCAL" />
       <updated>1427142345217</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Rapish">
+      <created>1427228885444</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1427228885444</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="-8" width="1317" height="784" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23190546" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21137586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21633889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23164764" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18238993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -611,16 +574,16 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4544025" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23164764" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20236337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -663,71 +626,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/sendMessageView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="221">
-          <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1122">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedInAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="986">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1190">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
@@ -739,26 +637,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
-          <folding>
-            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -810,26 +689,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
-          <folding>
-            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -881,26 +741,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
-          <folding>
-            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -945,13 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/loginView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.116838485" vertical-offset="0" max-vertical-offset="582">
-          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -959,20 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="221">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/newsfeedView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3901582" vertical-offset="1360" max-vertical-offset="3587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -994,15 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3536">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03586498" vertical-offset="0" max-vertical-offset="646">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,15 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18973215" vertical-offset="0" max-vertical-offset="510">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8846154" vertical-offset="1956" max-vertical-offset="3536">
-          <caret line="121" column="57" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="561">
           <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,17 +850,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/Jobseeker_DB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.230769" vertical-offset="881" max-vertical-offset="1377">
+        <state vertical-scroll-proportion="0.0" vertical-offset="881" max-vertical-offset="1377">
           <caret line="74" column="29" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="29" />
-          <folding>
-            <marker date="1425502775353" expanded="true" signature="1692:1713" placeholder="SELECT COUNT..table_and_query..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,15 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="1003">
-          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,15 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1394">
           <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.115385" vertical-offset="340" max-vertical-offset="1615">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,53 +879,147 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
           <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="674" max-vertical-offset="1275">
+        <state vertical-scroll-proportion="1.7162393" vertical-offset="33" max-vertical-offset="1275">
           <caret line="61" column="25" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.51699466" vertical-offset="340" max-vertical-offset="1615">
+          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="431" max-vertical-offset="1003">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/profileRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23247863" vertical-offset="0" max-vertical-offset="585">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1122">
+        <state vertical-scroll-proportion="0.02905983" vertical-offset="442" max-vertical-offset="1122">
           <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/viewProfileView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/viewProfileCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="731">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/loginView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/newsfeedView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="1360" max-vertical-offset="3587">
+          <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26153848" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14529915" vertical-offset="0" max-vertical-offset="646">
+          <caret line="5" column="66" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/singlePostView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.961538" vertical-offset="88" max-vertical-offset="799">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37096775" vertical-offset="1148" max-vertical-offset="3995">
-          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+        <state vertical-scroll-proportion="-12.538462" vertical-offset="1697" max-vertical-offset="4454">
+          <caret line="124" column="47" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="47" />
           <folding>
-            <marker date="1427142744528" expanded="true" signature="2651:2714" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3209:3238" placeholder="select * fro..posts..." />
-            <marker date="1427142744528" expanded="true" signature="3512:3539" placeholder="delete from ..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4769" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4787" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4788" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4736:4797" placeholder="select linke..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="4858:4899" placeholder="..." />
-            <marker date="1427142744528" expanded="true" signature="4918:5140" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5477" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5495" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5496" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5186:5504" placeholder="update jobse..." />
-            <marker date="1427142744528" expanded="true" signature="5953:6019" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6420:6473" placeholder="select jobse..jobseekers..." />
-            <marker date="1427142744528" expanded="true" signature="6593:6671" placeholder="insert into ..." />
-            <marker date="1427142744528" expanded="true" signature="6890:6924" placeholder="select * fro..jobseekers..." />
+            <marker date="1427291393360" expanded="true" signature="2651:2714" placeholder="insert into ..." />
+            <marker date="1427291393360" expanded="true" signature="2837:2856" placeholder="select * fro..posts..." />
+            <marker date="1427291393360" expanded="true" signature="3331:3371" placeholder="select jobse..posts..." />
+            <marker date="1427291393360" expanded="true" signature="3513:3542" placeholder="select * fro..posts..." />
+            <marker date="1427291393360" expanded="true" signature="3826:3853" placeholder="delete from ..." />
+            <marker date="1427291393360" expanded="true" signature="4231:4290" placeholder="update posts..." />
+            <marker date="1427291393360" expanded="true" signature="4238:4290" placeholder="delete from ..." />
+            <marker date="1427291393360" expanded="true" signature="5491:5552" placeholder="select linke..jobseekers..." />
+            <marker date="1427291393360" expanded="true" signature="5673:5895" placeholder="insert into ..." />
+            <marker date="1427291393360" expanded="true" signature="5941:6259" placeholder="update jobse..." />
+            <marker date="1427291393360" expanded="true" signature="6717:6783" placeholder="insert into ..." />
+            <marker date="1427291393360" expanded="true" signature="7184:7237" placeholder="select jobse..jobseekers..." />
+            <marker date="1427291393360" expanded="true" signature="7357:7435" placeholder="insert into ..." />
+            <marker date="1427291393360" expanded="true" signature="7654:7688" placeholder="select * fro..jobseekers..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21109124" vertical-offset="1956" max-vertical-offset="3536">
+          <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
   </component>
 </project>
-

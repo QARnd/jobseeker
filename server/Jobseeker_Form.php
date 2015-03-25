@@ -108,15 +108,24 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
     public function getSinglePost(){
+        $myswitch=false;
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
 
+        $jobseeker_id='jobseeker_id';
+        $jobseeker_id=$GLOBALS['request']->$jobseeker_id;
 
+        $sql1='select jobseeker_id from posts where id='.$postId;
+        $r=mysql_fetch_array($sql1);
+        if($r[0]=$jobseeker_id)
+        {
+            $myswitch=true;
+        }
         $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
-
         $row = $GLOBALS['db']->db_assoc($result);
-        print(json_encode($row));
+
+        print(json_encode($row,$myswitch));
 
     }
 
@@ -126,6 +135,23 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $sql='delete from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode("Done"));
+    }
+
+
+
+    public function updata_post()
+    {
+        $postId = 'postId';
+        $postId = $GLOBALS['request']->$postId;
+        $title = 'title';
+        $title = $GLOBALS['request']->$title;
+        $body = 'body';
+        $body = $GLOBALS['request']->$body;
+
+        $sql = 'update posts set title= '.$title.',body='.$body.' where id=' . $postId;
+        $result = $GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));
     }

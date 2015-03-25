@@ -4,9 +4,11 @@
 
 angular.module('myApp').controller('singlePostCtrl',
     function($scope, entitiesService, postRequestsService,$routeParams, authenticationService) {
+
+        var jobseeker_id= authenticationService.userProfile.data.jobseeker_id;
         $scope.postId=$routeParams.postId;
 
-        var postPromise = postRequestsService.getSinglePost($scope.postId);
+        var postPromise = postRequestsService.getSinglePost($scope.postId );
 
         postPromise.then(function (d) {
             console.log(d);
