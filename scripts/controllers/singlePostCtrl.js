@@ -10,10 +10,11 @@ angular.module('myApp').controller('singlePostCtrl',
 
         var postPromise = postRequestsService.getSinglePost($scope.postId );
 
+
         postPromise.then(function (d) {
             console.log(d);
             var post= d.data;
-            $scope.title= post.title; //7sb el database
+            $scope.title= post.title;
             $scope.body= post.body;
 
 

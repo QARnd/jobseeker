@@ -1,1 +1,39 @@
+<div>
+    View Profile:
 
+    <input type="text" ng-model="jobSeekerId" placeholder="jobSeekerId">
+    <button ng-click="viewProfile()">View Profile</button>
+
+
+        <div>
+
+            <br> First Name: {{first_name}}</br>
+            <br> Last Name: {{last_name}}</br>
+            <br> Email: {{Email}}</br>
+            <br> Profile Url: {{profileUrl}}</br>
+            <br> Picture Url: {{pictureUrl}}</br>
+            <br> Summary: {{summary}}</br>
+            <br> Location: {{location}}</br>
+            <br> Industry: {{industry}}</br>
+            <br> Location: {{location}}</br>
+            <br> </br>
+            Skills:
+            <ul>
+                <li ng-repeat='skill in skills'>
+                    <br>{{skill}}</br>
+                </li>
+
+            </ul>
+
+            Educations:
+            <ul>
+                <li ng-repeat='education in educations'>
+                    <br>  {{education}}</br>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+</div>

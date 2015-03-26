@@ -23,10 +23,10 @@
                 <i class="fa fa-comment-o bg-blue"></i>
                 <div class="timeline-item">
                     <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-                    <h3 class="timeline-header"><input type="text" value=" {{title}}"/></h3>
+                    <h3 class="timeline-header"><input type="text" ng-show="(userProfile.jobseekerId ==post.jobseeker_id)" value=" {{title}}"/></h3>
                     <div class="timeline-body">
-                        <input type="text" value="{{body}}">
-                <button>  <a class="btn btn-danger btn-xs" ng-click="updatePost({{id}})">update</a></button>
+                        <input type="text" ng-show="(userProfile.jobseekerId ==post.jobseeker_id)"value="{{body}}">
+                         <a class="btn btn-danger btn-xs" ng-show="(userProfile.jobseekerId ==post.jobseeker_id)" ng-click="updatePost(post.id)">update</a>
                     </div>
                     <!--<div class='timeline-footer'>-->
                         <!--<a class="btn btn-default btn-xs" ng-click="editPost(post.id)">Edit</a>-->
@@ -40,3 +40,4 @@
         </ul>
     </div><!-- /.col -->
 </div><!-- /.row -->
+
