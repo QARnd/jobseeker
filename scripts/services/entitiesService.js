@@ -46,6 +46,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             profile.jobSeekerId = jobSeekerId;
             return profile;
         },
+
         userEntity: function(firstName,lastName,email,linkedinId,profileUrl,pictureUrl,skills,educations,summary,industry,location) {
 
             var user = {};     // new object
