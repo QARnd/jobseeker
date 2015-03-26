@@ -187,7 +187,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         }
 
         $GLOBALS['db']->db_query($sql);
-        print(json_encode($js_id));
+        print($js_id);
     }
 
 
@@ -222,10 +222,10 @@ class Jobseeker_Form extends Jobseeker_DB {
         $to_id=$GLOBALS['request']->$entity->$to_id;
         $js_id='jobseeker_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='insert into messages values(NULL,"'.$content.'",now(),'.$js_id.','.$to_id.')';
-        $GLOBALS['db']->db_query($sql);
+        $sql='insert into messages values(NULL,"'.$content.'",'.$js_id.','.$to_id.')';
+        $result=$GLOBALS['db']->db_query($sql);
 
-        print ($content);
+        print (json_encode($sql));
     }
 
     public function viewProfile(){

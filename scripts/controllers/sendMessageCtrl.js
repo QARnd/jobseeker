@@ -3,12 +3,14 @@ angular.module('myApp').controller('sendMessageCtrl',
     function($scope, entitiesService, messageRequestService, authenticationService) {
 
         $scope.sendMessage = function () {
-           var from_id= authenticationService.userProfile.data.id;
+            var from_id= authenticationService.userProfile.jobseekerId;
+            console.log($.toJSON(from_id));
             var messageEntity = entitiesService.messageEntity($scope.content,$scope.to_id,from_id);
 
             var messagePromise = messageRequestService.sendMessage(messageEntity);
 
             messagePromise.then(function (d) {
+                console.log(d.data);
                 swal({
 
 
