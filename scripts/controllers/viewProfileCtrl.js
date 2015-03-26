@@ -10,7 +10,6 @@ angular.module('myApp').controller('viewProfileCtrl',
 
         $scope.viewProfile = function () {
 
-
             var profileEntity = entitiesService.profileEntity($scope.jobSeekerId);
 
             var profilePromise = profileRequestService.viewProfile(profileEntity);
@@ -28,8 +27,20 @@ angular.module('myApp').controller('viewProfileCtrl',
                 $scope.summary= profile.summary;
                 $scope.location= profile.location;
                 $scope.industry= profile.industry;
-                $scope.educations= profile.educations.split(',');
-                $scope.skills=profile.skills.split(',');
+                $scope.educations="";
+                try{
+                    $scope.educations= profile.educations.split(',');
+                }catch(err){
+
+                }
+                $scope.skills="";
+                try{
+                    $scope.skills=profile.skills.split(',');
+                }catch(err){
+
+                }
+
+
 
 
 
