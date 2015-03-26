@@ -37,6 +37,7 @@ angular.module('servicesModule').
                 var msg = {};
                 msg.opcode = "validateJobseekerRequest";
                 msg.Entity =userEntity;
+                console.log(userEntity);
                 var jobPromise=$http({
                     method : 'POST',
                     url : authenticationService.deploymentLink.link,

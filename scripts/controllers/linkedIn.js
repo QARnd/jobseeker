@@ -14,23 +14,43 @@ angular.module('myApp').controller('linkedInCtrl',
                     //Arrays To Strings
                     var educations=result.values[0].educations.values;
                     var educationStr='';
-                    for(var i=0;i<educations.length;i++){
-                        educationStr+=educations[i].degree;
+                    try{
+                        for(var i=0;i<educations.length;i++){
+                            educationStr+=educations[i].degree+",";
+                        }
+                    }catch(err){
+                        educationStr='';
+                    }
+
+
+
+                    var skillStr='';
+                    try{
+                        var skills=result.values[0].skills.values;
+                        for(var i=0;i<skills.length;i++){
+                            skillStr+=skills[i].skill.name+",";
+                        }
+
+                    }catch(err){
+                        skillStr='';
                     }
 
 
 
 
+
                     var userEntity=entitiesService.userEntity(result.values[0].firstName,result.values[0].lastName,
-                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,educationStr,educationStr,educationStr,educationStr,educationStr);
+                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,skillStr,educationStr,result.values[0].summary,result.values[0].industry,result.values[0].location.name);
                     var userPromise=linkedinService.loginRequest(userEntity);
 
                     userPromise.then(
                         function(d){
                             console.log(d.data);
+
                             if(d.data.userStatus!="UnauthorizedUser")
                             {
-                                result.values[0].userId=d.data.userId;
+                                authenticationService.userProfile.jobseekerId=d.data;
+                                result.values[0].userId=d.data.jobseeker_id;
                                 result.values[0].loggedIn=true;
                                 authenticationService.userProfile.data=result.values[0];
                                 authenticationService.userLoggedIn.status=true;
@@ -42,7 +62,8 @@ angular.module('myApp').controller('linkedInCtrl',
                             else{
                                 alert("error");
                                 $scope.logoutLinkedIn();
-                                $location.path("/login");}
+                                $location.path("/login");
+                            }
                         },
                         function(d){
                             alert("Login Error");

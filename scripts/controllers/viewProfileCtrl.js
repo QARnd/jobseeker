@@ -3,6 +3,8 @@
  */
 
 
+
+
 angular.module('myApp').controller('viewProfileCtrl',
     function($scope, entitiesService, profileRequestService, authenticationService) {
 
