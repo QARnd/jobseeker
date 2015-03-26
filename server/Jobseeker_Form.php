@@ -80,12 +80,15 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     //Add Post
     public function add_post(){
+
         $entity='Entity';
         $title='title';
         $title=$GLOBALS['request']->$entity->$title;
         $body='body';
         $body=$GLOBALS['request']->$entity->$body;
-        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",8,"jkk")';
+        $jobseeker_id='jobseeker_id';
+        $ $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
+        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"jkk")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
     }
@@ -108,24 +111,14 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
     public function getSinglePost(){
-        $myswitch=false;
-        $postId='postId';
+
+        $postId='id';
         $postId=$GLOBALS['request']->$postId;
-
-        $jobseeker_id='jobseeker_id';
-        $jobseeker_id=$GLOBALS['request']->$jobseeker_id;
-
-        $sql1='select jobseeker_id from posts where id='.$postId;
-        $r=mysql_fetch_array($sql1);
-        if($r[0]=$jobseeker_id)
-        {
-            $myswitch=true;
-        }
         $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 
-        print(json_encode($row,$myswitch));
+        print(json_encode($row));
 
     }
 
@@ -141,16 +134,16 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function updata_post()
+    public function update_post()
     {
-        $postId = 'postId';
+        $postId = 'id';
         $postId = $GLOBALS['request']->$postId;
         $title = 'title';
         $title = $GLOBALS['request']->$title;
         $body = 'body';
         $body = $GLOBALS['request']->$body;
 
-        $sql = 'update posts set title= '.$title.',body='.$body.' where id=' . $postId;
+        $sql = 'update posts set title= "'.$title.'",body="'.$body.'" where id='.$postId;
         $result = $GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));
@@ -227,12 +220,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $content=$GLOBALS['request']->$entity->$content;
         $to_id='to_id';
         $to_id=$GLOBALS['request']->$entity->$to_id;
-        $from_id='from_id';
-        $from_id=$GLOBALS['request']->$entity->$from_id;
-        $sql1='select jobseeker_id from jobseekers where linkedinId='.$from_id.'';
-        $result=$GLOBALS['db']->db_query($sql1);
-        $row=mysqli_fetch_array($result);
-        $sql='insert into messages values(NULL,"'.$content.'",now(),,'.$row[0].','.$to_id.')';
+        $js_id='jobseeker_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+        $sql='insert into messages values(NULL,"'.$content.'",now(),'.$js_id.','.$to_id.')';
         $GLOBALS['db']->db_query($sql);
 
         print ($content);
