@@ -230,18 +230,16 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
     public function viewProfile(){
+        $entity='Entity';
         $jobSeekerId='jobSeekerId';
-        $jobSeekerId=$GLOBALS['request']->$jobSeekerId;
+        $jobSeekerId=$GLOBALS['request']->$entity->$jobSeekerId;
 
-        $sql='select * from jobseekers where id='.$jobSeekerId;
+        $sql='select * from jobseekers where jobseeker_id='.$jobSeekerId;
         $result=$GLOBALS['db']->db_query($sql);
 
+        $row = $GLOBALS['db']->db_assoc($result);
 
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
-            array_push($total, $row);
-        }
-        print(json_encode($total));
+        print(json_encode($row));
 
     }
 
