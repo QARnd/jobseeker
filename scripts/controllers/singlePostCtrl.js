@@ -5,18 +5,21 @@
 angular.module('myApp').controller('singlePostCtrl',
     function($scope, entitiesService, postRequestsService,$routeParams, authenticationService) {
 
-        var jobseeker_id= authenticationService.userProfile.data.jobseeker_id;
+        var jobseeker_id= authenticationService.userProfile.jobseekerId;
         $scope.postId=$routeParams.postId;
 
-        var postPromise = postRequestsService.getSinglePost($scope.postId );
+
+        var postPromise = postRequestsService.getSinglePost($scope.postId);
 
 
         postPromise.then(function (d) {
             console.log(d);
             var post= d.data;
+            $scope.id= post.id;
             $scope.title= post.title;
             $scope.body= post.body;
-
+            $scope.jobseeker_id=post.jobseeker_id;
+            $scope.status=post.status;
 
 
         }, function (d) {
