@@ -78,6 +78,7 @@ class Jobseeker_Form extends Jobseeker_DB {
     /////
 
 
+
     //Add Post
     public function add_post(){
         $entity='Entity';
