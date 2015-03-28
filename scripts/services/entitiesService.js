@@ -20,11 +20,20 @@ angular.module('servicesModule').factory('entitiesService', function() {
             return deleteJob;
         },
 
-       messageEntity: function(content,to_id,jobseeker_id) {
+        updatePostEntity: function(title,body,postId) {
+            var postUpdated = {};     // new object
+            postUpdated.title = title;
+            postUpdated.body=body;
+            postUpdated.id=postId;
+            return postUpdated;
+        },
+
+       messageEntity: function(content,jobseeker_id,to_id) {
             var message = {};     // new object
-           message.to_id=to_id;
+
            message.content=content;
            message.jobseeker_id=jobseeker_id;
+           message.to_id=to_id;
             return message;
         },
         jobEntity: function(title,body, tags) {
