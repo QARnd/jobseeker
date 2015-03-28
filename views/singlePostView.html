@@ -1,46 +1,63 @@
-<!--<div class="container">-->
-    <!--<div class="alert-success">-->
-        <!--<h1>{{title}}</h1>-->
-        <!--<p>{{body}}</p>-->
-    <!--</div>-->
-<!--</div>-->
+<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="alert-success">&ndash;&gt;-->
+        <!--&lt;!&ndash;<h1>{{title}}</h1>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>{{body}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 
 
 
-<div class="row">
-    <div class="col-md-12">
-        <!-- The time line -->
-        <ul class="timeline">
-            <!-- timeline time label -->
-            <!--<li class="time-label">-->
-                  <!--<span class="bg-red">-->
-                    <!--10 Feb. 2014-->
-                  <!--</span>-->
-            <!--</li>-->
-            <!-- /.timeline-label -->
-            <!-- timeline item -->
-            <li>
-                <i class="fa fa-comment-o bg-blue"></i>
-                <div class="timeline-item">
-                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-                    <div ng-show="userProfile.jobseekerId==jobseeker_id">
-                    <h3 class="timeline-header"> title</h3>
-                    <div class="timeline-body">
-                      body
-                        <a class="btn btn-danger btn-xs" ng-click="updatePost()">updatePost</a>
+<!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+        <!--&lt;!&ndash; The time line &ndash;&gt;-->
+        <!--<ul class="timeline">-->
+            <!--&lt;!&ndash; timeline time label &ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="time-label">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<span class="bg-red">&ndash;&gt;-->
+                    <!--&lt;!&ndash;10 Feb. 2014&ndash;&gt;-->
+                  <!--&lt;!&ndash;</span>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash; /.timeline-label &ndash;&gt;-->
+            <!--&lt;!&ndash; timeline item &ndash;&gt;-->
+            <!--<li>-->
+                <!--<i class="fa fa-comment-o bg-blue"></i>-->
+                <!--<div class="timeline-item">-->
+                    <!--<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>-->
+                    <!--<div ng-show="userProfile.jobseekerId==jobseeker_id">-->
+                    <!--<h3 class="timeline-header"> title</h3>-->
+                    <!--<div class="timeline-body">-->
+                      <!--body-->
+                        <!--<a class="btn btn-danger btn-xs" ng-click="updatePost()">updatePost</a>-->
 
-                    </div>
-                </div>
-                    <!--<div class='timeline-footer'>-->
-                        <!--<a class="btn btn-default btn-xs" ng-click="editPost(post.id)">Edit</a>-->
-                        <!--<a class="btn btn-danger btn-xs" ng-click="deletePost(post.id)">delete</a>-->
                     <!--</div>-->
-                </div>
-            </li>
+                <!--</div>-->
+                    <!--&lt;!&ndash;<div class='timeline-footer'>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a class="btn btn-default btn-xs" ng-click="editPost(post.id)">Edit</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a class="btn btn-danger btn-xs" ng-click="deletePost(post.id)">delete</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</li>-->
 
 
 
-        </ul>
-    </div><!-- /.col -->
-</div><!-- /.row -->
+        <!--</ul>-->
+    <!--</div>&lt;!&ndash; /.col &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+
+
+<div ng-init="dis=true">
+    <p></p>Title:<input type=text ng-model= {{title}} placeholder= "title" ng-disabled="dis"></p>
+
+    <p>Body: <textarea ng-model= {{body}} placeholder= "body" ng-disabled="dis">{{body}}</textarea></p>
+
+
+    <p ng-show="jobseekerId==jobseeker_id">
+    <button ng-click=toggle()>Edit</button>
+    </p>
+
+    <p ng-hide="dis">
+        <button ng-click=update()>Save Changes</button>
+    </p>
+
+</div>
 
