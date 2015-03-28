@@ -30,6 +30,18 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
             });
             return postPromise;
         },
+        updatePost: function(updatePostEntity) {
+            var request = {};
+            request.opcode = "updatePostRequest";
+            request.Entity =updatePostEntity;
+            var postPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return postPromise;
+        },
 
         getSinglePost: function(postId) {
             var request = {};
