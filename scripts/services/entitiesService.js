@@ -75,7 +75,15 @@ angular.module('servicesModule').factory('entitiesService', function() {
             user.location = location;
 
             return user;
+        },
+        getMessagesEntity: function(from_id){
+            var message = {};     // new object
+
+            message.from_id=from_id;
+            return message;
         }
+
+
     };
 
 });

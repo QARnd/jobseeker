@@ -3,7 +3,7 @@ angular.module('myApp').controller('sendMessageCtrl',
     function($scope, entitiesService, messageRequestService, authenticationService) {
 
         $scope.sendMessage = function () {
-           var from_id= authenticationService.userProfile.jobseekerId;
+            var from_id= authenticationService.userProfile.jobseekerId;
             var messageEntity = entitiesService.messageEntity($scope.content,$scope.to_id,from_id);
             var messagePromise = messageRequestService.sendMessage(messageEntity);
 
@@ -12,12 +12,10 @@ angular.module('myApp').controller('sendMessageCtrl',
                 var message= d.data;
                 $scope.content= message.content;
 
-                swal({
-                    title: "Success!",
-                    text: "Your message Has been sent! With name:"+d.data,
-                    type: "success",
-                    timer: 5000
-                });
+
+                var html='<li><span class="left">'+message.content+'</span></li>';
+                $("#msgs").append(html);
+
 
             }, function (d) {
                 swal({
@@ -28,6 +26,19 @@ angular.module('myApp').controller('sendMessageCtrl',
                 });
             });
         };
+
+
+        $scope.getMessages = function () {
+            var from_id = authenticationService.userProfile.jobseekerId;
+            var messageEntity = entitiesService.getMessagesEntity(from_id);
+            var messagePromise = messageRequestService.getMessages(messageEntity);
+
+            messagePromise.then(function (d) {
+                console.log(d);
+                $scope.messages = d.data;
+            });
+
+        }
 
     });
 
