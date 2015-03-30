@@ -223,7 +223,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $to_id='to_id';
         $to_id=$GLOBALS['request']->$entity->$to_id;
-        $sql='insert into messages values(NULL,"'.$content.'",now(),'.$js_id.','.$to_id.')';
+        $sql='insert into messages values(NULL,"'.$content.'","'.date("Y-m-d H:i:s").'",'.$js_id.','.$to_id.')';
         $GLOBALS['db']->db_query($sql);
 
         print (json_encode($content));
