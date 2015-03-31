@@ -60,6 +60,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'viewProfileRequest':
                     $this->viewProfile();
                     break;
+                case 'getMessagesRequest':
+                    $this->getMessages();
+                    break;
+
+
+
             }
         }
     }
@@ -188,7 +194,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         }
 
         $GLOBALS['db']->db_query($sql);
-        print(json_encode($js_id));
+        print($js_id);
     }
 
 
@@ -219,14 +225,33 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $content='content';
         $content=$GLOBALS['request']->$entity->$content;
+        $js_id='from_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
         $to_id='to_id';
         $to_id=$GLOBALS['request']->$entity->$to_id;
-        $js_id='jobseeker_id';
-        $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='insert into messages values(NULL,"'.$content.'",now(),'.$js_id.','.$to_id.')';
-        $GLOBALS['db']->db_query($sql);
+        $sql='insert into messages values(NULL,"'.$content.'","'.date("Y-m-d H:i:s").'",'.$js_id.','.$to_id.')';
+        $result=$GLOBALS['db']->db_query($sql);
 
-        print ($content);
+        $newMsg = array('content' => $content,'date' => date("Y-m-d H:i:s"), 'from_id' => $js_id, 'to_id'=>$to_id);
+        print (json_encode($newMsg));
+    }
+
+    public function getMessages(){
+
+        $entity='Entity';
+
+        $js_id='from_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+
+
+        $sql='select * from messages where from_id='.$js_id.' or to_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
     }
 
     public function viewProfile(){

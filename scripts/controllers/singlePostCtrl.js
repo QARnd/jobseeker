@@ -5,13 +5,10 @@
 angular.module('myApp').controller('singlePostCtrl',
     function($scope, entitiesService, postRequestsService,$routeParams, authenticationService) {
 
-        $scope.jobseeker_id= authenticationService.userProfile.jobseekerId;
+        $scope.js_id= authenticationService.userProfile.jobseekerId;
         $scope.postId=$routeParams.postId;
-        $scope.dis=true;
-        $scope.toggle = function() {
-            $scope.dis = !$scope.dis;
-        }
 
+        alert($scope.js_id);
         var postPromise = postRequestsService.getSinglePost($scope.postId);
 
 

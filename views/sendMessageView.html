@@ -163,31 +163,10 @@
         <input type="text" placeholder="to_id" ng-model="to_id"><br>
     </div>
 
-    <div id="messages" class="messages">
-        <ul>
-            <li>
-                <span class="left">Hello</span>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span class="left">Are you there?</span>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span class="right">Yes I am here</span>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span class="left">Thanks for accepting my friend request</span>
-                <div class="clear"></div>
-            </li>
-            <li>
-
-                <span class="right">You Welcome</span>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span class="left">Bye</span>
+    <div ng-init="getMessages()" class="messages">
+        <ul id="msgs">
+            <li  ng-repeat='message in messages track by $index'>
+                <span class="left">{{message.content}}</span>
                 <div class="clear"></div>
             </li>
         </ul>

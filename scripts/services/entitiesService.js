@@ -20,12 +20,21 @@ angular.module('servicesModule').factory('entitiesService', function() {
             return deleteJob;
         },
 
-       messageEntity: function(content,jobseeker_id,to_id) {
+        updatePostEntity: function(title,body,postId) {
+            var postUpdated = {};     // new object
+            postUpdated.title = title;
+            postUpdated.body=body;
+            postUpdated.id=postId;
+            return postUpdated;
+        },
+
+       messageEntity: function(content,to_id,from_id) {
             var message = {};     // new object
 
            message.content=content;
-           message.jobseeker_id=jobseeker_id;
+
            message.to_id=to_id;
+           message.from_id=from_id;
             return message;
         },
         jobEntity: function(title,body, tags) {
@@ -66,7 +75,15 @@ angular.module('servicesModule').factory('entitiesService', function() {
             user.location = location;
 
             return user;
+        },
+        getMessagesEntity: function(from_id){
+            var message = {};     // new object
+
+            message.from_id=from_id;
+            return message;
         }
+
+
     };
 
 });
