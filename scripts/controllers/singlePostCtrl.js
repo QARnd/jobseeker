@@ -9,6 +9,19 @@ angular.module('myApp').controller('singlePostCtrl',
         $scope.postId=$routeParams.postId;
 
         alert($scope.js_id);
+
+        $scope.dis = true;
+        $scope.toggle = function () {
+            $scope.dis = false;
+        }
+
+        $scope.update = function () {
+            $scope.dis = true;
+
+            var postEntity = entitiesService.updatePostEntity($scope.title, $scope.body, $scope.postId);
+
+            var postPromise = postRequestsService.updatePost(postEntity);}
+
         var postPromise = postRequestsService.getSinglePost($scope.postId);
 
 
