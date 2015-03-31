@@ -119,7 +119,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function getSinglePost(){
 
-        $postId='id';
+        $postId='postId';
         $postId=$GLOBALS['request']->$postId;
         $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
