@@ -24,7 +24,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             var postUpdated = {};     // new object
             postUpdated.title = title;
             postUpdated.body=body;
-            postUpdated.id=postId;
+            postUpdated.postId=postId;
             return postUpdated;
         },
 

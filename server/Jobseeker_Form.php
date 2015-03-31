@@ -63,6 +63,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getMessagesRequest':
                     $this->getMessages();
                     break;
+                case 'updatePostRequest':
+                    $this->update_post();
+                    break;
+
 
 
 
@@ -119,7 +123,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function getSinglePost(){
 
-        $postId='id';
+        $postId='postId';
         $postId=$GLOBALS['request']->$postId;
         $sql='select * from posts where id='.$postId;
         $result=$GLOBALS['db']->db_query($sql);
@@ -143,15 +147,19 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function update_post()
     {
-        $postId = 'postId';
-        $postId = $GLOBALS['request']->$postId;
-        $title = 'title';
-        $title = $GLOBALS['request']->$title;
-        $body = 'body';
-        $body = $GLOBALS['request']->$body;
+        $entity='Entity';
+        $title='title';
+        $title=$GLOBALS['request']->$entity->$title;
+
+        $body='body';
+        $body=$GLOBALS['request']->$entity->$body;
+
+        $postId='postId';
+        $postId=$GLOBALS['request']->$entity->$postId;
+
 
         $sql = 'update posts set title= "'.$title.'",body="'.$body.'" where id='.$postId;
-        $result = $GLOBALS['db']->db_query($sql);
+        $GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));
     }
