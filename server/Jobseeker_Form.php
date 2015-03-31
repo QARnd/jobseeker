@@ -142,7 +142,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
     public function update_post()
-    {s
+    {
         $postId = 'postId';
         $postId = $GLOBALS['request']->$postId;
         $title = 'title';
