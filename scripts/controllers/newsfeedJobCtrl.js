@@ -1,29 +1,31 @@
 /**
- * Created by Omayma Abulrub on 12/1/2014.
+ * Created by rana on 4/1/2015.
  */
 
 
-angular.module('myApp').controller('newsfeedCtrl',
-    function($scope, entitiesService, postRequestsService, authenticationService) {
+angular.module('myApp').controller('newsfeedJobCtrl',
+    function($scope, jobEntitiesService, jobRequestsService, authenticationService) {
         console.log(authenticationService.userProfile.data);
 
-        $scope.js_id= authenticationService.userProfile.jobseekerId;
+        $scope.p_id= authenticationService.userProfile.provider_id;
+
+
 
         $scope.getNewsFeed=function(){
-            $scope.posts=[
-                {title:"ttttt"},
-                {title:"yyyyy"},
-                {title:"bbb"},
-                {title:"zzzz"},
-                {title:"aa"},
+            $scope.jobs=[
+                {jobTitle:"ttttt"},
+                {jobTitle:"yyyyy"},
+                {jobTitle:"bbb"},
+                {jobTitle:"zzzz"},
+                {jobTitle:"aa"},
 
             ];
 
-            var postPromise = postRequestsService.getAllPosts();
+            var jobPromise = jobRequestsService.getAllJobs();
 
-            postPromise.then(function (d) {
+            jobPromise.then(function (d) {
                 console.log(d);
-                $scope.posts= d.data;
+                $scope.jobs= d.data;
 
 
 
@@ -43,10 +45,10 @@ angular.module('myApp').controller('newsfeedCtrl',
 
 
 
-        $scope.deletePost=function(postId){
-            var postPromise = postRequestsService.deletePost(postId);
+        $scope.deleteJob=function(jobId){
+            var jobPromise = jobRequestsService.deleteJob(jobId);
 
-            postPromise.then(function (d) {
+            jobPromise.then(function (d) {
                 console.log(d);
                 swal({
                     title: "SUCCESS",
