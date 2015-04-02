@@ -59,7 +59,6 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'validateJobseekerRequest':
                     $this->validateJobseekerRequest();
                     break;
-
                 case 'sendMessageRequest':
                     $this->send_message();
                     break;
@@ -75,12 +74,15 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'updateJobRequest':
                     $this->update_job();
                     break;
+                case 'addCommentRequest':
+                    $this->add_comment();
+                     break;
+                case 'gitCommentsRequest':
+                    $this->git_comments();
+                    break;
+                     }
 
 
-
-
-
-            }
         }
     }
 
@@ -328,6 +330,32 @@ class Jobseeker_Form extends Jobseeker_DB {
         $row = $GLOBALS['db']->db_assoc($result);
 
         print(json_encode($row));
+
+    }
+    public function add_comment(){
+
+        $entity='Entity';
+        $postId='postId';
+        $postId=$GLOBALS['request']->$entity->$postId;
+        $content='content';
+        $content=$GLOBALS['request']->$entity->$content;
+        $jobseeker_id='jobseeker_id';
+        $ $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
+        $sql='insert into comments values(NULL,"'.$postId.'","'.$content.'",'.$jobseeker_id.')';
+        $GLOBALS['db']->db_query($sql);
+        $newMsg = array('content' => $content,'postId' => $postId, 'jobseeker_id'=>$jobseeker_id);
+        print (json_encode($newMsg));
+    }
+    public function get_comments(){
+
+        $sql='select * from comments';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
 
     }
 
