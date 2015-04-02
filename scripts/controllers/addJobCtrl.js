@@ -4,7 +4,9 @@ angular.module('myApp').controller('addJobCtrl',
 
         $scope.addJob = function () {
 
-            var jobEntity = entitiesService.jobEntity($scope.title,$scope.body,$scope.tags);
+
+            var jobEntity = entitiesService.jobEntity($scope.jobTitle,$scope.jobDescrbtion,$scope.tags);
+            alert($scope.jobTitle);
 
             var jobPromise = jobRequestsService.addJob(jobEntity);
 

@@ -37,11 +37,13 @@ angular.module('servicesModule').factory('entitiesService', function() {
            message.from_id=from_id;
             return message;
         },
-        jobEntity: function(title,body, tags) {
-            var job = {};     // new object
-            job.title = title;
-            job.body=body;
+        jobEntity: function(jobTitle,jobDescrbtion,tags) {
+            var job = {};
+
+            job.jobTitle = jobTitle;
+            job.jobDescrbtion=jobDescrbtion;
             job.tags=tags;
+
             return job;
         },
         commentEntity: function(body,date) {

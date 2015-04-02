@@ -7,10 +7,7 @@ angular.module('myApp').controller('singlePostCtrl',
 
         $scope.js_id= authenticationService.userProfile.jobseekerId;
         $scope.postId=$routeParams.postId;
-        $scope.dis=false;
-        $scope.toggle = function() {
-            $scope.dis = !$scope.dis;
-        }
+
 
         alert($scope.js_id);
 
