@@ -38,7 +38,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             return message;
         },
 
-      
+
         profileEntity: function(jobSeekerId) {
             var profile = {};     // new object
             profile.jobSeekerId = jobSeekerId;

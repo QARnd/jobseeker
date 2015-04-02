@@ -16,7 +16,7 @@ angular.module('servicesModule').factory('CommentRequest', function($http,authen
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
-            return messagePromise;
+            return commentPromise;
         }
         ,
         getComment: function () {
@@ -29,7 +29,7 @@ angular.module('servicesModule').factory('CommentRequest', function($http,authen
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
-            return messagePromise;
+            return commentPromise;
         }
 
 
