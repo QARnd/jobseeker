@@ -2,7 +2,7 @@
  * Created by happy on 4/2/2015.
  */
 
-angular.module('servicesModule').factory('commentRequest', function($http,authenticationService) {
+angular.module('servicesModule').factory('CommentRequest', function($http,authenticationService) {
     return {
 
         addComment: function (commentEntity) {
