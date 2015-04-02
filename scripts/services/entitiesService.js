@@ -38,13 +38,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             return message;
         },
 
-        commentEntity: function(body,date) {
-            var comment = {};     // new object
-
-            comment.body=body;
-            comment.date=date;
-            return comment;
-        },
+      
         profileEntity: function(jobSeekerId) {
             var profile = {};     // new object
             profile.jobSeekerId = jobSeekerId;
