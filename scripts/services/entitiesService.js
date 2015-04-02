@@ -70,10 +70,10 @@ angular.module('servicesModule').factory('entitiesService', function() {
 
             return user;
         },
-        getMessagesEntity: function(from_id){
+        getMessagesEntity: function(from_id,jobSeekerId){
             var message = {};     // new object
-
             message.from_id=from_id;
+            message.jobSeekerId=jobSeekerId;
             return message;
         }
 

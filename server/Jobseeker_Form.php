@@ -304,8 +304,10 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id='from_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
+        $to_id='to_id';
+        $to_id=$GLOBALS['request']->$entity->$to_id;
 
-        $sql='select * from messages where from_id='.$js_id.' or to_id='.$js_id;
+        $sql='select * from messages where (from_id='.$js_id.' and to_id='.$to_id.')or (to_id='.$js_id.' and from_id='.$to_id.')' ;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
