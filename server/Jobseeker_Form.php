@@ -17,9 +17,6 @@ class Jobseeker_Form extends Jobseeker_DB {
     public function __construct($current_user,$db_table){
         $this->current_user=$current_user;
         $this->db_table=$db_table;
-
-
-
 //        $request=$request;
 //        var_dump($request);
 
