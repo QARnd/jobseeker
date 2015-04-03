@@ -137,7 +137,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
-        $sql='select * from posts where id='.$postId;
+        $sql='select posts.id,posts.title,posts.body,posts.jobseeker_id,posts.status,jobseekers.jobseeker_id,jobseekers.first_name from posts INNER JOIN  jobseekers  ON posts.id='.$postId.' and posts.jobseeker_id=jobseekers.jobseeker_id';
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 
