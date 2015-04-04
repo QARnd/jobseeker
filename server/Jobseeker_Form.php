@@ -137,7 +137,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
-        $sql='select posts.id,posts.title,posts.body,posts.jobseeker_id,posts.status,jobseekers.jobseeker_id,jobseekers.first_name from posts INNER JOIN  jobseekers  ON posts.id='.$postId.' and posts.jobseeker_id=jobseekers.jobseeker_id';
+        $sql='select* from posts  where posts.id='.$postId.'';
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 
@@ -340,17 +340,19 @@ class Jobseeker_Form extends Jobseeker_DB {
         $content='content';
         $content=$GLOBALS['request']->$entity->$content;
         $jobseeker_id='jobseeker_id';
-        $ $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
-        $sql='insert into comments values(NULL,"'.$postId.'","'.$content.'",'.$jobseeker_id.')';
+        $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
+        $sql='insert into comments values(NULL,"'.$postId.'","'.$content.'",now(),'.$jobseeker_id.')';
         $GLOBALS['db']->db_query($sql);
+
         $newMsg = array('content' => $content,'postId' => $postId, 'jobseeker_id'=>$jobseeker_id);
         print (json_encode($newMsg));
     }
     public function get_comments(){
-
-        $sql='select * from comments';
+        $postId='postId';
+        $entity='Entity';
+        $postId=$GLOBALS['request']->$entity->$postId;
+        $sql='select jobseekers.first_name,jobseekers.jobseeker_id,comments.content from comments INNER JOIN jobseekers  ON jobseekers.jobseeker_id=comments.jobseeker_id and  post_id='.$postId.' ';
         $result=$GLOBALS['db']->db_query($sql);
-
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
