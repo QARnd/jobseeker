@@ -38,13 +38,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             return message;
         },
 
-        commentEntity: function(body,date) {
-            var comment = {};     // new object
 
-            comment.body=body;
-            comment.date=date;
-            return comment;
-        },
         profileEntity: function(jobSeekerId) {
             var profile = {};     // new object
             profile.jobSeekerId = jobSeekerId;
@@ -76,8 +70,14 @@ angular.module('servicesModule').factory('entitiesService', function() {
             message.jobSeekerId=jobSeekerId;
             return message;
         }
-
-
+        ,
+        addComment:function(postId,content,jobseeker_id){
+            var comment = {};     // new object
+            comment.postId=postId;
+            comment.content=content;
+            comment.jobseeker_id=jobseeker_id;
+            return comment;
+        }
     };
 
 });
