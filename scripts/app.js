@@ -8,7 +8,12 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/deleteDelete', {templateUrl: 'views/deleteJobView.html', controller: 'deleteJobCtrl'});
     //$routeProvider.when('/deletePost', {templateUrl: 'views/deletePostView.html', controller: 'deletePostCtrl'});
     $routeProvider.when('/newsfeed', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
+
+    $routeProvider.when('/newsfeedJob', {templateUrl: 'views/newsfeedJobView.html', controller: 'newsfeedJobCtrl'});
+
     $routeProvider.when('/newsfeed/:postId', {templateUrl: 'views/singlePostView.html', controller: 'singlePostCtrl'});
+    $routeProvider.when('/newsfeedJob/:jobId', {templateUrl: 'views/singleJobView.html', controller: 'singleJobCtrl'});
+
     $routeProvider.when('/sendMessage', {templateUrl: 'views/sendMessageView.html', controller: 'sendMessageCtrl'});
 
     $routeProvider.when('/login', {templateUrl: 'views/loginView.html', controller: 'loginCtrl'});

@@ -29,6 +29,7 @@ angular.module('myApp').controller('sendMessageCtrl',
 
 
         $scope.getMessages = function () {
+
             var from_id = authenticationService.userProfile.jobseekerId;
             var messageEntity = entitiesService.getMessagesEntity(from_id);
             var messagePromise = messageRequestService.getMessages(messageEntity);

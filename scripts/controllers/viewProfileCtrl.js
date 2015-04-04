@@ -53,7 +53,48 @@ angular.module('myApp').controller('viewProfileCtrl',
                 });
             });
         };
+        $scope.myVar = true;
+        $scope.toggle = function() {
+            $scope.myVar = !$scope.myVar;
+        }
+        $scope.sendMessage = function () {
+            var from_id= authenticationService.userProfile.jobseekerId;
+            var messageEntity = entitiesService.messageEntity($scope.content,$scope.to_id,from_id);
+            var messagePromise = profileRequestService.sendMessage(messageEntity);
 
+            messagePromise.then(function (d) {
+                console.log(d);
+                var message= d.data;
+                $scope.content= message.content;
+
+
+                var html='<li><span class="left">'+message.content+'</span></li>';
+                $("#msgs").append(html);
+
+
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error",
+                    timer: 2000
+                });
+            });
+        };
+
+        $scope.getMessages = function () {
+
+            var from_id = authenticationService.userProfile.jobseekerId;
+
+            var messageEntity = entitiesService.getMessagesEntity(from_id,$scope.jobSeekerId);
+            var messagePromise =profileRequestService.getMessages(messageEntity);
+
+            messagePromise.then(function (d) {
+                console.log(d);
+                $scope.messages = d.data;
+            });
+
+        }
     });
 
 

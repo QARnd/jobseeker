@@ -37,15 +37,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
            message.from_id=from_id;
             return message;
         },
-        jobEntity: function(jobTitle,jobDescrbtion,tags) {
-            var job = {};
 
-            job.jobTitle = jobTitle;
-            job.jobDescrbtion=jobDescrbtion;
-            job.tags=tags;
-
-            return job;
-        },
         commentEntity: function(body,date) {
             var comment = {};     // new object
 
@@ -78,10 +70,10 @@ angular.module('servicesModule').factory('entitiesService', function() {
 
             return user;
         },
-        getMessagesEntity: function(from_id){
+        getMessagesEntity: function(from_id,jobSeekerId){
             var message = {};     // new object
-
             message.from_id=from_id;
+            message.jobSeekerId=jobSeekerId;
             return message;
         }
 

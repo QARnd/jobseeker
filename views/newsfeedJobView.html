@@ -1,5 +1,4 @@
-
-<div ng-controller="addPostCtrl">
+<div ng-controller="addJobCtrl">
 
     <!-- Main content -->
     <section class="content">
@@ -9,25 +8,31 @@
                 <!-- general form elements disabled -->
                 <div class="box box-warning">
                     <div class="box-header">
-                        <h3 class="box-title">Write New Post..</h3>
+                        <h3 class="box-title">Write New Job..</h3>
                     </div><!-- /.box-header -->
                     <div class="box-body">
 
                         <!-- text input -->
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text"  ng-model="title" class="form-control" placeholder="Enter Title..."/>
+                            <input type="text"  ng-model="jobTitle" class="form-control" placeholder="Enter Title..."/>
                         </div>
 
 
                         <!-- textarea -->
                         <div class="form-group">
                             <label>Body</label>
-                            <textarea ng-model="body" class="form-control" rows="7" placeholder="Enter Body..."></textarea>
+                            <textarea ng-model="JobDescrbtion" class="form-control" rows="7" placeholder="Enter Body..."></textarea>
                         </div>
 
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <textarea ng-model="JobTag" class="form-control" rows="7" placeholder="Enter tags..."></textarea>
+                        </div>
+
+
                         <div class="box-footer">
-                            <button class="btn btn-primary" ng-click="addPost()">Add Post</button>
+                            <button class="btn btn-primary" ng-click="addJob()">Add Job</button>
                         </div>
 
                     </div>
@@ -93,39 +98,24 @@
             </li>
             <!-- /.timeline-label -->
             <!-- timeline item -->
-            <li   ng-repeat="post in posts">
+            <li   ng-repeat="job in jobs">
                 <i class="fa fa-comment-o bg-blue"></i>
                 <div class="timeline-item">
                     <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-                    <h3 class="timeline-header"><a href="#/newsfeed/{{post.id}}">{{post.title}}</a></h3>
+                    <h3 class="timeline-header"><a href="#/newsfeedJob/{{job.job_id}}">{{job.jobTitle}}</a></h3>
                     <div class="timeline-body">
-                        {{post.body}}
+                       <b>Description: </b>{{job.JobDescrbtion}}
+                    </div>
+                    <div class="timeline-body">
+                       <b>Tags: </b> {{job.JobTag}}
                     </div>
                     <div class='timeline-footer'>
-                          <a class="btn btn-primary btn-xs" href="#/newsfeed/{{post.id}}">Read more</a>
-                        <a class="btn btn-danger btn-xs" ng-show="post.jobseeker_id==js_id" ng-click="deletePost(post.id)">delete</a>
+                        <a class="btn btn-primary btn-xs" href="#/newsfeedJob/{{job.job_id}}">Read more</a>
+                        <a class="btn btn-danger btn-xs" ng-show="job.provider_id==p_id" ng-click="deleteJob(job.job_id)">delete</a>
                     </div>
                 </div>
             </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -184,19 +174,19 @@
             <!-- END timeline item -->
             <!--&lt;!&ndash; timeline item &ndash;&gt;-->
             <!--<li>-->
-                <!--<i class="fa fa-video-camera bg-maroon"></i>-->
-                <!--<div class="timeline-item">-->
-                    <!--<span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>-->
-                    <!--<h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>-->
-                    <!--<div class="timeline-body">-->
-                        <!--<div class="embed-responsive embed-responsive-16by9">-->
-                            <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs" frameborder="0" allowfullscreen></iframe>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="timeline-footer">-->
-                        <!--<a href="#" class="btn btn-xs bg-maroon">See comments</a>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--<i class="fa fa-video-camera bg-maroon"></i>-->
+            <!--<div class="timeline-item">-->
+            <!--<span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>-->
+            <!--<h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>-->
+            <!--<div class="timeline-body">-->
+            <!--<div class="embed-responsive embed-responsive-16by9">-->
+            <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs" frameborder="0" allowfullscreen></iframe>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="timeline-footer">-->
+            <!--<a href="#" class="btn btn-xs bg-maroon">See comments</a>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</li>-->
             <!-- END timeline item -->
             <li>

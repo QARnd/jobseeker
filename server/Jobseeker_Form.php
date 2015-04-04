@@ -17,9 +17,6 @@ class Jobseeker_Form extends Jobseeker_DB {
     public function __construct($current_user,$db_table){
         $this->current_user=$current_user;
         $this->db_table=$db_table;
-
-
-
 //        $request=$request;
 //        var_dump($request);
 
@@ -47,13 +44,22 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'deletePostRequest':
                     $this->delete_post();
                     break;
+                case 'addJobRequest':
+                    $this->add_job();
+                    break;
+                case 'getAllJobsRequest':
+                    $this->get_jobs();
+                    break;
+                case 'getSingleJobRequest':
+                    $this->getSingleJob();
+                    break;
+                case 'deleteJobRequest':
+                    $this->delete_job();
+                    break;
                 case 'validateJobseekerRequest':
                     $this->validateJobseekerRequest();
                     break;
 
-                case 'addJobRequest':
-                    $this->add_job();
-                    break;
                 case 'sendMessageRequest':
                     $this->send_message();
                     break;
@@ -66,6 +72,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'updatePostRequest':
                     $this->update_post();
                     break;
+                case 'updateJobRequest':
+                    $this->update_job();
+                    break;
+
 
 
 
@@ -164,6 +174,70 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode("Done"));
     }
 
+
+    public function get_jobs(){
+
+        $sql='select * from jobs';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
+
+
+
+
+    public function getSingleJob(){
+
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$jobId;
+        $sql='select * from jobs where job_id='.$jobId;
+        $result=$GLOBALS['db']->db_query($sql);
+        $row = $GLOBALS['db']->db_assoc($result);
+
+        print(json_encode($row));
+
+    }
+
+    public function delete_job(){
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$jobId;
+
+        $sql='delete from jobs where job_id='.$jobId;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode("Done"));
+    }
+
+
+
+    public function update_job()
+    {
+        $entity='Entity';
+        $jobTitle='jobTitle';
+        $jobTitle=$GLOBALS['request']->$entity->$jobTitle;
+
+        $JobDescription='jobDescription';
+        $JobDescription=$GLOBALS['request']->$entity->$JobDescription;
+
+        $JobTag='JobTag';
+        $JobTag=$GLOBALS['request']->$entity->$JobTag;
+
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$entity->$jobId;
+
+
+        $sql = 'update jobs set jobTitle= "'.$jobTitle.'",jobDescription="'.$JobDescription.'",jobTag="'.$JobTag.'" where job_id='.$jobId;
+        $GLOBALS['db']->db_query($sql);
+
+        print(json_encode("Done"));
+    }
+
+
     public function validateJobseekerRequest(){
         $entity='Entity';
         $firstName='firstName';
@@ -207,32 +281,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function add_job(){
-//        $this->db_query()
-//        $post=new Post();
-        $entity='Entity';
-
-
-
-        $title='title';
-        $title=$GLOBALS['request']->$entity->$title;
-
-        $jobDescrbtion='jobDescrbtion';
-        $jobDescrbtion=$GLOBALS['request']->$entity->$jobDescrbtion;
-
-        $tags='tags';
-        $tags=$GLOBALS['request']->$entity->$tags;
-
-
-
-
-        $sql= 'insert into jobs values("1",NULL,'.$title.'","'.$jobDescrbtion.'",'.$tags.','.date("Y-m-d H:i:s").',"1")';
-        $GLOBALS['db']->db_query($sql);
-        print ($title);
-    }
-
-
-
     public function send_message(){
 
         $entity='Entity';
@@ -256,8 +304,10 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id='from_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
+        $to_id='to_id';
+        $to_id=$GLOBALS['request']->$entity->$to_id;
 
-        $sql='select * from messages where from_id='.$js_id.' or to_id='.$js_id;
+        $sql='select * from messages where (from_id='.$js_id.' and to_id='.$to_id.')or (to_id='.$js_id.' and from_id='.$to_id.')' ;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
