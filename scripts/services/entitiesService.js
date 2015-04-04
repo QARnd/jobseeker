@@ -80,4 +80,5 @@ angular.module('servicesModule').factory('entitiesService', function() {
         }
     };
 
+
 });

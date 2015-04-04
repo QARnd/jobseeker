@@ -6,6 +6,7 @@ angular.module('servicesModule').factory('profileRequestService', function($http
     return {
 
 
+
         viewProfile: function (profileEntity) {
             var request = {};
             request.opcode = "viewProfileRequest";
