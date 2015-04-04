@@ -117,6 +117,8 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
 
+
+
     public function get_posts(){
 
         $sql='select * from posts';
