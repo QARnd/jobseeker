@@ -77,8 +77,8 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'addCommentRequest':
                     $this->add_comment();
                      break;
-                case 'gitCommentsRequest':
-                    $this->git_comments();
+                case 'getCommentsRequest':
+                    $this->get_comments();
                     break;
                      }
 
@@ -351,6 +351,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $newMsg = array('content' => $content,'postId' => $postId, 'user_id'=>$user_id);
         print (json_encode($newMsg));
     }
+
     public function get_comments(){
         $postId='postId';
         $entity='Entity';
@@ -359,7 +360,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $sql_id='select user_id from comments where post_id='.$postId;
         $result_id=$GLOBALS['db']->db-query($sql_id);
         while($row = $GLOBALS['db']->db_assoc($result_id)){
-            if (user_id>10000)
+            if (intval( $row['user_id'] ) >10000)
             {
                 $sql='select jobseekers.first_name,jobseekers.last_name,comments.content from comments,jobseekers where jobseekers.jobseeker_id=comments.user_id ';
                 $result=$GLOBALS['db']->db_query($sql);

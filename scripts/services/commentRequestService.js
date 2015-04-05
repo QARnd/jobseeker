@@ -2,7 +2,7 @@
  * Created by happy on 4/2/2015.
  */
 
-angular.module('servicesModule').factory('CommentRequest', function($http,authenticationService) {
+angular.module('servicesModule').factory('commentRequestService', function($http,authenticationService) {
     return {
 
         addComment: function (commentEntity) {
@@ -26,6 +26,20 @@ angular.module('servicesModule').factory('CommentRequest', function($http,authen
             var commentPromise = $http({
                 method: 'POST',
                 url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return commentPromise;
+        },
+
+        deleteComment: function(commentId) {
+            var request = {};
+
+            request.opcode = "deleteCommentRequest";
+            request.commentId =commentId;
+            var commentPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });

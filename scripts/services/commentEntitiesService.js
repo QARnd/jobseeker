@@ -13,6 +13,11 @@ angular.module('servicesModule').factory('commentEntitiesService', function() {
             comment.content=content;
             comment.user_id=user_id;
             return comment;
+        },
+        deleteCommentEntity: function(commentId) {
+            var commentDeleted = {};     // new object
+            commentDeleted.commentId=commentId;
+            return commentDeleted;
         }
 
     };
