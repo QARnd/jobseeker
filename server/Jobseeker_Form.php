@@ -288,7 +288,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
     public function send_message(){
-
         $entity='Entity';
         $content='content';
         $content=$GLOBALS['request']->$entity->$content;
@@ -313,7 +312,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $to_id='to_id';
         $to_id=$GLOBALS['request']->$entity->$to_id;
 
-        $sql='select * from messages where (from_id='.$js_id.' and to_id='.$to_id.')or (to_id='.$js_id.' and from_id='.$to_id.')' ;
+        $sql='select * from messages where (from_id='.$js_id.' and to_id='.$to_id.')or(to_id='.$js_id.' and from_id='.$to_id.')' ;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();

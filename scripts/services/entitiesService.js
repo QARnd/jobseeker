@@ -28,16 +28,15 @@ angular.module('servicesModule').factory('entitiesService', function() {
             return postUpdated;
         },
 
-       messageEntity: function(content,to_id,from_id) {
+        messageEntity: function(content,to_id,from_id) {
             var message = {};     // new object
 
-           message.content=content;
+            message.content=content;
 
-           message.to_id=to_id;
-           message.from_id=from_id;
+            message.to_id=to_id;
+            message.from_id=from_id;
             return message;
         },
-
 
         profileEntity: function(jobSeekerId) {
             var profile = {};     // new object
@@ -67,7 +66,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
         getMessagesEntity: function(from_id,jobSeekerId){
             var message = {};     // new object
             message.from_id=from_id;
-            message.jobSeekerId=jobSeekerId;
+            message.to_id=jobSeekerId;
             return message;
         }
 

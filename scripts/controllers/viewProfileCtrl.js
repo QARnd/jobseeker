@@ -57,17 +57,25 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.toggle = function() {
             $scope.myVar = !$scope.myVar;
         }
+        $scope.checkUser = function(fromId) {
+            var jsId= authenticationService.userProfile.jobseekerId;
+            console.log(fromId);
+            console.log(jsId);
+            if ( fromId==jsId ){
+                return true;
+            }
+            else {
+                return false;}
+
+        }
         $scope.sendMessage = function () {
             var from_id= authenticationService.userProfile.jobseekerId;
             var messageEntity = entitiesService.messageEntity($scope.content,$scope.to_id,from_id);
             var messagePromise = profileRequestService.sendMessage(messageEntity);
-
-            messagePromise.then(function (d) {
-                console.log(d);
+            alert($scope.content);
+            messagePromise.then(function (d) {console.log(d);
                 var message= d.data;
                 $scope.content= message.content;
-
-
                 var html='<li><span class="left">'+message.content+'</span></li>';
                 $("#msgs").append(html);
 
@@ -85,12 +93,13 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.getMessages = function () {
 
             var from_id = authenticationService.userProfile.jobseekerId;
-
+            alert(from_id);
+            alert($scope.jobSeekerId);
             var messageEntity = entitiesService.getMessagesEntity(from_id,$scope.jobSeekerId);
             var messagePromise =profileRequestService.getMessages(messageEntity);
 
             messagePromise.then(function (d) {
-                console.log(d);
+                console.log(d.data);
                 $scope.messages = d.data;
             });
 
