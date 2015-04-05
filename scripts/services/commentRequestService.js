@@ -44,6 +44,21 @@ angular.module('servicesModule').factory('commentRequestService', function($http
                 data: request
             });
             return commentPromise;
+        },
+
+
+        editComment: function(commentId) {
+            var request = {};
+
+            request.opcode = "editCommentRequest";
+            request.commentId =commentId;
+            var commentPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return commentPromise;
         }
 
 

@@ -380,6 +380,18 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
+
+
+    public function delete_comment(){
+        $commentId='commentId';
+        $commentId=$GLOBALS['request']->$commentId;
+
+        $sql='delete from comments where commentid='.$commentId;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode("Done"));
+    }
+
 }
 
 $GLOBALS['request']=json_decode(file_get_contents('php://input'));

@@ -38,4 +38,29 @@ angular.module('myApp').controller('commentCtrl',
             });
         };
 
+
+
+        $scope.editComment=function(commentId){
+            var commentPromise = commentRequestsService.editComment(commentId);
+
+           commentPromise.then(function (d) {
+                console.log(d);
+                swal({
+                    title: "SUCCESS",
+                    text: "Delete Done Successfully",
+                    type: "success"
+                });
+
+
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error"
+                });
+            });
+        }
+
     });
+
+
