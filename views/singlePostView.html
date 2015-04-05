@@ -29,7 +29,23 @@
     </ul>
 </div>
 
+<div ng-controller="commentCtrl" ng-controller="getCommentCtrl">
+    <input type="text" placeholder="Write a comment ....." ng-model="content">
+    <button ng-click="addComment()">Add Comment</button>
 
+    <ul>
+        <li ng-init="getComments()"  ng-repeat="comment in comments">
+            <i class="fa fa-comment-o bg-blue"></i>
+            <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                <h3 class="timeline-header">{{comment.firstName}}</h3>
+                <h3 class="timeline-header">{{comment.content}}</h3>
+
+            </div>
+        </li>
+    </ul>
+</div>
+</div>
 
 <div ng-show="js_id==jobseeker_id">
     <div ng-init="dis=true" >
