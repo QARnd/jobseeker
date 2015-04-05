@@ -343,20 +343,34 @@ class Jobseeker_Form extends Jobseeker_DB {
         $postId=$GLOBALS['request']->$entity->$postId;
         $content='content';
         $content=$GLOBALS['request']->$entity->$content;
-        $jobseeker_id='jobseeker_id';
-        $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
-        $sql='insert into comments values(NULL,"'.$postId.'","'.$content.'",now(),'.$jobseeker_id.')';
+        $user_id='user_id';
+        $user_id=$GLOBALS['request']->$entity-> $user_id;
+        $sql='insert into comments values(NULL,"'.$postId.'","'.$content.'",now(),'.$user_id.')';
         $GLOBALS['db']->db_query($sql);
 
-        $newMsg = array('content' => $content,'postId' => $postId, 'jobseeker_id'=>$jobseeker_id);
+        $newMsg = array('content' => $content,'postId' => $postId, 'user_id'=>$user_id);
         print (json_encode($newMsg));
     }
     public function get_comments(){
         $postId='postId';
         $entity='Entity';
         $postId=$GLOBALS['request']->$entity->$postId;
-        $sql='select jobseekers.first_name,jobseekers.jobseeker_id,comments.content from comments INNER JOIN jobseekers  ON jobseekers.jobseeker_id=comments.jobseeker_id and  post_id='.$postId.' ';
-        $result=$GLOBALS['db']->db_query($sql);
+
+        $sql_id='select user_id from comments where post_id='.$postId;
+        $result_id=$GLOBALS['db']->db-query($sql_id);
+        while($row = $GLOBALS['db']->db_assoc($result_id)){
+            if (user_id>10000)
+            {
+                $sql='select jobseekers.first_name,jobseekers.last_name,comments.content from comments,jobseekers where jobseekers.jobseeker_id=comments.user_id ';
+                $result=$GLOBALS['db']->db_query($sql);
+            }
+            else
+            {
+                $sql='select jobprovider.Name,comments.content from comments, jobprovider where jobprovider.jobprovider_id=comments.user_id ';
+                $result=$GLOBALS['db']->db_query($sql);
+            }
+        }
+
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
