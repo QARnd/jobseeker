@@ -69,10 +69,16 @@ angular.module('myApp').controller('commentCtrl',
         };
 
 
+        $scope.showModal = false;
+        $scope.toggleModal = function(comment_id,content){
+            $scope.showModal = !$scope.showModal;
+            $scope.editedContent=content;
+            $scope.editedCommentId=comment_id;
+        };
 
-
-        $scope.editComment=function(commentId,editedContent){
-            var editCommentEntity = commentEntitiesService.editComment(commentId,editedContent);
+        $scope.editComment=function(editedCommentId,editedContent){
+            alert(editedCommentId+"  "+editedContent);
+            var editCommentEntity = commentEntitiesService.editComment(editedCommentId,editedContent);
             var commentPromise = commentRequestService.editComment(editCommentEntity);
 
            commentPromise.then(function (d) {
@@ -89,12 +95,7 @@ angular.module('myApp').controller('commentCtrl',
             });
         }
 
-        $scope.showModal = false;
-        $scope.toggleModal = function(comment_id,content){
-            $scope.showModal = !$scope.showModal;
-            $scope.editedContent=content;
-            $scope.editedCommentId=comment_id;
-        };
+
 });
 
 angular.module('myApp').directive('modal', function () {

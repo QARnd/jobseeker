@@ -398,6 +398,23 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode("Done"));
     }
 
+    public function edit_comment()
+    {
+        $entity='Entity';
+        $commentId='commentId';
+        $commentId=$GLOBALS['request']->$entity->$commentId;
+
+        $content='content';
+        $content=$GLOBALS['request']->$entity->$content;
+
+
+        $sql = 'update comments set content= "'.$content.'" where comment_id='.$commentId;
+        $GLOBALS['db']->db_query($sql);
+        $newComment = array('commentId'=>$commentId,'content' => $content);
+
+        print(json_encode($newComment));
+    }
+
 }
 
 $GLOBALS['request']=json_decode(file_get_contents('php://input'));

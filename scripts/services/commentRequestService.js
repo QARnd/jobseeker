@@ -47,11 +47,11 @@ angular.module('servicesModule').factory('commentRequestService', function($http
         },
 
 
-        editComment: function(commentId) {
+        editComment: function(editCommentEntity) {
             var request = {};
 
             request.opcode = "editCommentRequest";
-            request.commentId =commentId;
+            request.Entity =editCommentEntity;
             var commentPromise=$http({
                 method : 'POST',
                 url : authenticationService.deploymentLink.link,
