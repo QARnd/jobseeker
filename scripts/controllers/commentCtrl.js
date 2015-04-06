@@ -77,7 +77,15 @@ angular.module('myApp').controller('commentCtrl',
         };
 
         $scope.editComment=function(editedCommentId,editedContent){
-            alert(editedCommentId+"  "+editedContent);
+            //alert(editedCommentId+"  "+editedContent);
+            for (var i=0; i<$scope.comments.length; i++) {
+                if ($scope.comments[i].comment_id == editedCommentId) {
+                    $scope.comments[i].content = editedContent;
+                    break;
+                }
+            }
+            $scope.showModal = false;
+            
             var editCommentEntity = commentEntitiesService.editComment(editedCommentId,editedContent);
             var commentPromise = commentRequestService.editComment(editCommentEntity);
 
@@ -85,13 +93,7 @@ angular.module('myApp').controller('commentCtrl',
                console.log(d);
 
                //edit comment in client
-               for (var i=0; i<$scope.comments.length; i++) {
-                   if ($scope.comments[i].comment_id == editedCommentId) {
-                       $scope.comments[i].content = editedContent;
-                       break;
-                   }
-               }
-               $scope.showModal = false;
+
 
 
             }, function (d) {
