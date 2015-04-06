@@ -80,6 +80,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getCommentsRequest':
                     $this->get_comments();
                     break;
+                case 'editCommentRequest':
+                    $this->edit_comment();
+                    break;
+
                      }
 
 

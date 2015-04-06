@@ -7,7 +7,8 @@
 angular.module('myApp').controller('commentCtrl',
     function($rootScope,$scope, commentEntitiesService, commentRequestService,$routeParams, authenticationService) {
 
-        $scope.user_id= authenticationService.userProfile.user_id;
+        $scope.auth_user_id= authenticationService.userProfile.user_id;
+        //alert($scope.auth_user_id);
         $scope.getComments=function(){
             var postId=$routeParams.postId;
 
@@ -54,7 +55,7 @@ angular.module('myApp').controller('commentCtrl',
 
                 $scope.date=comment.date;
 
-                $scope.comments.unshift({postId:comment.postId,content:comment.content,user_id:comment.user_id,date:comment.date,fullname:comment.fullname,comment_id:comment.commentId});
+                $scope.comments.unshift({postId:comment.postId,content:comment.content,user_id:comment.userId,date:comment.date,fullname:comment.fullname,comment_id:comment.commentId});
 
                 $scope.content="";
             }, function (d) {
@@ -69,16 +70,14 @@ angular.module('myApp').controller('commentCtrl',
 
 
 
-        $scope.editComment=function(commentId){
-            var commentPromise = commentRequestService.editComment(commentId);
+
+        $scope.editComment=function(commentId,editedContent){
+            var editCommentEntity = commentEntitiesService.editComment(commentId,editedContent);
+            var commentPromise = commentRequestService.editComment(editCommentEntity);
 
            commentPromise.then(function (d) {
                 console.log(d);
-                swal({
-                    title: "SUCCESS",
-                    text: "Delete Done Successfully",
-                    type: "success"
-                });
+
 
 
             }, function (d) {
@@ -90,6 +89,52 @@ angular.module('myApp').controller('commentCtrl',
             });
         }
 
-    });
+        $scope.showModal = false;
+        $scope.toggleModal = function(comment_id,content){
+            $scope.showModal = !$scope.showModal;
+            $scope.editedContent=content;
+            $scope.editedCommentId=comment_id;
+        };
+});
 
+angular.module('myApp').directive('modal', function () {
+    return {
+        template: '<div class="modal fade">' +
+        '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+        '<div class="modal-header">' +
+        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+        '<h4 class="modal-title">{{ title }}</h4>' +
+        '</div>' +
+        '<div class="modal-body" ng-transclude></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>',
+        restrict: 'E',
+        transclude: true,
+        replace:true,
+        scope:true,
+        link: function postLink(scope, element, attrs) {
+            scope.title = attrs.title;
 
+            scope.$watch(attrs.visible, function(value){
+                if(value == true)
+                    $(element).modal('show');
+                else
+                    $(element).modal('hide');
+            });
+
+            $(element).on('shown.bs.modal', function(){
+                scope.$apply(function(){
+                    scope.$parent[attrs.visible] = true;
+                });
+            });
+
+            $(element).on('hidden.bs.modal', function(){
+                scope.$apply(function(){
+                    scope.$parent[attrs.visible] = false;
+                });
+            });
+        }
+    };
+});

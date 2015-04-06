@@ -15,6 +15,13 @@ angular.module('servicesModule').factory('commentEntitiesService', function() {
             comment.full_name=full_name;
             return comment;
         },
+        editComment:function(commentId,content){
+            var comment = {};     // new object
+            comment.commentId=commentId;
+            comment.content=content;
+
+            return comment;
+        },
         getComments:function(postId){
             var comment = {};     // new object
             comment.postId=postId;

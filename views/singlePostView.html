@@ -91,8 +91,8 @@
                                 <ul class="timeline" ng-init="getComments()" id="comments">
                                     <li ng-repeat="comment in comments track by $index">
                                         <div class="timeline-item">
-                                                <span class="time"><i class="fa fa-clock-o"></i> {{comment.date}}</span>
-                                                <h3 class="timeline-header fa fa-comment-o"><a href="#"> {{comment.fullname}}</a></h3>
+                                                <span class="time"><i class="fa fa-clock-o"></i> {{comment.date}}<span>   <a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleModal(comment.comment_id,comment.content)"  ng-show="auth_user_id==comment.user_id"></a></span></span>
+                                                <h3 class="timeline-header fa fa-comments"><a href="#"> {{comment.fullname}}</a></h3>
                                                 <div class="timeline-body">
                                                     {{comment.content}}
                                                 </div>
@@ -101,6 +101,14 @@
 
 
                                     </li>
+                                    <modal title="Update Comment" visible="showModal">
+                                        <div class="form-group">
+                                            <textarea ng-model="editedContent" class="form-control" rows="2"></textarea>
+                                            <center>
+                                                <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="editComment(editedCommentId,editedContent)"> Edit Comment</button>
+                                            </center>
+                                        </div>
+                                    </modal>
                                 </ul>
                                 <!--End Get All Comments-->
 
@@ -118,4 +126,7 @@
 
     </div>
 </div>
+
+
+
 
