@@ -50,6 +50,9 @@ angular.module('myApp').controller('linkedInCtrl',
                             if(d.data.userStatus!="UnauthorizedUser")
                             {
                                 authenticationService.userProfile.jobseekerId=d.data.replace("\n","").replace("\r","").replace(" ","");
+                                authenticationService.userProfile.user_id=d.data.replace("\n","").replace("\r","").replace(" ","");
+                                authenticationService.userProfile.full_name=result.values[0].firstName+" "+result.values[0].lastName;
+
                                 result.values[0].userId=d.data.jobseeker_id;
                                 result.values[0].loggedIn=true;
                                 authenticationService.userProfile.data=result.values[0];

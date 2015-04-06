@@ -19,10 +19,10 @@ angular.module('servicesModule').factory('commentRequestService', function($http
             return commentPromise;
         }
         ,
-        getComment: function () {
+        getComments: function (getCommentEntity) {
             var request = {};
             request.opcode = "getCommentsRequest";
-
+            request.Entity =  getCommentEntity;
             var commentPromise = $http({
                 method: 'POST',
                 url: authenticationService.deploymentLink.link,

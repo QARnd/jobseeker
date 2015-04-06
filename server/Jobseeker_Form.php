@@ -344,11 +344,14 @@ class Jobseeker_Form extends Jobseeker_DB {
         $content=$GLOBALS['request']->$entity->$content;
         $user_id='user_id';
         $user_id=$GLOBALS['request']->$entity-> $user_id;
-        $sql='insert into comments values(NULL,"'.$postId.'","'.$content.'",now(),'.$user_id.')';
+        $full_name='full_name';
+        $full_name=$GLOBALS['request']->$entity-> $full_name;
+        $sql='insert into comments values(NULL,'.intval($postId).',"'.$content.'","'.date("Y-m-d H:i:s").'",'.intval($user_id).',"'.$full_name.'")';
         $GLOBALS['db']->db_query($sql);
 
-        $newMsg = array('content' => $content,'postId' => $postId, 'user_id'=>$user_id);
-        print (json_encode($newMsg));
+        $last_id=$GLOBALS['db']->db_insid();
+        $newComment = array('commentId'=>$last_id,'content' => $content,'postId' => $postId,'date'=>date("Y-m-d H:i:s"), 'userId'=>$user_id,'fullname'=>$full_name);
+        print (json_encode($newComment));
     }
 
     public function get_comments(){
@@ -356,23 +359,23 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $postId=$GLOBALS['request']->$entity->$postId;
 
-        $sql_id='select user_id from comments where post_id='.$postId;
-        $result_id=$GLOBALS['db']->db-query($sql_id);
-        while($row = $GLOBALS['db']->db_assoc($result_id)){
-            if (intval( $row['user_id'] ) >10000)
-            {
-                $sql='select jobseekers.first_name,jobseekers.last_name,comments.content from comments,jobseekers where jobseekers.jobseeker_id=comments.user_id ';
-                $result=$GLOBALS['db']->db_query($sql);
-            }
-            else
-            {
-                $sql='select jobprovider.Name,comments.content from comments, jobprovider where jobprovider.jobprovider_id=comments.user_id ';
-                $result=$GLOBALS['db']->db_query($sql);
-            }
-        }
+        $sql_id='select * from comments where post_id='.$postId.' order by comment_id desc';
+        $result_id=$GLOBALS['db']->db_query($sql_id);
+//        while($row = $GLOBALS['db']->db_assoc($result_id)){
+//            if (intval( $row['user_id'] ) >10000)
+//            {
+//                $sql='select jobseekers.first_name,jobseekers.last_name,comments.content from comments,jobseekers where jobseekers.jobseeker_id=comments.user_id ';
+//                $result=$GLOBALS['db']->db_query($sql);
+//            }
+//            else
+//            {
+//                $sql='select jobprovider.Name,comments.content from comments, jobprovider where jobprovider.jobprovider_id=comments.user_id ';
+//                $result=$GLOBALS['db']->db_query($sql);
+//            }
+//        }
 
         $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
+        while($row = $GLOBALS['db']->db_assoc($result_id)){
             array_push($total, $row);
         }
         print(json_encode($total));

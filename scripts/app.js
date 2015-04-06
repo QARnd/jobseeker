@@ -23,6 +23,6 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
 
-    $routeProvider.otherwise({redirectTo: '/login'});
+    $routeProvider.otherwise({redirectTo: '/newsfeed'});
 }]);
 

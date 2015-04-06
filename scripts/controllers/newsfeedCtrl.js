@@ -11,11 +11,6 @@ angular.module('myApp').controller('newsfeedCtrl',
 
         $scope.getNewsFeed=function(){
             $scope.posts=[
-                {title:"ttttt"},
-                {title:"yyyyy"},
-                {title:"bbb"},
-                {title:"zzzz"},
-                {title:"aa"},
 
             ];
 

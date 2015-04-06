@@ -13,7 +13,7 @@
         <li>
             <i class="fa fa-comment-o bg-blue"></i>
             <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 12:05<span>  <a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click=toggle()  ng-show="js_id==jobseeker_id"></a></span></span>
                 <h3 class="timeline-header"><a href="#">{{title}}</a></h3>
                 <div class="timeline-body">
                     {{body}}
@@ -27,40 +27,94 @@
         </li>
 
     </ul>
-</div>
 
-<div ng-controller="commentCtrl" ng-controller="getCommentCtrl">
-    <input type="text" placeholder="Write a comment ....." ng-model="content">
-    <button ng-click="addComment()">Add Comment</button>
 
-    <ul>
-        <li ng-init="getComments()"  ng-repeat="comment in comments">
-            <i class="fa fa-comment-o bg-blue"></i>
-            <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-                <h3 class="timeline-header">{{comment.firstName}}</h3>
-                <h3 class="timeline-header">{{comment.content}}</h3>
+
+    <!--Edit post div-->
+    <div id="editPost" class="center-block">
+        <section class="content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- general form elements disabled -->
+                    <div class="box box-primary">
+                        <div class="box-body">
+
+                            <div ng-init="dis=true" >
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text"  ng-model="title" class="form-control" ng-disabled="dis"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Body</label>
+                                    <textarea ng-model="body" class="form-control" rows="7" ng-disabled="dis"></textarea>
+                                </div>
+
+
+                                <p ng-hide="dis">
+                                    <button ng-click=update()>Save Changes</button>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
-        </li>
-    </ul>
-</div>
-</div>
+        </section>
+    <!--End Edit post div-->
 
-<div ng-show="js_id==jobseeker_id">
-    <div ng-init="dis=true" >
-        <p></p>Title:<input type=text ng-model="title"  placeholder= "title" ng-disabled="dis"></p>
-
-        <p>Body: <textarea ng-model= "body" placeholder= "body" ng-disabled="dis">{{body}}</textarea></p>
+    </div>
 
 
-        <p>
-        <button ng-click=toggle()>Edit</button>
-        </p>
+    <div ng-controller="commentCtrl" class="center-block">
 
-        <p ng-hide="dis">
-            <button ng-click=update()>Save Changes</button>
-        </p>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- general form elements disabled -->
+                    <div class="box box-warning">
+                            <div class="box-body">
+
+
+                                <div class="form-group">
+                                    <textarea ng-model="content" class="form-control" rows="1" placeholder="Write a comment ....."></textarea>
+                                    <center>
+                                        <button class="btn btn-primary btn-xs fa fa-plus center-block" ng-click="addComment()"> Add Comment</button>
+                                    </center>
+                                </div>
+
+
+                                <!--Get All Comments-->
+                                <ul class="timeline" ng-init="getComments()" id="comments">
+                                    <li ng-repeat="comment in comments track by $index">
+                                        <div class="timeline-item">
+                                                <span class="time"><i class="fa fa-clock-o"></i> {{comment.date}}</span>
+                                                <h3 class="timeline-header fa fa-comment-o"><a href="#"> {{comment.fullname}}</a></h3>
+                                                <div class="timeline-body">
+                                                    {{comment.content}}
+                                                </div>
+
+                                        </div>
+
+
+                                    </li>
+                                </ul>
+                                <!--End Get All Comments-->
+
+                            </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
 
     </div>
 </div>

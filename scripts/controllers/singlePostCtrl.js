@@ -5,19 +5,24 @@
 angular.module('myApp').controller('singlePostCtrl',
     function($scope, entitiesService, postRequestsService,$routeParams, authenticationService) {
 
+        //hide the edit div
+        $('#editPost').hide();
         $scope.js_id= authenticationService.userProfile.jobseekerId;
         $scope.postId=$routeParams.postId;
 
 
-        alert($scope.js_id);
-
-        $scope.dis = true;
+        //$scope.dis = true;
         $scope.toggle = function () {
-            $scope.dis = false;
+            if($scope.dis)
+                $('#editPost').show();
+            else
+                $('#editPost').hide();
+            $scope.dis=!$scope.dis;
         }
 
         $scope.update = function () {
             $scope.dis = true;
+            $('#editPost').hide();
 
             var postEntity = entitiesService.updatePostEntity($scope.title, $scope.body, $scope.postId);
 
