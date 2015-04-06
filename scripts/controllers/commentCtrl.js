@@ -55,7 +55,7 @@ angular.module('myApp').controller('commentCtrl',
 
                 $scope.date=comment.date;
 
-                $scope.comments.unshift({postId:comment.postId,content:comment.content,user_id:comment.userId,date:comment.date,fullname:comment.fullname,comment_id:comment.commentId});
+                $scope.comments.unshift({post_id:comment.postId,content:comment.content,user_id:comment.userId,date:comment.date,fullname:comment.fullname,comment_id:comment.commentId});
 
                 $scope.content="";
             }, function (d) {
@@ -82,8 +82,16 @@ angular.module('myApp').controller('commentCtrl',
             var commentPromise = commentRequestService.editComment(editCommentEntity);
 
            commentPromise.then(function (d) {
-                console.log(d);
+               console.log(d);
 
+               //edit comment in client
+               for (var i=0; i<$scope.comments.length; i++) {
+                   if ($scope.comments[i].comment_id == editedCommentId) {
+                       $scope.comments[i].content = editedContent;
+                       break;
+                   }
+               }
+               $scope.showModal = false;
 
 
             }, function (d) {
