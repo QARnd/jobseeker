@@ -106,23 +106,47 @@ angular.module('myApp').controller('commentCtrl',
         }
 
         $scope.deleteComment=function(commentId) {
+            //console.log(commentId);
+            swal({
+                    title: "Are you sure?",
+                    text: "Delete!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete!",
+                    closeOnConfirm: true },
+                function() {
 
-            var deleteCommentEntity = commentEntitiesService.deleteCommentEntity(commentId);
-            var commentPromise = commentRequestService.deleteComment(deleteCommentEntity);
-
-            commentPromise.then(function (d) {
-                console.log(d);
-
-                //delete comment
+                    var deleteCommentEntity = commentEntitiesService.deleteCommentEntity(commentId);
+                    var commentPromise = commentRequestService.deleteComment(deleteCommentEntity);
 
 
-            }, function (d) {
-                swal({
-                    title: "Error!",
-                    text: "Something went wrong, please try again later",
-                    type: "error"
-                });
-            });
+                    //delete comment
+                    for (var i = 0; i < $scope.comments.length; i++) {
+                        if ($scope.comments[i].comment_id == commentId) {
+                            $scope.comments.splice(i, 1);
+                            break;
+                        }
+                    }
+                    commentPromise.then(function (d) {
+                        //console.log(d);
+
+                        //
+                        //swal({
+                        //    title: "Comment Has Been Deleted Successfully",
+                        //    text: "SUCCESS",
+                        //    type: "success"
+                        //});
+
+                    }, function (d) {
+                        swal({
+                            title: "Error!",
+                            text: "Something went wrong, please try again later",
+                            type: "error"
+                        });
+                    });
+                }
+            );
 
         }
 

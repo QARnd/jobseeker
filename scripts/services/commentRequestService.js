@@ -32,11 +32,12 @@ angular.module('servicesModule').factory('commentRequestService', function($http
             return commentPromise;
         },
 
-        deleteComment: function(commentId) {
+        deleteComment: function(deleteCommentEntity) {
             var request = {};
 
             request.opcode = "deleteCommentRequest";
-            request.commentId =commentId;
+
+            request.Entity =deleteCommentEntity;
             var commentPromise=$http({
                 method : 'POST',
                 url : authenticationService.deploymentLink.link,
