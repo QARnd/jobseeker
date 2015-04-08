@@ -86,30 +86,15 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'deleteCommentRequest':
                     $this->delete_comment();
                     break;
-
+                case 'createAccountRequest':
+                    $this->createAccount();
+                    break;
 
             }
-
 
         }
     }
 
-
-    //-------------------------------------------------------------------------
-    //-------------------------------------------------------------------------
-    //-------------------------------------------------------------------------
-    //-------------------------------------------------------------------------
-    //-------------------------------------------------------------------------
-    //-------------------------------------------------------------------------
-
-    /////
-    // used by: Dispatcher($request)
-    // output: return data needed to client side/ make an operation in database
-    /////
-
-
-
-    //Add Post
     public function add_post(){
 
         $entity='Entity';
@@ -419,6 +404,23 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         print(json_encode($newComment));
     }
+
+    public function createAccount()
+    {
+        $entity='Entity';
+        $name='name';
+        $name=$GLOBALS['request']->$entity->$name;
+        $email='email';
+        $email=$GLOBALS['request']->$entity->$email;
+        $description='description';
+        $description=$GLOBALS['request']->$entity->$description;
+        $location='location';
+        $location=$GLOBALS['request']->$entity->$location;
+        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'",'.$description.','.$location.'';
+        $GLOBALS['db']->db_query($sql);
+        print(json_encode("done"));
+    }
+
 
 }
 
