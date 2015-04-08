@@ -30,6 +30,20 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
             });
             return postPromise;
         },
+
+        getAllPostsByPageNumber: function(pageScrolls) {
+            var request = {};
+            request.opcode = "getAllPostsByPageNumberRequest";
+            request.pageScrolls =pageScrolls;
+            var postPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return postPromise;
+        },
+
         updatePost: function(updatePostEntity) {
             var request = {};
             request.opcode = "updatePostRequest";

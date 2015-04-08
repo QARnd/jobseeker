@@ -11,22 +11,9 @@ angular.module('myApp').controller('singlePostCtrl',
         $scope.postId=$routeParams.postId;
 
 
-        //$scope.dis = true;
-        $scope.toggle = function () {
-            if($scope.dis)
-                $('#editPost').show();
-            else
-                $('#editPost').hide();
-            $scope.dis=!$scope.dis;
-        }
 
-        $scope.update = function () {
-            $scope.dis = true;
-            $('#editPost').hide();
 
-            var postEntity = entitiesService.updatePostEntity($scope.title, $scope.body, $scope.postId);
 
-            var postPromise = postRequestsService.updatePost(postEntity);}
 
         var postPromise = postRequestsService.getSinglePost($scope.postId);
 
@@ -48,5 +35,25 @@ angular.module('myApp').controller('singlePostCtrl',
                 type: "error"
             });
         });
+
+
+
+        //$scope.dis = true;
+        $scope.toggle = function () {
+            if($scope.dis)
+                $('#editPost').show();
+            else
+                $('#editPost').hide();
+            $scope.dis=!$scope.dis;
+        }
+
+        $scope.update = function () {
+            $scope.dis = true;
+            $('#editPost').hide();
+
+            var postEntity = entitiesService.updatePostEntity($scope.title, $scope.body, $scope.postId);
+
+            var postPromise = postRequestsService.updatePost(postEntity);
+        }
 
     });

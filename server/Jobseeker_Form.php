@@ -38,6 +38,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllPostsRequest':
                     $this->get_posts();
                     break;
+                case 'getAllPostsByPageNumberRequest':
+                    $this->getAllPostsByPageNumber();
+                    break;
                 case 'getSinglePostRequest':
                     $this->getSinglePost();
                     break;
@@ -119,7 +122,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $body=$GLOBALS['request']->$entity->$body;
         $jobseeker_id='jobseeker_id';
         $ $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
-        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"jkk")';
+        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"jkk","'.date("Y-m-d H:i:s").'")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
     }
@@ -127,9 +130,15 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function get_posts(){
+    public function getAllPostsByPageNumber(){
+        $pageScrolls='pageScrolls';
+        $pageScrolls=$GLOBALS['request']->$pageScrolls;
 
-        $sql='select * from posts';
+        $pageNum=abs(intval($pageScrolls));
+        $offset=$pageNum*5;
+
+
+        $sql='select * from posts order by id desc limit 5 offset '.$offset;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -141,6 +150,19 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
 
+
+    public function get_posts(){
+
+        $sql='select * from posts order by id desc limit 5';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
 
 
 

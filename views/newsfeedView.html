@@ -1,5 +1,131 @@
+<style>
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+    body{
+        background:#f1f1f1;
+    }
+    .container{
+        width:330px;
+        margin:10px auto
+    }
+    .spinner, .border{
+        border-top: 50px solid #0A5BC4;
+        border-left: 50px solid #00A600;
+        border-right: 50px solid #DC572E;
+        border-bottom: 50px solid #BF1E4B;
+        height:0;
+        width:0;
+        border-radius: 50px;
+        -webkit-animation: spin 1s infinite linear;
+        -moz-animation: spin 1s infinite linear;
+        animation: spin 1s infinite linear;
+        margin-right:10px;/*Just 4 spacing*/
+        display:inline-block;/*Can also be removed*/
+    }
+    .spinner:last-child{
+        margin:0;
+    }
+    .border{
+        border-top: 10px solid #0A5BC4;
+        border-left: 10px solid #00A600;
+        border-right: 10px solid #DC572E;
+        border-bottom: 10px solid #BF1E4B;
+        height:80px;
+        width:80px;
+        -webkit-animation-name: spinback;
+        -webkit-animation-duration: .5s;
+        -moz-animation-name: spinback;
+        -moz-animation-duration: .5s;
+        animation-name: spinback;
+        animation-duration: .5s;
+        animation-name: spinback;
+        animation-duration: .5s;
+    }
+    .arrow{
+        -webkit-animation-duration: 6s;
+        -moz-animation-duration: 6s;
+        animation-duration: 6s;
+        animation-duration: 6s;
+        height:80px;
+        width:80px;
+        border:10px solid black;
+        border-top: 10px solid transparent;
+        position:relative;
 
-<div ng-controller="addPostCtrl">
+    }
+    .arrow1{
+        width: 0;
+        height: 0;
+        border-top: 7px solid black;
+        border-left: 7px solid transparent;
+        position:absolute;
+        top:5px;
+        left:4px;
+    }
+    .arrow2{
+        width: 0;
+        height: 0;
+        border-bottom: 7px solid white;
+        border-left: 7px solid transparent;
+        position:absolute;
+        top:4px;
+        left:68px;
+    }
+    @keyframes spin{
+        100%{
+
+            -webkit-transform:rotate(360deg);
+            transform:rotate(360deg);
+        }
+    }
+    @keyframes spinback{
+        100%{
+
+            -webkit-transform:rotate(-360deg);
+            transform:rotate(-360deg);
+        }
+    }
+    @-webkit-keyframes spin{
+        100%{
+
+            -webkit-transform:rotate(360deg);
+            transform:rotate(360deg);
+        }
+    }
+    @-webkit-keyframes spinback{
+        100%{
+
+            -webkit-transform:rotate(-360deg);
+            transform:rotate(-360deg);
+        }
+    }
+    @-moz-keyframes spin{
+        100%{
+
+            -webkit-transform:rotate(360deg);
+            transform:rotate(360deg);
+        }
+    }
+    @-moz-keyframes spinback{
+        100%{
+
+            -webkit-transform:rotate(-360deg);
+            transform:rotate(-360deg);
+        }
+    }
+    /* Can be removed */
+
+    header{
+        display:blocK;
+        width:500px;
+        color:#313131;
+        margin:20px auto;
+        text-align:center;
+        font-size:.8em;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+</style>
+<div ng-controller="addPostCtrl" id="newsfeedContent">
 
     <!-- Main content -->
     <section class="content">
@@ -142,45 +268,58 @@
                     <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request</h3>
                 </div>
             </li>
+
+
+
             <!-- END timeline item -->
             <!-- timeline item -->
-            <li>
-                <i class="fa fa-comments bg-yellow"></i>
-                <div class="timeline-item">
-                    <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-                    <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-                    <div class="timeline-body">
-                        Take me to your leader!<br />
-                        Switzerland is small and neutral!<br>
-                        We are more like Germany, ambitious and misunderstood!
-                    </div>
-                    <div class='timeline-footer'>
-                        <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                    </div>
-                </div>
-            </li>
+            <!--<li>-->
+                <!--<i class="fa fa-comments bg-yellow"></i>-->
+                <!--<div class="timeline-item">-->
+                    <!--<span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>-->
+                    <!--<h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>-->
+                    <!--<div class="timeline-body">-->
+                        <!--Take me to your leader!<br />-->
+                        <!--Switzerland is small and neutral!<br>-->
+                        <!--We are more like Germany, ambitious and misunderstood!-->
+                    <!--</div>-->
+                    <!--<div class='timeline-footer'>-->
+                        <!--<a class="btn btn-warning btn-flat btn-xs">View comment</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+
+
             <!-- END timeline item -->
             <!-- timeline time label -->
-            <li class="time-label">
-                  <span class="bg-green">
-                    3 Jan. 2014
-                  </span>
-            </li>
+            <!--<li class="time-label">-->
+                  <!--<span class="bg-green">-->
+                    <!--3 Jan. 2014-->
+                  <!--</span>-->
+            <!--</li>-->
+            <!---->
+
+
+
             <!-- /.timeline-label -->
             <!-- timeline item -->
-            <li>
-                <i class="fa fa-camera bg-purple"></i>
-                <div class="timeline-item">
-                    <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-                    <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-                    <div class="timeline-body">
-                        <img src="http://placehold.it/150x100" alt="..." class='margin' />
-                        <img src="http://placehold.it/150x100" alt="..." class='margin'/>
-                        <img src="http://placehold.it/150x100" alt="..." class='margin'/>
-                        <img src="http://placehold.it/150x100" alt="..." class='margin'/>
-                    </div>
-                </div>
-            </li>
+
+
+            <!--<li>-->
+                <!--<i class="fa fa-camera bg-purple"></i>-->
+                <!--<div class="timeline-item">-->
+                    <!--<span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>-->
+                    <!--<h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>-->
+                    <!--<div class="timeline-body">-->
+                        <!--<img src="http://placehold.it/150x100" alt="..." class='margin' />-->
+                        <!--<img src="http://placehold.it/150x100" alt="..." class='margin'/>-->
+                        <!--<img src="http://placehold.it/150x100" alt="..." class='margin'/>-->
+                        <!--<img src="http://placehold.it/150x100" alt="..." class='margin'/>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+
+
             <!-- END timeline item -->
             <!--&lt;!&ndash; timeline item &ndash;&gt;-->
             <!--<li>-->
@@ -205,4 +344,16 @@
         </ul>
     </div><!-- /.col -->
 </div><!-- /.row -->
+
+<center>
+
+<button class="center-block" ng-click="loadMore()">Load More..</button>
+
+    <div class="container" id="loadMoreSpinner">
+        <!--<div class="spinner"></div>-->
+        <!--<div class="spinner border"></div>-->
+        <div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>
+    </div>
+</center>
+
 
