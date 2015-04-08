@@ -83,8 +83,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'editCommentRequest':
                     $this->edit_comment();
                     break;
+                case 'deleteCommentRequest':
+                    $this->delete_comment();
+                    break;
 
-                     }
+
+            }
 
 
         }
@@ -389,10 +393,11 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
     public function delete_comment(){
+
         $commentId='commentId';
         $commentId=$GLOBALS['request']->$commentId;
 
-        $sql='delete from comments where commentid='.$commentId;
+        $sql='delete from comments where comment_id='.$commentId;
         $result=$GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));

@@ -85,7 +85,7 @@ angular.module('myApp').controller('commentCtrl',
                 }
             }
             $scope.showModal = false;
-            
+
             var editCommentEntity = commentEntitiesService.editComment(editedCommentId,editedContent);
             var commentPromise = commentRequestService.editComment(editCommentEntity);
 
@@ -103,6 +103,27 @@ angular.module('myApp').controller('commentCtrl',
                     type: "error"
                 });
             });
+        }
+
+        $scope.deleteComment=function(commentId) {
+
+            var deleteCommentEntity = commentEntitiesService.deleteCommentEntity(commentId);
+            var commentPromise = commentRequestService.deleteComment(deleteCommentEntity);
+
+            commentPromise.then(function (d) {
+                console.log(d);
+
+                //delete comment
+
+
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error"
+                });
+            });
+
         }
 
 
