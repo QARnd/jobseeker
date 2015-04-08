@@ -85,7 +85,7 @@ angular.module('myApp').controller('commentCtrl',
                 }
             }
             $scope.showModal = false;
-            
+
             var editCommentEntity = commentEntitiesService.editComment(editedCommentId,editedContent);
             var commentPromise = commentRequestService.editComment(editCommentEntity);
 
