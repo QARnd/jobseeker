@@ -6,6 +6,7 @@
 angular.module('myApp').controller('newsfeedCtrl',
     function($scope, entitiesService, postRequestsService, authenticationService) {
         $('#loadMoreSpinner').hide();
+        $('#addNewPost').hide();
         console.log(authenticationService.userProfile.data);
         $scope.pageScrolls=1;
         $scope.js_id= authenticationService.userProfile.jobseekerId;
@@ -58,7 +59,7 @@ angular.module('myApp').controller('newsfeedCtrl',
                     type: "error"
                 });
             });
-        }
+        };
 
         $scope.loadMore=function(){
             //alert("load");
@@ -84,7 +85,7 @@ angular.module('myApp').controller('newsfeedCtrl',
                     type: "error"
                 });
             });
-        }
+        };
 
 
 
@@ -98,6 +99,12 @@ angular.module('myApp').controller('newsfeedCtrl',
         //
         //$(window).scroll(bindScroll);
 
+
+        $scope.showAddPost=function(){
+            $('#addNewPost').toggle('slow');
+        }
+
 });
+
 
 
