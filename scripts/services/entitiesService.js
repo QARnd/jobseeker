@@ -6,11 +6,12 @@
 angular.module('servicesModule').factory('entitiesService', function() {
 
     return {
-        postEntity: function(title,body,jobseeker_id) {
+        postEntity: function(title,body,jobseeker_id,fullname) {
             var post = {};     // new object
             post.title = title;
             post.body=body;
             post.jobseeker_id=jobseeker_id;
+            post.fullname=fullname;
             return post;
         },
 

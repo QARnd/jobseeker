@@ -8,10 +8,10 @@
 <div class="container" id="header">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
+                            data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span><span
                             class="icon-bar"></span><span class="icon-bar"></span><span
                             class="icon-bar"></span>
@@ -74,10 +74,10 @@
                         <li><img alt="140x140" src="{{userProfile.data.pictureUrl}}"
                                  class="img-circle" /></li>
                         <li><a ng-href="{{userProfile.data.publicProfileUrl}}">
-                            <h5 style="margin-top: 3px;" class="text-left text-info">
+                            <h5 style="margin-top: 3px;" class="text-left text-info ">
                                 {{userProfile.data.firstName}} {{userProfile.data.lastName}}</h5>
                         </a></li>
-                        <li><button class="btn btn-mini btn-primary"
+                        <li><button class="btn btn-mini btn-warning"
                                     style="margin-top: 6px;" type="button"
                                     ng-click="logoutLinkedIn()">Logout</button></li>
 

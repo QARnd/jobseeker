@@ -8,8 +8,9 @@ angular.module('myApp').controller('addPostCtrl',
             $scope.addPost = function () {
                 //alert($scope.title);
                var jobseeker_id=authenticationService.userProfile.jobseekerId;
+                var fullname=authenticationService.userProfile.full_name;
 
-            var postEntity = entitiesService.postEntity($scope.title,$scope.body,jobseeker_id);
+            var postEntity = entitiesService.postEntity($scope.title,$scope.body,jobseeker_id,fullname);
 
             var postPromise = postRequestsService.addPost(postEntity);
 

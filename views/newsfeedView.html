@@ -126,7 +126,7 @@
 
 </style>
 
-<p><button ng-click="showAddPost()" class="btn btn-default">Add New Post</button></p>
+<p><button ng-click="showAddPost()" class="btn btn-inverse">Add New Post</button></p>
 <center>
 
     <div ng-controller="addPostCtrl" id="addNewPost">
@@ -186,8 +186,8 @@
                         <i class="fa fa-comment-o bg-blue"></i>
                         <div class="timeline-item">
                             <span class="time"><i class="fa fa-clock-o"></i> {{post.publish_date}}</span>
-                            <h3 class="timeline-header"><a href="#/newsfeed/{{post.id}}">{{post.title}}</a></h3>
-                            <div class="timeline-body">
+                            <h3 class="timeline-header"><a href="#/newsfeed/{{post.id}}">{{post.fullname}}</a> - <a href="#/newsfeed/{{post.id}}">{{post.title}}</a></h3>
+                            <div class="timeline-body"  style="white-space: pre-line">
                                 {{post.body}}
                             </div>
                             <div class='timeline-footer'>
@@ -310,12 +310,12 @@
 
         <center>
 
-            <button class="center-block btn btn-default" ng-click="loadMore()">Load More..</button>
+            <button class="center-block btn btn-inverse" ng-click="loadMore()">Load More..</button>
 
             <div class="container" id="loadMoreSpinner">
                 <!--<div class="spinner"></div>-->
-                <!--<div class="spinner border"></div>-->
-                <div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>
+                <div class="spinner border"></div>
+                <!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
             </div>
         </center>
 
@@ -415,9 +415,9 @@
             <button class="center-block btn btn-default" ng-click="loadMoreNoti()">Load More..</button>
 
             <!--<div class="container" id="loadMoreNotiSpinner">-->
-                <!--&lt;!&ndash;<div class="spinner"></div>&ndash;&gt;-->
+                <!--<!--<div class="spinner"></div>-->-->
                 <!--<div class="spinner border"></div>-->
-                <!--&lt;!&ndash;<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>&ndash;&gt;-->
+                <!--<!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->-->
             <!--</div>-->
         </center>
 

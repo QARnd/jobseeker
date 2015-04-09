@@ -107,11 +107,13 @@ class Jobseeker_Form extends Jobseeker_DB {
         $body=$GLOBALS['request']->$entity->$body;
         $jobseeker_id='jobseeker_id';
         $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
-        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"seen","'.date("Y-m-d H:i:s").'")';
+        $fullname='fullname';
+        $fullname=$GLOBALS['request']->$entity-> $fullname;
+        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"seen","'.date("Y-m-d H:i:s").'","'.$fullname.'")';
         $GLOBALS['db']->db_query($sql);
 
         $last_id=$GLOBALS['db']->db_insid();
-        $newPost = array('id'=>$last_id,'title' => $title,'body' => $body,'publish_date'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>$jobseeker_id,'status'=>"seen");
+        $newPost = array('id'=>$last_id,'title' => $title,'body' => $body,'publish_date'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>$jobseeker_id,'status'=>"seen",'full_name'=>$fullname);
         print (json_encode($newPost));
 
     }
@@ -160,7 +162,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $postId='postId';
         $postId=$GLOBALS['request']->$postId;
-        $sql='select* from posts  where posts.id='.$postId.'';
+        $sql='select * from posts where posts.id='.$postId.'';
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 

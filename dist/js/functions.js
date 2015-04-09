@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 2/25/2015.
  */
 function trimString(str){
-    var length = 30;
+    var length = 300;
     var trimmedString = str.substring(0, length)+"...";
     return trimmedString
 }

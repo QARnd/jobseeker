@@ -27,6 +27,7 @@ angular.module('myApp').controller('singlePostCtrl',
             $scope.jobseeker_id=post.jobseeker_id;
             $scope.publish_date=post.publish_date;
             $scope.status=post.status;
+            $scope.fullname=post.fullname;
 
 
         }, function (d) {
