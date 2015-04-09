@@ -35,6 +35,11 @@ angular.module('myApp').controller('commentCtrl',
 
         };
 
+        
+
+
+
+
         $scope.addComment = function () {
             var postId=$routeParams.postId;
             //alert(postId);
@@ -67,6 +72,13 @@ angular.module('myApp').controller('commentCtrl',
                 });
             });
         };
+
+
+
+
+
+
+
 
 
         $scope.showModal = false;

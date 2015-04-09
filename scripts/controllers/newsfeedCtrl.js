@@ -4,7 +4,7 @@
 
 
 angular.module('myApp').controller('newsfeedCtrl',
-    function($scope, entitiesService, postRequestsService, authenticationService) {
+    function($rootScope,$scope, entitiesService, postRequestsService, authenticationService) {
         $('#loadMoreSpinner').hide();
         $('#addNewPost').hide();
         console.log(authenticationService.userProfile.data);
@@ -12,7 +12,7 @@ angular.module('myApp').controller('newsfeedCtrl',
         $scope.js_id= authenticationService.userProfile.jobseekerId;
 
         $scope.getNewsFeed=function(){
-            $scope.posts=[
+            $rootScope.posts=[
 
             ];
 
@@ -20,7 +20,7 @@ angular.module('myApp').controller('newsfeedCtrl',
 
             postPromise.then(function (d) {
                 console.log(d);
-                $scope.posts= d.data;
+                $rootScope.posts= d.data;
 
 
 
@@ -41,24 +41,44 @@ angular.module('myApp').controller('newsfeedCtrl',
 
 
         $scope.deletePost=function(postId){
-            var postPromise = postRequestsService.deletePost(postId);
+            swal({
+                    title: "Are you sure?",
+                    text: "Delete!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete!",
+                    closeOnConfirm: true },
+                function() {
+                    var postPromise = postRequestsService.deletePost(postId);
 
-            postPromise.then(function (d) {
-                console.log(d);
-                swal({
-                    title: "SUCCESS",
-                    text: "Delete Done Successfully",
-                    type: "success"
-                });
-                $scope.getNewsFeed();
 
-            }, function (d) {
-                swal({
-                    title: "Error!",
-                    text: "Something went wrong, please try again later",
-                    type: "error"
-                });
-            });
+                    //delete post
+                    for (var i = 0; i < $rootScope.posts.length; i++) {
+                        if ($rootScope.posts[i].id == postId) {
+                            $rootScope.posts.splice(i, 1);
+                            break;
+                        }
+                    }
+
+                    postPromise.then(function (d) {
+                        console.log(d);
+                        //swal({
+                        //    title: "SUCCESS",
+                        //    text: "Delete Done Successfully",
+                        //    type: "success"
+                        //});
+                        //$scope.getNewsFeed();
+
+                    }, function (d) {
+                        swal({
+                            title: "Error!",
+                            text: "Something went wrong, please try again later",
+                            type: "error"
+                        });
+                    });
+                }
+            );
         };
 
         $scope.loadMore=function(){

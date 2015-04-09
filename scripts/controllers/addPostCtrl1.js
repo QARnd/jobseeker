@@ -1,12 +1,12 @@
 
 angular.module('myApp').controller('addPostCtrl',
-    function($scope, entitiesService, postRequestsService, authenticationService) {
+    function($rootScope, $scope, entitiesService, postRequestsService, authenticationService) {
 
             console.log(authenticationService.userProfile.jobseekerId);
 
 
             $scope.addPost = function () {
-                alert($scope.title);
+                //alert($scope.title);
                var jobseeker_id=authenticationService.userProfile.jobseekerId;
 
             var postEntity = entitiesService.postEntity($scope.title,$scope.body,jobseeker_id);
@@ -15,6 +15,20 @@ angular.module('myApp').controller('addPostCtrl',
 
 
             postPromise.then(function (d) {
+                var post= d.data;
+                $scope.postId= post.id;
+                $scope.body= post.body;
+                $scope.title= post.title;
+                $scope.status= post.status;
+                $scope.jobseeker_id= post.jobseeker_id;
+
+                $scope.publish_date=post.publish_date;
+
+                $rootScope.posts.unshift({id:post.id,title:post.title,body:post.body,status:post.status,jobseeker_id:post.jobseeker_id,publish_date:post.publish_date});
+
+
+
+
                 swal({
                     title: "Success!",
                     text: "Your Post Has been Published! With Title:"+d.data,

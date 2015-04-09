@@ -107,9 +107,13 @@ class Jobseeker_Form extends Jobseeker_DB {
         $body=$GLOBALS['request']->$entity->$body;
         $jobseeker_id='jobseeker_id';
         $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
-        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"jkk","'.date("Y-m-d H:i:s").'")';
+        $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"seen","'.date("Y-m-d H:i:s").'")';
         $GLOBALS['db']->db_query($sql);
-        print ($title);
+
+        $last_id=$GLOBALS['db']->db_insid();
+        $newPost = array('id'=>$last_id,'title' => $title,'body' => $body,'publish_date'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>$jobseeker_id,'status'=>"seen");
+        print (json_encode($newPost));
+
     }
 
 

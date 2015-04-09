@@ -129,7 +129,7 @@
 <p><button ng-click="showAddPost()" class="btn btn-default">Add New Post</button></p>
 <center>
 
-    <div id="addNewPost">
+    <div ng-controller="addPostCtrl" id="addNewPost">
         <div class="row">
             <div class="col-md-12">
                 <!-- general form elements disabled -->
@@ -141,14 +141,12 @@
 
                         <!-- text input -->
                         <div class="form-group">
-                            <label>Title</label>
                             <input type="text"  ng-model="title" class="form-control" placeholder="Enter Title..."/>
                         </div>
 
 
                         <!-- textarea -->
                         <div class="form-group">
-                            <label>Body</label>
                             <textarea ng-model="body" class="form-control" rows="3" placeholder="Enter Body..."></textarea>
                         </div>
 
@@ -326,7 +324,7 @@
 
 
     <!--Notifications-->
-    <div class="col-sm-3" style="position:fixed; right: -2px; height:600px; overflow:auto">
+    <div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">
 
         <div ng-controller="addPostCtrl" id="newsfeedContent">
 
@@ -408,6 +406,20 @@
                 </div>
             </section>
         </div>
+
+
+
+
+        <center>
+
+            <button class="center-block btn btn-default" ng-click="loadMoreNoti()">Load More..</button>
+
+            <!--<div class="container" id="loadMoreNotiSpinner">-->
+                <!--&lt;!&ndash;<div class="spinner"></div>&ndash;&gt;-->
+                <!--<div class="spinner border"></div>-->
+                <!--&lt;!&ndash;<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>&ndash;&gt;-->
+            <!--</div>-->
+        </center>
 
     </div>
     <!--End Notifications-->

@@ -25,6 +25,7 @@ angular.module('myApp').controller('singlePostCtrl',
             $scope.title= post.title;
             $scope.body= post.body;
             $scope.jobseeker_id=post.jobseeker_id;
+            $scope.publish_date=post.publish_date;
             $scope.status=post.status;
 
 
