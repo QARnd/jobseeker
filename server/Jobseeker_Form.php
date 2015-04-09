@@ -211,7 +211,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function get_jobs(){
 
-        $sql='select * from jobs';
+        $sql='select * from job';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -229,7 +229,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$jobId;
-        $sql='select * from jobs where job_id='.$jobId;
+        $sql='select * from job where jobId='.$jobId;
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 
@@ -241,7 +241,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$jobId;
 
-        $sql='delete from jobs where job_id='.$jobId;
+        $sql='delete from job where jobId='.$jobId;
         $result=$GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));
@@ -265,7 +265,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobId=$GLOBALS['request']->$entity->$jobId;
 
 
-        $sql = 'update jobs set jobTitle= "'.$jobTitle.'",jobDescription="'.$JobDescription.'",jobTag="'.$JobTag.'" where job_id='.$jobId;
+        $sql = 'update job set jobTitle= "'.$jobTitle.'",jobDescription="'.$JobDescription.'",jobTag="'.$JobTag.'" where jobId='.$jobId;
         $GLOBALS['db']->db_query($sql);
 
         print(json_encode("Done"));

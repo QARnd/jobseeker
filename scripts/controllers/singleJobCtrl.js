@@ -19,7 +19,7 @@ angular.module('myApp').controller('singleJobCtrl',
         $scope.update = function () {
             $scope.dis = true;
 
-            var jobEntity = jobEntitiesService.updateJobEntity($scope.jobTitle, $scope.JobDescrbtion,$scope.JobTag, $scope.jobId);
+            var jobEntity = jobEntitiesService.updateJobEntity($scope.jobTitle, $scope.jobDescription,$scope.jobTag, $scope.jobId);
 
             var jobPromise = jobRequestsService.updateJob(jobEntity);}
 
@@ -31,9 +31,9 @@ angular.module('myApp').controller('singleJobCtrl',
             var job= d.data;
             $scope.jobId= job.jobId;
             $scope.jobTitle= job.jobTitle;
-            $scope.JobDescrbtion= job.JobDescrbtion;
-            $scope.JobTag= job.JobTag;
-            $scope.provider_id=job.provider_id;
+            $scope.jobDescription= job.jobDescription;
+            $scope.jobTag= job.jobTag;
+            $scope.providerId=job.providerId;
 
 
         }, function (d) {
