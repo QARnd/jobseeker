@@ -106,7 +106,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $body='body';
         $body=$GLOBALS['request']->$entity->$body;
         $jobseeker_id='jobseeker_id';
-        $ $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
+        $jobseeker_id=$GLOBALS['request']->$entity-> $jobseeker_id;
         $sql='insert into posts values(NULL,"'.$title.'","'.$body.'",'.$jobseeker_id.',"jkk","'.date("Y-m-d H:i:s").'")';
         $GLOBALS['db']->db_query($sql);
         print ($title);
@@ -195,6 +195,19 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode("Done"));
     }
 
+    public function add_job(){
+
+        $entity='Entity';
+        $jobTitle='jobTitle';
+        $jobTitle=$GLOBALS['request']->$entity->$jobTitle;
+        $jobDescrbtion='jobDescrbtion';
+        $jobDescrbtion=$GLOBALS['request']->$entity->$jobDescrbtion;
+        $jobTag='jobTag';
+        $jobTag=$GLOBALS['request']->$entity-> $jobTag;
+        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescrbtion.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1)';
+        $GLOBALS['db']->db_query($sql);
+        print ($sql);
+    }
 
     public function get_jobs(){
 

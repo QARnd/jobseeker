@@ -1,16 +1,17 @@
 
 angular.module('myApp').controller('addJobCtrl',
-    function($scope, entitiesService, jobRequestsService, authenticationService) {
+    function($scope, jobEntitiesService, jobRequestsService, authenticationService) {
 
         $scope.addJob = function () {
 
 
-            var jobEntity = entitiesService.jobEntity($scope.jobTitle,$scope.jobDescrbtion,$scope.tags);
+            var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescrbtion,$scope.tags);
             alert($scope.jobTitle);
 
             var jobPromise = jobRequestsService.addJob(jobEntity);
 
            jobPromise.then(function (d) {
+               console.log(d);
                 swal({
                     title: "Success!",
                     text: "Your job Has been added! With name:"+d.data,
