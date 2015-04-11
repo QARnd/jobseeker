@@ -1,52 +1,144 @@
 
-<div ng-hide="p_id==provider_id">
+<div >
     <ul class="timeline" >
         <!-- timeline time label -->
         <li class="time-label">
-                      <span class="bg-red">
-                        10 Feb. 2014
-                      </span>
+                      <span ng-show="jobseeker_id==jp_id" class="bg-green">
+                                <a href="#/newsfeed/{{jobId}}" style="color: white">This Is Me</a>
+                              </span>
+                              <span ng-hide="jobseeker_id==jp_id" class="bg-blue">
+                                <a href="#/newsfeed/{{jobId}}" style="color: white">{{Name}}</a>
+                              </span>
         </li>
         <!-- /.timeline-label -->
         <!-- timeline item -->
         <li>
             <i class="fa fa-comment-o bg-blue"></i>
             <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                <span class="time"><i class="fa fa-clock-o"></i> {{publishDate}}<span>  <a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click=toggle()  ng-show="jp_id==providerId"></a></span></span>
                 <h3 class="timeline-header"><a href="#">{{jobTitle}}</a></h3>
                 <div class="timeline-body" style="white-space: pre-line">
-                    <b>Description:</b> {{jobDescription}}
+                    {{jobDescription}}
                 </div>
-                <div class="timeline-body">
-                    <b>Tags:</b> {{jobTag}}
+                <div class="timeline-body" style="white-space: pre-line">
+                    {{jobTag}}
                 </div>
                 <!--<div class='timeline-footer'>-->
                 <!--<a class="btn btn-primary btn-xs" href="#/newsfeed/{{post.id}}">Read more</a>-->
                 <!--<a class="btn btn-danger btn-xs" ng-click="deletePost(post.id)">delete</a>-->
                 <!--</div>-->
+
             </div>
         </li>
 
     </ul>
-</div>
 
 
-<div ng-show="p_id==provider_id">
-    <div ng-init="dis=true" >
-        <p></p><b>Title:</b><input type=text ng-model="jobTitle"  placeholder= "title" ng-disabled="dis"></p>
 
-        <p><b>Description:</b> <textarea ng-model= "jobDescrbtion" placeholder= "body" ng-disabled="dis">{{JobDescrbtion}}</textarea></p>
-        <p><b> Tags:</b> <textarea ng-model= "jobTag" placeholder= "body" ng-disabled="dis">{{JobTag}}</textarea></p>
+    <!--Edit post div-->
+    <div id="editJob" class="center-block">
+        <section class="content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- general form elements disabled -->
+                    <div class="box box-primary">
+                        <div class="box-body">
+
+                            <div ng-init="dis=true" >
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text"  ng-model="jobTitle" class="form-control" ng-disabled="dis"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea ng-model="jobDescription" class="form-control" rows="3" ng-disabled="dis"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Requirements</label>
+                                    <textarea ng-model="jobTag" class="form-control" rows="3" ng-disabled="dis"></textarea>
+                                </div>
 
 
-        <p>
-            <button ng-click=toggle()>Edit</button>
-        </p>
+                                <p ng-hide="dis">
+                                    <button ng-click=update()>Save Changes</button>
+                                </p>
 
-        <p ng-hide="dis">
-            <button ng-click=update()>Save Changes</button>
-        </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--End Edit post div-->
+
+    </div>
+
+
+    <div ng-controller="commentJobCtrl" class="center-block">
+
+        <section class="content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- general form elements disabled -->
+                    <div class="box box-warning">
+                        <div class="box-body">
+
+
+                            <div class="form-group">
+                                <textarea ng-model="content" class="form-control" rows="1" placeholder="Write a comment ....."></textarea>
+                                <center>
+                                    <button class="btn btn-primary btn-xs fa fa-plus center-block" ng-click="addComment()"> Add Comment</button>
+                                </center>
+                            </div>
+
+
+                            <!--Get All Comments-->
+                            <!--get content from the DB using-->
+                            <ul class="timeline" ng-init="getComments()" id="comments">
+                                <li ng-repeat="comment in jobComments track by $index">
+                                    <div class="timeline-item">
+                                                <span class="time"><span><a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleModal(jobComment.comment_id,jobComment.content)"  ng-show="auth_user_id==jobComment.user_id"></a></span>
+                                                    <span>   <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteComment(jobComment.comment_id)"  ng-show="auth_user_id==comment.user_id"></a>  </span><i class="fa fa-clock-o"></i>  {{jobComment.date}}</span>
+                                        <h3 class="timeline-header fa fa-comments"><a href="#"> {{jobComment.fullname}}</a></h3>
+                                        <div class="timeline-body">
+                                            {{jobComment.content}}
+                                        </div>
+
+                                    </div>
+
+
+                                </li>
+                                <modal title="Update Comment" visible="showModal">
+                                    <div class="form-group">
+                                        <textarea ng-model="editedContent" class="form-control" rows="2"></textarea>
+                                        <center>
+                                            <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="editComment(editedCommentId,editedContent)"> Edit Comment</button>
+                                        </center>
+                                    </div>
+                                </modal>
+                            </ul>
+                            <!--End Get All Comments-->
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
 
     </div>
 </div>
+
+
+
 
