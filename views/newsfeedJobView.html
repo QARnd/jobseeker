@@ -177,16 +177,16 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- The time line -->
-                <div  ng-repeat="job in job">
+                <div  ng-repeat="job in jobs track by $index">
                     <ul class="timeline">
 
                         <!-- timeline time label -->
                         <li class="time-label">
                               <span ng-show="job.jobProvider==jp_id" class="bg-green">
-                                <a href="#/newsfeed/{{job.jobId}}" style="color: white">This Is Me</a>
+                                <a href="#/companies/{{job.jobProvider}}" style="color: white">Our Company</a>
                               </span>
                               <span ng-hide="job.jobProvider==jp_id" class="bg-blue">
-                                <a href="#/newsfeed/{{job.jobId}}" style="color: white">{{job.Name}}</a>
+                                <a href="#/companies/{{job.jobProvider}}" style="color: white">{{job.Name}}</a>
                               </span>
                         </li>
                         <!-- /.timeline-label -->
@@ -195,7 +195,7 @@
                             <i class="fa fa-comment-o bg-blue"></i>
                             <div class="timeline-item">
                                 <span class="time"><i class="fa fa-clock-o"></i> {{job.publishDate}}</span>
-                                <h3 class="timeline-header"><a href="#/newsfeed/{{job.jobId}}">{{job.jobTitle}}</a></h3>
+                                <h3 class="timeline-header"><a href="#/newsfeedJob/{{job.jobId}}">{{job.jobTitle}}</a></h3>
                                 <div class="timeline-body"  style="white-space: pre-line">
                                     {{job.jobDescription}}
                                 </div>
@@ -203,7 +203,7 @@
                                     {{job.jobTag}}
                                 </div>
                                 <div class='timeline-footer'>
-                                    <a class="btn btn-primary btn-xs" href="#/newsfeed/{{job.jobId}}">Read more</a>
+                                    <a class="btn btn-primary btn-xs" href="#/newsfeedJob/{{job.jobId}}">Read more</a>
                                     <a class="btn btn-danger btn-xs" ng-show="job.jobProvider==jp_id" ng-click="deleteJob(job.jobId)">delete</a>
                                 </div>
                             </div>

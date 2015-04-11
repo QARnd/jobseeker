@@ -9,7 +9,7 @@ angular.module('myApp').controller('singleJobCtrl',
         $scope.p_id= authenticationService.userProfile.provider_id;
         $scope.jobId=$routeParams.jobId;
 
-        alert($scope.p_id);
+        alert($scope.jobId);
 
         $scope.dis = true;
         $scope.toggle = function () {

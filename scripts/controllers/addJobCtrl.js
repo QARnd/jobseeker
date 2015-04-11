@@ -6,7 +6,7 @@ angular.module('myApp').controller('addJobCtrl',
 
                 //alert($scope.title);
                 var jp_id=authenticationService.userProfile.jobseekerId;
-                var company_name=authenticationService.userProfile.company_name;
+                //var company_name=authenticationService.userProfile.company_name;
 
 
             var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescription,$scope.jobTag);
@@ -24,7 +24,7 @@ angular.module('myApp').controller('addJobCtrl',
 
                 $scope.publishDate=jobs.publishDate;
 
-                $rootScope.job.unshift({jobId:jobs.jobId,jobTitle:jobs.jobTitle,jobDescription:jobs.jobDescription,jobTag:jobs.jobTag,jobProvider:jobs.jobProvider,publishDate:jobs.publishDate});
+                $rootScope.jobs.unshift({jobId:jobs.jobId,jobTitle:jobs.jobTitle,jobDescription:jobs.jobDescription,jobTag:jobs.jobTag,jobProvider:jobs.jobProvider,publishDate:jobs.publishDate,Name:"Our Company"});
 
                console.log(d);
                 swal({

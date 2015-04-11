@@ -244,14 +244,18 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobDescription=$GLOBALS['request']->$entity->$jobDescription;
         $jobTag='jobTag';
         $jobTag=$GLOBALS['request']->$entity-> $jobTag;
-        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1)';
+        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",5)';
         $GLOBALS['db']->db_query($sql);
-        print ($sql);
+
+
+        $last_id=$GLOBALS['db']->db_insid();
+        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>"jobTag");
+        print (json_encode($newPost));
     }
 
     public function get_jobs(){
 
-        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider==jobprovider.jobprovider_id';
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider=jobprovider.jobprovider_id';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -269,7 +273,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$jobId;
-        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider==jobprovider.jobprovider_id';
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider=jobprovider.jobprovider_id';
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 

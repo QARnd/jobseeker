@@ -12,7 +12,7 @@ angular.module('myApp').controller('newsfeedJobCtrl',
         $scope.jp_id= authenticationService.userProfile.provider_id;
 
         $scope.getNewsFeed=function(){
-            $rootScope.job=[
+            $rootScope.jobs=[
 
             ];
 
@@ -20,7 +20,7 @@ angular.module('myApp').controller('newsfeedJobCtrl',
 
             jobPromise.then(function (d) {
                 console.log(d);
-                $rootScope.job= d.data;
+                $rootScope.jobs= d.data;
 
 
 
@@ -54,9 +54,9 @@ angular.module('myApp').controller('newsfeedJobCtrl',
 
 
                     //delete post
-                    for (var i = 0; i < $rootScope.job.length; i++) {
-                        if ($rootScope.job[i].id == jobId) {
-                            $rootScope.job.splice(i, 1);
+                    for (var i = 0; i < $rootScope.jobs.length; i++) {
+                        if ($rootScope.jobs[i].id == jobId) {
+                            $rootScope.jobs.splice(i, 1);
                             break;
                         }
                     }
@@ -94,7 +94,7 @@ angular.module('myApp').controller('newsfeedJobCtrl',
                 console.log(d);
                 $('#loadMoreSpinner').hide();
                 $scope.pageScrolls=$scope.pageScrolls+1;
-                $scope.job= $scope.job.concat(d.data);
+                $rootScope.jobs= $rootScope.jobs.concat(d.data);
 
                 //$(window).bind('scroll', bindScroll);
 
