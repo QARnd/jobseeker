@@ -4,10 +4,10 @@
         <!-- timeline time label -->
         <li class="time-label">
                       <span ng-show="jobseeker_id==jp_id" class="bg-green">
-                                <a href="#/newsfeed/{{jobId}}" style="color: white">This Is Me</a>
+                                <a href="#/companies/{{jobId}}" style="color: white">Our Company</a>
                               </span>
                               <span ng-hide="jobseeker_id==jp_id" class="bg-blue">
-                                <a href="#/newsfeed/{{jobId}}" style="color: white">{{Name}}</a>
+                                <a href="#/companies/{{jobId}}" style="color: white">Our Company</a>
                               </span>
         </li>
         <!-- /.timeline-label -->
@@ -102,25 +102,25 @@
                             <ul class="timeline" ng-init="getComments()" id="comments">
                                 <li ng-repeat="comment in jobComments track by $index">
                                     <div class="timeline-item">
-                                                <span class="time"><span><a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleModal(jobComment.comment_id,jobComment.content)"  ng-show="auth_user_id==jobComment.user_id"></a></span>
-                                                    <span>   <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteComment(jobComment.comment_id)"  ng-show="auth_user_id==comment.user_id"></a>  </span><i class="fa fa-clock-o"></i>  {{jobComment.date}}</span>
-                                        <h3 class="timeline-header fa fa-comments"><a href="#"> {{jobComment.fullname}}</a></h3>
+                                                <span class="time"><span><a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleModal(comment.comment_id,comment.content)"  ng-show="auth_user_id==comment.user_id"></a></span>
+                                                    <span>   <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteComment(comment.comment_id)"  ng-show="auth_user_id==comment.user_id"></a>  </span><i class="fa fa-clock-o"></i>  {{comment.date}}</span>
+                                        <h3 class="timeline-header fa fa-comments"><a href="#"> {{comment.fullname}}</a></h3>
                                         <div class="timeline-body">
-                                            {{jobComment.content}}
+                                            {{comment.content}}
                                         </div>
 
                                     </div>
 
 
                                 </li>
-                                <modal title="Update Comment" visible="showModal">
+                                <jobModal title="Update Comment" visible="showModal">
                                     <div class="form-group">
                                         <textarea ng-model="editedContent" class="form-control" rows="2"></textarea>
                                         <center>
                                             <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="editComment(editedCommentId,editedContent)"> Edit Comment</button>
                                         </center>
                                     </div>
-                                </modal>
+                                </jobModal>
                             </ul>
                             <!--End Get All Comments-->
 

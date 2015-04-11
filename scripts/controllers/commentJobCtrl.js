@@ -60,7 +60,7 @@ angular.module('myApp').controller('commentJobCtrl',
 
                 $scope.date=comment.date;
 
-                $scope.jobComments.unshift({job_id:comment.jobId,content:comment.content,user_id:comment.userId,date:comment.date,company_name:comment.company_name,comment_id:comment.commentId});
+                $scope.jobComments.unshift({job_id:comment.jobId,content:comment.content,user_id:comment.userId,date:comment.date,fullname:comment.fullname,comment_id:comment.commentId});
 
                 $scope.content="";
             }, function (d) {
@@ -165,7 +165,7 @@ angular.module('myApp').controller('commentJobCtrl',
 
     });
 
-angular.module('myApp').directive('modal', function () {
+angular.module('myApp').directive('jobModal', function () {
     return {
         template: '<div class="modal fade">' +
         '<div class="modal-dialog">' +

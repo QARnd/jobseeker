@@ -163,7 +163,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $offset=$pageNum*5;
 
 
-        $sql='select * from job order by id desc limit 5 offset '.$offset;
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider=jobprovider.jobprovider_id order by jobId desc limit 5 offset '.$offset;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -255,7 +255,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function get_jobs(){
 
-        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider=jobprovider.jobprovider_id';
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider=jobprovider.jobprovider_id order by job.jobId desc limit 5';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -500,13 +500,13 @@ class Jobseeker_Form extends Jobseeker_DB {
         $GLOBALS['db']->db_query($sql);
 
         $last_id=$GLOBALS['db']->db_insid();
-        $newComment = array('commentId'=>$last_id,'content' => $content,'jobId' => $jobId,'date'=>date("Y-m-d H:i:s"), 'userId'=>$user_id,'company_name'=>$company_name);
+        $newComment = array('commentId'=>$last_id,'content' => $content,'jobId' => $jobId,'date'=>date("Y-m-d H:i:s"), 'userId'=>$user_id,'fullname'=>"The Is Me");
         print (json_encode($newComment));
     }
 
     public function get_commentsJob(){
         $entity='Entity';
-        $jobId='postId';
+        $jobId='jobId';
         $jobId=$GLOBALS['request']->$entity->$jobId;
 
         $sql_id='select * from jobComments where job_id='.$jobId.' order by comment_id desc';
