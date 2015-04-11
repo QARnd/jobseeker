@@ -41,6 +41,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllPostsByPageNumberRequest':
                     $this->getAllPostsByPageNumber();
                     break;
+                case 'getAllJobsByPageNumberRequest':
+                    $this->getAllJobsByPageNumber();
+                    break;
                 case 'getSinglePostRequest':
                     $this->getSinglePost();
                     break;
@@ -152,6 +155,25 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
+    public function getAllJobsByPageNumber(){
+        $pageScrolls='pageScrolls';
+        $pageScrolls=$GLOBALS['request']->$pageScrolls;
+
+        $pageNum=abs(intval($pageScrolls));
+        $offset=$pageNum*5;
+
+
+        $sql='select * from job order by id desc limit 5 offset '.$offset;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
+
 
 
     public function get_posts(){
@@ -218,18 +240,18 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $jobTitle='jobTitle';
         $jobTitle=$GLOBALS['request']->$entity->$jobTitle;
-        $jobDescrbtion='jobDescrbtion';
-        $jobDescrbtion=$GLOBALS['request']->$entity->$jobDescrbtion;
+        $jobDescription='jobDescription';
+        $jobDescription=$GLOBALS['request']->$entity->$jobDescription;
         $jobTag='jobTag';
         $jobTag=$GLOBALS['request']->$entity-> $jobTag;
-        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescrbtion.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1)';
+        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1)';
         $GLOBALS['db']->db_query($sql);
         print ($sql);
     }
 
     public function get_jobs(){
 
-        $sql='select * from job';
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider==jobprovider.jobprovider_id';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -247,7 +269,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$jobId;
-        $sql='select * from job where jobId='.$jobId;
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider==jobprovider.jobprovider_id';
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 

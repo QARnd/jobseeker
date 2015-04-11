@@ -1,16 +1,31 @@
 
 angular.module('myApp').controller('addJobCtrl',
-    function($scope, jobEntitiesService, jobRequestsService, authenticationService) {
+    function($rootScope,$scope, jobEntitiesService, jobRequestsService, authenticationService) {
 
         $scope.addJob = function () {
 
+                //alert($scope.title);
+                var jp_id=authenticationService.userProfile.jobseekerId;
+                var company_name=authenticationService.userProfile.company_name;
 
-            var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescrbtion,$scope.tags);
+
+            var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescription,$scope.jobTag);
             alert($scope.jobTitle);
 
             var jobPromise = jobRequestsService.addJob(jobEntity);
 
-           jobPromise.then(function (d) {
+            jobPromise.then(function (d) {
+                var jobs= d.data;
+                $scope.jobId= jobs.jobId;
+                $scope.jobTitle= jobs.jobTitle;
+                $scope.jobDescription= jobs.jobDescription;
+                $scope.jobTag= jobs.jobTag;
+                $scope.jobProvider= jobs.jobProvider;
+
+                $scope.publishDate=jobs.publishDate;
+
+                $rootScope.job.unshift({jobId:jobs.jobId,jobTitle:jobs.jobTitle,jobDescription:jobs.jobDescription,jobTag:jobs.jobTag,jobProvider:jobs.jobProvider,publishDate:jobs.publishDate});
+
                console.log(d);
                 swal({
                     title: "Success!",
