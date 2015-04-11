@@ -6,22 +6,10 @@
 angular.module('myApp').controller('singleJobCtrl',
     function($scope, jobEntitiesService, jobRequestsService,$routeParams, authenticationService) {
 
-        $scope.p_id= authenticationService.userProfile.provider_id;
+        //hide the edit div
+        $('#editJob').hide();
+        $scope.jp_id= authenticationService.userProfile.provider_id;
         $scope.jobId=$routeParams.jobId;
-
-        alert($scope.p_id);
-
-        $scope.dis = true;
-        $scope.toggle = function () {
-            $scope.dis = false;
-        }
-
-        $scope.update = function () {
-            $scope.dis = true;
-
-            var jobEntity = jobEntitiesService.updateJobEntity($scope.jobTitle, $scope.jobDescription,$scope.jobTag, $scope.jobId);
-
-            var jobPromise = jobRequestsService.updateJob(jobEntity);}
 
         var jobPromise = jobRequestsService.getSingleJob($scope.jobId);
 
@@ -43,5 +31,24 @@ angular.module('myApp').controller('singleJobCtrl',
                 type: "error"
             });
         });
+
+
+        //$scope.dis = true;
+        $scope.toggle = function () {
+            if($scope.dis)
+                $('#editJob').show();
+            else
+                $('#editJob').hide();
+            $scope.dis=!$scope.dis;
+        }
+
+        $scope.update = function () {
+            $scope.dis = true;
+            $('#editJob').hide();
+
+            var jobEntity = jobEntitiesService.updateJobEntity($scope.jobTitle, $scope.jobDescription,$scope.jobtag, $scope.jobId);
+
+            var jobPromise = jobRequestsService.updateJob(jobEntity);
+        }
 
     });
