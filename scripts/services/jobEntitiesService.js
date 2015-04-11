@@ -6,10 +6,10 @@ angular.module('servicesModule').factory('jobEntitiesService', function() {
 
     return {
 
-        jobEntity: function (jobTitle, jobDescrbtion, jobTag) {
+        jobEntity: function (jobTitle, jobDescription, jobTag) {
             var job = {};     // new object
             job.jobTitle = jobTitle;
-            job.jobDescrbtion = jobDescrbtion;
+            job.jobDescription = jobDescription;
             job.jobTag = jobTag;
             return job;
 
@@ -21,10 +21,10 @@ angular.module('servicesModule').factory('jobEntitiesService', function() {
             return deleteJob;
         },
 
-        updateJobEntity: function(jobTitle,jobDescrbtion,jobTag,jobId) {
+        updateJobEntity: function(jobTitle,jobDescription,jobTag,jobId) {
             var jobUpdated = {};     // new object
             jobUpdated.jobTitle = jobTitle;
-            jobUpdated.jobDescrbtion = jobDescrbtion;
+            jobUpdated.jobDescription = jobDescription;
             jobUpdated.jobTag=jobTag;
             jobUpdated.jobId=jobId;
             return jobUpdated;

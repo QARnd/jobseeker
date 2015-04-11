@@ -41,6 +41,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllPostsByPageNumberRequest':
                     $this->getAllPostsByPageNumber();
                     break;
+                case 'getAllJobsByPageNumberRequest':
+                    $this->getAllJobsByPageNumber();
+                    break;
                 case 'getSinglePostRequest':
                     $this->getSinglePost();
                     break;
@@ -89,6 +92,18 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'deleteCommentRequest':
                     $this->delete_comment();
                     break;
+                case 'addCommentJobRequest':
+                    $this->add_commentJob();
+                    break;
+                case 'getCommentsJobRequest':
+                    $this->get_commentsJob();
+                    break;
+                case 'editCommentJobRequest':
+                    $this->edit_commentJob();
+                    break;
+                case 'deleteCommentJobRequest':
+                    $this->delete_commentJob();
+                    break;
                 case 'createAccountRequest':
                     $this->createAccount();
                     break;
@@ -130,6 +145,25 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $sql='select * from posts order by id desc limit 5 offset '.$offset;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
+
+    public function getAllJobsByPageNumber(){
+        $pageScrolls='pageScrolls';
+        $pageScrolls=$GLOBALS['request']->$pageScrolls;
+
+        $pageNum=abs(intval($pageScrolls));
+        $offset=$pageNum*5;
+
+
+        $sql='select * from job order by id desc limit 5 offset '.$offset;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -206,18 +240,18 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $jobTitle='jobTitle';
         $jobTitle=$GLOBALS['request']->$entity->$jobTitle;
-        $jobDescrbtion='jobDescrbtion';
-        $jobDescrbtion=$GLOBALS['request']->$entity->$jobDescrbtion;
+        $jobDescription='jobDescription';
+        $jobDescription=$GLOBALS['request']->$entity->$jobDescription;
         $jobTag='jobTag';
         $jobTag=$GLOBALS['request']->$entity-> $jobTag;
-        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescrbtion.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1)';
+        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1)';
         $GLOBALS['db']->db_query($sql);
         print ($sql);
     }
 
     public function get_jobs(){
 
-        $sql='select * from job';
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider==jobprovider.jobprovider_id';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -235,7 +269,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$jobId;
-        $sql='select * from job where jobId='.$jobId;
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider==jobprovider.jobprovider_id';
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 
@@ -441,6 +475,71 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $sql = 'update comments set content= "'.$content.'" where comment_id='.$commentId;
+        $GLOBALS['db']->db_query($sql);
+        $newComment = array('commentId'=>$commentId,'content' => $content);
+
+        print(json_encode($newComment));
+    }
+
+    public function add_commentJob(){
+
+        $entity='Entity';
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$entity->$jobId;
+        $content='content';
+        $content=$GLOBALS['request']->$entity->$content;
+        $user_id='user_id';
+        $user_id=$GLOBALS['request']->$entity-> $user_id;
+        $company_name='company_name';
+        $company_name=$GLOBALS['request']->$entity-> $company_name;
+        $sql='insert into jobComments values(NULL,'.intval($jobId).',"'.$content.'","'.date("Y-m-d H:i:s").'",'.intval($user_id).',"'.$company_name.'")';
+        $GLOBALS['db']->db_query($sql);
+
+        $last_id=$GLOBALS['db']->db_insid();
+        $newComment = array('commentId'=>$last_id,'content' => $content,'jobId' => $jobId,'date'=>date("Y-m-d H:i:s"), 'userId'=>$user_id,'company_name'=>$company_name);
+        print (json_encode($newComment));
+    }
+
+    public function get_commentsJob(){
+        $entity='Entity';
+        $jobId='postId';
+        $jobId=$GLOBALS['request']->$entity->$jobId;
+
+        $sql_id='select * from jobComments where job_id='.$jobId.' order by comment_id desc';
+        $result_id=$GLOBALS['db']->db_query($sql_id);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result_id)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
+
+
+
+    public function delete_commentJob(){
+        $entity='Entity';
+        $commentId='commentId';
+        $commentId=$GLOBALS['request']->$entity->$commentId;
+
+        $cmtIdInt=intval($commentId);
+        $sql='delete from jobComments where comment_id='.$commentId;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode($commentId));
+    }
+
+    public function edit_commentJob()
+    {
+        $entity='Entity';
+        $commentId='commentId';
+        $commentId=$GLOBALS['request']->$entity->$commentId;
+
+        $content='content';
+        $content=$GLOBALS['request']->$entity->$content;
+
+
+        $sql = 'update jobComments set content= "'.$content.'" where comment_id='.$commentId;
         $GLOBALS['db']->db_query($sql);
         $newComment = array('commentId'=>$commentId,'content' => $content);
 
