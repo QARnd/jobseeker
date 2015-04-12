@@ -104,10 +104,10 @@
                                     <div class="timeline-item">
                                                 <span class="time"><span><a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleModal(comment.comment_id,comment.content)"  ng-show="auth_user_id==comment.user_id"></a></span>
                                                     <span>   <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteComment(comment.comment_id)"  ng-show="auth_user_id==comment.user_id"></a>  </span><i class="fa fa-clock-o"></i>  {{comment.date}}</span>
-                                                <h3 class="timeline-header fa fa-comments">
-                                                    <a href="#" ng-hide="auth_user_id==comment.user_id" > {{comment.fullname}}</a>
-                                                    <a href="#" ng-show="auth_user_id==comment.user_id" > This Is Me</a>
-                                                </h3>
+                                        <h3 class="timeline-header fa fa-comments">
+                                            <a href="#/jobseekers/{{comment.user_id}}" ng-hide="auth_user_id==comment.user_id" > {{comment.fullname}}</a>
+                                            <a href="#/jobseekers/{{comment.user_id}}" ng-show="auth_user_id==comment.user_id" > This Is Me</a>
+                                        </h3>
 
                                         <div class="timeline-body">
                                             {{comment.content}}

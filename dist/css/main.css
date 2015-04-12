@@ -1,6 +1,7 @@
 body{
-    background-image: url("../../imgs/job-seeking.jpg");
+    /*background-image: url("../../imgs/job-seeking.jpg");*/
     background-size:cover;
+    background:#f1f1f1;
 }
 
 

@@ -179,10 +179,10 @@
                     <!-- timeline time label -->
                          <li class="time-label">
                               <span ng-show="post.jobseeker_id==js_id" class="bg-green">
-                                <a href="#/newsfeed/{{post.id}}" style="color: white">This Is Me</a>
+                                <a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">This Is Me</a>
                               </span>
                               <span ng-hide="post.jobseeker_id==js_id" class="bg-blue">
-                                <a href="#/newsfeed/{{post.id}}" style="color: white">{{post.fullname}}</a>
+                                <a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">{{post.fullname}}</a>
                               </span>
                          </li>
                         <!-- /.timeline-label -->

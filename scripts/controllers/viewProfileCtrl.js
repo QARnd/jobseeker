@@ -6,11 +6,11 @@
 
 
 angular.module('myApp').controller('viewProfileCtrl',
-    function($scope, entitiesService, profileRequestService, authenticationService) {
+    function($scope,$routeParams, entitiesService, profileRequestService, authenticationService) {
 
-        $scope.viewProfile = function () {
+        $scope.user_id=$routeParams.id;
 
-            var profileEntity = entitiesService.profileEntity($scope.jobSeekerId);
+            var profileEntity = entitiesService.profileEntity($scope.user_id);
 
             var profilePromise = profileRequestService.viewProfile(profileEntity);
 
@@ -40,10 +40,6 @@ angular.module('myApp').controller('viewProfileCtrl',
 
                 }
 
-
-
-
-
             }, function (d) {
                 swal({
                     title: "Error!",
@@ -52,7 +48,16 @@ angular.module('myApp').controller('viewProfileCtrl',
                     timer: 2000
                 });
             });
-        };
+
+
+
+
+
+
+
+
+
+
         $scope.myVar = true;
         $scope.toggle = function() {
             $scope.myVar = !$scope.myVar;
