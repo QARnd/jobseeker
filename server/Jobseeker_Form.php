@@ -494,9 +494,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $content=$GLOBALS['request']->$entity->$content;
         $user_id='user_id';
         $user_id=$GLOBALS['request']->$entity-> $user_id;
-        $company_name='company_name';
-        $company_name=$GLOBALS['request']->$entity-> $company_name;
-        $sql='insert into jobComments values(NULL,'.intval($jobId).',"'.$content.'","'.date("Y-m-d H:i:s").'",'.intval($user_id).',"'.$company_name.'")';
+        $full_name='full_name';
+        $full_name=$GLOBALS['request']->$entity-> $full_name;
+        $sql='insert into jobComments values(NULL,'.intval($jobId).',"'.$content.'","'.date("Y-m-d H:i:s").'",'.intval($user_id).',"'.$full_name.'")';
         $GLOBALS['db']->db_query($sql);
 
         $last_id=$GLOBALS['db']->db_insid();

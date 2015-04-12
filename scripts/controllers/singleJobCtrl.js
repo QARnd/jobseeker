@@ -11,7 +11,7 @@ angular.module('myApp').controller('singleJobCtrl',
         $scope.jp_id= authenticationService.userProfile.provider_id;
         $scope.jobId=$routeParams.jobId;
 
-        alert($scope.jobId);
+        //alert($scope.jobId);
 
         $scope.dis = true;
         $scope.toggle = function () {
@@ -36,6 +36,7 @@ angular.module('myApp').controller('singleJobCtrl',
             $scope.jobDescription= job.jobDescription;
             $scope.jobTag= job.jobTag;
             $scope.providerId=job.providerId;
+            $scope.publishDate=job.publishDate;
 
 
         }, function (d) {

@@ -44,9 +44,9 @@ angular.module('myApp').controller('commentJobCtrl',
             var jobId=$routeParams.jobId;
             //alert(postId);
             var user_id=authenticationService.userProfile.user_id;
-            var company_name=authenticationService.userProfile.company_name;
-            //alert(full_name);
-            var commentEntity = commentJobEntitiesService.addComment(jobId,$scope.content,user_id,company_name);
+            var fullname=authenticationService.userProfile.full_name;
+            alert(fullname);
+            var commentEntity = commentJobEntitiesService.addComment(jobId,$scope.content,user_id,fullname);
 
             var commentPromise = commentJobRequestService.addComment(commentEntity);
 
@@ -164,46 +164,3 @@ angular.module('myApp').controller('commentJobCtrl',
 
 
     });
-
-angular.module('myApp').directive('jobModal', function () {
-    return {
-        template: '<div class="modal fade">' +
-        '<div class="modal-dialog">' +
-        '<div class="modal-content">' +
-        '<div class="modal-header">' +
-        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
-        '<h4 class="modal-title">{{ title }}</h4>' +
-        '</div>' +
-        '<div class="modal-body" ng-transclude></div>' +
-        '</div>' +
-        '</div>' +
-        '</div>',
-        restrict: 'E',
-        transclude: true,
-        replace:true,
-        scope:true,
-        link: function postLink(scope, element, attrs) {
-            scope.title = attrs.title;
-
-            scope.$watch(attrs.visible, function(value){
-                if(value == true)
-                    $(element).modal('show');
-                else
-                    $(element).modal('hide');
-            });
-
-            $(element).on('shown.bs.modal', function(){
-                scope.$apply(function(){
-                    scope.$parent[attrs.visible] = true;
-                });
-            });
-
-            $(element).on('hidden.bs.modal', function(){
-                scope.$apply(function(){
-                    scope.$parent[attrs.visible] = false;
-                });
-            });
-        }
-    };
-});
-

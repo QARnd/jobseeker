@@ -6,12 +6,12 @@
 angular.module('servicesModule').factory('commentJobEntitiesService', function() {
 
     return {
-        addComment:function(jobId,content,user_id,company_name){
+        addComment:function(jobId,content,user_id,full_name){
             var comment = {};     // new object
             comment.jobId=jobId;
             comment.content=content;
             comment.user_id=user_id;
-            comment.full_name=company_name;
+            comment.full_name=full_name;
             return comment;
         },
         editComment:function(commentId,content){
