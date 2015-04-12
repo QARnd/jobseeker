@@ -2,8 +2,8 @@ angular.module('myApp')
     .controller('headerCtrl', function ($scope,authenticationService,initially) {
         //  $scope.userProfile=authenticationService.userProfile;
         $scope.navPagesList = [
-            { filterId: 1, name: 'News Feed',target: 'newsfeed',show:'0'},
-            { filterId: 2, name: 'Jobs News Feed',target: 'newsfeedJob',show:'0'},
+            { filterId: 1, name: 'Posts NewsFeed',target: 'newsfeed',show:'0'},
+            { filterId: 2, name: 'Jobs NewsFeed',target: 'newsfeedJob',show:'0'},
             //   { filterId: 2, name: 'add Allowed User',target: 'addAllowedUser',show:'2' },
             //{ filterId: 3, name: 'Add Job',target: 'addJob',show:'0'},
             //{ filterId: 4, name: 'Add Post',target: 'addPost',show:'0' },

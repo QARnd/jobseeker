@@ -1,9 +1,35 @@
 
 angular.module('myApp').controller('addJobCtrl',
-    function($rootScope,$scope, jobEntitiesService, jobRequestsService, authenticationService) {
+    function($rootScope,$scope, jobEntitiesService, jobRequestsService, authenticationService,$http,$q) {
+
+
+        //Tags
+        $scope.allTags = [
+            { text: 'c#' },
+            { text: 'c++' },
+            { text: 'csharp' },
+            { text: 'angular' },
+            { text: 'javascript' },
+            { text: 'vb' },
+            { text: 'java' }
+        ];
+
+
+        $scope.tags = [
+            { text: 'c#' },
+            { text: 'c++' },
+            { text: 'csharp' },
+            { text: 'angular' },
+            { text: 'javascript' },
+            { text: 'vb' },
+            { text: 'java' }
+        ];
+        $scope.loadTags = function(query) {
+            return $scope.allTags;
+
+        };
 
         $scope.addJob = function () {
-
                 //alert($scope.title);
                 var jp_id=authenticationService.userProfile.jobseekerId;
                 //var company_name=authenticationService.userProfile.company_name;
@@ -43,5 +69,8 @@ angular.module('myApp').controller('addJobCtrl',
                });
            });
         };
+
+
+
 
     });

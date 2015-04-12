@@ -346,7 +346,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$row['jobseeker_id'];
         if (mysql_num_rows($result)==0)
         {
-            $sql='insert into jobseekers VALUES (NULL,"'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'.$skills.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$education.'","'.$summary.'","'.$industry.'","'.$location.'")';
+            $sql='insert into jobseekers VALUES (NULL,"'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'.$skills.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$education.'","'.$summary.'","'.$industry.'","'.$location.'",0)';
 
         }
         else{
@@ -424,6 +424,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $last_id=$GLOBALS['db']->db_insid();
         $newComment = array('commentId'=>$last_id,'content' => $content,'postId' => $postId,'date'=>date("Y-m-d H:i:s"), 'userId'=>$user_id,'fullname'=>$full_name);
         print (json_encode($newComment));
+
     }
 
     public function get_comments(){

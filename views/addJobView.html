@@ -4,6 +4,10 @@
    Description: <textarea placeholder="jobDescription" ng-model="jobDescription"></textarea><br>
    Requirements: <input type="text" placeholder="jobTag" ng-model="jobTag"><br>
 
+    <tags-input ng-model="tags">
+        <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+
     <button ng-click="addJob()">Add Job</button>
 
 </div>
