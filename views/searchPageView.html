@@ -48,9 +48,9 @@
 <div ng-controller="searchSeekersCtrl">
 
     <ul>
-        <li ng-repeat="x in result | filter: search ">
-            {{x.first_name }}
-            {{x.last_name }}
+        <li ng-repeat="x in result | filter: search track by $index">
+            <a href="#/jobseekers/{{x.jobseeker_id}}">{{x.first_name }} + " "+ {{x.last_name }}</a>
+
 
 
         </li>
