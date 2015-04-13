@@ -571,13 +571,14 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode("done"));
     }
 
+    
     public function search(){
 
         $entity='Entity';
         $search='search';
         $search=$GLOBALS['request']->$entity->$search;
 
-        $sql="select * from jobseekers where (first_name like'%' . $search . '%')or (last_name like '%' . $search . '%')" ;
+        $sql='select * from jobseekers where first_name LIKE "%' . $search .'%" or last_name LIKE "%' . $search .'%"' ;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();

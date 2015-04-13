@@ -62,11 +62,12 @@
                         </form>
                     </ul>
 
+
                     <form class="navbar-form navbar-left" role="search" ng-controller="searchSeekersCtrl">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search" ng-model="search">
                         </div>
-                        <button type="submit" class="btn btn-info" ng-click=ng-click="searchForSeekersByName(search)">Search</button>
+                        <a href="#/jobseekers" type="submit" class="btn btn-info" ng-click="searchForSeekersByName(search)">Search</a>
 
                         <!--<a href="#/jobseekers" type="submit" class="btn btn-info" ng-click="searchForSeekersByName(search)">Search</a>-->
                         <!--<button type="submit" class="btn btn-info" ng-click="redirect()">Search</button>-->
