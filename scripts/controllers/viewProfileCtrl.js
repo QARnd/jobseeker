@@ -8,6 +8,7 @@
 angular.module('myApp').controller('viewProfileCtrl',
     function($scope,$routeParams, entitiesService, profileRequestService, authenticationService) {
 
+        $scope.myId=authenticationService.userProfile.user_id;
         $scope.user_id=$routeParams.id;
 
             var profileEntity = entitiesService.profileEntity($scope.user_id);
@@ -58,10 +59,10 @@ angular.module('myApp').controller('viewProfileCtrl',
 
 
 
-        $scope.myVar = true;
-        $scope.toggle = function() {
-            $scope.myVar = !$scope.myVar;
-        }
+        //$scope.myVar = true;
+        //$scope.toggle = function() {
+        //    $scope.myVar = !$scope.myVar;
+        //}
         $scope.checkUser = function(fromId) {
             var jsId= authenticationService.userProfile.jobseekerId;
             console.log(fromId);
@@ -72,17 +73,28 @@ angular.module('myApp').controller('viewProfileCtrl',
             else {
                 return false;}
 
-        }
+        };
+
+
+
+        $scope.showModal = false;
+        $scope.toggle = function(){
+            $scope.showModal = !$scope.showModal;
+            $scope.getMessages();
+        };
+
         $scope.sendMessage = function () {
-            var from_id= authenticationService.userProfile.jobseekerId;
-            var messageEntity = entitiesService.messageEntity($scope.content,$scope.to_id,from_id);
+            var from_id= authenticationService.userProfile.user_id;
+            var to_id=$scope.user_id;
+            var messageEntity = entitiesService.messageEntity($scope.content,to_id,from_id);
             var messagePromise = profileRequestService.sendMessage(messageEntity);
-            alert($scope.content);
+            //console.log(from_id+","+to_id+","+$scope.content);
+            $scope.content="";
             messagePromise.then(function (d) {console.log(d);
                 var message= d.data;
-                $scope.content= message.content;
-                var html='<li><span class="left">'+message.content+'</span></li>';
-                $("#msgs").append(html);
+
+                $scope.messages.unshift({messageId:message.message_id,content:message.content,sendate:message.sendate,from_id:message.fromId,to_id:message.toId});
+                $scope.content="";
 
 
             }, function (d) {
@@ -97,10 +109,10 @@ angular.module('myApp').controller('viewProfileCtrl',
 
         $scope.getMessages = function () {
 
-            var from_id = authenticationService.userProfile.jobseekerId;
-            alert(from_id);
-            alert($scope.jobSeekerId);
-            var messageEntity = entitiesService.getMessagesEntity(from_id,$scope.jobSeekerId);
+            var from_id = authenticationService.userProfile.user_id;
+            //alert(from_id);
+            //alert($scope.user_id);
+            var messageEntity = entitiesService.getMessagesEntity(from_id,$scope.user_id);
             var messagePromise =profileRequestService.getMessages(messageEntity);
 
             messagePromise.then(function (d) {

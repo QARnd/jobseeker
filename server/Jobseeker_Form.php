@@ -370,7 +370,8 @@ class Jobseeker_Form extends Jobseeker_DB {
         $sql='insert into messages values(NULL,"'.$content.'","'.date("Y-m-d H:i:s").'",'.$js_id.','.$to_id.')';
         $result=$GLOBALS['db']->db_query($sql);
 
-        $newMsg = array('content' => $content,'date' => date("Y-m-d H:i:s"), 'from_id' => $js_id, 'to_id'=>$to_id);
+        $last_id=$GLOBALS['db']->db_insid();
+        $newMsg = array('messageId' => $last_id,'content' => $content,'sendate' => date("Y-m-d H:i:s"), 'fromId' => $js_id, 'toId'=>$to_id);
         print (json_encode($newMsg));
     }
 
@@ -384,7 +385,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $to_id='to_id';
         $to_id=$GLOBALS['request']->$entity->$to_id;
 
-        $sql='select * from messages where (from_id='.$js_id.' and to_id='.$to_id.')or(to_id='.$js_id.' and from_id='.$to_id.')' ;
+        $sql='select * from messages where ( from_id='.$js_id.' and to_id='.$to_id.' ) or ( from_id='.$to_id.' and to_id='.$js_id.' ) order by message_id desc limit 100';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();

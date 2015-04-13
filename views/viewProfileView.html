@@ -36,30 +36,6 @@
 <!--</div>-->
 
 
-
-<!--<div class="chat-box"  ng-hide="myVar">-->
-    <!--<div class="header">-->
-        <!--{{first_name}}-->
-    <!--</div>-->
-    <!--<div   class="messages">-->
-        <!--<ul id="msgs">-->
-            <!--<li  ng-repeat='message in messages track by $index'>-->
-                <!--<span ng-if="!checkUser(message.from_id)">  <span class="left">{{message.content}}</span></span>-->
-
-                <!--<span ng-if="checkUser(message.from_id)">  <span class="right">{{message.content}}></span></span>-->
-                <!--<div class="clear"></div>-->
-            <!--</li>-->
-        <!--</ul>-->
-        <!--<div class="clear"></div>-->
-    <!--</div>-->
-
-    <!--<div class="input-box">-->
-        <!--<textarea ng-model="content" class="form-control" rows="7" placeholder="Enter message..."></textarea>-->
-
-    <!--</div>-->
-    <!--<button ng-click="sendMessage()">send</button>-->
-<!--</div>-->
-
 <!--</div>-->
 
 
@@ -91,10 +67,34 @@
                     <a class="btn btn-primary btn-linkedin btn-sm" href="{{profileUrl}}">
                         <i class="fa fa-linkedin"></i>
                     </a>
-                    <a class="btn btn-danger btn-sm" rel="publisher"
-                       href="https://plus.google.com/+ahmshahnuralam">
-                        Send A Message
-                    </a>
+                    <button  class="btn btn-danger btn-sm" rel="publisher" ng-click="toggle()">
+                        Messages
+                    </button>
+
+                    <chat title="Chat .." visible="showModal">
+                        <div class="chat-box center-block">
+                            <div class="header">
+                                {{first_name}} {{last_name}}
+                            </div>
+                            <div class="chat-box center-block">
+                                <div class="input-box">
+                                    <textarea id="msg_content" ng-model="$parent.content" class="form-control msg_content" rows="2" placeholder="Enter message..."></textarea>
+
+                                </div>
+                                <button class="send_msg btn btn-danger sendBtn" ng-click="sendMessage()" >SEND A MESSAGE..</button>
+                                <div class="messages">
+                                    <ul id="msgs">
+                                        <li  ng-repeat='message in messages track by $index'>
+                                            <span ng-show="message.from_id==myId" class="left" alt="{{message.sendate}}">{{message.content}}</span>
+                                            <span ng-show="message.from_id!=myId" class="right" alt="{{message.sendate}}">{{message.content}}</span>
+                                            <div class="clear"></div>
+                                        </li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </chat>
 
                 </div>
 
