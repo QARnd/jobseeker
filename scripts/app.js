@@ -23,7 +23,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/jobseekers/:id', {templateUrl: 'views/viewProfileView.html', controller: 'viewProfileCtrl'});
 
-
+    $routeProvider.when('/search/:search', {templateUrl: 'views/searchPageView.html', controller: 'searchSeekersCtrl'});
 
 
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});

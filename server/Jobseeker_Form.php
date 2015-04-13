@@ -107,6 +107,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'createAccountRequest':
                     $this->createAccount();
                     break;
+                case 'searchRequest':
+                    $this->search();
+                    break;
 
             }
 
@@ -567,6 +570,22 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode("done"));
     }
 
+    public function search(){
+
+        $entity='Entity';
+        $search='search';
+        $search=$GLOBALS['request']->$entity->$search;
+
+        $sql="select * from jobseekers where (first_name like'%' . $search . '%')or (last_name like '%' . $search . '%')" ;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
 
 }
 
