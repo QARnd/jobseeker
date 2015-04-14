@@ -110,12 +110,25 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'searchRequest':
                     $this->search();
                     break;
-
+                case'getAllJobsRequest1':
+                    $this->getAllJobs();
+                    break;
             }
 
         }
     }
-
+    public function getAllJobs(){
+        $entity='Entity';
+        $lastJobId='lastJobId';
+        $lastJobId=$GLOBALS['request']->$entity->$lastJobId;
+        $sql='select*from jobs where lastJobId='.$lastJobId.' ';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+    }
     public function add_post(){
 
         $entity='Entity';
