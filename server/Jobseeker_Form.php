@@ -252,7 +252,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $last_id=$GLOBALS['db']->db_insid();
-        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>"jobTag");
+        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>$jobTag);
         print (json_encode($newPost));
     }
 
