@@ -566,12 +566,12 @@ class Jobseeker_Form extends Jobseeker_DB {
         $description=$GLOBALS['request']->$entity->$description;
         $location='location';
         $location=$GLOBALS['request']->$entity->$location;
-        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'",'.$description.','.$location.'';
+        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$description.'","'.$location.'")';
         $GLOBALS['db']->db_query($sql);
-        print(json_encode("done"));
+        print(json_encode($name));
     }
 
-    
+
     public function search(){
 
         $entity='Entity';

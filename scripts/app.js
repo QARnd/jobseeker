@@ -25,6 +25,8 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/jobseekers/:id', {templateUrl: 'views/viewProfileView.html', controller: 'viewProfileCtrl'});
 
+    $routeProvider.when('/createAccount', {templateUrl: 'views/createAccountView.html', controller: 'createAccountCtrl'});
+
 
 
 
