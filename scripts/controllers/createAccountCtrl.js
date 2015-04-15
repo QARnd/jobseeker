@@ -14,7 +14,7 @@ angular.module('myApp').controller('createAccountCtrl',
             createAccountPromise.then(function (d) {
                 swal({
                     title: "Success!",
-                    text: "Your Post Has been Published! With Title:"+d.data,
+                    text: "Company Has been Added! With Name:"+d.data,
                     type: "success",
                     timer: 5000
                 });

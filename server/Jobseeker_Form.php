@@ -107,6 +107,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'createAccountRequest':
                     $this->createAccount();
                     break;
+                case 'searchRequest':
+                    $this->search();
+                    break;
 
             }
 
@@ -249,7 +252,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $last_id=$GLOBALS['db']->db_insid();
-        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>"jobTag");
+        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>$jobTag);
         print (json_encode($newPost));
     }
 
@@ -346,7 +349,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$row['jobseeker_id'];
         if (mysql_num_rows($result)==0)
         {
-            $sql='insert into jobseekers VALUES (NULL,"'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'.$skills.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$education.'","'.$summary.'","'.$industry.'","'.$location.'")';
+            $sql='insert into jobseekers VALUES (NULL,"'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'.$skills.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$education.'","'.$summary.'","'.$industry.'","'.$location.'",0)';
 
         }
         else{
@@ -370,7 +373,8 @@ class Jobseeker_Form extends Jobseeker_DB {
         $sql='insert into messages values(NULL,"'.$content.'","'.date("Y-m-d H:i:s").'",'.$js_id.','.$to_id.')';
         $result=$GLOBALS['db']->db_query($sql);
 
-        $newMsg = array('content' => $content,'date' => date("Y-m-d H:i:s"), 'from_id' => $js_id, 'to_id'=>$to_id);
+        $last_id=$GLOBALS['db']->db_insid();
+        $newMsg = array('messageId' => $last_id,'content' => $content,'sendate' => date("Y-m-d H:i:s"), 'fromId' => $js_id, 'toId'=>$to_id);
         print (json_encode($newMsg));
     }
 
@@ -384,7 +388,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $to_id='to_id';
         $to_id=$GLOBALS['request']->$entity->$to_id;
 
-        $sql='select * from messages where (from_id='.$js_id.' and to_id='.$to_id.')or(to_id='.$js_id.' and from_id='.$to_id.')' ;
+        $sql='select * from messages where ( from_id='.$js_id.' and to_id='.$to_id.' ) or ( from_id='.$to_id.' and to_id='.$js_id.' ) order by message_id desc limit 100';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -424,6 +428,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $last_id=$GLOBALS['db']->db_insid();
         $newComment = array('commentId'=>$last_id,'content' => $content,'postId' => $postId,'date'=>date("Y-m-d H:i:s"), 'userId'=>$user_id,'fullname'=>$full_name);
         print (json_encode($newComment));
+
     }
 
     public function get_comments(){
@@ -561,27 +566,23 @@ class Jobseeker_Form extends Jobseeker_DB {
         $description=$GLOBALS['request']->$entity->$description;
         $location='location';
         $location=$GLOBALS['request']->$entity->$location;
-        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'",'.$description.','.$location.'';
+        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$description.'","'.$location.'")';
         $GLOBALS['db']->db_query($sql);
-        print(json_encode("done"));
+        print(json_encode($name));
     }
 
 
+    public function search(){
 
-
-
-    public function getAllJobs(){
         $entity='Entity';
-        $last_id='$last_id';
-        $$last_id=$GLOBALS['request']->$entity->$$last_id;
+        $search='search';
+        $search=$GLOBALS['request']->$entity->$search;
 
-        $jobProvider='$jobProvider';
-        $jobProvider=$GLOBALS['request']->$entity->$jobProvider;
+        $sql='select * from jobseekers where first_name LIKE "%' . $search .'%" or last_name LIKE "%' . $search .'%"' ;
+        $result=$GLOBALS['db']->db_query($sql);
 
-        $sql_id='select * from job where jobId >'.$last_id.' ';
-        $result_id=$GLOBALS['db']->db_query($sql_id);
         $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result_id)){
+        while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
         print(json_encode($total));

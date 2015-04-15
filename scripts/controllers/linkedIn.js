@@ -91,3 +91,4 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
     });
+

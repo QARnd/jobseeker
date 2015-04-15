@@ -64,10 +64,10 @@ angular.module('servicesModule').factory('entitiesService', function() {
 
             return user;
         },
-        getMessagesEntity: function(from_id,jobSeekerId){
+        getMessagesEntity: function(from_id,to_id){
             var message = {};     // new object
             message.from_id=from_id;
-            message.to_id=jobSeekerId;
+            message.to_id=to_id;
             return message;
         },
         createAccountEntity: function(name,email,description,location) {
