@@ -567,6 +567,27 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
 
+
+
+
+    public function getAllJobs(){
+        $entity='Entity';
+        $last_id='$last_id';
+        $$last_id=$GLOBALS['request']->$entity->$$last_id;
+
+        $jobProvider='$jobProvider';
+        $jobProvider=$GLOBALS['request']->$entity->$jobProvider;
+
+        $sql_id='select * from job where jobId >'.$last_id.' ';
+        $result_id=$GLOBALS['db']->db_query($sql_id);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result_id)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
+
 }
 
 $GLOBALS['request']=json_decode(file_get_contents('php://input'));
