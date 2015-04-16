@@ -12,7 +12,7 @@ angular.module('servicesModule').factory('accountRequestsService', function($htt
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
-            return postPromise;
+            return createAccountPromise;
         }
 
 

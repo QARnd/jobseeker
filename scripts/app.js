@@ -21,9 +21,13 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/viewProfile', {templateUrl: 'views/viewProfileView.html', controller: 'viewProfileCtrl'});
 
+    $routeProvider.when('/jobseekers', {templateUrl: 'views/searchPageView.html', controller: 'searchSeekersCtrl'});
+
     $routeProvider.when('/jobseekers/:id', {templateUrl: 'views/viewProfileView.html', controller: 'viewProfileCtrl'});
 
-    $routeProvider.when('/search/:search', {templateUrl: 'views/searchPageView.html', controller: 'searchSeekersCtrl'});
+    $routeProvider.when('/createAccount', {templateUrl: 'views/createAccountView.html', controller: 'createAccountCtrl'});
+
+
 
 
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});

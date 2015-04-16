@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5bb5571-93ec-44ef-a7ee-769275590669" name="Default" comment="">
+    <list default="true" id="c5bb5571-93ec-44ef-a7ee-769275590669" name="Default" comment="ee">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Jobseeker_Form.php" afterPath="$PROJECT_DIR$/server/Jobseeker_Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/addJobCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/addJobCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addJobView.html" afterPath="$PROJECT_DIR$/views/addJobView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/entitiesService.js" afterPath="$PROJECT_DIR$/scripts/services/entitiesService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app.js" afterPath="$PROJECT_DIR$/scripts/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/header.html" afterPath="$PROJECT_DIR$/views/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/searchPageView.html" afterPath="$PROJECT_DIR$/views/searchPageView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/searchSeekersCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/searchSeekersCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="1e9d11b2-e6ad-4cef-95a3-6380fbf5cd72" name="New changelist" comment="" />
@@ -33,61 +33,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="addJobCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/addJobCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="629">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addJobView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/addJobView.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entitiesService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="1649">
-              <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sendMessageView.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/sendMessageView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2606" max-vertical-offset="3196">
-              <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+            <state vertical-scroll-proportion="-4.7843137" vertical-offset="2578" max-vertical-offset="3213">
+              <caret line="166" column="40" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendMessageCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js">
+      <file leaf-file-name="viewProfileCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/viewProfileCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="850">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="2244">
+              <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jobRequestService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/jobRequestService.js">
+      <file leaf-file-name="searchPageView.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/searchPageView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="408">
-              <caret line="6" column="43" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.78807944" vertical-offset="561" max-vertical-offset="1292">
+              <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchSeekersCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/searchSeekersCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchEntitiesService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/services/searchEntitiesService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchRequestService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/services/searchRequestService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="697">
+              <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.846154" vertical-offset="770" max-vertical-offset="2057">
+              <caret line="68" column="45" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-31.73077" vertical-offset="2116" max-vertical-offset="4199">
+              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,32 +126,47 @@
       <file leaf-file-name="Jobseeker_Form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2452" max-vertical-offset="4930">
-              <caret line="228" column="110" selection-start-line="228" selection-start-column="110" selection-end-line="228" selection-end-column="110" />
+            <state vertical-scroll-proportion="-11.5" vertical-offset="9459" max-vertical-offset="10149">
+              <caret line="579" column="86" selection-start-line="579" selection-start-column="86" selection-end-line="579" selection-end-column="86" />
               <folding>
-                <marker date="1427918618916" expanded="true" signature="2988:3067" placeholder="insert into ..." />
-                <marker date="1427918618916" expanded="true" signature="3190:3209" placeholder="select * fro..posts..." />
-                <marker date="1427918618916" expanded="true" signature="3561:3590" placeholder="select * fro..posts..." />
-                <marker date="1427918618916" expanded="true" signature="3864:3891" placeholder="delete from ..." />
-                <marker date="1427918618916" expanded="true" signature="4313:4376" placeholder="update posts..." />
-                <marker date="1427918618916" expanded="true" signature="5565:5617" placeholder="select * fro..jobseekers..." />
-                <marker date="1427918618916" expanded="true" signature="5824:6046" placeholder="insert into ..." />
-                <marker date="1427918618916" expanded="true" signature="6092:6410" placeholder="update jobse..." />
-                <marker date="1427918618916" expanded="true" signature="6892:6996" placeholder="insert into ..." />
-                <marker date="1427918618916" expanded="true" signature="7390:7486" placeholder="insert into ..." />
-                <marker date="1427918618916" expanded="true" signature="7857:7914" placeholder="select * fro..messages..." />
-                <marker date="1427918618916" expanded="true" signature="8322:8366" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="4294:4416" placeholder="insert into ..." />
+                <marker date="1428956095754" expanded="true" signature="4966:5018" placeholder="select * fro..posts..." />
+                <marker date="1428956095754" expanded="true" signature="5478:5696" placeholder="select job.j..job..." />
+                <marker date="1428956095754" expanded="true" signature="5979:6023" placeholder="select * fro..posts..." />
+                <marker date="1428956095754" expanded="true" signature="6375:6410" placeholder="select * fro..posts..." />
+                <marker date="1428956095754" expanded="true" signature="6687:6714" placeholder="delete from ..." />
+                <marker date="1428956095754" expanded="true" signature="7136:7199" placeholder="update posts..." />
+                <marker date="1428956095754" expanded="true" signature="7650:7809" placeholder="insert into ..." />
+                <marker date="1428956095754" expanded="true" signature="8170:8384" placeholder="select job.j..job..." />
+                <marker date="1428956095754" expanded="true" signature="8731:8913" placeholder="select job.j..job..." />
+                <marker date="1428956095754" expanded="true" signature="9174:9202" placeholder="delete from ..." />
+                <marker date="1428956095754" expanded="true" signature="9752:9863" placeholder="update job s..." />
+                <marker date="1428956095754" expanded="true" signature="11052:11104" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="11311:11535" placeholder="insert into ..." />
+                <marker date="1428956095754" expanded="true" signature="11581:11899" placeholder="update jobse..." />
+                <marker date="1428956095754" expanded="true" signature="12302:12398" placeholder="insert into ..." />
+                <marker date="1428956095754" expanded="true" signature="12916:12938" placeholder="select * fro..messages..." />
+                <marker date="1428956095754" expanded="true" signature="12916:13070" placeholder="select * fro..messages..." />
+                <marker date="1428956095754" expanded="true" signature="13471:13515" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="14094:14226" placeholder="insert into ..." />
+                <marker date="1428956095754" expanded="true" signature="14691:14764" placeholder="select * fro..comments..." />
+                <marker date="1428956095754" expanded="true" signature="15846:15884" placeholder="delete from ..." />
+                <marker date="1428956095754" expanded="true" signature="16258:16319" placeholder="update comme..." />
+                <marker date="1428956095754" expanded="true" signature="16347:16385" placeholder="delete from ..." />
+                <marker date="1428956095754" expanded="true" signature="16859:16920" placeholder="update comme..." />
+                <marker date="1428956095754" expanded="true" signature="17515:17589" placeholder="select * fro..jobComments..." />
+                <marker date="1428956095754" expanded="true" signature="17744:17878" placeholder="insert into ..." />
+                <marker date="1428956095754" expanded="true" signature="18002:18076" placeholder="select * fro..jobComments..." />
+                <marker date="1428956095754" expanded="true" signature="18455:18519" placeholder="update jobCo..." />
+                <marker date="1428956095754" expanded="true" signature="18547:18588" placeholder="delete from ..." />
+                <marker date="1428956095754" expanded="true" signature="19063:19127" placeholder="update jobCo..." />
+                <marker date="1428956095754" expanded="true" signature="19452:19500" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="19452:19520" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="19452:19554" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="19452:19556" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="19452:19556" placeholder="select * fro..jobseekers..." />
+                <marker date="1428956095754" expanded="true" signature="19742:19820" placeholder="insert into ..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5509839" vertical-offset="2518" max-vertical-offset="3570">
-              <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -140,33 +185,57 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
+    <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/scripts/controllers/viewProfileCtrl.js" />
-        <option value="$PROJECT_DIR$/views/newsfeedView.html" />
-        <option value="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js" />
-        <option value="$PROJECT_DIR$/scripts/services/linkedInService.js" />
-        <option value="$PROJECT_DIR$/views/singlePostView.html" />
-        <option value="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/services/authenticationService.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/getCommentsCtrl.js" />
+        <option value="$PROJECT_DIR$/views/modals/editCommentView.html" />
+        <option value="$PROJECT_DIR$/scripts/services/commentEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/commentRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/postRequestsService.js" />
+        <option value="$PROJECT_DIR$/dist/js/spin.min.js'.js" />
+        <option value="$PROJECT_DIR$/dist/js/spin.min.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js" />
+        <option value="$PROJECT_DIR$/dist/js/functions.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/newsfeedJobCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/services/commentJobEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/commentJobCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/commentCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/directives/updateCommentDir.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/singleJobCtrl.js" />
+        <option value="$PROJECT_DIR$/views/singlePostView.html" />
+        <option value="$PROJECT_DIR$/views/singleJobView.html" />
+        <option value="$PROJECT_DIR$/dist/css/main.css" />
+        <option value="$PROJECT_DIR$/dist/css/profile.css" />
+        <option value="$PROJECT_DIR$/scripts/controllers/headerCtrl.js" />
+        <option value="$PROJECT_DIR$/views/newsfeedView.html" />
         <option value="$PROJECT_DIR$/views/addJobView.html" />
-        <option value="$PROJECT_DIR$/server/Jobseeker_Form.php" />
+        <option value="$PROJECT_DIR$/views/newsfeedJobView.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/addJobCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/linkedIn.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/directives/chatDir.js" />
         <option value="$PROJECT_DIR$/scripts/services/entitiesService.js" />
+        <option value="$PROJECT_DIR$/views/sendMessageView.html" />
+        <option value="$PROJECT_DIR$/dist/css/messageStyle.css" />
+        <option value="$PROJECT_DIR$/views/viewProfileView.html" />
+        <option value="$PROJECT_DIR$/scripts/controllers/viewProfileCtrl.js" />
+        <option value="$PROJECT_DIR$/views/header.html" />
+        <option value="$PROJECT_DIR$/scripts/app.js" />
+        <option value="$PROJECT_DIR$/server/Jobseeker_Form.php" />
+        <option value="$PROJECT_DIR$/scripts/controllers/searchSeekersCtrl.js" />
+        <option value="$PROJECT_DIR$/views/searchPageView.html" />
       </list>
     </option>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="57" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1317" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -194,7 +263,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,6 +292,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modals" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -287,6 +373,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -329,23 +433,109 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="imgs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jobseeker" />
+    <property name="last_opened_file_path" value="C:/Desktopapps/projects/first_app" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FullScreen" value="false" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/AppServ/www/jobseeker/scripts/controllers/getCommentsCtrl.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\AppServ\www\jobseeker\dist\tags" />
+      <recent name="C:\AppServ\www\jobseeker\imgs" />
       <recent name="C:\AppServ\www\jobseeker" />
     </key>
   </component>
@@ -371,7 +561,7 @@
       <node-options />
       <gulpfile />
       <tasks />
-      <pass-parent-envs>true</pass-parent-envs>
+      <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
       <method />
     </configuration>
@@ -641,58 +831,173 @@
       <option name="project" value="LOCAL" />
       <updated>1427830823909</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Comments Comments Comments Comments">
+      <created>1428323241853</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1428323241853</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Comment Update">
+      <created>1428328625480</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1428328625480</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Comment Update .. solving bugs">
+      <created>1428330049105</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1428330049105</updated>
+    </task>
+    <task id="LOCAL-00046" summary="bugs">
+      <created>1428344531413</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1428344531413</updated>
+    </task>
+    <task id="LOCAL-00047" summary="edit comment is faster now">
+      <created>1428357288670</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1428357288670</updated>
+    </task>
+    <task id="LOCAL-00048" summary="bugs">
+      <created>1428479270763</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1428479270763</updated>
+    </task>
+    <task id="LOCAL-00049" summary="delete comment(solving 1 bug)">
+      <created>1428482804497</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1428482804497</updated>
+    </task>
+    <task id="LOCAL-00050" summary="newsfeed loadMore">
+      <created>1428535166649</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1428535166650</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Add_job new table in the database+ solving bugs">
+      <created>1428564873756</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1428564873756</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Jobs newsfeed solving some bugs">
+      <created>1428565592999</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1428565592999</updated>
+    </task>
+    <task id="LOCAL-00053" summary="newsfeed design">
+      <created>1428571403677</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1428571403677</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Show Date in newsfeed">
+      <created>1428574020996</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1428574020996</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Design and just design">
+      <created>1428603584163</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1428603584163</updated>
+    </task>
+    <task id="LOCAL-00056" summary="new design">
+      <created>1428605253681</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1428605253681</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Single Post View design">
+      <created>1428655836168</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1428655836168</updated>
+    </task>
+    <task id="LOCAL-00058" summary="change read more to view comments (view)">
+      <created>1428683307156</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1428683307156</updated>
+    </task>
+    <task id="LOCAL-00059" summary="solve some bugs (job)">
+      <created>1428776950510</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1428776950510</updated>
+    </task>
+    <task id="LOCAL-00060" summary="ee">
+      <created>1428790490825</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1428790490825</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Job Integration">
+      <created>1428832459451</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1428832459451</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Some changes">
+      <created>1428844686546</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1428844686546</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Tags">
+      <created>1428878212550</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1428878212551</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Message design + solve 1 bug in the server">
+      <created>1428948284603</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1428948284603</updated>
+    </task>
+    <task id="LOCAL-00065" summary="header - search">
+      <created>1428951819350</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1428951819350</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="57" y="-8" width="1317" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.068515494" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2526475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2313605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25258493" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18238993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.068515494" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18238993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -709,32 +1014,32 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="LikedIn Login" />
-    <MESSAGE value="postRequest Enter" />
-    <MESSAGE value="addJobView.html" />
-    <MESSAGE value="addJobView.html&#10;&#10;in app" />
-    <MESSAGE value="addJobView.html&#10;&#10;" />
-    <MESSAGE value="addPostDB" />
-    <MESSAGE value="addjobview" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/esmatptr/jobseeker&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/esmatptr/jobseeker&#10;view&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;" />
-    <MESSAGE value="sendMessage Db" />
-    <MESSAGE value="global DB" />
-    <MESSAGE value="XML" />
-    <MESSAGE value="Rapish" />
-    <MESSAGE value="updata" />
-    <MESSAGE value="updataa" />
-    <MESSAGE value="up" />
-    <MESSAGE value="posts" />
-    <MESSAGE value="update" />
-    <MESSAGE value="updatee" />
-    <MESSAGE value="rana" />
-    <MESSAGE value="changes" />
     <MESSAGE value="commit" />
     <MESSAGE value="body" />
     <MESSAGE value="title" />
+    <MESSAGE value="Comments Comments Comments Comments" />
+    <MESSAGE value="Comment Update" />
+    <MESSAGE value="Comment Update .. solving bugs" />
+    <MESSAGE value="edit comment is faster now" />
+    <MESSAGE value="bugs" />
+    <MESSAGE value="delete comment(solving 1 bug)" />
+    <MESSAGE value="newsfeed loadMore" />
+    <MESSAGE value="Add_job new table in the database+ solving bugs" />
+    <MESSAGE value="Jobs newsfeed solving some bugs" />
+    <MESSAGE value="newsfeed design" />
+    <MESSAGE value="Show Date in newsfeed" />
+    <MESSAGE value="Design and just design" />
+    <MESSAGE value="new design" />
+    <MESSAGE value="Single Post View design" />
+    <MESSAGE value="change read more to view comments (view)" />
+    <MESSAGE value="solve some bugs (job)" />
     <MESSAGE value="ee" />
-    <option name="LAST_COMMIT_MESSAGE" value="ee" />
+    <MESSAGE value="Job Integration" />
+    <MESSAGE value="Some changes" />
+    <MESSAGE value="Tags" />
+    <MESSAGE value="Message design + solve 1 bug in the server" />
+    <MESSAGE value="header - search" />
+    <option name="LAST_COMMIT_MESSAGE" value="header - search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -749,414 +1054,462 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/getCommentsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="459">
-          <caret line="9" column="119" selection-start-line="9" selection-start-column="119" selection-end-line="9" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="561">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/loginView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="272">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="994" max-vertical-offset="1734">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1190">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
-          <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="66" />
           <folding>
-            <marker date="1427918618916" expanded="true" signature="2988:3067" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="3190:3209" placeholder="select * fro..posts..." />
-            <marker date="1427918618916" expanded="true" signature="3561:3590" placeholder="select * fro..posts..." />
-            <marker date="1427918618916" expanded="true" signature="3864:3891" placeholder="delete from ..." />
-            <marker date="1427918618916" expanded="true" signature="4313:4376" placeholder="update posts..." />
-            <marker date="1427918618916" expanded="true" signature="5565:5617" placeholder="select * fro..jobseekers..." />
-            <marker date="1427918618916" expanded="true" signature="5824:6046" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="6092:6410" placeholder="update jobse..." />
-            <marker date="1427918618916" expanded="true" signature="6892:6996" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="7390:7486" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="7857:7914" placeholder="select * fro..messages..." />
-            <marker date="1427918618916" expanded="true" signature="8322:8366" placeholder="select * fro..jobseekers..." />
+            <element signature="e#0#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+    <entry file="file://$PROJECT_DIR$/views/modals/editCommentView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="459">
-          <caret line="9" column="119" selection-start-line="9" selection-start-column="119" selection-end-line="9" selection-end-column="119" />
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
+    <entry file="file://$PROJECT_DIR$/dist/js/spin.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="561">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.027552674" vertical-offset="0" max-vertical-offset="617">
+          <caret line="1" column="4108" selection-start-line="1" selection-start-column="4108" selection-end-line="1" selection-end-column="4108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/loginView.html">
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentRequestService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="272">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="994" max-vertical-offset="1734">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1224">
+          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
+    <entry file="file://$PROJECT_DIR$/scripts/services/jobEntitiesService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1190">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1516" max-vertical-offset="2482">
-          <caret line="134" column="36" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="36" />
-          <folding>
-            <marker date="1427918618916" expanded="true" signature="2988:3067" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="3190:3209" placeholder="select * fro..posts..." />
-            <marker date="1427918618916" expanded="true" signature="3561:3590" placeholder="select * fro..posts..." />
-            <marker date="1427918618916" expanded="true" signature="3864:3891" placeholder="delete from ..." />
-            <marker date="1427918618916" expanded="true" signature="4313:4376" placeholder="update posts..." />
-            <marker date="1427918618916" expanded="true" signature="5565:5617" placeholder="select * fro..jobseekers..." />
-            <marker date="1427918618916" expanded="true" signature="5824:6046" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="6092:6410" placeholder="update jobse..." />
-            <marker date="1427918618916" expanded="true" signature="6892:6996" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="7390:7486" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="7857:7914" placeholder="select * fro..messages..." />
-            <marker date="1427918618916" expanded="true" signature="8322:8366" placeholder="select * fro..jobseekers..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="459">
-          <caret line="9" column="119" selection-start-line="9" selection-start-column="119" selection-end-line="9" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="561">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/loginView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="272">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="994" max-vertical-offset="1734">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="4" column="60" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentEntitiesService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
+    <entry file="file://$PROJECT_DIR$/dist/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/headerCtrl.js">
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/createAccountCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="2" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18973215" vertical-offset="0" max-vertical-offset="510">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/authenticationCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Jobseeker_DB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="881" max-vertical-offset="1377">
-          <caret line="74" column="29" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedInAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/profileRequestService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23247863" vertical-offset="0" max-vertical-offset="585">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/loginCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/loginView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25724638" vertical-offset="606" max-vertical-offset="1615">
-          <caret line="44" column="0" selection-start-line="43" selection-start-column="36" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6231884" vertical-offset="285" max-vertical-offset="1037">
-          <caret line="37" column="46" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.51520574" vertical-offset="288" max-vertical-offset="1632">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53283304" vertical-offset="5" max-vertical-offset="1207">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/viewProfileCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/viewProfileView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.3461537" vertical-offset="241" max-vertical-offset="748">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/messageRequestService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/newsfeedView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="1360" max-vertical-offset="3587">
-          <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="98" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1326">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/singlePostView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4060823" vertical-offset="300" max-vertical-offset="935">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.052991454" vertical-offset="184" max-vertical-offset="901">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="714">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41144902" vertical-offset="246" max-vertical-offset="1615">
-          <caret line="28" column="116" selection-start-line="28" selection-start-column="116" selection-end-line="28" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23247863" vertical-offset="0" max-vertical-offset="585">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/addJobCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="629">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1564">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
+    <entry file="file://$PROJECT_DIR$/server/Jobseeker_DB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2452" max-vertical-offset="4930">
-          <caret line="228" column="110" selection-start-line="228" selection-start-column="110" selection-end-line="228" selection-end-column="110" />
-          <folding>
-            <marker date="1427918618916" expanded="true" signature="2988:3067" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="3190:3209" placeholder="select * fro..posts..." />
-            <marker date="1427918618916" expanded="true" signature="3561:3590" placeholder="select * fro..posts..." />
-            <marker date="1427918618916" expanded="true" signature="3864:3891" placeholder="delete from ..." />
-            <marker date="1427918618916" expanded="true" signature="4313:4376" placeholder="update posts..." />
-            <marker date="1427918618916" expanded="true" signature="5565:5617" placeholder="select * fro..jobseekers..." />
-            <marker date="1427918618916" expanded="true" signature="5824:6046" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="6092:6410" placeholder="update jobse..." />
-            <marker date="1427918618916" expanded="true" signature="6892:6996" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="7390:7486" placeholder="insert into ..." />
-            <marker date="1427918618916" expanded="true" signature="7857:7914" placeholder="select * fro..messages..." />
-            <marker date="1427918618916" expanded="true" signature="8322:8366" placeholder="select * fro..jobseekers..." />
-          </folding>
+        <state vertical-scroll-proportion="-6.230769" vertical-offset="773" max-vertical-offset="1377">
+          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedJobCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1303" max-vertical-offset="2261">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentJobRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/singleJobCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentJobEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/services/jobRequestService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+        <state vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="1479">
           <caret line="6" column="43" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js">
+    <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/sendMessageView.html">
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/commentJobCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2606" max-vertical-offset="3196">
-          <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2307" max-vertical-offset="2924">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
+    <entry file="file://$PROJECT_DIR$/dist/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="1649">
-          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/singleJobView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.230769" vertical-offset="1587" max-vertical-offset="2618">
+          <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/searchCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.96" vertical-offset="3628" max-vertical-offset="4233">
+          <caret line="231" column="17" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/headerCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/tags/ng-tags-input.bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="617">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/addJobView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="323">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/newsfeedJobView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.26923" vertical-offset="2220" max-vertical-offset="6120">
+          <caret line="157" column="85" selection-start-line="157" selection-start-column="85" selection-end-line="157" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/addJobCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1394">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedIn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="624" max-vertical-offset="1700">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10793651" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/commentCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1309" max-vertical-offset="2958">
+          <caret line="88" column="10" selection-start-line="83" selection-start-column="7" selection-end-line="88" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/directives/updateCommentDir.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4063492" vertical-offset="220" max-vertical-offset="850">
+          <caret line="28" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/singlePostView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6153846" vertical-offset="1715" max-vertical-offset="2482">
+          <caret line="111" column="36" selection-start-line="111" selection-start-column="36" selection-end-line="118" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#span#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/addPostView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="374" max-vertical-offset="1530">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/messageRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/directives/chatDir.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="867">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="766" max-vertical-offset="1547">
+          <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/profileRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="2312">
+          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="969">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="168" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/messageStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2158" max-vertical-offset="2856">
+          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/viewProfileView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6862745" vertical-offset="1087" max-vertical-offset="2142">
+          <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
+          <folding>
+            <marker date="1428948157769" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/viewProfileCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="2244">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/newsfeedView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18274112" vertical-offset="2969" max-vertical-offset="5848">
+          <caret line="181" column="53" selection-start-line="181" selection-start-column="41" selection-end-line="181" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.846154" vertical-offset="770" max-vertical-offset="2057">
+          <caret line="68" column="45" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5509839" vertical-offset="2518" max-vertical-offset="3570">
-          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state vertical-scroll-proportion="-31.73077" vertical-offset="2116" max-vertical-offset="4199">
+          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/searchEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/searchRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.5" vertical-offset="9459" max-vertical-offset="10149">
+          <caret line="579" column="86" selection-start-line="579" selection-start-column="86" selection-end-line="579" selection-end-column="86" />
+          <folding>
+            <marker date="1428956095754" expanded="true" signature="4294:4416" placeholder="insert into ..." />
+            <marker date="1428956095754" expanded="true" signature="4966:5018" placeholder="select * fro..posts..." />
+            <marker date="1428956095754" expanded="true" signature="5478:5696" placeholder="select job.j..job..." />
+            <marker date="1428956095754" expanded="true" signature="5979:6023" placeholder="select * fro..posts..." />
+            <marker date="1428956095754" expanded="true" signature="6375:6410" placeholder="select * fro..posts..." />
+            <marker date="1428956095754" expanded="true" signature="6687:6714" placeholder="delete from ..." />
+            <marker date="1428956095754" expanded="true" signature="7136:7199" placeholder="update posts..." />
+            <marker date="1428956095754" expanded="true" signature="7650:7809" placeholder="insert into ..." />
+            <marker date="1428956095754" expanded="true" signature="8170:8384" placeholder="select job.j..job..." />
+            <marker date="1428956095754" expanded="true" signature="8731:8913" placeholder="select job.j..job..." />
+            <marker date="1428956095754" expanded="true" signature="9174:9202" placeholder="delete from ..." />
+            <marker date="1428956095754" expanded="true" signature="9752:9863" placeholder="update job s..." />
+            <marker date="1428956095754" expanded="true" signature="11052:11104" placeholder="select * fro..jobseekers..." />
+            <marker date="1428956095754" expanded="true" signature="11311:11535" placeholder="insert into ..." />
+            <marker date="1428956095754" expanded="true" signature="11581:11899" placeholder="update jobse..." />
+            <marker date="1428956095754" expanded="true" signature="12302:12398" placeholder="insert into ..." />
+            <marker date="1428956095754" expanded="true" signature="12916:12938" placeholder="select * fro..messages..." />
+            <marker date="1428956095754" expanded="true" signature="12916:13070" placeholder="select * fro..messages..." />
+            <marker date="1428956095754" expanded="true" signature="13471:13515" placeholder="select * fro..jobseekers..." />
+            <marker date="1428956095754" expanded="true" signature="14094:14226" placeholder="insert into ..." />
+            <marker date="1428956095754" expanded="true" signature="14691:14764" placeholder="select * fro..comments..." />
+            <marker date="1428956095754" expanded="true" signature="15846:15884" placeholder="delete from ..." />
+            <marker date="1428956095754" expanded="true" signature="16258:16319" placeholder="update comme..." />
+            <marker date="1428956095754" expanded="true" signature="16347:16385" placeholder="delete from ..." />
+            <marker date="1428956095754" expanded="true" signature="16859:16920" placeholder="update comme..." />
+            <marker date="1428956095754" expanded="true" signature="17515:17589" placeholder="select * fro..jobComments..." />
+            <marker date="1428956095754" expanded="true" signature="17744:17878" placeholder="insert into ..." />
+            <marker date="1428956095754" expanded="true" signature="18002:18076" placeholder="select * fro..jobComments..." />
+            <marker date="1428956095754" expanded="true" signature="18455:18519" placeholder="update jobCo..." />
+            <marker date="1428956095754" expanded="true" signature="18547:18588" placeholder="delete from ..." />
+            <marker date="1428956095754" expanded="true" signature="19063:19127" placeholder="update jobCo..." />
+            <marker date="1428956095754" expanded="true" signature="19452:19500" placeholder="select * fro..jobseekers..." />
+            <marker date="1428956095754" expanded="true" signature="19452:19520" placeholder="select * fro..jobseekers..." />
+            <marker date="1428956095754" expanded="true" signature="19452:19554" placeholder="select * fro..jobseekers..." />
+            <marker date="1428956095754" expanded="true" signature="19452:19556" placeholder="select * fro..jobseekers..." />
+            <marker date="1428956095754" expanded="true" signature="19452:19556" placeholder="select * fro..jobseekers..." />
+            <marker date="1428956095754" expanded="true" signature="19742:19820" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="697">
+          <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/sendMessageView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7843137" vertical-offset="2578" max-vertical-offset="3213">
+          <caret line="166" column="40" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/searchSeekersCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/searchPageView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78807944" vertical-offset="561" max-vertical-offset="1292">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
   </component>
 </project>
+

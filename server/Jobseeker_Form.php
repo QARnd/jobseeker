@@ -265,7 +265,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $last_id=$GLOBALS['db']->db_insid();
-        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>"jobTag");
+        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>$jobTag);
         print (json_encode($newPost));
     }
 
@@ -579,10 +579,11 @@ class Jobseeker_Form extends Jobseeker_DB {
         $description=$GLOBALS['request']->$entity->$description;
         $location='location';
         $location=$GLOBALS['request']->$entity->$location;
-        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'",'.$description.','.$location.'';
+        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$description.'","'.$location.'")';
         $GLOBALS['db']->db_query($sql);
-        print(json_encode("done"));
+        print(json_encode($name));
     }
+
 
     public function search(){
 
@@ -590,7 +591,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $search='search';
         $search=$GLOBALS['request']->$entity->$search;
 
-        $sql="select * from jobseekers where (first_name like'%' . $search . '%')or (last_name like '%' . $search . '%')" ;
+        $sql='select * from jobseekers where first_name LIKE "%' . $search .'%" or last_name LIKE "%' . $search .'%"' ;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();

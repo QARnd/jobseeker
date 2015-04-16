@@ -43,18 +43,29 @@
 </style>
 
 
-<body>
-
-<div ng-controller="searchSeekersCtrl">
-
-    <ul>
-        <li ng-repeat="x in result | filter: search ">
-            {{x.first_name }}
-            {{x.last_name }}
 
 
-        </li>
-    </ul>
+<div class="container">
+    <div class="row">
+        <h1>
+            Results ..
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" ng-repeat="seeker in searchedSeekers">
+            <div class="card">
+                <canvas class="header-bg" width="250" height="70"></canvas>
+                <div class="avatar">
+                    <img src="{{seeker.pictureUrl}}" alt="" />
+                </div>
+                <div class="content">
+                    <p>{{seeker.first_name}} {{seeker.last_name}}</p>
+                    <p>{{seeker.Email}}</p>
+                    <p>{{seeker.industry}}</p>
+                    <p><a href="#/jobseekers/{{seeker.jobseeker_id}}"  class="btn btn-default">Contact</a></p>
+                </div>
+            </div>
+        </div>
 
+    </div>
 </div>
-</body>
