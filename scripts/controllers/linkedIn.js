@@ -112,14 +112,21 @@ angular.module('myApp').controller('linkedInCtrl',
                 console.log(d);
                 $rootScope.matched= d.data;
 
+                $scope.skills="";
+                try{
+                    $rootScope.skills=result.values[0].skills.values;
+                }
+
+                catch(err){
+
+                }
+
                 for (var x = 0; x < $rootScope.matched.length; x++) {
 
-                    $scope.skills="";
-                    try{
-                        $scope.skills=matched.skills.split(',');
-                    }catch(err){
-
-                    }
+                    //$scope.skills="";
+                    //try{
+                    //    $scope.skills=matched.skills.split(',');
+                    //}
 
                     $scope.matched[x].tags="";
                     try{
