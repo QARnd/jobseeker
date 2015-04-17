@@ -41,6 +41,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                     var userEntity=entitiesService.userEntity(result.values[0].firstName,result.values[0].lastName,
                         result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,skillStr,educationStr,result.values[0].summary,result.values[0].industry,result.values[0].location.name);
+
                     var userPromise=linkedinService.loginRequest(userEntity);
 
                     userPromise.then(
