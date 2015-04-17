@@ -77,6 +77,12 @@ angular.module('servicesModule').factory('entitiesService', function() {
             account.description=description;
             account.location=location;
             return account;
+        },
+        
+        getAllJobs: function(lastJobId) {
+            var job = {};     // new object
+            job.lastJobId = lastJobId;
+            return job;
         }
 
     };
