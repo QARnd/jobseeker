@@ -27,8 +27,16 @@ angular.module('myApp').controller('linkedInCtrl',
                     var skillStr='';
                     try{
                         var skills=result.values[0].skills.values;
-                        for(var i=0;i<skills.length;i++){
-                            skillStr+=skills[i].skill.name+",";
+                        var jobs=result.values[0].jobs.values;
+                        var p=skills.length/100;
+                        var percentage=0;
+                        for(var j=0;j<jobs.length;j++){
+                            for(var i=0;i<skills.length;i++){
+                               if(skills[i].skill.name+","==jobs[j].job.tage+",")
+                               { percentage+=p;
+                                   breake;}
+                            }
+
                         }
 
                     }catch(err){

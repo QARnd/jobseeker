@@ -35,15 +35,26 @@ angular.module('servicesModule').
             },
 
 
-            loginRequest : function(userEntity){
+            loginRequest : function(userEntity) {
                 var msg = {};
                 msg.opcode = "validateJobseekerRequest";
-                msg.Entity =userEntity;
+                msg.Entity = userEntity;
                 console.log(userEntity);
+                var jobPromise = $http({
+                    method: 'POST',
+                    url: authenticationService.deploymentLink.link,
+                    data: msg
+                });
+                return jobPromise;
+            },
+            getAllJobs: function() {
+                var request = {};
+                request.opcode = "getAllJobsRequest1";
                 var jobPromise=$http({
                     method : 'POST',
                     url : authenticationService.deploymentLink.link,
-                    data: msg
+                    //url: 'server/Jobseeker_Form.php',
+                    data: request
                 });
                 return jobPromise;
             }
