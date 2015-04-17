@@ -121,9 +121,9 @@ angular.module('myApp').controller('linkedInCtrl',
 
                     }
 
-                    $scope.tags="";
+                    $scope.matched[x].tags="";
                     try{
-                        $scope.tags=matched.tags.split(',');
+                        $scope.matched[x].tags=matched[x].tags.split(',');
                     }catch(err){
 
                     }
