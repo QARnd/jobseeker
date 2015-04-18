@@ -10,7 +10,7 @@ angular.module('servicesModule').
         return {
             userProfile : {data:"",jobseekerId:"", provider_id:"", user_id:"", full_name:""},
             userLoggedIn : {status:""},
-            jobs:{},
+            jobs:{lastId:""},
             posts:{},
             deploymentLink:{link:'server/Jobseeker_Form.php'},
             getNewsFeedLength: function(){
