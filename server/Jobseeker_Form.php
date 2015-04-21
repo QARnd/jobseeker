@@ -113,7 +113,16 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case'getAllJobsRequest1':
                     $this->getAllJobs();
                     break;
+                case'addJobListRequest':
+                    $this->addToJobList();
+                    break;
+                case'getJobListRequest':
+                    $this->getJobList();
+                    break;
+
+
             }
+
 
         }
     }
@@ -601,6 +610,35 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode($total));
 
     }
+    public function addToJobList(){
+        $entity='Entity';
+        $JobId='JobId';
+        $JobId=$GLOBALS['request']->$entity->$JobId;
+        $User_Id='User_Id';
+        $User_Id=$GLOBALS['request']->$entity->$User_Id;
+        $similarity='similarity';
+        $similarity=$GLOBALS['request']->$entity->$similarity;
+        $sql='insert into joblist VALUES (NULL ,'.$User_Id.','.$JobId.','.$similarity.')';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+        array_push($total, $row);
+        }
+    print(json_encode($total));
+    }
+    public function getJobList(){
+        $entity='Entity';
+        $User_Id='User_Id';
+        $User_Id=$GLOBALS['request']->$entity->$User_Id;
+        $sql='select * from joblist where jobseekerId='.$User_Id.'';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+    }
+
 
 }
 
