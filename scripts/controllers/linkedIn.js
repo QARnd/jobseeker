@@ -85,7 +85,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
         ///get last jobs
         $scope.getLastAddedJobs=function(){
-            var js_id= authenticationService.userProfile.user_id;
+            var js_id= authenticationService.userProfile.jobseekerId;
 
             var lastJobsEntity = entitiesService.lastJobsEntity(js_id);
 
