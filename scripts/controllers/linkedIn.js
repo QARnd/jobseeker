@@ -35,7 +35,7 @@ angular.module('myApp').controller('linkedInCtrl',
                         skillStr='';
                     }
 
-                    $scope.getLastAddedJobs();
+
 
 
 
@@ -63,6 +63,9 @@ angular.module('myApp').controller('linkedInCtrl',
                                 //alert("chekLogin");
 
                                 $location.path("/newsFeed");
+
+
+                                $scope.getLastAddedJobs(skillStr);
                             }
                             else{
                                 alert("error");
@@ -79,12 +82,11 @@ angular.module('myApp').controller('linkedInCtrl',
             });
 
 
-
-
         };
 
         ///get last jobs
-        $scope.getLastAddedJobs=function(){
+        $scope.getLastAddedJobs=function(skillStr){
+
             var js_id= authenticationService.userProfile.user_id;
 
             var lastJobsEntity = entitiesService.lastJobsEntity(js_id);
@@ -93,27 +95,29 @@ angular.module('myApp').controller('linkedInCtrl',
 
             jobsPromise.then(function (d) {
                 var jobs= d.data;
-                var skills=authenticationService.userProfile.skills.split(",").split(" ");
+                alert(skillStr);
+                var skills=skillStr.split(",");
 
-                var clonedSkillsHash={};
-                for(var skill in skills){
-                    clonedSkillsHash[skill]=false;
-                }
-
+                console.log(skills);
                 var c=0;
                 for(var i=0;i<jobs.length;i++){
                     c=0;
-                    var skillsHash=clonedSkillsHash;
+                    var skillsHash=skills;
 
-                    var jobTags=jobs[i].jobTag.split(",").split(" ");
-                    for(var jobTag in jobTags){
-                        if(skillsHash.contains(jobTag)){
-                            skillsHash[jobTag]=true;
+                    var jobTags=jobs[i].jobTag.split(",");
+                    console.log(jobTags);
+                    for(var j=0;j<jobTags.length;j++){
+                        var jobTag=jobTags[j];
+
+                        if ($.inArray(jobTag, skillsHash) >= 0) {
+                            c++;
+                            alert(jobTag);
                         }
                     }
-                    for(var skill in skills){
-                        if(skillsHash[skill]==true) c++;
-                    }
+
+
+
+
                     var similarity=(c/jobTags.length)*100;
 
                     if(similarity>70){
@@ -121,7 +125,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
                         jobListPromise.then(function (d) {
-                            console.log("Done");
+                            console.log(jobListEntity);
                         }, function (d) {
                             swal({
                                 title: "Error!",
@@ -141,7 +145,7 @@ angular.module('myApp').controller('linkedInCtrl',
                     timer: 2000
                 });
             });
-        }
+        };
 
 
 
@@ -153,7 +157,7 @@ angular.module('myApp').controller('linkedInCtrl',
             linkedinService.logout();
 
             delete linkedinService.getProfileData.resultData;
-            delete authenticationService.userProfile.data
+            delete authenticationService.userProfile.data;
             //	$rootScope.loggedUser = false;
 
             $location.path("/login");
