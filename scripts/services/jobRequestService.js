@@ -1,4 +1,4 @@
-angular.module('servicesModule').factory('jobRequestService', function($http,authenticationService) {
+angular.module('servicesModule').factory('jobRequestsService', function($http,authenticationService) {
     return {
 
 

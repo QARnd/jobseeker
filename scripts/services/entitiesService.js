@@ -78,9 +78,9 @@ angular.module('servicesModule').factory('entitiesService', function() {
             account.location=location;
             return account;
         },
-        getAllJobs: function(lastJobId) {
+        lastJobsEntity: function(js_id) {
             var job = {};     // new object
-            job.lastJobId = lastJobId;
+            job.js_id = js_id;
             return job;
         }
 

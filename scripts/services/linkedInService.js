@@ -47,9 +47,9 @@ angular.module('servicesModule').
                 });
                 return jobPromise;
             },
-            getAllJobs: function() {
+            getAllJobsFromLastId: function() {
                 var request = {};
-                request.opcode = "getAllJobsRequest1";
+                request.opcode = "getAllJobsFromLastIdRequest";
                 var jobPromise=$http({
                     method : 'POST',
                     url : authenticationService.deploymentLink.link,

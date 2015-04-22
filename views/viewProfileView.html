@@ -1,4 +1,52 @@
 <link href="dist/css/messageStyle.css" rel="stylesheet">
+
+
+<style>
+    .chat
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .chat li
+    {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+    }
+
+    .chat li.left .chat-body
+    {
+        margin-left: 60px;
+    }
+
+    .chat li.right .chat-body
+    {
+        margin-right: 60px;
+    }
+
+
+    .chat li .chat-body p
+    {
+        margin: 0;
+        color: #777777;
+    }
+
+    .panel .slidedown .glyphicon, .chat .glyphicon
+    {
+        margin-right: 5px;
+    }
+
+    .panel-body
+    {
+        overflow-y: scroll;
+        height: 250px;
+    }
+
+
+
+</style>
 <!--View Profile:-->
 
 <!--<input type="text" ng-model="jobSeekerId" placeholder="jobSeekerId">-->
@@ -72,29 +120,108 @@
                     </button>
 
                     <chat title="Chat .." visible="showModal">
-                        <div class="chat-box center-block">
-                            <div class="header">
-                                {{first_name}} {{last_name}}
-                            </div>
-                            <div class="chat-box center-block">
-                                <div class="input-box">
-                                    <textarea id="msg_content" ng-model="$parent.content" class="form-control msg_content" rows="2" placeholder="Enter message..."></textarea>
+                        <!--<div class="chat-box center-block">-->
+                            <!--<div class="header">-->
+                                <!--{{first_name}} {{last_name}}-->
+                            <!--</div>-->
+                            <!--<div class="chat-box center-block">-->
+                                <!--<div class="input-box">-->
+                                    <!--<textarea id="msg_content" ng-model="$parent.content" class="form-control msg_content" rows="2" placeholder="Enter message..."></textarea>-->
 
-                                </div>
-                                <button class="send_msg btn btn-danger sendBtn" ng-click="sendMessage()" >SEND A MESSAGE..</button>
-                                <div class="messages">
-                                    <ul id="msgs">
-                                        <li  ng-repeat='message in messages track by $index'>
-                                            <span ng-show="message.from_id==myId" class="left" alt="{{message.sendate}}">{{message.content}}</span>
-                                            <span ng-show="message.from_id!=myId" class="right" alt="{{message.sendate}}">{{message.content}}</span>
-                                            <div class="clear"></div>
-                                        </li>
-                                    </ul>
-                                    <div class="clear"></div>
+                                <!--</div>-->
+                                <!--<button class="send_msg btn btn-danger sendBtn" ng-click="sendMessage()" >SEND A MESSAGE..</button>-->
+                                <!--<div class="messages">-->
+                                    <!--<ul id="msgs">-->
+                                        <!--<li  ng-repeat='message in messages track by $index'>-->
+                                            <!--<span ng-show="message.from_id==myId" class="left" alt="{{message.sendate}}">{{message.content}}</span>-->
+                                            <!--<span ng-show="message.from_id!=myId" class="right" alt="{{message.sendate}}">{{message.content}}</span>-->
+                                            <!--<div class="clear"></div>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                    <!--<div class="clear"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+
+
+
+                        <center>
+                        <div class="container block-center" style="width: 100%">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading" id="accordion">
+                                            <span class="glyphicon glyphicon-comment"></span> Chat
+                                            <div class="btn-group pull-right">
+
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                            <div class="panel-footer">
+                                                <div class="input-group">
+                                                    <input ng-model="$parent.content" id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="sendMessage()">
+                                                    Send
+                                                </button>
+                                            </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="panel-body">
+                                                <ul class="chat">
+                                                    <li class="clearfix" ng-repeat='message in messages track by $index'>
+
+                                                        <span class="chat-img pull-left">
+                                                                    <img  ng-show="message.from_id!=myId" src="{{pictureUrl}}" alt="User Avatar" class="img-circle" />
+                                                                    <img  ng-show="message.from_id==myId" src="{{imgUrl}}" alt="User Avatar" class="img-circle" />
+                                                        </span>
+                                                        <div class="chat-body clearfix">
+                                                            <div class="header">
+                                                                <strong class="primary-font" ng-show="message.from_id==myId"> Me</strong>
+                                                                <strong class="primary-font" ng-show="message.from_id!=myId"> {{first_name}} {{last_name}}</strong>
+                                                                <small class="pull-right text-muted">
+
+                                                                    <span class="glyphicon glyphicon-time"></span>{{message.sendate}}
+                                                                </small>
+                                                            </div>
+                                                            <p>
+                                                                {{message.content}}
+                                                            </p>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        </center>
                     </chat>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 </div>
 
@@ -110,6 +237,25 @@
                 <a class="btn btn-primary btn-linkedin btn-sm" href="{{profileUrl}}">
                     Show More In Linked <i class="fa fa-linkedin"></i>
                 </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             </div>

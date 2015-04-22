@@ -2,7 +2,7 @@
 angular.module('servicesModule').factory('addToJobListRequestService', function($http,authenticationService) {
     return {
 
-        addComment: function (addToJobListEntity) {
+        addToJobList: function (addToJobListEntity) {
             var request = {};
             request.opcode = "addToJobListRequest";
 
@@ -13,7 +13,7 @@ angular.module('servicesModule').factory('addToJobListRequestService', function(
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
-            return addToJobListEntityPromise;
+            return addToJobListPromise;
         }
 
 
