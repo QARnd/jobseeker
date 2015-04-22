@@ -144,8 +144,7 @@ angular.module('myApp').controller('linkedInCtrl',
         }
 
 
-
-
+        
 
             //logout and go to login screen
         $scope.logoutLinkedIn = function() {
