@@ -8,6 +8,7 @@
 angular.module('myApp').controller('viewProfileCtrl',
     function($scope,$routeParams, entitiesService, profileRequestService, authenticationService) {
 
+        $scope.imgUrl=authenticationService.userProfile.data.pictureUrl;
         $scope.myId=authenticationService.userProfile.user_id;
         $scope.user_id=$routeParams.id;
 
@@ -92,7 +93,8 @@ angular.module('myApp').controller('viewProfileCtrl',
             $scope.content="";
             messagePromise.then(function (d) {console.log(d);
                 var message= d.data;
-
+                console.log(message);
+                alert(d.data.message_id);
                 $scope.messages.unshift({messageId:message.message_id,content:message.content,sendate:message.sendate,from_id:message.fromId,to_id:message.toId});
                 $scope.content="";
 

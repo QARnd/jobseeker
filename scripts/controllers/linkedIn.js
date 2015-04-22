@@ -27,23 +27,15 @@ angular.module('myApp').controller('linkedInCtrl',
                     var skillStr='';
                     try{
                         var skills=result.values[0].skills.values;
-                        var jobs=result.values[0].jobs.values;
-                        var p=skills.length/100;
-                        var percentage=0;
-                        for(var j=0;j<jobs.length;j++){
-                            for(var i=0;i<skills.length;i++){
-                               if(skills[i].skill.name+","==jobs[j].job.tage+",")
-                               { percentage+=p;
-                                   breake;}
-                            }
-
+                        for(var i=0;i<skills.length;i++){
+                            skillStr+=skills[i].skill.name+",";
                         }
 
                     }catch(err){
                         skillStr='';
                     }
 
-
+                    $scope.getLastAddedJobs();
 
 
 
@@ -91,7 +83,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
         };
 
-///get last jobs
+        ///get last jobs
         $scope.getLastAddedJobs=function(){
             var js_id= authenticationService.userProfile.user_id;
 
@@ -122,13 +114,22 @@ angular.module('myApp').controller('linkedInCtrl',
                     for(var skill in skills){
                         if(skillsHash[skill]==true) c++;
                     }
-                    var similarity=(c/jobs[i].length)*100;
+                    var similarity=(c/jobTags.length)*100;
 
                     if(similarity>70){
                         var jobListEntity = addToJobListEntitiesService.addToJobListEntity(js_id,jobs[i].jobId,similarity);
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
-
+                        jobListPromise.then(function (d) {
+                            console.log("Done");
+                        }, function (d) {
+                            swal({
+                                title: "Error!",
+                                text: "Something went wrong, please try again later",
+                                type: "error",
+                                timer: 2000
+                            });
+                        });
                     }
                 }
 
