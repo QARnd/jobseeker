@@ -2,14 +2,9 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,authenticationService,profileRequestService,jobListEntitiesService,jobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
-
-
-            $scope.addToJobList();
-
-
 
             linkedinService.getProfile(function(err, result){
                 if(err){
@@ -96,60 +91,46 @@ angular.module('myApp').controller('linkedInCtrl',
 
         };
 
+///get last jobs
+        $scope.getLastAddedJobs=function(){
+            var js_id= authenticationService.userProfile.user_id;
 
+            var lastJobsEntity = entitiesService.lastJobsEntity(js_id);
 
-        $scope.getAllJobsFromLastId=function() {
-
-            //var last_id=authenticationService.jobs.lastId;
-
-            //var jobsToMatch=entitiesService.getAllJobsFromLastId(last_id);
-
-            $scope.js_id= authenticationService.userProfile.jobseekerId;
-
-            var jobsPromise = profileRequestService.getAllJobsFromLastId(js_id);
+            var jobsPromise = linkedinService.getAllJobsFromLastId(lastJobsEntity);
 
             jobsPromise.then(function (d) {
-                console.log(d);
-                $rootScope.matched= d.data;
+                var jobs= d.data;
+                var skills=authenticationService.userProfile.skills.split(",").split(" ");
 
-                $scope.skills="";
-                try{
-                    $rootScope.skills=result.values[0].skills.values;
+                var clonedSkillsHash={};
+                for(var skill in skills){
+                    clonedSkillsHash[skill]=false;
                 }
 
-                catch(err){
+                var c=0;
+                for(var i=0;i<jobs.length;i++){
+                    c=0;
+                    var skillsHash=clonedSkillsHash;
 
-                }
-
-                for (var x = 0; x < $rootScope.matched.length; x++) {
-
-                    //$scope.skills="";
-                    //try{
-                    //    $scope.skills=matched.skills.split(',');
-                    //}
-
-                    $scope.matched[x].tags="";
-                    try{
-                        $scope.matched[x].tags=matched[x].tags.split(',');
-                    }catch(err){
-
-                    }
-
-                    var counter=0;
-                    for(var i=0;i<tags.length;i++){
-                        for(var j=0;j<skills.length;j++){
-                            if(tags[i]==skills[j]) {
-                                counter++;
-                            }
+                    var jobTags=jobs[i].jobTag.split(",").split(" ");
+                    for(var jobTag in jobTags){
+                        if(skillsHash.contains(jobTag)){
+                            skillsHash[jobTag]=true;
                         }
-                        var similarity=(counter*100)/(i+1);
+                    }
+                    for(var skill in skills){
+                        if(skillsHash[skill]==true) c++;
+                    }
+                    var similarity=(c/jobs[i].length)*100;
 
-                        $scope.addToJobList()
+                    if(similarity>70){
+                        var jobListEntity = addToJobListEntitiesService.addToJobListEntity(js_id,jobs[i].jobId,similarity);
+
+                        var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
 
                     }
-
                 }
-
 
             }, function (d) {
                 swal({
@@ -163,90 +144,10 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-        $scope.addToJobList=function(){
-            var jobListEntity = jobListEntitiesService.addToJobListEntity($scope.title,$scope.body,jobseeker_id,fullname);
-
-            var postPromise = jobListRequestService.addToJobList(jobListEntity);
-
-
-            postPromise.then(function (d) {
-                var job = d.data;
-                $scope.jobId = job.jobId;
-                $scope.similarity = job.similarity;
-                $scope.jobseekerId = job.jobseekerId;
-                $scope.id = job.id;
-
-
-                $rootScope.jobList.unshift({
-                    id: job.id,
-                    similarity: job.similarity,
-                    jobseekerId: job.jobseekerId,
-                    jobId: job.jobId
-
-                });
-
-
-            }, function (d) {
-            swal({
-                title: "Error!",
-                text: "Something went wrong, please try again later",
-                type: "error",
-                timer: 2000
-            });
-        });
-
-
-
-        }
-
-        setTimeout(addToJobList(),5000);
-
-
 
 
             //logout and go to login screen
         $scope.logoutLinkedIn = function() {
-
-            //var lastIdPromise = profileRequestService.getLastId();
-            //
-            //lastIdPromise.then(function (d) {
-            //    console.log(d);
-            //    $rootScope.lastId= d.lastId;
-            //
-            //
-            //
-            //}, function (d) {
-            //    swal({
-            //        title: "Error!",
-            //        text: "Something went wrong, please try again later",
-            //        type: "error"
-            //    });
-            //});
-
-            $scope.js_id= authenticationService.userProfile.jobseekerId;
-
-            var idPromise = profileRequestService.getLastId(js_id); // getLastId() (from services) ... the server find the lastJobId and insert it to the jobseekers table wher id=js_id
-
-            //authenticationService.jobs.lastId=d.data.jobId;
-            //result.values[0].lastId=d.data.last_id;
-
-
-            //idPromise.then(function (d) {
-            //
-            //    console.log(d.data);
-            //    authenticationService.jobs.lastId=d.data.last_id; //last_id (from server)
-            //
-            //}, function (d) {
-            //    swal({
-            //        title: "Error!",
-            //        text: "Something went wrong, please try again later",
-            //        type: "error",
-            //        timer: 2000
-            //    });
-            //});
-
-
-
 
             linkedinService.logout();
 
