@@ -146,6 +146,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode($total));
     }
 
+    
 
     public function add_post(){
 
