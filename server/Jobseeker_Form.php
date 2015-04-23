@@ -132,12 +132,18 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
-        $lastJobId='select lastJobId from jobseekers where jobseeker_id='.$js_id.' ';
+        $lastJobId='select lastJobId from jobseekers where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($lastJobId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $lastJobId=$row['lastJobId'];
 
-        $sql='select * from job where lastJobId>'.$lastJobId.' ';
+
         $last_id=$GLOBALS['db']->db_insid();
-        $updateSql= 'update jobseekers set lastJobId= "'.$last_id.'" where jobseeker_id='.$js_id;
+        $updateSql= 'update jobseekers set lastJobId='.$last_id.' where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($updateSql);
 
+
+        $sql='select * from job where jobId>'.$lastJobId;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
