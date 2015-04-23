@@ -14,6 +14,20 @@ angular.module('servicesModule').factory('addToJobListRequestService', function(
                 data: request
             });
             return addToJobListPromise;
+        },
+
+        getJobList:function (jobListEntity) {
+            var request = {};
+            request.opcode = "getJobListRequest";
+
+            request.Entity =  jobListEntity;
+            var JobListPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return JobListPromise;
         }
 
 

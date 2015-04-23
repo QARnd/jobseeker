@@ -9,6 +9,12 @@ angular.module('servicesModule').factory('addToJobListEntitiesService', function
             jobList.similarity =similarity;
             return jobList;
 
+        },
+
+        getJobListEntity:function(js_id) {
+            var jobList = {};     // new object
+            jobList.js_id=js_id;
+            return jobList;
         }
     }
 });

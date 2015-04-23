@@ -649,9 +649,9 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function getJobList(){
         $entity='Entity';
-        $User_Id='User_Id';
-        $User_Id=$GLOBALS['request']->$entity->$User_Id;
-        $sql='select * from joblist where jobseekerId='.$User_Id.'';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle from joblist,job where joblist.jobseekerId='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -659,6 +659,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         }
         print(json_encode($total));
     }
+
 
 
 }
