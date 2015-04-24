@@ -633,17 +633,13 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $JobId='JobId';
         $JobId=$GLOBALS['request']->$entity->$JobId;
-        $user_id='user_id';
-        $user_id=$GLOBALS['request']->$entity->$user_id;
+        $js_id='$js_id';
+        $$js_id=$GLOBALS['request']->$entity->$$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
-        $sql='insert into joblist VALUES (NULL ,'.$user_id.','.$JobId.','.$similarity.')';
+        $sql='insert into joblist VALUES (NULL ,'.$$js_id.','.$JobId.','.$similarity.')';
         $result=$GLOBALS['db']->db_query($sql);
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
-        array_push($total, $row);
-        }
-    print(json_encode($total));
+
     }
 
 
