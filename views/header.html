@@ -87,12 +87,17 @@
 
 
 
-                                <li id="notification_li">
-                                    <span id="notification_count">3</span>
+                                <li ng-controller="linkedInCtrl" id="notification_li">
+                                    <span id="notification_count">{{count}}</span>
                                    <button id="notificationLink">Notifications</button>
                                     <div id="notificationContainer">
                                         <div id="notificationTitle">Notifications</div>
                                         <div id="notificationsBody" class="notifications">
+                                            <div ng-repeat="notification in notifications">
+                                                <h2 class="timeline-header"><a href="#/newsfeed/{{notification.jobId}}">{{notification.content}}</a></h2>
+                                                {{notification.alertDate}}
+
+                                            </div>
                                         </div>
                                         <div id="notificationFooter"><a href="#">See All</a></div>
                                     </div>

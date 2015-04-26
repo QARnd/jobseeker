@@ -119,6 +119,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case'getJobListRequest':
                     $this->getJobList();
                     break;
+                case'getNotificationsRequest':
+                    $this->getNotifications();
+                    break;
 
 
             }
@@ -286,7 +289,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobDescription=$GLOBALS['request']->$entity->$jobDescription;
         $jobTag='jobTag';
         $jobTag=$GLOBALS['request']->$entity-> $jobTag;
-        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",5)';
+        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1000007)';
         $GLOBALS['db']->db_query($sql);
 
 
@@ -655,6 +658,23 @@ class Jobseeker_Form extends Jobseeker_DB {
         }
         print(json_encode($total));
     }
+
+    public function getNotifications(){
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+        $notificationId='notificationId';
+        $notificationId=$GLOBALS['request']->$entity->$notificationId;
+        $sql='select count(*) AS "count", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.not_Id> '.$notificationId.' and  notifications.notiToId='.$js_id;
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+    }
+
+
 
 
 
