@@ -4,9 +4,10 @@
 angular.module('servicesModule').factory('notificationRequestService', function($http,authenticationService) {
     return {
 
-        getNotifications: function () {
+        getNotifications: function (notificationEntity) {
             var request = {};
             request.opcode = "getNotificationsRequest";
+            request.Entity=notificationEntity;
             var notificationPromise = $http({
                 method: 'POST',
                 url: authenticationService.deploymentLink.link,
