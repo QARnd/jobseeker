@@ -159,6 +159,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 });
 
+                
             }, function (d) {
                 swal({
                     title: "Error!",

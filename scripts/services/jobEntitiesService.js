@@ -14,6 +14,7 @@ angular.module('servicesModule').factory('jobEntitiesService', function() {
             return job;
 
 
+
         },
         deleteJobEntity: function(id) {
             var deleteJob = {};     // new object

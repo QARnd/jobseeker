@@ -640,11 +640,17 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
-        $sql='insert into joblist VALUES (NULL ,'.$$js_id.','.$JobId.','.$similarity.')';
+        $sql='insert into joblist VALUES (NULL ,'.$js_id.','.$JobId.','.$similarity.')';
         $result=$GLOBALS['db']->db_query($sql);
 
-        $sql='insert into jobNotifications VALUES (NULL ,'.$js_id.','.date("Y-m-d H:i:s").','.$js_id.')';
-        $result=$GLOBALS['db']->db_query($sql);
+         $jobTitle='select jobTitle from job where job.jobId='.$JobId;
+        $result=$GLOBALS['db']->db_query($jobTitle);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $jobTitle=$row['jobTitle'];
+
+
+        $sql1='insert into notification VALUES (NULL ,"you have this job '.$jobTitle.' "and"'.$similarity.'"  ,"'.date("Y-m-d H:i:s").'",'.$js_id.')';
+        $result=$GLOBALS['db']->db_query($sql1);
 
     }
 
@@ -653,7 +659,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='select joblist.jobId,joblist.similarity, job.jobTitle from joblist,job where joblist.jobseekerId='.$js_id;
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle,job.description , job.jobTag from joblist,job where joblist.jobseekerId='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
