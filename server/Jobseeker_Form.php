@@ -650,7 +650,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.Description, job.jobTag  from joblist , job where joblist.jobseekerId='.$js_id;
+        $sql='select joblist.jobId,joblist.similarity,job.jobId, job.jobTitle , job.Description, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
