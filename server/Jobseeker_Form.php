@@ -634,10 +634,13 @@ class Jobseeker_Form extends Jobseeker_DB {
         $JobId='JobId';
         $JobId=$GLOBALS['request']->$entity->$JobId;
         $js_id='$js_id';
-        $$js_id=$GLOBALS['request']->$entity->$$js_id;
+        $js_id=$GLOBALS['request']->$entity->$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
         $sql='insert into joblist VALUES (NULL ,'.$$js_id.','.$JobId.','.$similarity.')';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $sql='insert into jobNotifications VALUES (NULL ,'.$js_id.','.date("Y-m-d H:i:s").','.$js_id.')';
         $result=$GLOBALS['db']->db_query($sql);
 
     }
