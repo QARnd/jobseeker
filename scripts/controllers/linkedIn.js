@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,notificationRequestService,notificationEntityService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
 
@@ -79,16 +79,20 @@ angular.module('myApp').controller('linkedInCtrl',
                     );
 
                 }
+
             });
 
 
         };
 
-        ///get last jobs
+
+
+            ///get last jobs
         $scope.getLastAddedJobs=function(skillStr){
 
             var js_id= authenticationService.userProfile.user_id;
-
+            var similarity=(c/jobTags.length)*100;
+            var countNot=0;
             var lastJobsEntity = entitiesService.lastJobsEntity(js_id);
 
             var jobsPromise = linkedinService.getAllJobsFromLastId(lastJobsEntity);
@@ -118,9 +122,9 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-                    var similarity=(c/jobTags.length)*100;
 
                     if(similarity>70){
+                        countNot++;
                         var jobListEntity = addToJobListEntitiesService.addToJobListEntity(js_id,jobs[i].jobId,similarity);
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
@@ -135,7 +139,25 @@ angular.module('myApp').controller('linkedInCtrl',
                             });
                         });
                     }
+
                 }
+
+                $scope.Notifications=[
+
+                ];
+                var js_id = authenticationService.userProfile.jobseekerId;
+                var NotificationEntity = notificationEntityService.notificationsEntity(js_id,countNot);
+                var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
+
+                NotificationPromise.then(function (d) {
+                    console.log(d);
+
+                    var Notifications = d.data;
+                    $scope.counteNot=Notifications.counteNot;
+                    $scope.content=Notifications.content;
+                    $scope.jobId=Notifications.jobId;
+
+                });
 
             }, function (d) {
                 swal({
@@ -146,6 +168,7 @@ angular.module('myApp').controller('linkedInCtrl',
                 });
             });
         };
+
 
 
 
