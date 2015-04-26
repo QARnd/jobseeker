@@ -243,60 +243,32 @@
     <!--Notifications-->
     <div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">
 
-        <div ng-controller="addJobCtrl" id="newsfeedJobContent">
+        <div ng-controller="JobsListCtrl" id="newsfeedJobContent">
 
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-
-                    <div class="col-md-12">
-                        <!-- general form elements disabled -->
-                        <div class="box box-warning">
-                            <div class="box-header">
-                                <h3 class="box-title">Write New Job..</h3>
-                            </div><!-- /.box-header -->
-                            <div class="box-body">
-
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text"  ng-model="jobTitle" class="form-control" placeholder="Enter Title..."/>
-                                </div>
-
-
-                                <!-- textarea -->
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea ng-model="jobDescription" class="form-control" rows="3" placeholder="Enter Description..."></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Requirements</label>
-                                    <textarea ng-model="jobTag" class="form-control" rows="3" placeholder="Enter Requirements..."></textarea>
-                                </div>
-
-                                <div class="box-footer">
-                                    <button class="btn btn-primary" ng-click="addJob()">Add Job</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
 
                     
                     <div class="col-md-12">
                         <!-- general form elements disabled -->
                         <div class="box box-warning">
                             <div class="box-header">
-                                <h3 class="box-title"> NewJobs For You..</h3>
+                                <h3 class="box-title"> Your JobList..</h3>
 
                             <div class="box-body">
-                                <div  ng-repeat="job in joblist track by $index">
+                                <div  ng-repeat="job in jobList track by $index">
                                 <div class="form-group">
-                                    <h3 class="timeline-header"><a href="#/newsfeed/{{job.id}}">{{job.jobTitle}}</a></h3>
+                                    <h3 class="timeline-header"><a href="#/newsfeed/{{job.jobId}}">{{job.jobTitle}}</a></h3>
+                                    <div class="timeline-body"  style="white-space: pre-line">
+                                        {{job.jobDescription}}
+                                    </div>
+                                    <div class="timeline-body"  style="white-space: pre-line">
+                                        {{job.jobTag}}
+                                    </div>
+                                    <div class="timeline-body"  style="white-space: pre-line">
+                                        {{job.similarity}}
+                                    </div>
                                 </div>
 
                                  </div>
@@ -305,47 +277,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
-                <!-- left column -->
-                    <div class="col-md-12">
-                        <!-- general form elements -->
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <h3 class="box-title">Quick Example</h3>
-                            </div><!-- /.box-header -->
-                            <!-- form start -->
-                            <form role="form">
-                                <div class="box-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
-                                        <input type="file" id="exampleInputFile">
-                                        <p class="help-block">Example block-level help text here.</p>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Check me out
-                                        </label>
-                                    </div>
-                                </div><!-- /.box-body -->
-
-                                <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </form>
-                        </div><!-- /.box -->
-                    </div><!--/.col (left) -->
                 </div>
             </section>
         </div>
@@ -358,9 +289,9 @@
             <button class="center-block btn btn-default" ng-click="loadMoreNoti()">Load More..</button>
 
             <!--<div class="container" id="loadMoreNotiSpinner">-->
-            <!--<!--<div class="spinner"></div>-->-->
+            <!--<!--<div class="spinner"></div>-->
             <!--<div class="spinner border"></div>-->
-            <!--<!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->-->
+            <!--<!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
             <!--</div>-->
         </center>
 

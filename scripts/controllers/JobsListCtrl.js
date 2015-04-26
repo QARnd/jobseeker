@@ -6,15 +6,18 @@
  */
 angular.module('myApp').controller('JobsListCtrl',
 
-    function AppCtrl($scope,addToJobListEntitiesService,authenticationService,addToJobListRequestService, $location, $rootScope, $http) {
-        $scope.getJobsListCtrl=function()
+    function AppCtrl($scope,addToJobListEntitiesService,authenticationService,addToJobListRequestService) {
 
-        {var jobListEntity = addToJobListEntitiesService.getJobListEntity($scope.js_id);
+        $scope.js_id= authenticationService.userProfile.jobseekerId;
+
+        $scope.getJobsListCtrl=function(){
+
+        var jobListEntity = addToJobListEntitiesService.getJobListEntity($scope.js_id);
 
             var jobListPromise = addToJobListRequestService.getJobList(jobListEntity);
 
             jobListPromise.then(function (d) {
-                var jobList= d.data;
+                $scope.jobList= d.data;
 
             }, function (d) {
                 swal({
@@ -26,7 +29,6 @@ angular.module('myApp').controller('JobsListCtrl',
             });
 
         }
-        $scope.js_id= authenticationService.userProfile.jobseekerId;
 
 
 
