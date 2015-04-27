@@ -653,7 +653,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $result=$GLOBALS['db']->db_query($sql1);
 
     }
-
+    
 
     public function getJobList(){
         $entity='Entity';
