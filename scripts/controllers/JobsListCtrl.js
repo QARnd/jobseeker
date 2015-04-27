@@ -17,6 +17,7 @@ angular.module('myApp').controller('JobsListCtrl',
             var jobListPromise = addToJobListRequestService.getJobList(jobListEntity);
 
             jobListPromise.then(function (d) {
+                console.log(d.data);
                 $scope.jobList= d.data;
 
             }, function (d) {
