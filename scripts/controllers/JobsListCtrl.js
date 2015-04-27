@@ -1,22 +1,21 @@
 /**
  * Created by happy on 4/23/2015.
  */
-/**
- * Created by happy on 4/23/2015.
- */
+
 angular.module('myApp').controller('JobsListCtrl',
 
     function AppCtrl($scope,addToJobListEntitiesService,authenticationService,addToJobListRequestService) {
 
-        $scope.js_id= authenticationService.userProfile.jobseekerId;
+        var js_id= authenticationService.userProfile.jobseekerId;
 
         $scope.getJobsListCtrl=function(){
 
-        var jobListEntity = addToJobListEntitiesService.getJobListEntity($scope.js_id);
+        var jobListEntity = addToJobListEntitiesService.getJobListEntity(js_id);
 
             var jobListPromise = addToJobListRequestService.getJobList(jobListEntity);
 
             jobListPromise.then(function (d) {
+                console.log(d.data);
                 $scope.jobList= d.data;
 
             }, function (d) {
