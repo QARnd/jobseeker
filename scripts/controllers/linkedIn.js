@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,notificationRequestService,notificationEntityService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,notificationRequestService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
 
