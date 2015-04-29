@@ -1,6 +1,5 @@
-/**
- * Created by Hanan Tahayni on 4/13/2015.
- */
+
+
 
 
 angular.module('myApp').directive('chat', function () {
