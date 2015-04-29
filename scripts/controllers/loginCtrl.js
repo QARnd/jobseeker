@@ -7,4 +7,20 @@ angular.module('myApp')
          if($scope.userProfile.data.loggedIn==true){
          $location.path("/newsFeed");
          }*/
+
+
+        $scope.showModal = false;
+        $scope.toggle = function(){
+            $scope.showModal = !$scope.showModal;
+
+        };
+
+
+        $scope.showModalAccount = false;
+        $scope.toggleAccount = function(){
+            $scope.showModalAccount = !$scope.showModalAccount;
+
+        };
     });
+
+
