@@ -12,7 +12,14 @@ angular.module('myApp')
         $scope.showModal = false;
         $scope.toggle = function(){
             $scope.showModal = !$scope.showModal;
-            $scope.getMessages();
+
+        };
+
+
+        $scope.showModalAccount = false;
+        $scope.toggleAccount = function(){
+            $scope.showModalAccount = !$scope.showModalAccount;
+
         };
     });
 
