@@ -122,8 +122,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case'getNotificationsRequest':
                     $this->getNotifications();
                     break;
-
-
+                case'getRemainderRequest':
+                    $this->getRemainders();
+                    break;
             }
 
 
@@ -632,6 +633,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
+
     public function addToJobList(){
         $entity='Entity';
         $JobId='JobId';
@@ -650,7 +652,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id;
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id;-
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -673,6 +675,28 @@ class Jobseeker_Form extends Jobseeker_DB {
         }
         print(json_encode($total));
     }
+    public function getRemainders(){
+        $entity='Entity';
+        $user_id='user_id';
+        $user_id=$GLOBALS['request']->$entity->$user_id;
+        $sql='select remainderDate,eventId,eventTitle from events where jobseeker_id= '.$user_id.' ';
+        $result=$GLOBALS['db']->db_query($sql);
+        $row = $GLOBALS['db']->db_assoc($result);
+        while($row[0]==now())
+        {
+            sendSMS($row[0],$user_id,$row[2]);
+        }
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+    }
+    public function sendSMS($date,$user_id,$eventTitle){
+
+
+    }
+
 
 
 
