@@ -123,6 +123,8 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
+
+
                     if(similarity>70){
                         countNot++;
                         var jobListEntity = addToJobListEntitiesService.addToJobListEntity(js_id,jobs[i].jobId,similarity);
@@ -159,7 +161,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 });
 
-                
+
             }, function (d) {
                 swal({
                     title: "Error!",
