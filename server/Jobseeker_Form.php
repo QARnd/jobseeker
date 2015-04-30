@@ -333,7 +333,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$jobId;
-        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider=jobprovider.jobprovider_id';
+        $sql='select job.jobId,job.jobTitle,job.jobDescription, job.jobTag, job.publishDate, job.jobProvider, jobprovider.Name from job,jobprovider where job.jobProvider=jobprovider.jobprovider_id and job.jobId='.$jobId;
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
 
