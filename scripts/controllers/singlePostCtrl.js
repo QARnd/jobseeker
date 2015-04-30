@@ -11,10 +11,6 @@ angular.module('myApp').controller('singlePostCtrl',
         $scope.postId=$routeParams.postId;
 
 
-
-
-
-
         var postPromise = postRequestsService.getSinglePost($scope.postId);
 
 

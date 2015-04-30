@@ -87,11 +87,11 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-            ///get last jobs
+        ///get last jobs
         $scope.getLastAddedJobs=function(skillStr){
 
             var js_id= authenticationService.userProfile.user_id;
-            var similarity=(c/jobTags.length)*100;
+
             var countNot=0;
             var lastJobsEntity = entitiesService.lastJobsEntity(js_id);
 
@@ -103,7 +103,7 @@ angular.module('myApp').controller('linkedInCtrl',
                 var skills=skillStr.split(",");
 
                 console.log(skills);
-                var c=0;
+                var c;
                 for(var i=0;i<jobs.length;i++){
                     c=0;
                     var skillsHash=skills;
@@ -118,8 +118,8 @@ angular.module('myApp').controller('linkedInCtrl',
                             alert(jobTag);
                         }
                     }
-
-
+                    var similarity=(c/jobTags.length)*100;
+                    console.log(similarity);
 
 
 
@@ -146,7 +146,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 ];
                 var js_id = authenticationService.userProfile.jobseekerId;
-                var NotificationEntity = notificationEntityService.notificationsEntity(js_id,countNot);
+                var NotificationEntity = notificationEntitiesService.notificationEntity(js_id,countNot);
                 var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
 
                 NotificationPromise.then(function (d) {
@@ -159,7 +159,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 });
 
-                
+
             }, function (d) {
                 swal({
                     title: "Error!",
@@ -168,6 +168,12 @@ angular.module('myApp').controller('linkedInCtrl',
                     timer: 2000
                 });
             });
+            var user_id= authenticationService.userProfile.user_id;
+            var remainderEntity =remainderEntityService.getRemainders(user_id);
+            var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
+            remainderPromise.then(function (d) {
+                var  remainder = d.data;
+            });
         };
 
 
@@ -175,7 +181,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-            //logout and go to login screen
+        //logout and go to login screen
         $scope.logoutLinkedIn = function() {
 
             linkedinService.logout();
