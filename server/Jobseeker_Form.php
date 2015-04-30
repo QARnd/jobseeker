@@ -134,6 +134,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'editEventRequest':
                     $this->edit_event();
                     break;
+                case 'getRemainderRequest':
+                    $this->get_remainder();
+                    break;
 
 
             }
@@ -768,6 +771,23 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         print(json_encode($newEvent));
     }
+public function get_remainder(){
+
+    $entity='Entity';
+    $js_id='user_id';
+    $js_id=$GLOBALS['request']->$entity->$js_id;
+    $sql='select remainderDate,eventTitle from event where jobseeker_id='.$js_id.'';
+    $result=$GLOBALS['db']->db_query($sql);
+    $row = $GLOBALS['db']->db_assoc($result);
+    while($row[0]==now()){
+    sendSMS($row[1],$js_id);
+        array_push($total, $row);
+    }
+
+    print(json_encode($total));
+
+}
+    public function  sendSMS($eventTitle,$js_id){}
 
 
 
