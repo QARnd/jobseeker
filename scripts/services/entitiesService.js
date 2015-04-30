@@ -82,6 +82,14 @@ angular.module('servicesModule').factory('entitiesService', function() {
             var job = {};     // new object
             job.js_id = js_id;
             return job;
+        },
+        addMessageJobProviderEntity: function(emailSend,content) {
+            var message = {};     // new object
+            message.emailSend=emailSend;
+            message.content=content;
+
+
+            return message;
         }
 
     };

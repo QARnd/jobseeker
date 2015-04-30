@@ -137,6 +137,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getRemainderRequest':
                     $this->get_remainder();
                     break;
+                case 'addMessageJobProviderRequest':
+                    $this->add_messageJobProvider();
+                    break;
+                case 'getAllMessageProviders':
+                    $this->getAllMessageProviders();
+                    break;
 
 
             }
@@ -172,7 +178,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    
+
     public function add_post(){
 
         $entity='Entity';
@@ -783,16 +789,46 @@ public function get_remainder(){
     sendSMS($row[1],$js_id);
         array_push($total, $row);
     }
-
     print(json_encode($total));
-
 }
+
+
     public function  sendSMS($eventTitle,$js_id){}
 
 
+    public function add_messageJobProvider(){
 
+        $entity='Entity';
+        $emailSend='emailSend';
+        $emailSend=$GLOBALS['request']->$entity->$emailSend;
+        $content='content';
+        $content=$GLOBALS['request']->$entity->$content;
+       ;
+        $sql='insert into messageJobProvider values(NULL,'.$emailSend.','.$content.')';
+        $GLOBALS['db']->db_query($sql);
+
+
+
+    }
+
+
+
+    public function getAllMessageProviders(){
+
+        $sql='select * from messageJobProvider';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
 
 }
+
+
 
 $GLOBALS['request']=json_decode(file_get_contents('php://input'));
 

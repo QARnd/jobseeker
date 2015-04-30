@@ -28,8 +28,7 @@ angular.module('myApp').controller('addPostCtrl',
                 $rootScope.posts.unshift({id:post.id,title:post.title,body:post.body,status:post.status,jobseeker_id:post.jobseeker_id,publish_date:post.publish_date});
 
 
-
-
+                
                 swal({
                     title: "Success!",
                     text: "Your Post Has been Published! With Title:"+d.data,
