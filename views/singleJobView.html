@@ -137,7 +137,8 @@
         </section>
 
     </div>
-    <p><button ng-click="showAddEvent()" class="btn btn-inverse">Add New Event</button></p>
+
+    <center><p><button ng-click="showAddEvent()" class="btn btn-inverse">Add New Event</button></p></center>
     <div ng-controller="eventCtrl" id="addNewEvent">
 
         <section class="content">
@@ -154,7 +155,7 @@
                                 Event Title:<input type="text" ng-model="eventTitle"/>
                             </div>
                             <div class="form-group">
-                                Event Content:<textarea ng-model="eventDetail" class="form-control" rows="1" placeholder="Write an Event ....."></textarea>
+                                Event Content:<textarea ng-model="eventDetail" class="form-control" rows="6" cols="10" placeholder="Write an Event ....."></textarea>
                             </div>
                             <div class="form-group">
                                 remainderDate: <input type="date" ng-model="remainderDate"/>
@@ -168,11 +169,13 @@
                             <!--Get All Comments-  ->
                             <!--get content from the DB using-->
                             <ul class="timeline" ng-init="getEvents()" id="events">
-                                <li ng-repeat="event in events track by $index">
+                               <li ng-repeat="event in events track by $index">
                                     <div class="timeline-item">
                                         <div class="timeline-body">
-                                            <span> <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteEvent(event.eventId)"></a></span>
-                                           <h3>{{event.eventTitle}}</h3>
+                                            <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteEvent(event.eventId)">
+                                                <h3>{{event.eventTitle}}</h3>
+                                            </a>
+
                                            <p>{{event.eventDetail}}</p>
                                             {{event.remainderDate}}
                                         </div>
