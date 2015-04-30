@@ -1,10 +1,68 @@
-
+<p>Sign in with your LinkedIn account?</p>
+<div style="margin-left:6px; "><script type="in/Login" ></script></div>
 <!--<div class="jumbotron" ng-show="userProfile.data.loggedIn==undefined && !userProfile.data.loggedIn">-->
-    <div class="hero-unit">
-        <p>Sign in with your LinkedIn account?</p>
-        <span style="margin-left:6px; "><script type="in/Login" ></script></span>
+
+
+
+<div>
+    <button  class="btn btn-danger btn-sm" rel="publisher" ng-click="toggle()">
+        Login As JobProvider
+    </button>
+</div>
+
+<modal title="Login As JobProvider" visible="showModal">
+    <div class="form-group">
+
+
+
+        <div class="form-group">
+            <label for="Emailp">Email address</label>
+            <input type="email" class="form-control" id="Emailp" placeholder="Enter email" />
+        </div>
+        <div class="form-group">
+            <label for="password">content</label>
+            <textarea ng-model="content" class="form-control" rows="7" ></textarea>
+
+        </div>
+        <button class="btn btn-default">Submit</button>
+
+
 
     </div>
+</modal>
+
+
+
+
+
+
+<div>
+    <button  class="btn btn-danger btn-sm" rel="publisher" ng-click="toggleAccount()">
+        Send a message to create new JobProvider account
+    </button>
+</div>
+
+<modal title="Send a message to create new JobProvider account" visible="showModalAccount">
+    <div class="form-group">
+
+
+
+        <div class="form-group">
+            <label for="Emailp">Email address</label>
+            <input type="email" class="form-control" id="Emailp" placeholder="Enter email" />
+        </div>
+        <div class="form-group">
+            <label for="password">content</label>
+            <textarea ng-model="content" class="form-control" rows="7" ></textarea>
+
+        </div>
+        <button class="btn btn-default">Send</button>
+
+
+
+    </div>
+</modal>
+
 <!--</div>-->
 
 

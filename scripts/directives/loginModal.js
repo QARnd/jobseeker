@@ -1,8 +1,8 @@
+/**
+ * Created by Omayma on 4/12/2015.
+ */
 
-
-
-
-angular.module('myApp').directive('chat', function () {
+angular.module('myApp').directive('loginModal', function () {
     return {
         template: '<div class="modal fade">' +
         '<div class="modal-dialog">' +

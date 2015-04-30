@@ -122,9 +122,20 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case'getNotificationsRequest':
                     $this->getNotifications();
                     break;
-                case'getRemainderRequest':
-                    $this->getRemainders();
+                case 'addEventRequest':
+                    $this->add_event();
                     break;
+                case 'getEventsRequest':
+                    $this->get_events();
+                    break;
+                case 'deleteEventRequest':
+                    $this->delete_event();
+                    break;
+                case 'editEventRequest':
+                    $this->edit_event();
+                    break;
+
+
             }
 
 
@@ -633,26 +644,35 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
-
     public function addToJobList(){
         $entity='Entity';
         $JobId='JobId';
         $JobId=$GLOBALS['request']->$entity->$JobId;
         $js_id='$js_id';
-        $$js_id=$GLOBALS['request']->$entity->$$js_id;
+        $js_id=$GLOBALS['request']->$entity->$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
-        $sql='insert into joblist VALUES (NULL ,'.$$js_id.','.$JobId.','.$similarity.')';
+        $sql='insert into joblist VALUES (NULL ,'.$js_id.','.$JobId.','.$similarity.')';
         $result=$GLOBALS['db']->db_query($sql);
 
+        $jobTitle='select jobTitle from job where job.jobId='.$JobId;
+        $result=$GLOBALS['db']->db_query($jobTitle);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $jobTitle=$row['jobTitle'];
+
+
+        $sql1='insert into notifications VALUES (NULL ,"you have a new job oppurtunity with title " '.$jobTitle.' "and similarity " $similarity ,'.date("Y-m-d H:i:s").','.$js_id.')';
+        $result=$GLOBALS['db']->db_query($sql1);
+
     }
+
 
 
     public function getJobList(){
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id;-
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -675,29 +695,79 @@ class Jobseeker_Form extends Jobseeker_DB {
         }
         print(json_encode($total));
     }
-    public function getRemainders(){
+
+    public function add_event(){
+
         $entity='Entity';
-        $user_id='user_id';
-        $user_id=$GLOBALS['request']->$entity->$user_id;
-        $sql='select remainderDate,eventId,eventTitle from events where jobseeker_id= '.$user_id.' ';
+        $remainderDate='remainderDate';
+        $remainderDate=$GLOBALS['request']->$entity->$remainderDate;
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity-> $js_id;
+        $eventTitle='eventTitle';
+        $eventTitle=$GLOBALS['request']->$entity->$eventTitle;
+        $eventDetail='eventDetail';
+        $eventDetail=$GLOBALS['request']->$entity-> $eventDetail;
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$entity-> $jobId;
+        $sql='insert into events values(NULL,"'.$remainderDate.'",'.$js_id.',"'.$eventTitle.'","'.$eventDetail.'",'.$jobId.')';
+
+        $GLOBALS['db']->db_query($sql);
+
+
+    }
+
+    public function get_events(){
+
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$entity->$jobId;
+
+        $sql='select remainderDate,eventTitle,eventDetail from events where jobseeker_id='.$js_id.'and jobId='.$jobId;
         $result=$GLOBALS['db']->db_query($sql);
-        $row = $GLOBALS['db']->db_assoc($result);
-        while($row[0]==now())
-        {
-            sendSMS($row[0],$user_id,$row[2]);
-        }
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
         print(json_encode($total));
-    }
-    public function sendSMS($date,$user_id,$eventTitle){
-
 
     }
 
+    public function delete_event(){
+        $entity='Entity';
+        $eventId='eventId';
+        $eventId=$GLOBALS['request']->$entity->$eventId;
 
+        $eventIdInt=intval($eventId);
+        $sql='delete from events where eventId='.$eventIdInt;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode("Done"));
+    }
+
+    public function edit_event()
+    {
+        $entity='Entity';
+        $editedEventId='editedEventId';
+        $editedEventId=$GLOBALS['request']->$entity->$editedEventId;
+
+        $editedEventTitle='editedEventTitle';
+        $editedEventTitle=$GLOBALS['request']->$entity->$editedEventTitle;
+
+        $editedEventDetail='editedEventDetail';
+        $editedEventDetail=$GLOBALS['request']->$entity->$editedEventDetail;
+
+        $editedRemainderDate='editedRemainderDate';
+        $editedRemainderDate=$GLOBALS['request']->$entity->$editedRemainderDate;
+
+
+        $sql = 'update events set remainderDate= "'.$editedRemainderDate.'" and eventTitle= "'.$editedEventTitle.'" and eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
+        $GLOBALS['db']->db_query($sql);
+        $newEvent = array('eventId'=>$editedEventId,'remainderDate' => $editedRemainderDate,'eventTitle' => $editedEventTitle,'eventDetail' => $editedEventDetail);
+
+        print(json_encode($newEvent));
+    }
 
 
 
