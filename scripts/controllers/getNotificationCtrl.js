@@ -3,12 +3,12 @@
  */
 
 angular.module('myApp').controller('getNotificationCtrl',
-    function($scope, entitiesService, NotificationRequestService, authenticationService) {
+    function($scope, notificationEntitiesService, NotificationRequestService, authenticationService) {
 
         $scope.getNotification = function () {
 
             var js_id = authenticationService.userProfile.jobseekerId;
-            var NotificationEntity = entitiesService.getNotificationsEntity(js_id,$scope.count);
+            var NotificationEntity = notificationEntitiesService.notificationEntity(js_id,$scope.count);
             var NotificationPromise = NotificationRequestService.getNotifications(NotificationEntity);
 
             NotificationPromise.then(function (d) {

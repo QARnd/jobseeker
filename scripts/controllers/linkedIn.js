@@ -91,7 +91,7 @@ angular.module('myApp').controller('linkedInCtrl',
         $scope.getLastAddedJobs=function(skillStr){
 
             var js_id= authenticationService.userProfile.user_id;
-            var similarity=(c/jobTags.length)*100;
+
             var countNot=0;
             var lastJobsEntity = entitiesService.lastJobsEntity(js_id);
 
@@ -103,7 +103,7 @@ angular.module('myApp').controller('linkedInCtrl',
                 var skills=skillStr.split(",");
 
                 console.log(skills);
-                var c=0;
+                var c;
                 for(var i=0;i<jobs.length;i++){
                     c=0;
                     var skillsHash=skills;
@@ -118,6 +118,8 @@ angular.module('myApp').controller('linkedInCtrl',
                             alert(jobTag);
                         }
                     }
+                    var similarity=(c/jobTags.length)*100;
+                    console.log(similarity);
 
 
 
@@ -146,7 +148,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 ];
                 var js_id = authenticationService.userProfile.jobseekerId;
-                var NotificationEntity = notificationEntityService.notificationsEntity(js_id,countNot);
+                var NotificationEntity = notificationEntitiesService.notificationEntity(js_id,countNot);
                 var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
 
                 NotificationPromise.then(function (d) {
