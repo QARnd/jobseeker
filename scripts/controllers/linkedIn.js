@@ -87,7 +87,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-            ///get last jobs
+        ///get last jobs
         $scope.getLastAddedJobs=function(skillStr){
 
             var js_id= authenticationService.userProfile.user_id;
@@ -170,6 +170,12 @@ angular.module('myApp').controller('linkedInCtrl',
                     timer: 2000
                 });
             });
+            var user_id= authenticationService.userProfile.user_id;
+            var remainderEntity =remainderEntityService.getRemainders(user_id);
+            var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
+            remainderPromise.then(function (d) {
+                var  remainder = d.data;
+            });
         };
 
 
@@ -177,7 +183,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-            //logout and go to login screen
+        //logout and go to login screen
         $scope.logoutLinkedIn = function() {
 
             linkedinService.logout();

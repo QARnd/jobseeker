@@ -5,7 +5,7 @@
 
 angular.module('myApp').controller('singleJobCtrl',
     function($scope, jobEntitiesService, jobRequestsService,$routeParams, authenticationService) {
-
+        $('#addNewEvent').hide();
         //hide the edit div
         $('#editJob').hide();
         $scope.jp_id= authenticationService.userProfile.provider_id;
@@ -79,6 +79,10 @@ angular.module('myApp').controller('singleJobCtrl',
             var jobEntity = jobEntitiesService.updateJobEntity($scope.jobTitle, $scope.jobDescription,$scope.jobtag, $scope.jobId);
 
             var jobPromise = jobRequestsService.updateJob(jobEntity);
+        }
+
+        $scope.showAddEvent=function(){
+            $('#addNewEvent').toggle('slow');
         }
 
     });
