@@ -156,17 +156,17 @@ class Jobseeker_Form extends Jobseeker_DB {
         $lastJobId=$row['lastJobId'];
 
 
-        $last_id=$GLOBALS['db']->db_insid();
-        $updateSql= 'update jobseekers set lastJobId='.$last_id.' where jobseeker_id='.$js_id;
-        $result=$GLOBALS['db']->db_query($updateSql);
-
-
         $sql='select * from job where jobId>'.$lastJobId;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
+
+        $last_id=$GLOBALS['db']->db_insid();
+        $updateSql= 'update jobseekers set lastJobId='.$last_id.' where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($updateSql);
+
         print(json_encode($total));
     }
 
@@ -649,14 +649,16 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function addToJobList(){
         $entity='Entity';
-        $JobId='JobId';
+        $JobId='jobId';
         $JobId=$GLOBALS['request']->$entity->$JobId;
-        $js_id='$js_id';
+        $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
         $sql='insert into joblist VALUES (NULL ,'.$js_id.','.$JobId.','.$similarity.')';
         $result=$GLOBALS['db']->db_query($sql);
+//        print(json_encode("Done"));
+
 
         $jobTitle='select jobTitle from job where job.jobId='.$JobId;
         $result=$GLOBALS['db']->db_query($jobTitle);
@@ -727,10 +729,10 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$entity->$jobId;
 
-        $sql='select remainderDate,eventTitle,eventDetail from events where jobseeker_id='.$js_id.'and jobId='.$jobId;
-        $result=$GLOBALS['db']->db_query($sql);
+        $sql='select * from events where jobseeker_id ='.$js_id.'and jobId = '.$jobId;
+        $result1=$GLOBALS['db']->db_query($sql);
         $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
+        while($row = $GLOBALS['db']->db_assoc($result1)){
             array_push($total, $row);
         }
         print(json_encode($total));

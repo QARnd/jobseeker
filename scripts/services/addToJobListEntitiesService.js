@@ -2,11 +2,11 @@ angular.module('servicesModule').factory('addToJobListEntitiesService', function
 
     return {
 
-        addToJobListEntity: function (user_id,jobId,similarity) {
+        addToJobListEntity: function (js_id,jobId,similarity) {
             var jobList = {};     // new object
-            jobList.user_id = user_id;
+            jobList.js_id = js_id;
             jobList.jobId = jobId;
-            jobList.similarity =similarity;
+            jobList.similarity = similarity;
 
             return jobList;
 

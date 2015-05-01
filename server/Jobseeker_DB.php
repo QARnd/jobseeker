@@ -49,7 +49,7 @@ class Jobseeker_DB {
     //input: query to select data
     //output: array of rows
     function db_assoc($query_result){
-        if ($last = mysql_fetch_assoc($query_result))
+        if ($last = @mysql_fetch_assoc($query_result))
             return $last;
         else
             $this->error_messge = mysql_error();

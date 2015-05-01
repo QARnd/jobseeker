@@ -8,7 +8,7 @@ angular.module('myApp').controller('JobsListCtrl',
 
         var js_id= authenticationService.userProfile.jobseekerId;
 
-        $scope.getJobsListCtrl=function(){
+        //$scope.getJobsListCtrl=function(){
 
         var jobListEntity = addToJobListEntitiesService.getJobListEntity(js_id);
 
@@ -27,7 +27,7 @@ angular.module('myApp').controller('JobsListCtrl',
                 });
             });
 
-        }
+        //}
 
 
 
