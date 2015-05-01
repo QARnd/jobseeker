@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,notificationRequestService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
 
@@ -129,7 +129,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
                         jobListPromise.then(function (d) {
-                            console.log(jobListEntity);
+                            //console.log(jobListEntity);
                         }, function (d) {
                             swal({
                                 title: "Error!",
@@ -173,6 +173,7 @@ angular.module('myApp').controller('linkedInCtrl',
             var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
             remainderPromise.then(function (d) {
                 var  remainder = d.data;
+   
             });
         };
 

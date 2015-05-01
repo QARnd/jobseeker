@@ -776,7 +776,7 @@ public function get_remainder(){
     $entity='Entity';
     $js_id='user_id';
     $js_id=$GLOBALS['request']->$entity->$js_id;
-    $sql='select remainderDate,eventTitle from event where jobseeker_id='.$js_id.'';
+    $sql='select remainderDate,eventTitle from events where jobseeker_id='.$js_id.'';
     $result=$GLOBALS['db']->db_query($sql);
     $row = $GLOBALS['db']->db_assoc($result);
     while($row[0]==now()){
