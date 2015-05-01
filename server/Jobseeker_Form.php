@@ -729,7 +729,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$entity->$jobId;
 
-        $sql='select * from events where jobseeker_id ='.$js_id.'and jobId = '.$jobId;
+        $sql='select * from events where jobseeker_id ='.$js_id.' and jobId ='.$jobId;
         $result1=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result1)){

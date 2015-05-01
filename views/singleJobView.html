@@ -151,13 +151,14 @@
 
 
                             <div class="form-group">
-                                Event Title:<input type="text" ng-model="eventTitle"/>
+                                <input type="text" ng-model="eventTitle" placeholder="Event Title" class="col-md-12" />
                             </div>
                             <div class="form-group">
-                                Event Content:<textarea ng-model="eventDetail" class="form-control" rows="6" cols="10" placeholder="Write an Event ....."></textarea>
+                                <textarea ng-model="eventDetail" class="form-control" rows="6" cols="10" placeholder="Write an Event Content ..."></textarea>
                             </div>
                             <div class="form-group">
-                                remainderDate: <input type="date" ng-model="remainderDate"/>
+                                <label>Remainder Date:</label>
+                                <input type="date" ng-model="remainderDate"/>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary btn-xs fa fa-plus center-block" ng-click="addEvent()"> Add Event</button>
@@ -265,7 +266,7 @@
                                         Event Content:<textarea ng-model="editedEventDetail" class="form-control" rows="6" cols="10" placeholder="Your Event Detail....."></textarea>
                                     </div>
                                     <div class="form-group">
-                                        remainderDate: <input type="date" ng-model="editedRemainderDate"/>
+                                        Remainder Date: <input type="date" ng-model="editedRemainderDate"/>
                                     </div>
 
 

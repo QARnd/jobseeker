@@ -18,6 +18,8 @@ angular.module('myApp').controller('JobsListCtrl',
                 console.log(d.data);
                 $scope.jobList= d.data;
 
+
+
             }, function (d) {
                 swal({
                     title: "Error!",

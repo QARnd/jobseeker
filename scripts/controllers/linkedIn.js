@@ -99,7 +99,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
             jobsPromise.then(function (d) {
                 var jobs= d.data;
-                alert(skillStr);
+                //alert(skillStr);
                 var skills=skillStr.split(",");
 
                 console.log(skills);
@@ -115,7 +115,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         if ($.inArray(jobTag, skillsHash) >= 0) {
                             c++;
-                            alert(jobTag);
+                            //alert(jobTag);
                         }
                     }
                     var similarity=(c/jobTags.length)*100;
