@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,notificationRequestService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,notificationRequestService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService,remainderEntityService,remainderRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
 
@@ -115,6 +115,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         if ($.inArray(jobTag, skillsHash) >= 0) {
                             c++;
+
                             alert(jobTag);
                         }
                     }
@@ -131,7 +132,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
                         jobListPromise.then(function (d) {
-                            console.log(jobListEntity);
+                            console.log(d);
                         }, function (d) {
                             swal({
                                 title: "Error!",
@@ -171,7 +172,7 @@ angular.module('myApp').controller('linkedInCtrl',
                 });
             });
             var user_id= authenticationService.userProfile.user_id;
-            var remainderEntity =remainderEntityService.getRemainders(user_id);
+            var remainderEntity =remainderEntityService.remainderEntity(user_id);
             var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
             remainderPromise.then(function (d) {
                 var  remainder = d.data;
