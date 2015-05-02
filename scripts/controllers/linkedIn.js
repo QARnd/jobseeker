@@ -169,7 +169,7 @@ angular.module('myApp').controller('linkedInCtrl',
                 });
             });
             var user_id= authenticationService.userProfile.user_id;
-            var remainderEntity =remainderEntityService.getRemainders(user_id);
+            var remainderEntity =remainderEntityService.remainderEntity(user_id);
             var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
             remainderPromise.then(function (d) {
                 var  remainder = d.data;

@@ -16,6 +16,14 @@ angular.module('servicesModule').factory('addToJobListEntitiesService', function
             var jobList = {};     // new object
             jobList.js_id=js_id;
             return jobList;
+        },
+
+        pageScrollEntity:function(pageScrolls,js_id) {
+            var jobList = {};     // new object
+            jobList.pageScrolls=pageScrolls;
+            jobList.js_id=js_id;
+
+            return jobList;
         }
     }
 });

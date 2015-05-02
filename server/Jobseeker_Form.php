@@ -137,6 +137,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getRemainderRequest':
                     $this->get_remainder();
                     break;
+                case 'getFromJobListByPageNumberRequest':
+                    $this->getFromJobListByPageNumberRequest();
+                    break;
 
 
             }
@@ -655,7 +658,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
-        $sql='insert into joblist VALUES (NULL ,'.$js_id.','.$JobId.','.$similarity.')';
+        $sql='insert into joblist VALUES (NULL , '.$js_id.' , '.$JobId.' , '.$similarity.')';
         $result=$GLOBALS['db']->db_query($sql);
 //        print(json_encode("Done"));
 
@@ -677,7 +680,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id;
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id.' limit 2';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -786,15 +789,40 @@ public function get_remainder(){
         array_push($total, $row);
     }
 
+
     print(json_encode($total));
 
 }
-    public function  sendSMS($eventTitle,$js_id){}
+    public function  sendSMS($eventTitle,$js_id){
+
+
+    }
+
+
+    public function getFromJobListByPageNumberRequest(){
+        $Entity='Entity';
+        $pageScrolls='pageScrolls';
+        $pageScrolls=$GLOBALS['request']->$Entity->$pageScrolls;
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$Entity->$js_id;
+
+        $pageNum=abs(intval($pageScrolls));
+        $offset=$pageNum*2;
+
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id.' order by joblist.jobId desc limit 2 offset '.$offset;
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+        }
 
 
 
 
-}
+    }
 
 $GLOBALS['request']=json_decode(file_get_contents('php://input'));
 

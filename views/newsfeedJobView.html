@@ -283,12 +283,19 @@
             </section>
         </div>
 
+        <div ng-controller="JobsListCtrl">
 
 
 
-        <center>
+        <center >
 
-            <button class="center-block btn btn-default" ng-click="loadMoreNoti()">Load More..</button>
+            <button class="center-block btn btn-default" ng-click="loadMoreJobList()">Load More..</button>
+
+            <div class="container" id="loadMoreJobList">
+                <!--<div class="spinner"></div>-->
+                <div class="spinner border"></div>
+                <!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
+            </div>
 
             <!--<div class="container" id="loadMoreNotiSpinner">-->
             <!--<!--<div class="spinner"></div>-->
@@ -296,6 +303,8 @@
             <!--<!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
             <!--</div>-->
         </center>
+
+        </div>
 
     </div>
     <!--End Notifications-->

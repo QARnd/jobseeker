@@ -4,7 +4,11 @@
 
 angular.module('myApp').controller('JobsListCtrl',
 
-    function AppCtrl($scope,addToJobListEntitiesService,authenticationService,addToJobListRequestService) {
+    function AppCtrl($scope,$rootScope,addToJobListEntitiesService,authenticationService,addToJobListRequestService) {
+
+        $('#loadMoreJobList').hide();
+        $scope.pageScrolls=1;
+
 
         var js_id= authenticationService.userProfile.jobseekerId;
 
@@ -16,7 +20,7 @@ angular.module('myApp').controller('JobsListCtrl',
 
             jobListPromise.then(function (d) {
                 console.log(d.data);
-                $scope.jobList= d.data;
+                $rootScope.jobList= d.data;
 
 
 
@@ -28,6 +32,33 @@ angular.module('myApp').controller('JobsListCtrl',
                     timer: 2000
                 });
             });
+
+        $scope.loadMoreJobList=function(){
+            //alert("load");
+            $('#loadMoreJobList').show();
+
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+
+            var scrollEntity = addToJobListEntitiesService.pageScrollEntity($scope.pageScrolls,js_id);
+
+            var scrollPromise = addToJobListRequestService.getFromJobListByPageNumber(scrollEntity);
+
+            scrollPromise.then(function (d) {
+                console.log(d);
+                $('#loadMoreJobList').hide();
+                $scope.pageScrolls=$scope.pageScrolls+1;
+                $rootScope. jobList= $rootScope. jobList.concat(d.data);
+
+                //$(window).bind('scroll', bindScroll);
+
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error"
+                });
+            });
+        };
 
         //}
 
