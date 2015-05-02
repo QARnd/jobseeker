@@ -211,27 +211,7 @@
                         <div class="box-body">
 
                             Your Events:
-
-
-                            <!--Get All Comments-  ->
-                            <!--get content from the DB using-->
                             <ul class="timeline" ng-init="getEvents()" id="events">
-                                <!--<li ng-repeat="event in events track by $index">-->
-                                    <!--<div class="timeline-item">-->
-                                        <!--<div class="timeline-body">-->
-                                            <!--<a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteEvent(event.eventId)">-->
-                                                <!--<h3>{{event.eventTitle}}</h3>-->
-                                            <!--</a>-->
-
-                                            <!--<p>{{event.eventDetail}}</p>-->
-                                            <!--{{event.remainderDate}}-->
-                                        <!--</div>-->
-
-                                    <!--</div>-->
-
-
-                                <!--</li>-->
-
 
                                 <li ng-repeat="event in events track by $index">
                                     <div class="timeline-item">
@@ -268,11 +248,8 @@
                                     <div class="form-group">
                                         Remainder Date: <input type="date" ng-model="editedRemainderDate"/>
                                     </div>
-
-
-
                                     <center>
-                                            <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="editEvent(editedEventId,editedEventDetail, editedEventTitle,editedRemainderDate)"> Edit Event</button>
+                                            <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="editEvent(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate)"> Edit Event</button>
                                         </center>
                                 </modal>
 

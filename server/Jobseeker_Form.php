@@ -770,7 +770,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $editedRemainderDate=$GLOBALS['request']->$entity->$editedRemainderDate;
 
 
-        $sql = 'update events set remainderDate= "'.$editedRemainderDate.'" and eventTitle= "'.$editedEventTitle.'" and eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
+        $sql = 'update events set remainderDate="'.$editedRemainderDate.'" and eventTitle= "'.$editedEventTitle.'" and eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
         $GLOBALS['db']->db_query($sql);
         $newEvent = array('eventId'=>$editedEventId,'remainderDate' => $editedRemainderDate,'eventTitle' => $editedEventTitle,'eventDetail' => $editedEventDetail);
 

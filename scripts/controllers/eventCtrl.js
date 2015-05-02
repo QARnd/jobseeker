@@ -89,28 +89,22 @@ angular.module('myApp').controller('eventCtrl',
 
         };
 
-        $scope.editEvent=function(editedEventId,editedEventDetail, editedEventTitle,editedRemainderDate){
-            for (var i=0; i<$scope.events.length; i++) {
+        $scope.editEvent=function(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate){
+            for (var i=0;i<$scope.events.length;i++) {
                 if ($scope.events[i].eventId == editedEventId) {
                     $scope.events[i].eventDetail = editedEventDetail;
                     $scope.events[i].eventTitle = editedEventTitle;
                     $scope.events[i].remainderDate = editedRemainderDate;
-
-
                     break;
                 }
             }
             $scope.showModal = false;
 
-            var editEventEntity = eventEntitiesService.editEvent(editedEventId,editedEventDetail,editedEventTitle,editedReminderDate);
+            var editEventEntity = eventEntitiesService.editEvent(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate);
             var eventPromise = eventRequestService.editEvent(editEventEntity);
 
             eventPromise.then(function (d) {
                 console.log(d);
-
-
-
-
             }, function (d) {
                 swal({
                     title: "Error!",
