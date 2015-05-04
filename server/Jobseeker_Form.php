@@ -655,9 +655,9 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     public function addToJobList(){
         $entity='Entity';
-        $JobId='JobId';
+        $JobId='jobId';
         $JobId=$GLOBALS['request']->$entity->$JobId;
-        $js_id='$js_id';
+        $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;

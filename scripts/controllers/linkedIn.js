@@ -123,7 +123,9 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-                    if(similarity>70){v
+
+
+                    if(similarity>70){
                         countNot++;
                         var jobListEntity = addToJobListEntitiesService.addToJobListEntity(js_id,jobs[i].jobId,similarity);
 

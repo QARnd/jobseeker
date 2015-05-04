@@ -254,20 +254,20 @@
                         <!-- general form elements disabled -->
                         <div class="box box-warning">
                             <div class="box-header">
-                                <h3 class="box-title"> Your JobList..</h3>
+                                <h1 class="box-title" style="font-family: sans-serif"> Your JobList..</h1>
 
                             <div class="box-body">
                                 <div  ng-repeat="job in jobList track by $index">
                                 <div class="form-group">
-                                    <h3 class="timeline-header"><a href="#/newsfeed/{{job.jobId}}">{{job.jobTitle}}</a></h3>
+                                    <h5 class="timeline-header"><a href="#/newsfeedJob/{{job.jobId}}">{{job.jobTitle}}</a></h5>
                                     <div class="timeline-body"  style="white-space: pre-line">
-                                        {{job.jobDescription}}
+                                       <h5>{{job.jobDescription}}</h5>
                                     </div>
                                     <div class="timeline-body"  style="white-space: pre-line">
-                                        {{job.jobTag}}
+                                        <h5><b>Requirements:</b> {{job.jobTag}} </h5>
                                     </div>
                                     <div class="timeline-body"  style="white-space: pre-line">
-                                        {{job.similarity}}
+                                       <h5> <b>Similarity:</b> {{job.similarity}} </h5>
                                     </div>
                                 </div>
 
