@@ -80,12 +80,12 @@ angular.module('myApp').controller('eventCtrl',
 
 
         $scope.showModal = false;
-        $scope.toggleEventModal = function(editedEventId,editedEventTitle,editedEventDetail,editedRemainderDate){
+        $scope.toggleEventModal = function(eventId,eventTitle,eventDetail,remainderDate){
             $scope.showModal = !$scope.showModal;
-            $scope.editedEventDetail=editedEventDetail;
-            $scope.editedEventTitle=editedEventTitle;
-            $scope.editedRemainderDate=editedRemainderDate;
-            $scope.editedEventId=editedEventId;
+            $scope.editedEventDetail=eventDetail;
+            $scope.editedEventTitle=eventTitle;
+            $scope.editedRemainderDate=remainderDate;
+            $scope.editedEventId=eventId;
 
         };
 

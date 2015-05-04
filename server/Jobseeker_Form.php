@@ -776,7 +776,8 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         print(json_encode($newEvent));
     }
-public function get_remainder(){
+
+    public function get_remainder(){
 
     $entity='Entity';
     $js_id='user_id';
@@ -809,7 +810,7 @@ public function get_remainder(){
         $pageNum=abs(intval($pageScrolls));
         $offset=$pageNum*2;
 
-        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id.' order by joblist.jobId desc limit 2 offset '.$offset;
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id.' limit 2 offset '.$offset;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
 
