@@ -6,7 +6,7 @@ angular.module('myApp').controller('createAccountCtrl',
     function($scope,providerEntitiesService,providerRequestService,authenticationService) {
         $('#CreateAccount').hide();
         $scope.createAccount= function () {
-            alert($scope.name);
+
             var accountEntity = providerEntitiesService.createAccountEntity($scope.name,$scope.email,$scope.description,$scope.location);
 
             var createAccountPromise = providerRequestService.createAccount(accountEntity);
@@ -29,7 +29,16 @@ angular.module('myApp').controller('createAccountCtrl',
                 });
             });
         };
-        $scope.showCreateAccount=function(){
-            $('#CreateAccount').toggle('slow');
+
+        $scope.last_acc;
+        $scope.showCreateAccount=function(messageProId){
+            //$('#'+messageProId).html($('#CreateAccount'));
+            $scope.last_acc=messageProId;
+            $('#'+messageProId).html( $('.CreateAccount') );
+        };
+        $scope.cancelAccount=function(){
+            //$('#'+messageProId).html($('#CreateAccount'));
+
+            $('#'+$scope.last_acc).html( "" );
         }
     });

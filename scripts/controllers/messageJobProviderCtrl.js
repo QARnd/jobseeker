@@ -11,7 +11,7 @@ angular.module('myApp').controller('messageJobProviderCtrl',
 
             MessagesPromise.then(function (d) {
                     console.log(d);
-                    $scope.Messages= d.data;
+                    $scope.messages= d.data;
                 }, function (d) {
                     swal({
                         title: "Error!",
