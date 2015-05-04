@@ -143,6 +143,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'sendEmailToPRequest':
                     $this->sendEmailToP();
                     break;
+                case 'getAllMessagesFromPRequest':
+                    $this->getAllMessagesFromP();
+                    break;
 
             }
 
@@ -629,7 +632,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $description=$GLOBALS['request']->$entity->$description;
         $location='location';
         $location=$GLOBALS['request']->$entity->$location;
-        $sql = 'insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$description.'","'.$location.'")';
+        $password='password';
+        $password=$GLOBALS['request']->$entity->$password;
+        $sql='insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$password.'","'.$description.'","'.$location.'")';
         $GLOBALS['db']->db_query($sql);
         print(json_encode($name));
     }
@@ -788,6 +793,7 @@ class Jobseeker_Form extends Jobseeker_DB {
     $result=$GLOBALS['db']->db_query($sql);
     $row = $GLOBALS['db']->db_assoc($result);
     while($row[0]==now()){
+
     sendSMS($row[1],$js_id);
         array_push($total, $row);
     }
@@ -834,6 +840,17 @@ public function sendEmailToP(){
     $result=$GLOBALS['db']->db_query($sql);
     print (json_encode($result));
 }
+    public function getAllMessagesFromP(){
+
+        $sql='select * from messageJobprovider';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
 
 
     }

@@ -70,14 +70,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             message.to_id=to_id;
             return message;
         },
-        createAccountEntity: function(name,email,description,location) {
-            var account = {};     // new object
-            account.name = name;
-            account.email=email;
-            account.description=description;
-            account.location=location;
-            return account;
-        },
+
         lastJobsEntity: function(js_id) {
             var job = {};     // new object
             job.js_id = js_id;

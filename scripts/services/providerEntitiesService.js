@@ -18,5 +18,13 @@ angular.module('servicesModule').factory('providerEntitiesService', function() {
 
 
 
-        }}
+        },createAccountEntity: function(name,email,description,location) {
+            var account = {};     // new object
+            account.name=name;
+            account.email=email;
+            account.description=description;
+            account.location=location;
+            return account;
+        }
+    }
 });

@@ -1,6 +1,6 @@
 
-<div class="row">
-    <div class="col-md-12">
+<div ng-controller="messageJobProviderCtrl()"class="row">
+    <div  ng-init="getMessages()" class="col-md-12">
         <!-- The time line -->
         <div  ng-repeat="message in messages track by $index">
             <ul class="timeline">
@@ -10,6 +10,10 @@
                         <h3 class="timeline-header">{{message.email}}</h3>
                         <div class="timeline-body"  style="white-space: pre-line">
                             {{message.content}}
+                        </div>
+                        <div class="timeline-body"  style="white-space: pre-line">
+                            <center><p><button ng-click="showCreateAccount()" class="btn btn-inverse">Create Account</button></p></center>
+
                         </div>
 
 
@@ -22,7 +26,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="CreateAccount">
 
         <div class="col-md-6">
             <!-- general form elements disabled -->
