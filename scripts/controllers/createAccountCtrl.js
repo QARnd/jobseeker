@@ -3,13 +3,13 @@
  */
 
 angular.module('myApp').controller('createAccountCtrl',
-    function($scope, entitiesService, accountRequestsService, authenticationService) {
-
+    function($scope,providerEntitiesService,providerRequestService,authenticationService) {
+        $('#CreateAccount').hide();
         $scope.createAccount= function () {
             alert($scope.name);
-            var accountEntity = entitiesService.createAccountEntity($scope.name,$scope.email,$scope.description,$scope.location);
+            var accountEntity = providerEntitiesService.createAccountEntity($scope.name,$scope.email,$scope.description,$scope.location);
 
-            var createAccountPromise = accountRequestsService.createAccount(accountEntity);
+            var createAccountPromise = providerRequestService.createAccount(accountEntity);
 
             createAccountPromise.then(function (d) {
                 swal({
@@ -29,5 +29,7 @@ angular.module('myApp').controller('createAccountCtrl',
                 });
             });
         };
-
+        $scope.showCreateAccount=function(){
+            $('#CreateAccount').toggle('slow');
+        }
     });
