@@ -624,6 +624,7 @@ class Jobseeker_Form extends Jobseeker_DB {
     public function createAccount()
     {
         $entity='Entity';
+        $fromEmail='hanan.tahayni20@gmail.com';
         $name='name';
         $name=$GLOBALS['request']->$entity->$name;
         $email='email';
@@ -635,6 +636,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $password='password';
         $password=$GLOBALS['request']->$entity->$password;
         $sql='insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$password.'","'.$description.'","'.$location.'")';
+         mail($email,"your account", $password, "From:" .$fromEmail );
         $GLOBALS['db']->db_query($sql);
         print(json_encode($name));
     }
@@ -836,6 +838,7 @@ public function sendEmailToP(){
     $content='content';
     $content=$GLOBALS['request']->$entity->$content;
     $sql='insert into messageJobprovider values(NULL,"'.$content.'","'.$email.'")';
+
     $GLOBALS['db']->db_query($sql);
     $result=$GLOBALS['db']->db_query($sql);
     print (json_encode($result));
