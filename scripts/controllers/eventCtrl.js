@@ -7,20 +7,26 @@
 angular.module('myApp').controller('eventCtrl',
     function($rootScope,$scope, eventEntitiesService, eventRequestService,$routeParams, authenticationService) {
 
-        $scope.js_id= authenticationService.userProfile.jobseekerId;
+
         $scope.getEvents=function(){
             var jobId=$routeParams.jobId;
+            var js_id = authenticationService.userProfile.jobseekerId;
 
 
             $scope.events=[
 
             ];
-            var getEventsEntity = eventEntitiesService.getEvent(jobId,$scope.js_id);
+            var getEventsEntity = eventEntitiesService.getEvent(jobId,js_id);
             var eventPromise =eventRequestService.getEvents(getEventsEntity);
 
             eventPromise.then(function (d) {
                 console.log(d);
                 $scope.events= d.data;
+                //$scope.jobId= event.jobId;
+                //$scope.js_id= event.js_id;
+                //$scope.eventTitle= event.eventTitle;
+                //$scope.eventDetail= event.eventDetail;
+                //$scope.remainderDate= event.remainderDate;
 
 
 
@@ -56,7 +62,7 @@ angular.module('myApp').controller('eventCtrl',
                 //
                 //
                 //
-                //$scope.jobComments.unshift({jobId:event.jobId,js_id:event.js_id,eventTitle:event.eventTitle,eventDetail:event.eventDetail,reminderDate:event.remainderDate,eventId:event.eventId});
+                //$scope.jobComments.unshift({jobId:event.jobId,js_id:event.js_id,eventTitle:event.eventTitle,eventDetail:event.eventDetail,remainderDate:event.remainderDate,eventId:event.eventId});
                 //
                 //$scope.eventTitle="";
                 //$scope.eventDetail="";
@@ -73,35 +79,32 @@ angular.module('myApp').controller('eventCtrl',
 
 
 
-        //$scope.showModal = false;
-        //$scope.toggleModal = function(comment_id,content){
-        //    $scope.showModal = !$scope.showModal;
-        //    $scope.editedContent=content;
-        //    $scope.editedCommentId=comment_id;
-        //};
+        $scope.showModal = false;
+        $scope.toggleEventModal = function(eventId,eventTitle,eventDetail,remainderDate){
+            $scope.showModal = !$scope.showModal;
+            $scope.editedEventDetail=eventDetail;
+            $scope.editedEventTitle=eventTitle;
+            $scope.editedRemainderDate=remainderDate;
+            $scope.editedEventId=eventId;
 
-        $scope.editComment=function(editedEventId,editedEventDetail, editedEventTitle,editedRemainderDate){
-            for (var i=0; i<$scope.events.length; i++) {
+        };
+
+        $scope.editEvent=function(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate){
+            for (var i=0;i<$scope.events.length;i++) {
                 if ($scope.events[i].eventId == editedEventId) {
                     $scope.events[i].eventDetail = editedEventDetail;
                     $scope.events[i].eventTitle = editedEventTitle;
                     $scope.events[i].remainderDate = editedRemainderDate;
-
-
                     break;
                 }
             }
             $scope.showModal = false;
 
-            var editEventEntity = eventEntitiesService.editEvent(editedEventId,editedEventDetail,editedEventTitle,editedReminderDate);
+            var editEventEntity = eventEntitiesService.editEventEntity(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate);
             var eventPromise = eventRequestService.editEvent(editEventEntity);
 
             eventPromise.then(function (d) {
                 console.log(d);
-
-
-
-
             }, function (d) {
                 swal({
                     title: "Error!",

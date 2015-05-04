@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,notificationRequestService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
 
@@ -99,7 +99,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
             jobsPromise.then(function (d) {
                 var jobs= d.data;
-                alert(skillStr);
+                //alert(skillStr);
                 var skills=skillStr.split(",");
 
                 console.log(skills);
@@ -115,13 +115,11 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         if ($.inArray(jobTag, skillsHash) >= 0) {
                             c++;
-                            alert(jobTag);
+                            //alert(jobTag);
                         }
                     }
                     var similarity=(c/jobTags.length)*100;
                     console.log(similarity);
-
-
 
 
 
@@ -131,7 +129,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
                         jobListPromise.then(function (d) {
-                            console.log(jobListEntity);
+                            //console.log(jobListEntity);
                         }, function (d) {
                             swal({
                                 title: "Error!",
@@ -171,10 +169,11 @@ angular.module('myApp').controller('linkedInCtrl',
                 });
             });
             var user_id= authenticationService.userProfile.user_id;
-            var remainderEntity =remainderEntityService.getRemainders(user_id);
+            var remainderEntity =remainderEntityService.remainderEntity(user_id);
             var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
             remainderPromise.then(function (d) {
                 var  remainder = d.data;
+   
             });
         };
 

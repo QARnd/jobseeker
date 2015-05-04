@@ -137,13 +137,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getRemainderRequest':
                     $this->get_remainder();
                     break;
-                case 'addMessageJobProviderRequest':
-                    $this->add_messageJobProvider();
+                case 'getFromJobListByPageNumberRequest':
+                    $this->getFromJobListByPageNumberRequest();
                     break;
-                case 'getAllMessageProviders':
-                    $this->getAllMessageProviders();
+                case 'sendEmailToPRequest':
+                    $this->sendEmailToP();
                     break;
-
 
             }
 
@@ -162,23 +161,23 @@ class Jobseeker_Form extends Jobseeker_DB {
         $lastJobId=$row['lastJobId'];
 
 
-        $last_id=$GLOBALS['db']->db_insid();
-        $updateSql= 'update jobseekers set lastJobId='.$last_id.' where jobseeker_id='.$js_id;
-        $result=$GLOBALS['db']->db_query($updateSql);
-
-
         $sql='select * from job where jobId>'.$lastJobId;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
+
+        $last_id=$GLOBALS['db']->db_insid();
+        $updateSql= 'update jobseekers set lastJobId='.$last_id.' where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($updateSql);
+
         print(json_encode($total));
     }
 
 
 
-
+    
     public function add_post(){
 
         $entity='Entity';
@@ -661,8 +660,10 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
-        $sql='insert into joblist VALUES (NULL ,'.$js_id.','.$JobId.','.$similarity.')';
+        $sql='insert into joblist VALUES (NULL , '.$js_id.' , '.$JobId.' , '.$similarity.')';
         $result=$GLOBALS['db']->db_query($sql);
+//        print(json_encode("Done"));
+
 
         $jobTitle='select jobTitle from job where job.jobId='.$JobId;
         $result=$GLOBALS['db']->db_query($jobTitle);
@@ -681,7 +682,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id;
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag  from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id.' limit 2';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -733,10 +734,10 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$entity->$jobId;
 
-        $sql='select remainderDate,eventTitle,eventDetail from events where jobseeker_id='.$js_id.'and jobId='.$jobId;
-        $result=$GLOBALS['db']->db_query($sql);
+        $sql='select * from events where jobseeker_id ='.$js_id.' and jobId ='.$jobId;
+        $result1=$GLOBALS['db']->db_query($sql);
         $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
+        while($row = $GLOBALS['db']->db_assoc($result1)){
             array_push($total, $row);
         }
         print(json_encode($total));
@@ -771,64 +772,71 @@ class Jobseeker_Form extends Jobseeker_DB {
         $editedRemainderDate=$GLOBALS['request']->$entity->$editedRemainderDate;
 
 
-        $sql = 'update events set remainderDate= "'.$editedRemainderDate.'" and eventTitle= "'.$editedEventTitle.'" and eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
+        $sql = 'update events set remainderDate="'.$editedRemainderDate.'" and eventTitle= "'.$editedEventTitle.'" and eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
         $GLOBALS['db']->db_query($sql);
         $newEvent = array('eventId'=>$editedEventId,'remainderDate' => $editedRemainderDate,'eventTitle' => $editedEventTitle,'eventDetail' => $editedEventDetail);
 
         print(json_encode($newEvent));
     }
-public function get_remainder(){
+
+    public function get_remainder(){
 
     $entity='Entity';
     $js_id='user_id';
     $js_id=$GLOBALS['request']->$entity->$js_id;
-    $sql='select remainderDate,eventTitle from event where jobseeker_id='.$js_id.'';
+    $sql='select remainderDate,eventTitle from events where jobseeker_id='.$js_id.'';
     $result=$GLOBALS['db']->db_query($sql);
     $row = $GLOBALS['db']->db_assoc($result);
     while($row[0]==now()){
     sendSMS($row[1],$js_id);
         array_push($total, $row);
     }
+
+
     print(json_encode($total));
+
 }
-
-
-    public function  sendSMS($eventTitle,$js_id){}
-
-
-    public function add_messageJobProvider(){
-
-        $entity='Entity';
-        $emailSend='emailSend';
-        $emailSend=$GLOBALS['request']->$entity->$emailSend;
-        $content='content';
-        $content=$GLOBALS['request']->$entity->$content;
-       ;
-        $sql='insert into messageJobProvider values(NULL,'.$emailSend.','.$content.')';
-        $GLOBALS['db']->db_query($sql);
-
+    public function  sendSMS($eventTitle,$js_id){
 
 
     }
 
 
+    public function getFromJobListByPageNumberRequest(){
+        $Entity='Entity';
+        $pageScrolls='pageScrolls';
+        $pageScrolls=$GLOBALS['request']->$Entity->$pageScrolls;
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$Entity->$js_id;
 
-    public function getAllMessageProviders(){
+        $pageNum=abs(intval($pageScrolls));
+        $offset=$pageNum*2;
 
-        $sql='select * from messageJobProvider';
+        $sql='select joblist.jobId,joblist.similarity, job.jobTitle , job.jobDescription, job.jobTag from joblist , job where joblist.jobId=job.jobId and joblist.jobseekerId='.$js_id.' limit 2 offset '.$offset;
         $result=$GLOBALS['db']->db_query($sql);
-
         $total=array();
+
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
         print(json_encode($total));
+        }
 
-    }
 
+public function sendEmailToP(){
+    $entity='Entity';
+    $email='email';
+    $email=$GLOBALS['request']->$entity->$email;
+    $content='content';
+    $content=$GLOBALS['request']->$entity->$content;
+    $sql='insert into messageJobprovider values(NULL,"'.$content.'","'.$email.'")';
+    $GLOBALS['db']->db_query($sql);
+    $result=$GLOBALS['db']->db_query($sql);
+    print (json_encode($result));
 }
 
 
+    }
 
 $GLOBALS['request']=json_decode(file_get_contents('php://input'));
 

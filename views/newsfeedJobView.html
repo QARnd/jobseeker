@@ -201,6 +201,7 @@
                                 <span class="time"><i class="fa fa-clock-o"></i> {{job.publishDate}}</span>
                                 <h3 class="timeline-header"><a href="#/newsfeedJob/{{job.jobId}}">{{job.jobTitle}}</a></h3>
                                 <div class="timeline-body"  style="white-space: pre-line">
+
                                     {{job.jobDescription}}
                                 </div>
                                 <div class="timeline-body"  style="white-space: pre-line">
@@ -251,27 +252,28 @@
 
                     
                     <div class="col-md-12">
+                        <h1 class="box-title" style="font-family: sans-serif"> Your JobList..</h1>
                         <!-- general form elements disabled -->
-                        <div class="box box-warning">
+                        <div class="box box-warning" ng-repeat="job in jobList track by $index">
                             <div class="box-header">
-                                <h1 class="box-title" style="font-family: sans-serif"> Your JobList..</h1>
+                                <h1 class="box-title" style="font-family: sans-serif"><a href="#/newsfeedJob/{{job.jobId}}"> {{job.jobTitle}}</a></h1>
 
                             <div class="box-body">
-                                <div  ng-repeat="job in jobList track by $index">
+
                                 <div class="form-group">
-                                    <h5 class="timeline-header"><a href="#/newsfeedJob/{{job.jobId}}">{{job.jobTitle}}</a></h5>
+
                                     <div class="timeline-body"  style="white-space: pre-line">
-                                       <h5>{{job.jobDescription}}</h5>
+                                       <h5>{{job.jobDescription | limitTo:200}}<span ng-show="job.jobDescription.length>200">...</span></h5>
                                     </div>
-                                    <div class="timeline-body"  style="white-space: pre-line">
-                                        <h5><b>Requirements:</b> {{job.jobTag}} </h5>
+                                    <div>
+                                        <h5><b>Requirements:</b> {{job.jobTag | limitTo:25}}... </h5>
                                     </div>
-                                    <div class="timeline-body"  style="white-space: pre-line">
-                                       <h5> <b>Similarity:</b> {{job.similarity}} </h5>
+                                    <div>
+                                       <h5> <b>Similarity:</b> {{job.similarity}}% </h5>
                                     </div>
                                 </div>
 
-                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -281,12 +283,19 @@
             </section>
         </div>
 
+        <div ng-controller="JobsListCtrl">
 
 
 
-        <center>
+        <center >
 
-            <button class="center-block btn btn-default" ng-click="loadMoreNoti()">Load More..</button>
+            <button class="center-block btn btn-default" ng-click="loadMoreJobList()">Load More..</button>
+
+            <div class="container" id="loadMoreJobList">
+                <!--<div class="spinner"></div>-->
+                <div class="spinner border"></div>
+                <!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
+            </div>
 
             <!--<div class="container" id="loadMoreNotiSpinner">-->
             <!--<!--<div class="spinner"></div>-->
@@ -294,6 +303,8 @@
             <!--<!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
             <!--</div>-->
         </center>
+
+        </div>
 
     </div>
     <!--End Notifications-->

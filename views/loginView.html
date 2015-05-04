@@ -4,7 +4,7 @@
 
 
 
-<div >
+<div>
     <button  class="btn btn-danger btn-sm" rel="publisher" ng-click="toggle()">
         Login As JobProvider
     </button>
@@ -16,14 +16,14 @@
 
 
         <div class="form-group">
-            <label for="Emailp">Email address</label>
-            <input type="email" ng-model="emailReceive" class="form-control" id="Emailp" placeholder="Enter email" />
+            <label >Email address</label>
+            <input type="email" class="form-control" nd-model="EmailP"placeholder="Enter email" />
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" ng-model="password" class="form-control" id="password" placeholder="Password" />
+            <label >password</label>
+            <input type="password" class="form-control"nd-model="passwordP" placeholder="Enter password" />
         </div>
-        <button class="btn btn-default">Submit</button>
+        <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="loginProvider()"> Submit</button>
 
 
 
@@ -47,21 +47,20 @@
 
 
         <div class="form-group">
-            <label for="Emaila">Email address</label>
-            <input type="email" ng-model="emailSend" class="form-control" id="Emaila" placeholder="Enter email" />
+            <label >Email address</label>
+            <input type="email" class="form-control"ng-model="email"  placeholder="Enter email" />
         </div>
         <div class="form-group">
-            <label for="content">content</label>
-            <textarea ng-model="content" class="form-control" rows="7" id="content"></textarea>
+            <label >content</label>
+            <textarea ng-model="content" class="form-control" rows="7" ></textarea>
 
         </div>
-        <button class="btn btn-default" ng-click="addMessageJobProvider()">Send</button>
+        <button class="btn btn-default"ng-click="sendMessageForP()">Send</button>
 
 
 
     </div>
 </modal>
-</div>
 
 <!--</div>-->
 

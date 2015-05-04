@@ -28,6 +28,19 @@ angular.module('servicesModule').factory('addToJobListRequestService', function(
                 data: request
             });
             return JobListPromise;
+        },
+
+        getFromJobListByPageNumber: function(scrollEntity) {
+            var request = {};
+            request.opcode = "getFromJobListByPageNumberRequest";
+            request.Entity =scrollEntity;
+            var postPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return postPromise;
         }
 
 

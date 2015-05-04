@@ -142,8 +142,7 @@
     <div ng-controller="eventCtrl" id="addNewEvent">
 
         <section class="content">
-            <div class="row">.
-                .
+            <div class="row">
 
                 <div class="col-md-10 col-md-offset-1">
                     <!-- general form elements disabled -->
@@ -152,13 +151,14 @@
 
 
                             <div class="form-group">
-                                Event Title:<input type="text" ng-model="eventTitle"/>
+                                <input type="text" ng-model="eventTitle" placeholder="Event Title" class="col-md-12" />
                             </div>
                             <div class="form-group">
-                                Event Content:<textarea ng-model="eventDetail" class="form-control" rows="6" cols="10" placeholder="Write an Event ....."></textarea>
+                                <textarea ng-model="eventDetail" class="form-control" rows="6" cols="10" placeholder="Write an Event Content ..."></textarea>
                             </div>
                             <div class="form-group">
-                                remainderDate: <input type="date" ng-model="remainderDate"/>
+                                <label>Remainder Date:</label>
+                                <input type="date" ng-model="remainderDate"/>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary btn-xs fa fa-plus center-block" ng-click="addEvent()"> Add Event</button>
@@ -166,29 +166,96 @@
 
 
 
-                            <!--Get All Comments-  ->
-                            <!--get content from the DB using-->
-                            <ul class="timeline" ng-init="getEvents()" id="events">
-                               <li ng-repeat="event in events track by $index">
-                                    <div class="timeline-item">
-                                        <div class="timeline-body">
-                                            <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteEvent(event.eventId)">
-                                                <h3>{{event.eventTitle}}</h3>
-                                            </a>
+                            <!--&lt;!&ndash;Get All Comments-  ->-->
+                            <!--&lt;!&ndash;get content from the DB using&ndash;&gt;-->
+                            <!--<ul class="timeline" ng-init="getEvents()" id="events">-->
+                               <!--<li ng-repeat="event in events track by $index">-->
+                                    <!--<div class="timeline-item">-->
+                                        <!--<div class="timeline-body">-->
+                                            <!--<a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteEvent(event.eventId)">-->
+                                                <!--<h3>{{event.eventTitle}}</h3>-->
+                                            <!--</a>-->
 
-                                           <p>{{event.eventDetail}}</p>
+                                           <!--<p>{{event.eventDetail}}</p>-->
+                                            <!--{{event.remainderDate}}-->
+                                        <!--</div>-->
+
+                                    <!--</div>-->
+
+
+                                <!--</li>-->
+
+                            <!--</ul>-->
+                            <!--&lt;!&ndash;End Get All Comments&ndash;&gt;-->
+
+                                                    <!--End Get All Comments-->
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <div ng-controller="eventCtrl" >
+
+        <section class="content">
+            <div class="row">
+
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- general form elements disabled -->
+                    <div class="box box-warning">
+                        <div class="box-body">
+
+                            Your Events:
+                            <ul class="timeline" ng-init="getEvents()" id="events">
+
+                                <li ng-repeat="event in events track by $index">
+                                    <div class="timeline-item">
+                                                <span class="time">
+                                                    <a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleEventModal(event.eventId,event.eventTitle,event.eventDetail,event.remainderDate)"></a>
+                                                    <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteEvent(event.eventId)" ></a>
+                                                </span>
+
+                                        <div class="timeline-header">
+                                            {{event.eventTitle}}
+                                        </div>
+
+                                        <div class="timeline-body">
+                                           {{event.eventDetail}}
+                                        </div>
+
+                                        <div class="timeline-body">
                                             {{event.remainderDate}}
                                         </div>
 
                                     </div>
 
-
                                 </li>
+
+
+
+                                <modal title="Update Event" visible="showModal">
+                                    <div class="form-group">
+                                        Event Title: <input type="text" ng-model="editedEventTitle" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        Event Content:<textarea ng-model="editedEventDetail" class="form-control" rows="6" cols="10" placeholder="Your Event Detail....."> </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        Remainder Date: <input type="date" ng-model="editedRemainderDate"/>
+                                    </div>
+                                    <center>
+                                            <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="editEvent(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate)"> Edit Event</button>
+                                        </center>
+                                </modal>
 
                             </ul>
                             <!--End Get All Comments-->
 
-                            <                        <!--End Get All Comments-->
 
                         </div>
 
@@ -200,7 +267,3 @@
 
     </div>
 </div>
-
-
-
-
