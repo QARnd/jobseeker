@@ -15,7 +15,7 @@ angular.module('servicesModule').factory('eventEntitiesService', function() {
 
             return event;
         },
-        editEvent:function(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate ){
+        editEventEntity:function(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate ){
             var event = {};     // new object
             event.editedEventId=editedEventId;
             event.editedEventDetail=editedEventDetail;

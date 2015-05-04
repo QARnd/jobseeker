@@ -100,7 +100,7 @@ angular.module('myApp').controller('eventCtrl',
             }
             $scope.showModal = false;
 
-            var editEventEntity = eventEntitiesService.editEvent(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate);
+            var editEventEntity = eventEntitiesService.editEventEntity(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate);
             var eventPromise = eventRequestService.editEvent(editEventEntity);
 
             eventPromise.then(function (d) {

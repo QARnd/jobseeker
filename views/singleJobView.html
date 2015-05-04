@@ -216,7 +216,7 @@
                                 <li ng-repeat="event in events track by $index">
                                     <div class="timeline-item">
                                                 <span class="time">
-                                                    <a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleEventModal(event.editEventId,event.editedEventTitle,event.editedEventDetail,event.editedRemainderDate)"></a>
+                                                    <a class="btn btn-primary btn-xs fa fa-pencil-square-o" ng-click="toggleEventModal(event.eventId,event.eventTitle,event.eventDetail,event.remainderDate)"></a>
                                                     <a class="btn btn-danger btn-xs fa fa-times" ng-click="deleteEvent(event.eventId)" ></a>
                                                 </span>
 
