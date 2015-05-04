@@ -140,7 +140,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getFromJobListByPageNumberRequest':
                     $this->getFromJobListByPageNumberRequest();
                     break;
-
+                case 'sendEmailToPRequest':
+                    $this->sendEmailToP();
+                    break;
 
             }
 
@@ -821,6 +823,17 @@ class Jobseeker_Form extends Jobseeker_DB {
         }
 
 
+public function sendEmailToP(){
+    $entity='Entity';
+    $email='email';
+    $email=$GLOBALS['request']->$entity->$email;
+    $content='content';
+    $content=$GLOBALS['request']->$entity->$content;
+    $sql='insert into messageJobprovider values(NULL,"'.$content.'","'.$email.'")';
+    $GLOBALS['db']->db_query($sql);
+    $result=$GLOBALS['db']->db_query($sql);
+    print (json_encode($result));
+}
 
 
     }
