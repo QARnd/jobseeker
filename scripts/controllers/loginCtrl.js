@@ -13,15 +13,16 @@ angular.module('myApp')
         $scope.toggle = function(){
             $scope.showModal = !$scope.showModal;
 
-        };
-        $scope.sendMessageForP = function() {
+        },
+        $scope.sendMessageForP = function(pEmail,content) {
 
-            var sendMessageForPEntity = providerEntitiesService.sendMessageForPEntity($scope.email,$scope.content);
+            var sendMessageForPEntity = providerEntitiesService.sendMessageForPEntity(pEmail,content);
 
             var providerPromise = providerRequestService.sendMessageForP(sendMessageForPEntity);
 
             providerPromise.then(function (d) {
                 var provider = d.data;
+                console.log(provider);
             }, function (d) {
                 swal({
                     title: "Error!",
@@ -31,7 +32,9 @@ angular.module('myApp')
                 });
             });
 
-            };
+        },
+
+
 
         $scope.showModalAccount = false;
         $scope.toggleAccount = function(){
