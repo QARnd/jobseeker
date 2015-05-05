@@ -645,6 +645,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode($result));
 
 
+        
         $to = $email;
         $subject = "Your New Account @ sho3'ol";
         $txt = "You can enter our system using your email and this password: ".$password;
