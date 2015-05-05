@@ -628,7 +628,7 @@ class Jobseeker_Form extends Jobseeker_DB {
     public function createAccount()
     {
         $entity='Entity';
-        $fromEmail='hanan.tahayni20@gmail.com';
+
         $name='name';
         $name=$GLOBALS['request']->$entity->$name;
         $email='email';
@@ -640,9 +640,21 @@ class Jobseeker_Form extends Jobseeker_DB {
         $password='password';
         $password=$GLOBALS['request']->$entity->$password;
         $sql='insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$password.'","'.$description.'","'.$location.'")';
-         mail($email,"your account", $password, "From:" .$fromEmail );
-        $GLOBALS['db']->db_query($sql);
-        print(json_encode($name));
+
+        $result=$GLOBALS['db']->db_query($sql);
+        print(json_encode($result));
+
+
+        $to = $email;
+        $subject = "Your New Account @ sho3'ol";
+        $txt = "You can enter our system using your email and this password: ".$password;
+        $headers = "From: info@sho3'ol.com" . "\r\n" .
+            "CC: job@sho3'ol.com";
+
+        mail($to,$subject,$txt,$headers);
+
+
+        //delete from messageProvider
     }
 
 
