@@ -25,6 +25,12 @@ angular.module('servicesModule').factory('providerEntitiesService', function() {
             account.description=description;
             account.location=location;
             return account;
+        },
+        loginProviderEntity:function(EmailP,passwordP){
+            var provider = {};     // new object
+            provider.EmailP=EmailP;
+            provider.passwordP=passwordP;
+            return provider;
         }
     }
 });

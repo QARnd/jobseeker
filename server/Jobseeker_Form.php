@@ -146,6 +146,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllMessagesFromPRequest':
                     $this->getAllMessagesFromP();
                     break;
+                case 'loginProviderRequest':
+                    $this->loginProvider();
+                    break;
+
 
             }
 
@@ -795,7 +799,6 @@ class Jobseeker_Form extends Jobseeker_DB {
     $result=$GLOBALS['db']->db_query($sql);
     $row = $GLOBALS['db']->db_assoc($result);
     while($row[0]==now()){
-
     sendSMS($row[1],$js_id);
         array_push($total, $row);
     }
@@ -854,6 +857,24 @@ public function sendEmailToP(){
         print(json_encode($total));
 
     }
+    public function loginProvider(){
+        $entity='Entity';
+        $EmailP='EmailP';
+        $EmailP=$GLOBALS['request']->$entity->$EmailP;
+        $passwordP='passwordP';
+        $passwordP=$GLOBALS['request']->$entity->$passwordP;
+        $sql='select * from jobprovider where Email="'.$EmailP.'" and password="'.$passwordP.'"';
+        $result=$GLOBALS['db']->db_query($sql);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $total=array();
+        if (mysql_num_rows($row)==0)
+        {
+
+        }
+        print(json_encode($total));
+
+    }
+
 
 
     }

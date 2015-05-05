@@ -14,6 +14,25 @@ angular.module('myApp')
             $scope.showModal = !$scope.showModal;
 
         },
+            $scope.loginProvider = function(EmailP,passwordP) {
+
+            var loginProviderEntity = providerEntitiesService.loginProviderEntity(EmailP,passwordP);
+
+            var loginProviderPromise = providerRequestService.loginProvider(loginProviderEntity);
+
+                loginProviderPromise.then(function (d) {
+                var provider = d.data;
+                console.log(provider);
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error",
+                    timer: 2000
+                });
+            });
+
+        },
         $scope.sendMessageForP = function(pEmail,content) {
 
             var sendMessageForPEntity = providerEntitiesService.sendMessageForPEntity(pEmail,content);
