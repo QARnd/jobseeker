@@ -39,7 +39,15 @@ angular.module('myApp').controller('singleJobCtrl',
         //$scope.dis = true;
         //$scope.toggle = function () {
         //    $scope.dis = false;
-        //}
+
+        $scope.applyForJob = function (jobId,providerId) {
+            var jobseeker_id=authenticationService.userProfile.jobseekerId;
+
+            var applyForJobEntity = jobEntitiesService.applyForJobEntity(jobId,providerId,jobseeker_id);
+
+            var applyForJobPromise = jobRequestsService.applyForJob(applyForJobEntity);
+        }
+
 
         $scope.toggle = function () {
             if($scope.dis)

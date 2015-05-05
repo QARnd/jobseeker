@@ -149,6 +149,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'loginProviderRequest':
                     $this->loginProvider();
                     break;
+                case 'applyForJobRequest':
+                    $this->applyForJob();
+                    break;
+
 
 
             }
@@ -873,6 +877,19 @@ public function sendEmailToP(){
         }
         print(json_encode($total));
 
+    }
+    public function applyForJob()
+    {$entity='Entity';
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$entity->$jobId;
+        $providerId='providerId';
+        $providerId=$GLOBALS['request']->$entity->$providerId;
+         $jobseeker_id='jobseeker_id';
+        $jobseeker_id=$GLOBALS['request']->$entity->$jobseeker_id;
+        $sql='insert into appliesJob values(NULL,'.$jobId.','.$providerId.','.$jobseeker_id.')';
+        $GLOBALS['db']->db_query($sql);
+        $newApply = array('jobId' => $jobId,'providerId' => $providerId,'jobseeker_id'=>$jobseeker_id);
+        print (json_encode($newApply));
     }
 
 
