@@ -41,6 +41,17 @@ angular.module('servicesModule').factory('providerRequestService', function($htt
                 data: request
             });
             return getAllMessagesPromise;
+        },
+        loginProvider:function() {
+            var request = {};
+            request.opcode = "loginProviderRequest";
+            var loginProviderPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return loginProviderPromise;
         }
 
     }

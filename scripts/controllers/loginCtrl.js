@@ -13,15 +13,16 @@ angular.module('myApp')
         $scope.toggle = function(){
             $scope.showModal = !$scope.showModal;
 
-        };
-        $scope.sendMessageForP = function() {
+        },
+            $scope.loginProvider = function(EmailP,passwordP) {
 
-            var sendMessageForPEntity = providerEntitiesService.sendMessageForPEntity($scope.email,$scope.content);
+            var loginProviderEntity = providerEntitiesService.loginProviderEntity(EmailP,passwordP);
 
-            var providerPromise = providerRequestService.sendMessageForP(sendMessageForPEntity);
+            var loginProviderPromise = providerRequestService.loginProvider(loginProviderEntity);
 
-            providerPromise.then(function (d) {
+                loginProviderPromise.then(function (d) {
                 var provider = d.data;
+                console.log(provider);
             }, function (d) {
                 swal({
                     title: "Error!",
@@ -31,7 +32,28 @@ angular.module('myApp')
                 });
             });
 
-            };
+        },
+        $scope.sendMessageForP = function(pEmail,content) {
+
+            var sendMessageForPEntity = providerEntitiesService.sendMessageForPEntity(pEmail,content);
+
+            var providerPromise = providerRequestService.sendMessageForP(sendMessageForPEntity);
+
+            providerPromise.then(function (d) {
+                var provider = d.data;
+                console.log(provider);
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error",
+                    timer: 2000
+                });
+            });
+
+        },
+
+
 
         $scope.showModalAccount = false;
         $scope.toggleAccount = function(){
