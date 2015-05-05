@@ -35,10 +35,11 @@ angular.module('myApp').controller('createAccountCtrl',
             //$('#'+messageProId).html($('#CreateAccount'));
             $scope.last_acc=messageProId;
             $('#'+messageProId).html( $('.CreateAccount') );
+            $('.CreateAccount').show();
         };
         $scope.cancelAccount=function(){
             //$('#'+messageProId).html($('#CreateAccount'));
 
-            $('#'+$scope.last_acc).html( "" );
+            $('.CreateAccount').hide();
         }
     });
