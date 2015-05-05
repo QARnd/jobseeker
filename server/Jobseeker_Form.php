@@ -846,6 +846,8 @@ public function sendEmailToP(){
     $result=$GLOBALS['db']->db_query($sql);
     print (json_encode($result));
 }
+
+    
     public function getAllMessagesFromP(){
 
         $sql='select * from messageJobprovider';
