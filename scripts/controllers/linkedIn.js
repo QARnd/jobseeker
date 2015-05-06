@@ -122,13 +122,18 @@ angular.module('myApp').controller('linkedInCtrl',
                     console.log(similarity);
 
 
-
                     if(similarity>70){
+
                         countNot++;
-                        var jobListEntity = addToJobListEntitiesService.addToJobListEntity(js_id,jobs[i].jobId,similarity);
+                        $scope.js_id= authenticationService.userProfile.jobseekerId;
+                        var jobListEntity = addToJobListEntitiesService.addToJobListEntity( $scope.js_id,jobs[i].jobId,similarity);
+
+
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
                         jobListPromise.then(function (d) {
+                            alert(d.data);
+
                             //console.log(jobListEntity);
                         }, function (d) {
                             swal({

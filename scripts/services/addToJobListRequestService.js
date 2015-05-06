@@ -2,11 +2,11 @@
 angular.module('servicesModule').factory('addToJobListRequestService', function($http,authenticationService) {
     return {
 
-        addToJobList: function (addToJobListEntity) {
+        addToJobList: function (JobListEntity) {
             var request = {};
             request.opcode = "addToJobListRequest";
 
-            request.Entity =  addToJobListEntity;
+            request.Entity =  JobListEntity;
             var addToJobListPromise = $http({
                 method: 'POST',
                 url: authenticationService.deploymentLink.link,
