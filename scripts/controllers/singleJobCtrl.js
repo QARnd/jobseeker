@@ -46,6 +46,15 @@ angular.module('myApp').controller('singleJobCtrl',
             var applyForJobEntity = jobEntitiesService.applyForJobEntity(jobId,providerId,jobseeker_id);
 
             var applyForJobPromise = jobRequestsService.applyForJob(applyForJobEntity);
+            applyForJobPromise.then(function (d) {
+                console.log("done");
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error"
+                });
+            });
         }
 
 
