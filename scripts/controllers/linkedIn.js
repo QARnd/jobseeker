@@ -90,6 +90,7 @@ angular.module('myApp').controller('linkedInCtrl',
         ///get last jobs
         $scope.getLastAddedJobs=function(skillStr){
 
+
             var js_id= authenticationService.userProfile.user_id;
 
             var countNot=0;
@@ -147,11 +148,10 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 }
 
-                $scope.Notifications=[
+                $scope.Notifications=[];
 
-                ];
-                var js_id = authenticationService.userProfile.jobseekerId;
-                var NotificationEntity = notificationEntitiesService.notificationEntity(js_id,countNot);
+                //var js_id = authenticationService.userProfile.jobseekerId;
+                var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
                 var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
 
                 NotificationPromise.then(function (d) {
