@@ -823,15 +823,39 @@ class Jobseeker_Form extends Jobseeker_DB {
     $js_id='user_id';
     $js_id=$GLOBALS['request']->$entity->$js_id;
     $sql='select remainderDate,eventTitle from events where jobseeker_id='.$js_id.'';
-    $result=$GLOBALS['db']->db_query($sql);
-    $row = $GLOBALS['db']->db_assoc($result);
+    $result1=$GLOBALS['db']->db_query($sql);
+    $row = $GLOBALS['db']->db_assoc($result1);
     while($row[0]==now()){
-    sendSMS($row[1],$js_id);
-        array_push($total, $row);
+
+        $result2=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result2)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+        $email='select Email from jobseekers where jobseeker_id='.$js_id.'';
+        $result3=$GLOBALS['db']->db_query($email);
+        $row = $GLOBALS['db']->db_assoc($result3);
+        $emaile=$row['email'];
+
+        $to = $email;
+        $subject = "";
+        $txt = "";
+        $headers = "From: info@sho3'ol.com" . "\r\n" .
+            "CC: job@sho3'ol.com";
+
+        mail($to,$subject,$txt,$headers);
+
+
+
+
+
+
     }
 
 
-    print(json_encode($total));
+
 
 }
     public function  sendSMS($eventTitle,$js_id){
