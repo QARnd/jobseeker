@@ -179,8 +179,13 @@ class Jobseeker_Form extends Jobseeker_DB {
             array_push($total, $row);
         }
 
-        $last_id=$GLOBALS['db']->db_insid();
-        $updateSql= 'update jobseekers set lastJobId='.$last_id.' where jobseeker_id='.$js_id;
+        $jobId='select jobId from job order by jobId DESC limit 1 ';
+        $result=$GLOBALS['db']->db_query($jobId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $jobId=$row['jobId'];
+
+//        $last_id=$GLOBALS['db']->db_insid();
+        $updateSql= 'update jobseekers set lastJobId='.$jobId.' where jobseeker_id='.$js_id;
         $result=$GLOBALS['db']->db_query($updateSql);
 
         print(json_encode($total));
@@ -632,7 +637,7 @@ class Jobseeker_Form extends Jobseeker_DB {
     public function createAccount()
     {
         $entity='Entity';
-        $fromEmail='hanan.tahayni20@gmail.com';
+
         $name='name';
         $name=$GLOBALS['request']->$entity->$name;
         $email='email';
@@ -644,9 +649,21 @@ class Jobseeker_Form extends Jobseeker_DB {
         $password='password';
         $password=$GLOBALS['request']->$entity->$password;
         $sql='insert into jobprovider values(NULL,"'.$name.'","'.$email.'","'.$password.'","'.$description.'","'.$location.'")';
-         mail($email,"your account", $password, "From:" .$fromEmail );
-        $GLOBALS['db']->db_query($sql);
-        print(json_encode($name));
+
+        $result=$GLOBALS['db']->db_query($sql);
+        print(json_encode($result));
+
+
+        $to = $email;
+        $subject = "Your New Account @ sho3'ol";
+        $txt = "You can enter our system using your email and this password: ".$password;
+        $headers = "From: info@sho3'ol.com" . "\r\n" .
+            "CC: job@sho3'ol.com";
+
+        mail($to,$subject,$txt,$headers);
+
+
+        //delete from messageProvider
     }
 
 

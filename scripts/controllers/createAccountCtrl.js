@@ -14,12 +14,11 @@ angular.module('myApp').controller('createAccountCtrl',
             createAccountPromise.then(function (d) {
                 swal({
                     title: "Success!",
-                    text: "Company Has been Added! With Name:"+d.data,
+                    text: "Company Has been Added!",
                     type: "success",
                     timer: 5000
                 });
-
-
+     
             }, function (d) {
                 swal({
                     title: "Error!",
