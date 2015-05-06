@@ -710,7 +710,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $sql1='insert into notifications VALUES (NULL ,"you have a new job oppurtunity with title '.$jobTitle.' and similarity '. $similarity .'","'.date("Y-m-d H:i:s").'",'.$js_id.')';
         $result=$GLOBALS['db']->db_query($sql1);
-
+        print(json_encode($result));
     }
 
 

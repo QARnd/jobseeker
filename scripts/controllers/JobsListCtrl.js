@@ -37,7 +37,7 @@ angular.module('myApp').controller('JobsListCtrl',
             //alert("load");
             $('#loadMoreJobList').show();
 
-            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            //$("#newsfeedJob").animate({ scrollTop: $(document).height() }, 1000);
 
             var scrollEntity = addToJobListEntitiesService.pageScrollEntity($scope.pageScrolls,js_id);
 
