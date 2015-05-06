@@ -16,6 +16,7 @@ angular.module('myApp').controller('newsfeedCtrl',
 
             ];
 
+
             var postPromise = postRequestsService.getAllPosts();
 
             postPromise.then(function (d) {

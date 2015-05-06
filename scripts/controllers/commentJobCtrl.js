@@ -140,6 +140,8 @@ angular.module('myApp').controller('commentJobCtrl',
                             break;
                         }
                     }
+
+
                     commentPromise.then(function (d) {
                         //console.log(d);
 

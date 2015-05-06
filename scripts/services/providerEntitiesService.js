@@ -33,6 +33,7 @@ angular.module('servicesModule').factory('providerEntitiesService', function() {
             return provider;
         },
 
+        
         deleteMessageEntity:function(messageProId){
             var message = {};     // new object
             message.messageProId=messageProId;

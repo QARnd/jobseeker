@@ -147,6 +147,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 }
 
+
                 $scope.Notifications=[
 
                 ];
