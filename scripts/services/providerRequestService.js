@@ -52,6 +52,19 @@ angular.module('servicesModule').factory('providerRequestService', function($htt
                 data: request
             });
             return loginProviderPromise;
+        },
+
+        deleteMessage:function(deleteMessageEntity) {
+            var request = {};
+            request.opcode = "deleteMessageFromProRequest";
+            request.Entity =deleteMessageEntity;
+            var deleteMessagePPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return sdeleteMessageEntity;
         }
 
     }

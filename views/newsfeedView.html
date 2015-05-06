@@ -163,7 +163,7 @@
 
 
 
-<div class="row">
+  <div class="row">
 
     <!--Newsfeed-->
     <div class="col-sm-9">
@@ -266,70 +266,35 @@
                             </div>
                         </div>
                     </div>
+                    <div  ng-controller="linkedInCtrl" id="notification_li">
 
-
-
-
-
-
-                    <!-- left column -->
-                    <div class="col-md-12">
-                        <!-- general form elements -->
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <h3 class="box-title">Quick Example</h3>
-                            </div><!-- /.box-header -->
-                            <!-- form start -->
-                            <form role="form">
+                       <!-- left column -->
+                        <div class="col-md-12"   >
+                           <!-- general form elements -->
+                            <div class="box box-primary">
+                               <div class="box-header">
+                                <h3 class="box-title">Your Notification</h3>
+                               </div><!-- /.box-header -->
+                              <!-- form start -->
+                              <form role="form">
                                 <div class="box-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
-                                        <input type="file" id="exampleInputFile">
-                                        <p class="help-block">Example block-level help text here.</p>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Check me out
-                                        </label>
-                                    </div>
-                                </div><!-- /.box-body -->
+                                    <div class="box box-warning" ng-repeat="notification in notifications track by $index">
+                                        <div class="box-header">
+                                                <h1 class="box-title" style="font-family: sans-serif"><a href="#/newsfeed/{{notification.jobId}}"> {{notification.content}}</a></h1>
+                                                 {{notification.alertDate}}
+                                                <div class="box-body">
 
-                                <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </form>
-                        </div><!-- /.box -->
-                    </div><!--/.col (left) -->
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- /.box-body -->
+                              </form>
+                          </div><!-- /.box -->
+                        </div><!--/.col (left) -->
+                    </div>
                 </div>
             </section>
         </div>
-
-
-
-
-
-
-        <center>
-
-            <button class="center-block btn btn-default" ng-click="loadMoreNoti()">Load More..</button>
-
-            <!--<div class="container" id="loadMoreNotiSpinner">-->
-                <!--<!--<div class="spinner"></div>-->-->
-                <!--<div class="spinner border"></div>-->
-                <!--<!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->-->
-            <!--</div>-->
-        </center>
-
     </div>
-    <!--End Notifications-->
-
-
   </div>
+

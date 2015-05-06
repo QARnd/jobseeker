@@ -150,6 +150,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                     $this->loginProvider();
                     break;
 
+                case 'deleteMessageFromProRequest':
+                        $this->deleteMessageFromPro();
+                        break;
+
 
             }
 
@@ -700,7 +704,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobTitle=$row['jobTitle'];
 
 
-        $sql1='insert into notifications VALUES (NULL ,"you have a new job oppurtunity with title " '.$jobTitle.' "and similarity " $similarity ,'.date("Y-m-d H:i:s").','.$js_id.')';
+        $sql1='insert into notifications VALUES (NULL ,"you have a new job oppurtunity with title '.$jobTitle.' and similarity '. $similarity .'","'.date("Y-m-d H:i:s").'",'.$js_id.')';
         $result=$GLOBALS['db']->db_query($sql1);
 
     }
@@ -864,6 +868,17 @@ public function sendEmailToP(){
     $result=$GLOBALS['db']->db_query($sql);
     print (json_encode($result));
 }
+
+    public function deleteMessageFromPro(){
+        $entity='Entity';
+        $messageProId='messageProId';
+        $messageProId=$GLOBALS['request']->$entity->$messageProId;
+
+        $sql='delete from messageJobprovider where messageProId='.$messageProId;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        print(json_encode($messageProId));
+    }
 
     
     public function getAllMessagesFromP(){

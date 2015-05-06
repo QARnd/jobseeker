@@ -31,6 +31,12 @@ angular.module('servicesModule').factory('providerEntitiesService', function() {
             provider.EmailP=EmailP;
             provider.passwordP=passwordP;
             return provider;
+        },
+
+        deleteMessageEntity:function(messageProId){
+            var message = {};     // new object
+            message.messageProId=messageProId;
+            return message;
         }
     }
 });
