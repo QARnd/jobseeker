@@ -4,17 +4,17 @@
         background:#f1f1f1;
     }
     .container{
-        width:330px;
+        width:200px;
         margin:10px auto
     }
     .spinner, .border{
-        border-top: 50px solid #0A5BC4;
-        border-left: 50px solid #00A600;
-        border-right: 50px solid #DC572E;
-        border-bottom: 50px solid #BF1E4B;
+        border-top: 20px solid #0A5BC4;
+        border-left: 20px solid #00A600;
+        border-right: 20px solid #DC572E;
+        border-bottom: 20px solid #BF1E4B;
         height:0;
         width:0;
-        border-radius: 50px;
+        border-radius: 20px;
         -webkit-animation: spin 1s infinite linear;
         -moz-animation: spin 1s infinite linear;
         animation: spin 1s infinite linear;
@@ -29,8 +29,8 @@
         border-left: 10px solid #00A600;
         border-right: 10px solid #DC572E;
         border-bottom: 10px solid #BF1E4B;
-        height:80px;
-        width:80px;
+        height:40px;
+        width:40px;
         -webkit-animation-name: spinback;
         -webkit-animation-duration: .5s;
         -moz-animation-name: spinback;
@@ -253,7 +253,7 @@
                 <div class="row">
 
                     
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="newsfeedJob">
                         <h1 class="box-title" style="font-family: sans-serif"> Your JobList..</h1>
                         <!-- general form elements disabled -->
                         <div class="box box-warning" ng-repeat="job in jobList track by $index">

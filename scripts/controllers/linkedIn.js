@@ -101,6 +101,7 @@ angular.module('myApp').controller('linkedInCtrl',
             jobsPromise.then(function (d) {
                 var jobs= d.data;
                 //alert(skillStr);
+                skillStr=skillStr.toLowerCase();
                 var skills=skillStr.split(",");
 
                 console.log(skills);
@@ -108,7 +109,7 @@ angular.module('myApp').controller('linkedInCtrl',
                 for(var i=0;i<jobs.length;i++){
                     c=0;
                     var skillsHash=skills;
-
+                    jobs[i].jobTag=jobs[i].jobTag.toLowerCase();
                     var jobTags=jobs[i].jobTag.split(",");
                     console.log(jobTags);
                     for(var j=0;j<jobTags.length;j++){
