@@ -50,7 +50,6 @@ angular.module('myApp').controller('createAccountCtrl',
 
             ];
 
-
             for (var i = 0; i < $scope.message.length; i++) {
                 if ($scope.message[i].messageProId == messageProId) {
                     $scope.message.splice(i, 1);

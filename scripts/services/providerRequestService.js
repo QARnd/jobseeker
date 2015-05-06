@@ -55,7 +55,6 @@ angular.module('servicesModule').factory('providerRequestService', function($htt
         },
 
 
-
         deleteMessage:function(deleteMessageEntity) {
             var request = {};
             request.opcode = "deleteMessageFromProRequest";

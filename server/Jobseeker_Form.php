@@ -835,7 +835,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
-
     public function getFromJobListByPageNumberRequest(){
         $Entity='Entity';
         $pageScrolls='pageScrolls';
