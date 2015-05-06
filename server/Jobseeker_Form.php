@@ -113,7 +113,7 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case'getAllJobsFromLastIdRequest':
                     $this->getAllJobsFromLastId();
                     break;
-                case'addJobListRequest':
+                case'addToJobListRequest':
                     $this->addToJobList();
                     break;
                 case'getJobListRequest':
@@ -694,7 +694,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $similarity='similarity';
         $similarity=$GLOBALS['request']->$entity->$similarity;
         $sql='insert into joblist VALUES (NULL , '.$js_id.' , '.$JobId.' , '.$similarity.')';
-        $result=$GLOBALS['db']->db_query($sql);
+        $GLOBALS['db']->db_query($sql);
 //        print(json_encode("Done"));
 
 
