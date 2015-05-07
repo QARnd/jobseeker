@@ -733,9 +733,12 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $notificationId='notificationId';
-        $notificationId=$GLOBALS['request']->$entity->$notificationId;
-        $sql='select count(*) AS "count", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.not_Id> '.$notificationId.' and  notifications.notiToId='.$js_id;
+        $countNot='countNot';
+        $countNot=$GLOBALS['request']->$entity->$countNot;
+//        $sql='select count(*) AS "count", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.not_Id> '.$countNot.' and  notifications.notiToId='.$js_id;
+//        $sql='select * from notifications';
+        $sql='select count(*) AS "count", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.notiToId='.$js_id;
+
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){

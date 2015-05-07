@@ -150,19 +150,23 @@ angular.module('myApp').controller('linkedInCtrl',
                 }
 
                 $scope.Notifications=[];
+                $scope.js_id= authenticationService.userProfile.jobseekerId;
+
 
                 //var js_id = authenticationService.userProfile.jobseekerId;
-                var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
+                //alert($scope.js_id);
+                var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,3);
                 var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
 
                 NotificationPromise.then(function (d) {
                     console.log(d);
 
                     var Notifications = d.data;
-                    $scope.counteNot=Notifications.counteNot;
+                    //$scope.counteNot=Notifications.counteNot;
                     $scope.content=Notifications.content;
-                    $scope.jobId=Notifications.jobId;
+                    //$scope.jobId=Notifications.jobId;
 
+                    alert($scope.content);
                 });
 
 
