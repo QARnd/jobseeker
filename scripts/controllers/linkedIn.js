@@ -178,11 +178,15 @@ angular.module('myApp').controller('linkedInCtrl',
                     timer: 2000
                 });
             });
+
+            $scope.remainders=[
+
+            ];
             var user_id= authenticationService.userProfile.user_id;
             var remainderEntity =remainderEntityService.remainderEntity(user_id);
             var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
             remainderPromise.then(function (d) {
-                var  remainder = d.data;
+                var  remainders = d.data;
    
             });
         };
