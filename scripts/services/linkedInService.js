@@ -46,6 +46,7 @@ angular.module('servicesModule').
                 });
                 return jobPromise;
             },
+
             getAllJobsFromLastId: function(lastJobsEntity) {
                 var request = {};
                 request.opcode = "getAllJobsFromLastIdRequest";
