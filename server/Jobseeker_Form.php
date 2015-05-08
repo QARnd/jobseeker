@@ -837,7 +837,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $email='select Email from jobseekers where jobseeker_id='.$js_id.'';
         $result3=$GLOBALS['db']->db_query($email);
         $row = $GLOBALS['db']->db_assoc($result3);
-        $emaile=$row['email'];
+        $email=$row['email'];
 
         $to = $email;
         $subject = "";

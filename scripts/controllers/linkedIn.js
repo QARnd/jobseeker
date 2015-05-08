@@ -119,6 +119,8 @@ angular.module('myApp').controller('linkedInCtrl',
                             c++;
                             //alert(jobTag);
                         }
+
+
                     }
                     var similarity=(c/jobTags.length)*100;
                     console.log(similarity);
