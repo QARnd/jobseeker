@@ -990,13 +990,13 @@ public function sendEmailToP(){
 
 //        $sql='select termSynonyms from Synonyms where term= financial ';
 
-        $sql='select * from Synonyms where term ='."' $skill '".' or termSynonyms ='."' $skill '";
+        $sql='select * from Synonyms where term ="'. $skill. '" or termSynonyms ="' .$skill. '"';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
-        print(json_encode($result));
+        print(json_encode($total));
 
     }
 

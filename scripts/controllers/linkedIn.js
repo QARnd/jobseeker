@@ -25,7 +25,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                     var skillStr='';
-                    var skillsWithSynonyms = {};
+                    var skillsWithSynonyms = [];
 
                     try{
                         var skills=result.values[0].skills.values;
@@ -41,14 +41,20 @@ angular.module('myApp').controller('linkedInCtrl',
                             //alert(skillStr);
 
                         }
+                        //alert(skillsWithSynonyms.length);
 
-                        for(var i=0;i<skillsWithSynonyms.length;i++){
-                            var synonymsEntity = entitiesService.synonymsEntity(skillsWithSynonyms[i]);
+                        for(var j=0;j<skillsWithSynonyms.length;j++){
+                            //alert(skillsWithSynonyms[j]);
+                            var x =skillsWithSynonyms[j];
+                            var synonymsEntity = entitiesService.synonymsEntity(x);
+                            //alert("synonymsEntity");
 
                             var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
+                            //alert("synonymsPromise");
 
                             synonymsPromise.then(function (d) {
                                 var synonyms = d.data;
+                                console.log(synonyms);
                                 $scope.term = synonyms.term;
                                 $scope.termSynonyms = synonyms.termSynonyms;
                                 for (var i = 0; i < synonyms.length; i++) {

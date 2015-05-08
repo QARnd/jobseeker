@@ -80,9 +80,9 @@ angular.module('servicesModule').factory('entitiesService', function() {
         synonymsEntity: function(skill) {
             var skills = {};     // new object
             skills.skill = skill;
+
             return skills;
         }
-
        // addMessageJobProviderEntity: function(emailSend,content) {
           //  var message = {};     // new object
         // message.emailSend=emailSend;
