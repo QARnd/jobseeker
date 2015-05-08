@@ -229,73 +229,141 @@
     <!--End Newsfeed-->
 
 
-    <!--Notifications-->
     <div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">
 
-        <div ng-controller="addPostCtrl" id="newsfeedContent">
+        <div ng-controller="linkedInCtrl" id="newsfeedJobContent">
 
             <!-- Main content -->
             <section class="content">
                 <div class="row">
 
-                    <div class="col-md-12">
+
+                    <div class="col-md-12" id="newsfeedJob">
+                        <h1 class="box-title" style="font-family: sans-serif"> Your Notifications..</h1>
                         <!-- general form elements disabled -->
-                        <div class="box box-warning">
+                        <div class="box box-warning" ng-repeat="notification in Notifications track by $index">
                             <div class="box-header">
-                                <h3 class="box-title">Write New Post..</h3>
-                            </div><!-- /.box-header -->
-                            <div class="box-body">
+                                <!--<h1 class="box-title" style="font-family: sans-serif"><a href="#/newsfeedJob/{{job.jobId}}"> {{job.jobTitle}}</a></h1>-->
+                                <div class="box-body">
 
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text"  ng-model="title" class="form-control" placeholder="Enter Title..."/>
+                                    <div class="form-group">
+
+                                        <div class="timeline-body"  style="white-space: pre-line">
+                                            <h5>{{notification.content}}</h5>
+                                        </div>
+                                        <!--<div>-->
+                                            <!--<h5><b>Requirements:</b> {{job.jobTag | limitTo:25}}... </h5>-->
+                                        <!--</div>-->
+                                        <!--<div>-->
+                                            <!--<h5> <b>Similarity:</b> {{job.similarity}}% </h5>-->
+                                        <!--</div>-->
+                                    </div>
+
+
                                 </div>
-
-
-                                <!-- textarea -->
-                                <div class="form-group">
-                                    <label>Body</label>
-                                    <textarea ng-model="body" class="form-control" rows="7" placeholder="Enter Body..."></textarea>
-                                </div>
-
-                                <div class="box-footer">
-                                    <button class="btn btn-primary" ng-click="addPost()">Add Post</button>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                    <div  ng-controller="linkedInCtrl" id="notification_li">
 
-
-                       <!-- left column -->
-                        <div class="col-md-12"   >
-                           <!-- general form elements -->
-                            <div class="box box-primary">
-                               <div class="box-header">
-                                <h3 class="box-title">Your Notification</h3>
-                               </div><!-- /.box-header -->
-                              <!-- form start -->
-                              <form role="form">
-                                <div class="box-body">
-                                    <div class="box box-warning" ng-repeat="notification in notifications track by $index">
-                                        <div class="box-header">
-                                                <h1 class="box-title" style="font-family: sans-serif"><a href="#/newsfeed/{{notification.jobId}}"> {{notification.content}}</a></h1>
-                                                 {{notification.alertDate}}
-                                                <div class="box-body">
-
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- /.box-body -->
-                              </form>
-                          </div><!-- /.box -->
-                        </div><!--/.col (left) -->
-                    </div>
                 </div>
             </section>
         </div>
+
+        <!--<div ng-controller="JobsListCtrl">-->
+
+
+
+            <!--<center >-->
+
+                <!--<button class="center-block btn btn-default" ng-click="loadMoreJobList()">Load More..</button>-->
+
+                <!--<div class="container" id="loadMoreJobList">-->
+                    <!--&lt;!&ndash;<div class="spinner"></div>&ndash;&gt;-->
+                    <!--<div class="spinner border"></div>-->
+                    <!--&lt;!&ndash;<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>&ndash;&gt;-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash;<div class="container" id="loadMoreNotiSpinner">&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<div class="spinner"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="spinner border"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</center>-->
+
+        <!--</div>-->
+
     </div>
+    <!--End Notifications-->
+
+
+    <!--&lt;!&ndash;Notifications&ndash;&gt;-->
+    <!--<div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">-->
+
+        <!--<div ng-controller="addPostCtrl" id="newsfeedContent">-->
+
+            <!--&lt;!&ndash; Main content &ndash;&gt;-->
+            <!--<section class="content">-->
+                <!--<div class="row">-->
+
+                    <!--<div class="col-md-12">-->
+                        <!--&lt;!&ndash; general form elements disabled &ndash;&gt;-->
+                        <!--<div class="box box-warning">-->
+                            <!--<div class="box-header">-->
+                                <!--<h3 class="box-title">Write New Post..</h3>-->
+                            <!--</div>&lt;!&ndash; /.box-header &ndash;&gt;-->
+                            <!--<div class="box-body">-->
+
+                                <!--&lt;!&ndash; text input &ndash;&gt;-->
+                                <!--<div class="form-group">-->
+                                    <!--<label>Title</label>-->
+                                    <!--<input type="text"  ng-model="title" class="form-control" placeholder="Enter Title..."/>-->
+                                <!--</div>-->
+
+
+                                <!--&lt;!&ndash; textarea &ndash;&gt;-->
+                                <!--<div class="form-group">-->
+                                    <!--<label>Body</label>-->
+                                    <!--<textarea ng-model="body" class="form-control" rows="7" placeholder="Enter Body..."></textarea>-->
+                                <!--</div>-->
+
+                                <!--<div class="box-footer">-->
+                                    <!--<button class="btn btn-primary" ng-click="addPost()">Add Post</button>-->
+                                <!--</div>-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div  ng-controller="linkedInCtrl" id="notification_li">-->
+
+
+                       <!--&lt;!&ndash; left column &ndash;&gt;-->
+                        <!--<div class="col-md-12"   >-->
+                           <!--&lt;!&ndash; general form elements &ndash;&gt;-->
+                            <!--<div class="box box-primary">-->
+                               <!--<div class="box-header">-->
+                                <!--<h3 class="box-title">Your Notification</h3>-->
+                               <!--</div>&lt;!&ndash; /.box-header &ndash;&gt;-->
+                              <!--&lt;!&ndash; form start &ndash;&gt;-->
+                              <!--<form role="form">-->
+                                <!--<div class="box-body">-->
+                                    <!--<div class="box box-warning" ng-repeat="notification in Notifications track by $index">-->
+                                        <!--<div class="box-header">-->
+                                                <!--&lt;!&ndash;<h1 class="box-title" style="font-family: sans-serif"><a href="#/newsfeed/{{notification.jobId}}"> {{notification.content}}</a></h1>&ndash;&gt;-->
+                                                 <!--{{notification.content}}-->
+
+                                            <!--<div class="box-body">-->
+
+                                                <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div> &lt;!&ndash; /.box-body &ndash;&gt;-->
+                              <!--</form>-->
+                          <!--</div>&lt;!&ndash; /.box &ndash;&gt;-->
+                        <!--</div>&lt;!&ndash;/.col (left) &ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</section>-->
+        <!--</div>-->
+    <!--</div>-->
   </div>
 

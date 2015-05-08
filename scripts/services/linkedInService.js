@@ -58,6 +58,18 @@ angular.module('servicesModule').
                     data: request
                 });
                 return jobPromise;
+            },
+            getSkillsWithSynonyms: function(synonymsEntity) {
+                var request = {};
+                request.opcode = "getSkillsWithSynonymsRequest";
+                request.Entity=synonymsEntity;
+                var synonymsPromise=$http({
+                    method : 'POST',
+                    url : authenticationService.deploymentLink.link,
+                    //url: 'server/Jobseeker_Form.php',
+                    data: request
+                });
+                return synonymsPromise;
             }
 
 
