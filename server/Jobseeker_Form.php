@@ -152,6 +152,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'applyForJobRequest':
                     $this->applyForJob();
                     break;
+                case 'getSkillsWithSynonymsRequest':
+                    $this->getSynonyms();
+                    break;
+
 
 
                 case 'deleteMessageFromProRequest':
@@ -735,10 +739,8 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $countNot='countNot';
         $countNot=$GLOBALS['request']->$entity->$countNot;
-//        $sql='select count(*) AS "count", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.not_Id> '.$countNot.' and  notifications.notiToId='.$js_id;
-//        $sql='select * from notifications';
-        $sql='select count(*) AS "count", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.notiToId='.$js_id;
-
+//        $sql='select count(*) AS "counts", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.notiToId='.$js_id.'and notifications.notiToId=joblist.jobseekerId order by joblist.jobId DESC limit'. $countNot;
+        $sql='select joblist.jobId,notifications.content,notifications.alertDate from joblist,notifications where notifications.notiToId= joblist.jobseekerId and notifications.notiToId='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -840,7 +842,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $email='select Email from jobseekers where jobseeker_id='.$js_id.'';
         $result3=$GLOBALS['db']->db_query($email);
         $row = $GLOBALS['db']->db_assoc($result3);
-        $emaile=$row['email'];
+        $email=$row['email'];
 
         $to = $email;
         $subject = "";
@@ -978,6 +980,28 @@ public function sendEmailToP(){
         $GLOBALS['db']->db_query($sql);
         print (json_encode("done"));
     }
+
+
+    public function getSynonyms(){
+
+        $entity='Entity';
+        $skill='skill';
+        $skill=$GLOBALS['request']->$entity->$skill;
+
+//        $sql='select termSynonyms from Synonyms where term= financial ';
+
+        $sql='select * from Synonyms where term ='."' $skill '".' or termSynonyms ='."' $skill '";
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($result));
+
+    }
+
+
+
 
 
 

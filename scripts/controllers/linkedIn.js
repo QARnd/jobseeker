@@ -25,11 +25,50 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                     var skillStr='';
+                    var skillsWithSynonyms = {};
+
                     try{
                         var skills=result.values[0].skills.values;
-                        for(var i=0;i<skills.length;i++){
-                            skillStr+=skills[i].skill.name+",";
+
+                        skillsWithSynonyms[0]=skills[i].skill.name.toLowerCase();
+                        //skillStr+=skillsWithSynonyms[0];
+
+                        for(var i=1;i<skills.length;i++){
+                            skillsWithSynonyms[i]=skills[i].skill.name.toLowerCase();
+                            //skillStr+=","+skillsWithSynonyms[i];
+
+                            //alert(skills[i].skill.name.toLowerCase());
+                            //alert(skillStr);
+
                         }
+
+                        for(var i=0;i<skillsWithSynonyms.length;i++){
+                            var synonymsEntity = entitiesService.synonymsEntity(skillsWithSynonyms[i]);
+
+                            var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
+
+                            synonymsPromise.then(function (d) {
+                                var synonyms = d.data;
+                                $scope.term = synonyms.term;
+                                $scope.termSynonyms = synonyms.termSynonyms;
+                                for (var i = 0; i < synonyms.length; i++) {
+                                    if (skillsWithSynonyms.indexOf($scope.term) == -1) skillsWithSynonyms.push($scope.term);
+                                    if (skillsWithSynonyms.indexOf($scope.termSynonyms) == -1) skillsWithSynonyms.push($scope.termSynonyms);
+                                }
+                                for (var s = 0; i < skillsWithSynonyms.length; s++)
+                                    skillStr += skillsWithSynonyms[s] + ",";
+
+
+
+                                    //
+                                    //var skills=result.values[0].skills.values;
+                                    //for(var i=0;i<skills.length;i++){
+                                    //    skillStr+=skills[i].skill.name+",";
+
+                            })
+                        }
+
+                        alert(skillStr);
 
                     }catch(err){
                         skillStr='';
@@ -89,6 +128,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
         ///get last jobs
         $scope.getLastAddedJobs=function(skillStr){
+            alert(skillStr);
 
 
             var js_id= authenticationService.userProfile.user_id;
@@ -155,18 +195,20 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 //var js_id = authenticationService.userProfile.jobseekerId;
                 //alert($scope.js_id);
-                var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,3);
+                var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
                 var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
 
                 NotificationPromise.then(function (d) {
                     console.log(d);
 
                     var Notifications = d.data;
-                    //$scope.counteNot=Notifications.counteNot;
+                    //$scope.counts=Notifications.counts;
                     $scope.content=Notifications.content;
-                    //$scope.jobId=Notifications.jobId;
+                    $scope.jobId=Notifications.jobId;
+                    $scope.alertDate=Notifications.alertDate;
 
-                    alert($scope.content);
+
+                    //alert($scope.content);
                 });
 
 
