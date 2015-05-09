@@ -3,7 +3,7 @@
  */
 
 angular.module('myApp').controller('messageJobProviderCtrl',
-    function($scope,providerEntitiesService,providerRequestService,authenticationService) {
+    function($scope,$rootScope,providerEntitiesService,providerRequestService,authenticationService) {
 
         $scope.getMessages= function () {
 
@@ -11,7 +11,7 @@ angular.module('myApp').controller('messageJobProviderCtrl',
 
             MessagesPromise.then(function (d) {
                     console.log(d);
-                    $scope.messages= d.data;
+                    $rootScope.providerMessages= d.data;
                 }, function (d) {
                     swal({
                         title: "Error!",

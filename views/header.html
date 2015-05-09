@@ -1,10 +1,11 @@
+
 <link href="dist/css/Notification.css" rel="stylesheet" type="text/css" />
 <script src="dist/js/Notification.js"></script>
 <style>
     img {
-        height: 40px;
+        height: 5%;
         width: 40px;
-        margin-top: 5px;
+        /*margin-top: 5px;*/
     }
 </style>
 <div class="container" id="header">
@@ -15,7 +16,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
                             data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span><span
-                            class="icon-bar"></span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="glyphicon glyphicon-chevron-down"></span><span
                             class="icon-bar"></span>
                     </button>
                     <a href="#/newsFeed"><img class="logo" src="imgs\jobseeker.png"></a>
@@ -26,7 +27,7 @@
                     <ul class="nav navbar-nav">
                         <li ng-repeat="page in navPagesList" ng-click="select($index)"
                             ng-class="{active: $index===selectedIndex}"><a
-                                href="#/{{page.target}}"
+                                href="#/{{page.target}}" data-toggle="collapse" data-target=".nav-collapse"
                                 ng-show="(userProfile.data.userType == page.show) || (page.show == 0)">{{page.name}}</a></li>
 
 
@@ -64,6 +65,35 @@
                             </div>
 
                         </form>
+
+
+
+
+
+
+
+                        <li ng-controller="linkedInCtrl" id="notification_li" class="dropdown messages-menu">
+                            <a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">
+                                <i class="fa fa-bell-o" alt="Notifications"></i>
+                                <span class="label label-success noti_num">{{count}}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You Have <span class="noti_num">{{count}}</span> Notifications</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu" id="msgs_lst">
+                                        <li ng-repeat="notification in Notifications track by $index">
+                                            <a href="#/newsfeed/{{notification.jobId}}">
+                                                <p>{{notification.content}}</p>
+                                                <p>{{notification.alertDate}}</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer  whatever"><a href="javascript:void(0);">See All Notifications</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
 
 
@@ -86,23 +116,6 @@
 
 
 
-
-                                <li ng-controller="linkedInCtrl" id="notification_li">
-                                    <span id="notification_count">{{count}}</span>
-                                   <button id="notificationLink">Notifications</button>
-                                    <div id="notificationContainer">
-                                        <div id="notificationTitle">Notifications</div>
-                                        <div id="notificationsBody" class="notifications">
-                                            <div ng-repeat="notification in notifications">
-                                                <h2 class="timeline-header"><a href="#/newsfeed/{{notification.jobId}}">{{notification.content}}</a></h2>
-                                                {{notification.alertDate}}
-
-                                            </div>
-                                        </div>
-                                        <div id="notificationFooter"><a href="#">See All</a></div>
-                                    </div>
-
-                                </li>
 
 
 
@@ -144,4 +157,18 @@
             </nav>
         </div>
     </div>
+
+
+
 </div>
+
+
+
+        <script>
+
+
+            $('.whatever').click(function(event){
+                event.preventDefault();
+            });
+        </script>
+
