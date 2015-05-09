@@ -1,0 +1,13 @@
+angular.module('servicesModule').factory('msgsEntitiesService', function() {
+
+    return {
+
+        msgsEntity: function (js_id,countNot) {
+            var notification = {};     // new object
+            notification.js_id = js_id;
+            notification.countNot = countNot;
+            return notification;
+
+        }
+    }
+});

@@ -2,7 +2,7 @@
 <div ng-controller="messageJobProviderCtrl" class="row">
     <div  ng-init="getMessages()" class="col-md-12">
         <!-- The time line -->
-        <div  ng-repeat="message in messages track by $index">
+        <div  ng-repeat="message in providerMessages track by $index">
             <ul class="timeline">
                 <li>
                     <i class="fa fa-comment-o bg-blue"></i>

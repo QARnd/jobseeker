@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,msgsRequestService,notificationEntitiesService,msgsEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
 
@@ -25,60 +25,60 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                     var skillStr='';
-                    var skillsWithSynonyms = [];
+                    //var skillsWithSynonyms = [];
+                    //
+                    //try{
+                    //    var skills=result.values[0].skills.values;
+                    //
+                    //    skillsWithSynonyms[0]=skills[i].skill.name.toLowerCase();
+                    //    //skillStr+=skillsWithSynonyms[0];
+                    //
+                    //    for(var i=1;i<skills.length;i++){
+                    //        skillsWithSynonyms[i]=skills[i].skill.name.toLowerCase();
+                    //        //skillStr+=","+skillsWithSynonyms[i];
+                    //
+                    //        //alert(skills[i].skill.name.toLowerCase());
+                    //        //alert(skillStr);
+                    //
+                    //    }
+                    //    //alert(skillsWithSynonyms.length);
+                    //
+                    //    for(var j=0;j<skillsWithSynonyms.length;j++){
+                    //        //alert(skillsWithSynonyms[j]);
+                    //        var x =skillsWithSynonyms[j];
+                    //        var synonymsEntity = entitiesService.synonymsEntity(x);
+                    //        //alert("synonymsEntity");
+                    //
+                    //        var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
+                    //        //alert("synonymsPromise");
+                    //
+                    //        synonymsPromise.then(function (d) {
+                    //            var synonyms = d.data;
+                    //            console.log(synonyms);
+                    //            $scope.term = synonyms.term;
+                    //            $scope.termSynonyms = synonyms.termSynonyms;
+                    //            for (var i = 0; i < synonyms.length; i++) {
+                    //                if (skillsWithSynonyms.indexOf($scope.term) == -1) skillsWithSynonyms.push($scope.term);
+                    //                if (skillsWithSynonyms.indexOf($scope.termSynonyms) == -1) skillsWithSynonyms.push($scope.termSynonyms);
+                    //            }
+                    //            for (var s = 0; i < skillsWithSynonyms.length; s++)
+                    //                skillStr += skillsWithSynonyms[s] + ",";
+                    //
+                    //
+                    //
 
-                    try{
-                        var skills=result.values[0].skills.values;
+                                    var skills=result.values[0].skills.values;
+                                    for(var i=0;i<skills.length;i++){
+                                        skillStr+=skills[i].skill.name+",";
 
-                        skillsWithSynonyms[0]=skills[i].skill.name.toLowerCase();
-                        //skillStr+=skillsWithSynonyms[0];
-
-                        for(var i=1;i<skills.length;i++){
-                            skillsWithSynonyms[i]=skills[i].skill.name.toLowerCase();
-                            //skillStr+=","+skillsWithSynonyms[i];
-
-                            //alert(skills[i].skill.name.toLowerCase());
-                            //alert(skillStr);
-
-                        }
-                        //alert(skillsWithSynonyms.length);
-
-                        for(var j=0;j<skillsWithSynonyms.length;j++){
-                            //alert(skillsWithSynonyms[j]);
-                            var x =skillsWithSynonyms[j];
-                            var synonymsEntity = entitiesService.synonymsEntity(x);
-                            //alert("synonymsEntity");
-
-                            var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
-                            //alert("synonymsPromise");
-
-                            synonymsPromise.then(function (d) {
-                                var synonyms = d.data;
-                                console.log(synonyms);
-                                $scope.term = synonyms.term;
-                                $scope.termSynonyms = synonyms.termSynonyms;
-                                for (var i = 0; i < synonyms.length; i++) {
-                                    if (skillsWithSynonyms.indexOf($scope.term) == -1) skillsWithSynonyms.push($scope.term);
-                                    if (skillsWithSynonyms.indexOf($scope.termSynonyms) == -1) skillsWithSynonyms.push($scope.termSynonyms);
-                                }
-                                for (var s = 0; i < skillsWithSynonyms.length; s++)
-                                    skillStr += skillsWithSynonyms[s] + ",";
-
-
-
-                                    //
-                                    //var skills=result.values[0].skills.values;
-                                    //for(var i=0;i<skills.length;i++){
-                                    //    skillStr+=skills[i].skill.name+",";
-
-                            })
-                        }
-
-                        alert(skillStr);
-
-                    }catch(err){
-                        skillStr='';
-                    }
+                            //})
+                                    }
+                    //
+                    //    alert(skillStr);
+                    //
+                    //}catch(err){
+                    //    skillStr='';
+                    //}
 
 
 
@@ -182,7 +182,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
                         jobListPromise.then(function (d) {
-                            alert(d.data);
+                            //alert(d.data);
 
                             //console.log(jobListEntity);
                         }, function (d) {
@@ -197,10 +197,13 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 }
 
-                $scope.Notifications=[];
+
+
+
+
                 $scope.js_id= authenticationService.userProfile.jobseekerId;
 
-
+                $scope.jobsNotifications=[];
                 //var js_id = authenticationService.userProfile.jobseekerId;
                 //alert($scope.js_id);
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
@@ -210,10 +213,43 @@ angular.module('myApp').controller('linkedInCtrl',
                     console.log(d);
 
                     var Notifications = d.data;
-                    //$scope.counts=Notifications.counts;
-                    $scope.content=Notifications.content;
-                    $scope.jobId=Notifications.jobId;
-                    $scope.alertDate=Notifications.alertDate;
+                    $scope.jobsNotifications=Notifications;
+                    $scope.jobNoticount=Notifications.length;
+
+
+
+                    //alert($scope.content);
+                });
+
+
+                $scope.msgsNotifications=[];
+                var msgsEntity = msgsEntitiesService.msgsEntity($scope.js_id,countNot);
+                var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
+
+                msgsPromise.then(function (d) {
+                    console.log(d);
+
+                    var msgsNotifications = d.data;
+                    $scope.msgsNotifications=msgsNotifications;
+                    $scope.msgsNoticount=msgsNotifications.length;
+
+
+
+                    //alert($scope.content);
+                });
+
+
+                $scope.commentNotifications=[];
+                var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
+                var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
+
+                NotificationPromise.then(function (d) {
+                    console.log(d);
+
+                    var Notifications = d.data;
+                    $scope.commentNotifications=Notifications;
+                    $scope.commentNoticount=Notifications.length;
+
 
 
                     //alert($scope.content);
@@ -237,7 +273,7 @@ angular.module('myApp').controller('linkedInCtrl',
             var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
             remainderPromise.then(function (d) {
                 var  remainders = d.data;
-   
+
             });
         };
 

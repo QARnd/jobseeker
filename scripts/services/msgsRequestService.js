@@ -1,12 +1,9 @@
-/**
- * Created by rana on 4/26/2015.
- */
-angular.module('servicesModule').factory('notificationRequestService', function($http,authenticationService) {
+angular.module('servicesModule').factory('msgsRequestService', function($http,authenticationService) {
     return {
 
         getNotifications: function (notificationEntity) {
             var request = {};
-            request.opcode = "getJobsNotificationsRequest";
+            request.opcode = "getMsgsNotificationsRequest";
             request.Entity=notificationEntity;
             var notificationPromise = $http({
                 method: 'POST',
