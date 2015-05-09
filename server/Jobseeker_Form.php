@@ -119,8 +119,8 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case'getJobListRequest':
                     $this->getJobList();
                     break;
-                case'getNotificationsRequest':
-                    $this->getNotifications();
+                case'getJobsNotificationsRequest':
+                    $this->getJobsNotifications();
                     break;
                 case 'addEventRequest':
                     $this->add_event();
@@ -156,8 +156,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                     $this->getSynonyms();
                     break;
                 case 'deleteMessageFromProRequest':
-                        $this->deleteMessageFromPro();
-                        break;
+                    $this->deleteMessageFromPro();
+                    break;
+                case 'getMsgsNotificationsRequest':
+                    $this->getMsgsNotifications();
+                    break;
+
 
 
             }
@@ -709,7 +713,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobTitle=$row['jobTitle'];
 
 
-        $sql1='insert into notifications VALUES (NULL ,"You Have A New Job Oppurtunity With Title '.$jobTitle.', And Similarity = '. $similarity .'","'.date("Y-m-d H:i:s").'",'.$js_id.')';
+        $sql1='insert into jobNotification VALUES (NULL ,"New Job Oppurtunity With Similarity = '. $similarity .'%","'.date("Y-m-d H:i:s").'",'.$js_id.','.$JobId.')';
         $result=$GLOBALS['db']->db_query($sql1);
         print(json_encode($result));
     }
@@ -730,14 +734,14 @@ class Jobseeker_Form extends Jobseeker_DB {
     }
 
 
-    public function getNotifications(){
+    public function getJobsNotifications(){
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
         $countNot='countNot';
         $countNot=$GLOBALS['request']->$entity->$countNot;
 //        $sql='select count(*) AS "counts", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.notiToId='.$js_id.'and notifications.notiToId=joblist.jobseekerId order by joblist.jobId DESC limit'. $countNot;
-        $sql='select joblist.jobId,notifications.content,notifications.alertDate from joblist,notifications where notifications.notiToId= joblist.jobseekerId and notifications.notiToId='.$js_id;
+        $sql='select * from jobNotification where notiToId='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -995,6 +999,25 @@ public function sendEmailToP(){
         }
         print(json_encode($total));
 
+    }
+
+
+    public function getMsgsNotifications(){
+
+        $entity='Entity';
+
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+
+
+        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id group by from_id order by message_id desc limit 50';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
     }
 
 

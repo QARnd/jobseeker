@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp').controller('linkedInCtrl',
-    function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,notificationEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
+    function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,msgsRequestService,notificationEntitiesService,msgsEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
 
         $scope.getUserProfile = function () {
 
@@ -180,7 +180,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         var jobListPromise = addToJobListRequestService.addToJobList(jobListEntity);
                         jobListPromise.then(function (d) {
-                            alert(d.data);
+                            //alert(d.data);
 
                             //console.log(jobListEntity);
                         }, function (d) {
@@ -198,10 +198,10 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-                $scope.Notifications=[];
+
                 $scope.js_id= authenticationService.userProfile.jobseekerId;
 
-
+                $scope.jobsNotifications=[];
                 //var js_id = authenticationService.userProfile.jobseekerId;
                 //alert($scope.js_id);
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
@@ -211,8 +211,42 @@ angular.module('myApp').controller('linkedInCtrl',
                     console.log(d);
 
                     var Notifications = d.data;
-                    $scope.Notifications=Notifications;
-                    $scope.count=Notifications.length;
+                    $scope.jobsNotifications=Notifications;
+                    $scope.jobNoticount=Notifications.length;
+
+
+
+                    //alert($scope.content);
+                });
+
+
+                $scope.msgsNotifications=[];
+                var msgsEntity = msgsEntitiesService.msgsEntity($scope.js_id,countNot);
+                var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
+
+                msgsPromise.then(function (d) {
+                    console.log(d);
+
+                    var msgsNotifications = d.data;
+                    $scope.msgsNotifications=msgsNotifications;
+                    $scope.msgsNoticount=msgsNotifications.length;
+
+
+
+                    //alert($scope.content);
+                });
+
+
+                $scope.commentNotifications=[];
+                var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
+                var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
+
+                NotificationPromise.then(function (d) {
+                    console.log(d);
+
+                    var Notifications = d.data;
+                    $scope.commentNotifications=Notifications;
+                    $scope.commentNoticount=Notifications.length;
 
 
 
