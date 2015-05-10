@@ -112,11 +112,15 @@ angular.module('myApp').controller('linkedInCtrl',
 
                                 $scope.getLastAddedJobs(skillStr);
                             }
+
+                            
                             else{
                                 alert("error");
                                 $scope.logoutLinkedIn();
                                 $location.path("/login");
                             }
+
+
                         },
                         function(d){
                             alert("Login Error");
@@ -222,6 +226,7 @@ angular.module('myApp').controller('linkedInCtrl',
                 });
 
 
+
                 $scope.msgsNotifications=[];
                 var msgsEntity = msgsEntitiesService.msgsEntity($scope.js_id,countNot);
                 var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
@@ -254,6 +259,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                     //alert($scope.content);
                 });
+
 
 
             }, function (d) {
