@@ -738,15 +738,30 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-        $countNot='countNot';
-        $countNot=$GLOBALS['request']->$entity->$countNot;
+//        $countNot='countNot';
+//        $countNot=$GLOBALS['request']->$entity->$countNot;
+
+//        $lastJobNotificationId='select lastSeenJobNotification from jobseekers where jobseeker_id='.$js_id;
+//        $idResult=$GLOBALS['db']->db_query($lastJobNotificationId);
+//        $row = $GLOBALS['db']->db_assoc($idResult);
+//        $lastJobNotificationId=$row['lastJobNotificationId'];
+
 //        $sql='select count(*) AS "counts", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.notiToId='.$js_id.'and notifications.notiToId=joblist.jobseekerId order by joblist.jobId DESC limit'. $countNot;
-        $sql='select * from jobNotification where notiToId='.$js_id;
+        $sql='select jobNotification.content,jobNotification.alertDate,jobNotification.jobId from jobNotification,jobseekers  where jobNotification.notiToId='.$js_id.' and jobseekers.jobseeker_id=jobNotification.notiToId and jobNotification.not_Id> jobseekers.lastSeenJobNotification';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
+
+        $jobNotificationId='select not_Id from jobNotification order by not_Id DESC limit 1 ';
+        $resultLastId=$GLOBALS['db']->db_query($jobNotificationId);
+        $row = $GLOBALS['db']->db_assoc($resultLastId);
+        $jobNotificationId1=$row['jobNotificationId'];
+
+        $updateSql= 'update jobseekers set lastSeenJobNotification='.$jobNotificationId1.' where jobseeker_id='.$js_id;
+        $GLOBALS['db']->db_query($updateSql);
+
         print(json_encode($total));
     }
 
@@ -991,7 +1006,7 @@ public function sendEmailToP(){
 
 //        $sql='select termSynonyms from Synonyms where term= financial ';
 
-        $sql='select * from Synonyms where term ="'. $skill. '" or termSynonyms ="' .$skill. '"';
+        $sql=' select * from Synonyms where term ="'. $skill. '" or termSynonyms ="' .$skill. '"';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){

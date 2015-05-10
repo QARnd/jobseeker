@@ -25,60 +25,82 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                     var skillStr='';
-                    //var skillsWithSynonyms = [];
-                    //
-                    //try{
-                    //    var skills=result.values[0].skills.values;
-                    //
-                    //    skillsWithSynonyms[0]=skills[i].skill.name.toLowerCase();
-                    //    //skillStr+=skillsWithSynonyms[0];
-                    //
-                    //    for(var i=1;i<skills.length;i++){
-                    //        skillsWithSynonyms[i]=skills[i].skill.name.toLowerCase();
-                    //        //skillStr+=","+skillsWithSynonyms[i];
-                    //
-                    //        //alert(skills[i].skill.name.toLowerCase());
-                    //        //alert(skillStr);
-                    //
-                    //    }
-                    //    //alert(skillsWithSynonyms.length);
-                    //
-                    //    for(var j=0;j<skillsWithSynonyms.length;j++){
-                    //        //alert(skillsWithSynonyms[j]);
-                    //        var x =skillsWithSynonyms[j];
-                    //        var synonymsEntity = entitiesService.synonymsEntity(x);
-                    //        //alert("synonymsEntity");
-                    //
-                    //        var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
-                    //        //alert("synonymsPromise");
-                    //
-                    //        synonymsPromise.then(function (d) {
-                    //            var synonyms = d.data;
-                    //            console.log(synonyms);
-                    //            $scope.term = synonyms.term;
-                    //            $scope.termSynonyms = synonyms.termSynonyms;
-                    //            for (var i = 0; i < synonyms.length; i++) {
-                    //                if (skillsWithSynonyms.indexOf($scope.term) == -1) skillsWithSynonyms.push($scope.term);
-                    //                if (skillsWithSynonyms.indexOf($scope.termSynonyms) == -1) skillsWithSynonyms.push($scope.termSynonyms);
-                    //            }
-                    //            for (var s = 0; i < skillsWithSynonyms.length; s++)
-                    //                skillStr += skillsWithSynonyms[s] + ",";
-                    //
-                    //
-                    //
+                    var skillsWithSynonyms = [];
 
-                                    var skills=result.values[0].skills.values;
-                                    for(var i=0;i<skills.length;i++){
-                                        skillStr+=skills[i].skill.name+",";
+                    try{
+                        var skills=result.values[0].skills.values;
 
-                            //})
-                                    }
-                    //
-                    //    alert(skillStr);
-                    //
-                    //}catch(err){
-                    //    skillStr='';
-                    //}
+                        //skillsWithSynonyms[0]=skills[0].skill.name.toLowerCase();
+                        //skillStr+=skillsWithSynonyms[0];
+
+                        for(var i=0;i<skills.length;i++){
+                            skillsWithSynonyms[i]=skills[i].skill.name.toLowerCase();
+                            //skillStr+=","+skillsWithSynonyms[i];
+
+                            //alert(skills[i].skill.name.toLowerCase());
+                            //alert(skillStr);
+
+                        }
+                        //alert(skillsWithSynonyms.length);
+
+                        for(var j=0;j<skillsWithSynonyms.length;j++){
+                            //alert(skillsWithSynonyms[j]);
+                            var x =skillsWithSynonyms[j];
+                            var synonymsEntity = entitiesService.synonymsEntity(x);
+                            //alert("synonymsEntity");
+
+                            var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
+                            //alert("synonymsPromise");
+
+                            synonymsPromise.then(function (d) {
+                                var synonyms = d.data;
+                                console.log(synonyms);
+                                $scope.terms = synonyms.term;
+                                $scope.termsSynonyms = synonyms.termSynonyms;
+
+                                console.log($scope.terms);
+                                //alert(synonyms.length);
+
+                                //alert($scope.term);
+                                if( synonyms.length>0)
+                                {
+                                    for (var i = 0; i < synonyms.length; i++) {
+                                    //alert(i);
+                                    //alert(synonyms.length);
+
+                                    //alert(skillsWithSynonyms.indexOf($scope.terms));
+                                    console.log(skillsWithSynonyms);
+
+                                    if (skillsWithSynonyms.indexOf($scope.terms) == -1) skillsWithSynonyms.push($scope.terms);
+                                    if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1) skillsWithSynonyms.push($scope.termsSynonyms);
+                                }}
+
+                            })
+
+
+
+                        }
+                        skillStr += skillsWithSynonyms[0];
+
+                        //alert(skillsWithSynonyms.length);
+
+                        for (var i = 1; i < skillsWithSynonyms.length; i++)
+                            //alert(skillsWithSynonyms.length);
+                            skillStr +=","+ skillsWithSynonyms[i] ;
+
+
+
+
+                        //var skills=result.values[0].skills.values;
+                        //for(var i=0;i<skills.length;i++){
+                        //    skillStr+=skills[i].skill.name+",";
+
+
+                        alert(skillStr);
+
+                    }catch(err){
+                        skillStr='';
+                    }
 
 
 
