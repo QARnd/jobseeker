@@ -161,7 +161,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getMsgsNotificationsRequest':
                     $this->getMsgsNotifications();
                     break;
-
+                case 'getFromJobNotificationByPageNumber':
+                    $this->getFromJobNotificationByPageNumber();
+                    break;
 
 
             }
@@ -1022,6 +1024,25 @@ public function sendEmailToP(){
 
 
 
+    public function getFromJobNotificationByPageNumber(){
+        $Entity='Entity';
+        $pageScrolls='pageScrolls';
+        $pageScrolls=$GLOBALS['request']->$Entity->$pageScrolls;
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$Entity->$js_id;
+
+        $pageNum=abs(intval($pageScrolls));
+        $offset=$pageNum*2;
+
+        $sql='select content,alertDate from jobNotification where jobseekerId='.$js_id.' limit 2 offset '.$offset;
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+    }
 
 
 

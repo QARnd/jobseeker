@@ -3,7 +3,8 @@
  */
 angular.module('myApp').controller('linkedInCtrl',
     function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,msgsRequestService,notificationEntitiesService,msgsEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
-
+        $('#loadMoreJobNotification').hide();
+        $scope.pageScrolls=1;
         $scope.getUserProfile = function () {
 
             linkedinService.getProfile(function(err, result){
@@ -113,7 +114,7 @@ angular.module('myApp').controller('linkedInCtrl',
                                 $scope.getLastAddedJobs(skillStr);
                             }
 
-                            
+
                             else{
                                 alert("error");
                                 $scope.logoutLinkedIn();
@@ -298,6 +299,36 @@ angular.module('myApp').controller('linkedInCtrl',
             //	$rootScope.loggedUser = false;
 
             $location.path("/login");
+        };
+
+
+        $scope.loadMoreJobNotification=function(){
+            //alert("load");
+            $('#loadMoreJobNotification').show();
+
+            //$("#newsfeedJob").animate({ scrollTop: $(document).height() }, 1000);
+
+            var scrollEntity = notificationEntitiesService.pageScrollEntity($scope.pageScrolls,js_id);
+
+            var scrollPromise = notificationRequestService.getFromJobNotificationByPageNumber(scrollEntity);
+            $scope.jobsNotifications = [
+
+            ];
+            scrollPromise.then(function (d) {
+                console.log(d);
+                $('#loadMoreJobNotification').hide();
+                $scope.pageScrolls=$scope.pageScrolls+1;
+                $scope. jobsNotifications= $scope. jobsNotifications.concat(d.data);
+
+                //$(window).bind('scroll', bindScroll);
+
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error"
+                });
+            });
         };
 
 

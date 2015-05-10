@@ -15,6 +15,21 @@ angular.module('servicesModule').factory('notificationRequestService', function(
                 data: request
             });
             return notificationPromise;
+        },
+
+
+
+        getFromJobNotificationByPageNumber: function(scrollEntity) {
+            var request = {};
+            request.opcode = "getFromJobNotificationByPageNumber";
+            request.Entity =scrollEntity;
+            var getFromJobNotificationByPageNumberPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return getFromJobNotificationByPageNumberPromise;
         }
 
 
