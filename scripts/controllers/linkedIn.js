@@ -214,6 +214,9 @@ angular.module('myApp').controller('linkedInCtrl',
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
                 var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
 
+
+                console.log(countNot);
+
                 NotificationPromise.then(function (d) {
                     console.log(d);
 
@@ -232,6 +235,10 @@ angular.module('myApp').controller('linkedInCtrl',
                 var msgsEntity = msgsEntitiesService.msgsEntity($scope.js_id,countNot);
                 var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
 
+
+                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
+                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
+
                 msgsPromise.then(function (d) {
                     console.log(d);
 
@@ -244,6 +251,23 @@ angular.module('myApp').controller('linkedInCtrl',
                     //alert($scope.content);
                 });
 
+                $scope.allMsgsNotifications=[];
+
+
+                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
+                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
+
+                msgsPromise.then(function (d) {
+                    console.log(d);
+
+                    var allMsgsNotifications = d.data;
+                    $scope.allMsgsNotifications=allMsgsNotifications;
+                    $scope.msgsNoticount=allMsgsNotifications.length;
+
+
+                   console.log(d);
+                    alert($scope.content);
+                });
 
                 $scope.commentNotifications=[];
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
@@ -302,34 +326,7 @@ angular.module('myApp').controller('linkedInCtrl',
         };
 
 
-        $scope.loadMoreJobNotification=function(){
-            //alert("load");
-            $('#loadMoreJobNotification').show();
 
-            //$("#newsfeedJob").animate({ scrollTop: $(document).height() }, 1000);
-
-            var scrollEntity = notificationEntitiesService.pageScrollEntity($scope.pageScrolls,js_id);
-
-            var scrollPromise = notificationRequestService.getFromJobNotificationByPageNumber(scrollEntity);
-            $scope.jobsNotifications = [
-
-            ];
-            scrollPromise.then(function (d) {
-                console.log(d);
-                $('#loadMoreJobNotification').hide();
-                $scope.pageScrolls=$scope.pageScrolls+1;
-                $scope. jobsNotifications= $scope. jobsNotifications.concat(d.data);
-
-                //$(window).bind('scroll', bindScroll);
-
-            }, function (d) {
-                swal({
-                    title: "Error!",
-                    text: "Something went wrong, please try again later",
-                    type: "error"
-                });
-            });
-        };
 
 
 

@@ -8,6 +8,14 @@ angular.module('servicesModule').factory('msgsEntitiesService', function() {
             notification.countNot = countNot;
             return notification;
 
+        },
+
+        allMsgsEntity: function (js_id,countNot) {
+            var allNotification = {};     // new object
+            allNotification.js_id = js_id;
+            allNotification.countNot = countNot;
+            return allNotification;
+
         }
     }
 });

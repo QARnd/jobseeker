@@ -13,6 +13,7 @@ angular.module('servicesModule').factory('notificationEntitiesService', function
 
         },
 
+
         pageScrollEntity:function(pageScrolls,js_id) {
             var notificationJob = {};     // new object
             notificationJob.pageScrolls=pageScrolls;

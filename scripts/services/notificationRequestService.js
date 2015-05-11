@@ -19,6 +19,7 @@ angular.module('servicesModule').factory('notificationRequestService', function(
 
 
 
+
         getFromJobNotificationByPageNumber: function(scrollEntity) {
             var request = {};
             request.opcode = "getFromJobNotificationByPageNumber";
