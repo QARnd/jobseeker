@@ -44,11 +44,11 @@ angular.module('myApp').controller('JobsListCtrl',
             var scrollPromise = addToJobListRequestService.getFromJobListByPageNumber(scrollEntity);
 
             scrollPromise.then(function (d) {
-                console.log(d);
+
                 $('#loadMoreJobList').hide();
                 $scope.pageScrolls=$scope.pageScrolls+1;
                 $rootScope. jobList= $rootScope. jobList.concat(d.data);
-
+                console.log(d);
                 //$(window).bind('scroll', bindScroll);
 
             }, function (d) {

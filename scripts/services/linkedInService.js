@@ -33,8 +33,7 @@ angular.module('servicesModule').
             logout : function(){
                 return IN.User.logout();
             },
-
-
+            
             loginRequest : function(userEntity) {
                 var msg = {};
                 msg.opcode = "validateJobseekerRequest";
@@ -47,6 +46,7 @@ angular.module('servicesModule').
                 });
                 return jobPromise;
             },
+
             getAllJobsFromLastId: function(lastJobsEntity) {
                 var request = {};
                 request.opcode = "getAllJobsFromLastIdRequest";

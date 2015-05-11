@@ -12,8 +12,20 @@ angular.module('servicesModule').factory('msgsRequestService', function($http,au
                 data: request
             });
             return notificationPromise;
-        }
+        },
 
+        getAllNotifications: function (allMsgsEntity) {
+            var request = {};
+            request.opcode = "getAllMsgsNotificationsRequest";
+            request.Entity=allMsgsEntity;
+            var notificationPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return notificationPromise;
+        }
 
 
 

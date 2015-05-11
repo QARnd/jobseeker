@@ -3,7 +3,8 @@
  */
 angular.module('myApp').controller('linkedInCtrl',
     function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,msgsRequestService,notificationEntitiesService,msgsEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService) {
-
+        $('#loadMoreJobNotification').hide();
+        $scope.pageScrolls=1;
         $scope.getUserProfile = function () {
 
             linkedinService.getProfile(function(err, result){
@@ -112,11 +113,15 @@ angular.module('myApp').controller('linkedInCtrl',
 
                                 $scope.getLastAddedJobs(skillStr);
                             }
+
+
                             else{
                                 alert("error");
                                 $scope.logoutLinkedIn();
                                 $location.path("/login");
                             }
+
+
                         },
                         function(d){
                             alert("Login Error");
@@ -165,6 +170,8 @@ angular.module('myApp').controller('linkedInCtrl',
                             c++;
                             //alert(jobTag);
                         }
+
+
                     }
                     var similarity=(c/jobTags.length)*100;
                     console.log(similarity);
@@ -207,6 +214,9 @@ angular.module('myApp').controller('linkedInCtrl',
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
                 var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
 
+
+                console.log(countNot);
+
                 NotificationPromise.then(function (d) {
                     console.log(d);
 
@@ -220,9 +230,14 @@ angular.module('myApp').controller('linkedInCtrl',
                 });
 
 
+
                 $scope.msgsNotifications=[];
                 var msgsEntity = msgsEntitiesService.msgsEntity($scope.js_id,countNot);
                 var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
+
+
+                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
+                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
 
                 msgsPromise.then(function (d) {
                     console.log(d);
@@ -236,6 +251,23 @@ angular.module('myApp').controller('linkedInCtrl',
                     //alert($scope.content);
                 });
 
+                $scope.allMsgsNotifications=[];
+
+
+                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
+                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
+
+                msgsPromise.then(function (d) {
+                    console.log(d);
+
+                    var allMsgsNotifications = d.data;
+                    $scope.allMsgsNotifications=allMsgsNotifications;
+                    $scope.msgsNoticount=allMsgsNotifications.length;
+
+
+                   console.log(d);
+                    alert($scope.content);
+                });
 
                 $scope.commentNotifications=[];
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
@@ -252,6 +284,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                     //alert($scope.content);
                 });
+
 
 
             }, function (d) {
@@ -291,6 +324,9 @@ angular.module('myApp').controller('linkedInCtrl',
 
             $location.path("/login");
         };
+
+
+
 
 
 
