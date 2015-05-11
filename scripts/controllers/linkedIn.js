@@ -239,7 +239,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 $scope.commentNotifications=[];
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);
-                var NotificationPromise = notificationRequestService.getNotifications(NotificationEntity);
+                var NotificationPromise = notificationRequestService.getComments(NotificationEntity);
 
                 NotificationPromise.then(function (d) {
                     console.log(d);

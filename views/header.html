@@ -151,8 +151,8 @@
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
                                         <li ng-repeat="notification in commentNotifications track by $index">
-                                            <a href="#/posts/{{notification.id}}">
-                                                <span class="timeline-body" style="font-size: 12px;">new comment on {{notification.title}} by  {{notification.first_name}} {{notification.last_name}}</span><br>
+                                            <a href="#/newsfeed/{{notification.id}}">
+                                                <span class="timeline-body" style="font-size: 12px;">New Comment On {{notification.title}} By {{notification.fullname}}</span><br>
                                                 <span>{{notification.alertDate}}</span>
                                             </a>
                                         </li>
