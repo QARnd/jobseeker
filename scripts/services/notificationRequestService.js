@@ -4,9 +4,23 @@
 angular.module('servicesModule').factory('notificationRequestService', function($http,authenticationService) {
     return {
 
+
         getNotifications: function (notificationEntity) {
             var request = {};
             request.opcode = "getJobsNotificationsRequest";
+            request.Entity=notificationEntity;
+            var notificationPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return notificationPromise;
+        }
+        ,
+        getComments:function (notificationEntity) {
+            var request = {};
+            request.opcode = "getCommentsNotificationsRequest";
             request.Entity=notificationEntity;
             var notificationPromise = $http({
                 method: 'POST',

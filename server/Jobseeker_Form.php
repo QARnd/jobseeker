@@ -161,6 +161,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getMsgsNotificationsRequest':
                     $this->getMsgsNotifications();
                     break;
+                case 'getCommentsNotificationsRequest':
+                    $this->getCommentsNotifications();
+                    break;
 
 
 
@@ -1017,6 +1020,30 @@ public function sendEmailToP(){
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
+        print(json_encode($total));
+    }
+    public function getCommentsNotifications(){
+
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+        $lastCommentId='select lastseenComment_id from jobseekers where jobseeker_id='.$js_id.'';
+        $result=$GLOBALS['db']->db_query($lastCommentId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $lastCommentId=$row['lastseenComment_id'];
+        $sql='select * from comments cc,jobseekers j ,posts p where p.jobseeker_id='.$js_id.' and cc.post_id=p.id and cc.comment_id > '.$lastCommentId.' and j.jobseeker_id=cc.user_id group by p.jobseeker_id order by c.comment_id desc limit 50';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        $commentId='select comment_id from comments order by comment_id DESC limit 1 ';
+        $result=$GLOBALS['db']->db_query($commentId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $commentId=$row['comment_id'];
+        $updateSql= 'update jobseekers set lastseenComment_id='.$commentId.' where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($updateSql);
+
         print(json_encode($total));
     }
 

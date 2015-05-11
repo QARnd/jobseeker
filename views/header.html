@@ -119,19 +119,40 @@
                         </li>
 
 
+                        <!--<li ng-controller="linkedInCtrl" class="dropdown messages-menu">-->
+                            <!--<a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">-->
+                                <!--<i class="fa fa-comment-o" alt="Notifications"></i>-->
+                                <!--<span class="label label-success noti_num">{{count}}</span>-->
+                            <!--</a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li class="header">You Have <span class="noti_num">{{count}}</span> Notifications</li>-->
+                                <!--<li>-->
+                                    <!--&lt;!&ndash; inner menu: contains the actual data &ndash;&gt;-->
+                                    <!--<ul class="menu">-->
+                                        <!--<li ng-repeat="notification in Notifications track by $index">-->
+                                            <!--<a href="#/newsfeedJob/{{notification.jobId}}">-->
+                                                <!--<span class="timeline-body" style="font-size: 12px;">{{notification.content}}</span><br>-->
+                                                <!--<span>{{notification.alertDate}}</span>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</li>-->
+                                <!--&lt;!&ndash;<li class="footer  whatever"><a href="javascript:void(0);">See All Notifications</a></li>&ndash;&gt;-->
+                            <!--</ul>-->
+                        <!--</li>-->
                         <li ng-controller="linkedInCtrl" class="dropdown messages-menu">
                             <a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">
                                 <i class="fa fa-comment-o" alt="Notifications"></i>
-                                <span class="label label-success noti_num">{{count}}</span>
+                                <span class="label label-success noti_num">{{commentNoticount}}</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">You Have <span class="noti_num">{{count}}</span> Notifications</li>
+                                <li class="header">You Have <span class="noti_num">{{commentNoticount}}</span> Comments</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
-                                        <li ng-repeat="notification in Notifications track by $index">
-                                            <a href="#/newsfeedJob/{{notification.jobId}}">
-                                                <span class="timeline-body" style="font-size: 12px;">{{notification.content}}</span><br>
+                                        <li ng-repeat="notification in commentNotifications track by $index">
+                                            <a href="#/posts/{{notification.id}}">
+                                                <span class="timeline-body" style="font-size: 12px;">new comment on {{notification.title}} by  {{notification.first_name}} {{notification.last_name}}</span><br>
                                                 <span>{{notification.alertDate}}</span>
                                             </a>
                                         </li>
