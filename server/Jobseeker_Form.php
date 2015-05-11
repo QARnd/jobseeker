@@ -1031,7 +1031,7 @@ public function sendEmailToP(){
         $result=$GLOBALS['db']->db_query($lastCommentId);
         $row = $GLOBALS['db']->db_assoc($result);
         $lastCommentId=$row['lastseenComment_id'];
-        $sql='select * from comments,posts where posts.jobseeker_id='.$js_id.' and comments.post_id=posts.id and comments.comment_id > '.$lastCommentId.' order by posts.id desc';
+        $sql='select posts.id,posts.title,comments.comment_id,comments.fullname from comments,posts where posts.jobseeker_id='.$js_id.' and comments.post_id=posts.id and comments.comment_id > '.$lastCommentId.' order by posts.id desc';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
