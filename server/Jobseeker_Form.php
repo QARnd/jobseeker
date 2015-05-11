@@ -1011,8 +1011,13 @@ public function sendEmailToP(){
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
+        $lastSeenMessageId='select lastSeenMessageId from jobseekers where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($lastSeenMessageId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $lastSeenMessageId=$row['lastSeenMessageId'];
 
-        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id group by from_id order by message_id desc limit 50';
+
+        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id and message_id>'.$lastSeenMessageId .' group by from_id order by message_id desc limit 50';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -1020,7 +1025,21 @@ public function sendEmailToP(){
             array_push($total, $row);
         }
         print(json_encode($total));
+
+
+        $message_id='select message_id from messages order by message_id DESC limit 1 ';
+        $result=$GLOBALS['db']->db_query($message_id);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $message_id=$row['message_id'];
+
+//        $last_id=$GLOBALS['db']->db_insid();
+        $updateSql= 'update jobseekers set lastSeenMessageId='.$message_id.' where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($updateSql);
+
     }
+
+
+  
 
 
 
