@@ -109,7 +109,7 @@
                                         <li ng-repeat="notification in msgsNotifications track by $index">
                                             <a href="#/jobseekers/{{notification.from_id}}">
                                                 <span class="timeline-body" style="font-size: 12px;">New Msg From {{notification.first_name}} {{notification.last_name}}</span><br>
-                                                <span>{{notification.alertDate}}</span>x
+                                            
                                             </a>
                                         </li>
                                     </ul>
@@ -120,27 +120,6 @@
 
 
 
-                        <li ng-controller="linkedInCtrl" class="dropdown messages-menu">
-                            <a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">
-                                <i class="fa fa-history" alt="Notifications"></i>
-
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You Have <span class="noti_num">{{msgsNoticount}}</span> Messages</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li ng-repeat="notification in msgsNotifications track by $index">
-                                            <a href="#/jobseekers/{{notification.from_id}}">
-                                                <span class="timeline-body" style="font-size: 12px;">New Msg From {{notification.first_name}} {{notification.last_name}}</span><br>
-                                                <span>{{notification.alertDate}}</span>x
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </li>
 
 
                         <!--<li ng-controller="linkedInCtrl" class="dropdown messages-menu">-->
@@ -186,7 +165,39 @@
                             </ul>
                         </li>
 
+
+                        <li ng-controller="linkedInCtrl" class="dropdown messages-menu">
+                            <a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">
+                                <i class="fa fa-history" alt="Notifications"></i>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">History</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#/msgshistory">
+                                                <span class="timeline-body" style="font-size: 14px;">Messages History</span><br>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#/notihistory">
+                                                <span class="timeline-body" style="font-size: 14px;">Notification History</span><br>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
                     </ul>
+
+
+
+
 
 
                     <form class="navbar-form navbar-left" role="search" ng-controller="searchSeekersCtrl">
