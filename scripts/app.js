@@ -13,6 +13,8 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/newsfeed/:postId', {templateUrl: 'views/singlePostView.html', controller: 'singlePostCtrl'});
     $routeProvider.when('/newsfeedJob/:jobId', {templateUrl: 'views/singleJobView.html', controller: 'singleJobCtrl'});
+    ///////////hoooon ana adalet
+    $routeProvider.when('/posts/:id', {templateUrl: 'views/singlePostView.html', controller: 'singlePostCtrl'});
 
     $routeProvider.when('/sendMessage', {templateUrl: 'views/sendMessageView.html', controller: 'sendMessageCtrl'});
 

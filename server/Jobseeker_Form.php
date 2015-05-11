@@ -161,12 +161,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getMsgsNotificationsRequest':
                     $this->getMsgsNotifications();
                     break;
-                case 'getFromJobNotificationByPageNumber':
-                    $this->getFromJobNotificationByPageNumber();
+                case 'getCommentsNotificationsRequest':
+                    $this->getCommentsNotifications();
                     break;
-                case 'getAllMsgsNotificationsRequest':
-                    $this->getAllMsgsNotifications();
-                    break;
+
 
 
             }
@@ -1014,13 +1012,8 @@ public function sendEmailToP(){
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
-        $lastSeenMessageId='select lastSeenMessageId from jobseekers where jobseeker_id='.$js_id;
-        $result=$GLOBALS['db']->db_query($lastSeenMessageId);
-        $row = $GLOBALS['db']->db_assoc($result);
-        $lastSeenMessageId=$row['lastSeenMessageId'];
 
-
-        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id and message_id>'.$lastSeenMessageId .' group by from_id order by message_id desc limit 50';
+        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id group by from_id order by message_id desc limit 50';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
@@ -1028,67 +1021,34 @@ public function sendEmailToP(){
             array_push($total, $row);
         }
         print(json_encode($total));
-
-
-        $message_id='select message_id from messages order by message_id DESC limit 1 ';
-        $result=$GLOBALS['db']->db_query($message_id);
-        $row = $GLOBALS['db']->db_assoc($result);
-        $message_id=$row['message_id'];
-
-//        $last_id=$GLOBALS['db']->db_insid();
-        $updateSql= 'update jobseekers set lastSeenMessageId='.$message_id.' where jobseeker_id='.$js_id;
-        $result=$GLOBALS['db']->db_query($updateSql);
-
     }
-
-
-
-
-
-
-    public function getFromJobNotificationByPageNumber(){
-        $Entity='Entity';
-        $pageScrolls='pageScrolls';
-        $pageScrolls=$GLOBALS['request']->$Entity->$pageScrolls;
-        $js_id='js_id';
-        $js_id=$GLOBALS['request']->$Entity->$js_id;
-
-        $pageNum=abs(intval($pageScrolls));
-        $offset=$pageNum*2;
-
-        $sql='select content,alertDate from jobNotification where jobseekerId='.$js_id.' limit 2 offset '.$offset;
-        $result=$GLOBALS['db']->db_query($sql);
-        $total=array();
-
-        while($row = $GLOBALS['db']->db_assoc($result)){
-            array_push($total, $row);
-        }
-        print(json_encode($total));
-    }
-
-
-    public function getAllMsgsNotifications(){
+    public function getCommentsNotifications(){
 
         $entity='Entity';
-
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
-
-
-
-        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id  group by from_id order by message_id desc limit 50';
+        $lastCommentId='select lastseenComment_id from jobseekers where jobseeker_id='.$js_id.'';
+        $result=$GLOBALS['db']->db_query($lastCommentId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $lastCommentId=$row['lastseenComment_id'];
+        $sql='select * from comments cc,jobseekers j ,posts p where p.jobseeker_id='.$js_id.' and cc.post_id=p.id and cc.comment_id > '.$lastCommentId.' and j.jobseeker_id=cc.user_id group by p.jobseeker_id order by c.comment_id desc limit 50';
         $result=$GLOBALS['db']->db_query($sql);
-
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
+        $commentId='select comment_id from comments order by comment_id DESC limit 1 ';
+        $result=$GLOBALS['db']->db_query($commentId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $commentId=$row['comment_id'];
+        $updateSql= 'update jobseekers set lastseenComment_id='.$commentId.' where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($updateSql);
+
         print(json_encode($total));
-
-
-
-
     }
+
+
+
 
 
 
