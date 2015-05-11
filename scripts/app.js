@@ -18,6 +18,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/sendMessage', {templateUrl: 'views/sendMessageView.html', controller: 'sendMessageCtrl'});
 
+    
     $routeProvider.when('/login', {templateUrl: 'views/loginView.html', controller: 'loginCtrl'});
     $routeProvider.when('/main', {templateUrl: 'views/mainView.html', controller: 'mainCtrl'});
 
