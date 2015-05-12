@@ -1027,14 +1027,35 @@ public function sendEmailToP(){
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
+        $lastSeenMessageId='select $lastSeenMessageId from jobseekers where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($lastSeenMessageId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $lastSeenMessageId=$row['lastSeenMessageId'];
 
-        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id group by from_id order by message_id desc limit 50';
+
+
+        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id and message_id>'.$lastSeenMessageId.' group by from_id order by message_id desc limit 50';
         $result=$GLOBALS['db']->db_query($sql);
 
+
+
+
+        $sql='select * from messages where message_id>'.$lastSeenMessageId;
+        $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
+
+        $messageId='select jobId from messages order by message_id DESC limit 1 ';
+        $result=$GLOBALS['db']->db_query($messageId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $messageId=$row['messageId'];
+
+//        $last_id=$GLOBALS['db']->db_insid();
+        $updateSql= 'update jobseekers set lastSeenMessageId='.$messageId.' where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($updateSql);
+
         print(json_encode($total));
     }
     public function getCommentsNotifications(){
