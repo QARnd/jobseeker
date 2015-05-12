@@ -27,25 +27,26 @@ angular.module('myApp').controller('linkedInCtrl',
                     var skillStr='';
                     var skillsWithSynonyms = [];
 
-                    try{
-                        var skills=result.values[0].skills.values;
+                    try {
+                        var skills = result.values[0].skills.values;
 
                         //skillsWithSynonyms[0]=skills[0].skill.name.toLowerCase();
                         //skillStr+=skillsWithSynonyms[0];
 
-                        for(var i=0;i<skills.length;i++){
-                            skillsWithSynonyms[i]=skills[i].skill.name.toLowerCase();
+                        for (var i = 0; i < skills.length; i++) {
+                            skillsWithSynonyms[i] = skills[i].skill.name.toLowerCase();
                             //skillStr+=","+skillsWithSynonyms[i];
 
                             //alert(skills[i].skill.name.toLowerCase());
                             //alert(skillStr);
 
                         }
+                        console.log(skillsWithSynonyms);
                         //alert(skillsWithSynonyms.length);
 
-                        for(var j=0;j<skillsWithSynonyms.length;j++){
+                        for (var j = 0; j < skillsWithSynonyms.length; j++) {
                             //alert(skillsWithSynonyms[j]);
-                            var x =skillsWithSynonyms[j];
+                            var x = skillsWithSynonyms[j];
                             var synonymsEntity = entitiesService.synonymsEntity(x);
                             //alert("synonymsEntity");
 
@@ -55,16 +56,17 @@ angular.module('myApp').controller('linkedInCtrl',
                             synonymsPromise.then(function (d) {
                                 var synonyms = d.data;
                                 console.log(synonyms);
-                                $scope.terms = synonyms.term;
-                                $scope.termsSynonyms = synonyms.termSynonyms;
+                                //$scope.terms = synonyms.term;
+                                //$scope.termsSynonyms = synonyms.termSynonyms;
 
                                 console.log($scope.terms);
                                 //alert(synonyms.length);
 
                                 //alert($scope.term);
-                                if( synonyms.length>0)
-                                {
-                                    for (var i = 0; i < synonyms.length; i++) {
+
+                                for (var i = 0; i < synonyms.length; i++) {
+                                    $scope.terms = synonyms[i].term;
+                                    $scope.termsSynonyms = synonyms[i].termSynonyms;
                                     //alert(i);
                                     //alert(synonyms.length);
 
@@ -73,24 +75,31 @@ angular.module('myApp').controller('linkedInCtrl',
 
                                     if (skillsWithSynonyms.indexOf($scope.terms) == -1) skillsWithSynonyms.push($scope.terms);
                                     if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1) skillsWithSynonyms.push($scope.termsSynonyms);
-                                }}
+                                    //alert(skillsWithSynonyms.length);
+
+                                }
 
                             })
 
 
-
                         }
+                        console.log(skillsWithSynonyms);
+
                         skillStr += skillsWithSynonyms[0];
 
                         //alert(skillsWithSynonyms.length);
 
-                        for (var i = 1; i < skillsWithSynonyms.length; i++)
+                        for (var i = 1; i < skillsWithSynonyms.length; i++) {
+
                             //alert(skillsWithSynonyms.length);
-                            skillStr +=","+ skillsWithSynonyms[i] ;
+                            //alert(skillsWithSynonyms[i]);
+
+                            skillStr += "," + skillsWithSynonyms[i];
+                            alert(skillStr);
 
 
-
-
+                        }
+                        
                         //var skills=result.values[0].skills.values;
                         //for(var i=0;i<skills.length;i++){
                         //    skillStr+=skills[i].skill.name+",";
@@ -98,9 +107,12 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         alert(skillStr);
 
-                    }catch(err){
+                    }
+                    catch(err){
                         skillStr='';
                     }
+
+
 
 
 
