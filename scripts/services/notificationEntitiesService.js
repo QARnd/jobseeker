@@ -11,6 +11,15 @@ angular.module('servicesModule').factory('notificationEntitiesService', function
             notification.countNot = countNot;
             return notification;
 
+        },
+
+
+        pageScrollEntity:function(pageScrolls,js_id) {
+            var notificationJob = {};     // new object
+            notificationJob.pageScrolls=pageScrolls;
+            notificationJob.js_id=js_id;
+
+            return notificationJob;
         }
     }
 });
