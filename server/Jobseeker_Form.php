@@ -164,6 +164,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getCommentsNotificationsRequest':
                     $this->getCommentsNotifications();
                     break;
+                case 'getMsgsHistoryRequest':
+                         $this->getMsgsHistory();
+                    break;
+
 
 
 
@@ -1068,7 +1072,16 @@ public function sendEmailToP(){
         print(json_encode($total));
     }
 
+    public function getMsgsHistory()
+    {
+        $entity = 'Entity';
+        $js_id = 'js_id';
+        $js_id = $GLOBALS['request']->$entity->$js_id;
 
+
+        $sql = 'select * from messages,jobseekers where to_id=' . $js_id . ' and jobseeker_id=from_id  group by from_id order by message_id desc limit 50';
+        $result = $GLOBALS['db']->db_query($sql);
+    }
 
 
 

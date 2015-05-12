@@ -31,7 +31,6 @@
 
 
 
-
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -49,7 +48,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a href="#/viewProfile/">
-                        <strong>myusername</strong> <span class="text-muted">Wrote a new message for you..</span>
+                        <div class="box box-warning" ng-repeat="history in MsgsHistory track by $index">
+                        <strong>{{history.first_name}} {{history.last_name}}</strong> <span class="text-muted">Wrote a new message for you..</span>
+                            </div>
                     </a>
                 </div>
 

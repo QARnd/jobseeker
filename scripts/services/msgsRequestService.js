@@ -14,17 +14,17 @@ angular.module('servicesModule').factory('msgsRequestService', function($http,au
             return notificationPromise;
         },
 
-        getAllNotifications: function (allMsgsEntity) {
+        getAllMessage: function (allMsgsEntity) {
             var request = {};
-            request.opcode = "getAllMsgsNotificationsRequest";
+            request.opcode = "getMsgsHistoryRequest";
             request.Entity=allMsgsEntity;
-            var notificationPromise = $http({
+            var messagePromise = $http({
                 method: 'POST',
                 url: authenticationService.deploymentLink.link,
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
-            return notificationPromise;
+            return messagePromise;
         }
 
 
