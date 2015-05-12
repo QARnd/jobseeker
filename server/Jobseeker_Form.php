@@ -744,13 +744,13 @@ class Jobseeker_Form extends Jobseeker_DB {
 //        $countNot='countNot';
 //        $countNot=$GLOBALS['request']->$entity->$countNot;
 
-//        $lastJobNotificationId='select lastSeenJobNotification from jobseekers where jobseeker_id='.$js_id;
-//        $idResult=$GLOBALS['db']->db_query($lastJobNotificationId);
-//        $row = $GLOBALS['db']->db_assoc($idResult);
-//        $lastJobNotificationId=$row['lastJobNotificationId'];
+        $lastJobNotificationId='select lastSeenJobNotification from jobseekers where jobseeker_id='.$js_id;
+        $idResult=$GLOBALS['db']->db_query($lastJobNotificationId);
+        $row = $GLOBALS['db']->db_assoc($idResult);
+        $lastJobNotificationId=$row['lastSeenJobNotification'];
 
 //        $sql='select count(*) AS "counts", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.notiToId='.$js_id.'and notifications.notiToId=joblist.jobseekerId order by joblist.jobId DESC limit'. $countNot;
-        $sql='select jobNotification.content,jobNotification.alertDate,jobNotification.jobId from jobNotification,jobseekers  where jobNotification.notiToId='.$js_id.' and jobseekers.jobseeker_id=jobNotification.notiToId and jobNotification.not_Id> jobseekers.lastSeenJobNotification';
+        $sql='select jobNotification.content,jobNotification.alertDate,jobNotification.jobId from jobNotification,jobseekers  where jobNotification.notiToId='.$js_id.' and jobseekers.jobseeker_id=jobNotification.notiToId and jobNotification.not_Id>'.$lastJobNotificationId;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
@@ -760,9 +760,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobNotificationId='select not_Id from jobNotification order by not_Id DESC limit 1 ';
         $resultLastId=$GLOBALS['db']->db_query($jobNotificationId);
         $row = $GLOBALS['db']->db_assoc($resultLastId);
-        $jobNotificationId1=$row['jobNotificationId'];
+        $jobNotificationId=$row['not_Id'];
 
-        $updateSql= 'update jobseekers set lastSeenJobNotification='.$jobNotificationId1.' where jobseeker_id='.$js_id;
+        $updateSql= 'update jobseekers set lastSeenJobNotification='.$jobNotificationId.' where jobseeker_id='.$js_id;
         $GLOBALS['db']->db_query($updateSql);
 
         print(json_encode($total));

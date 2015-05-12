@@ -56,11 +56,11 @@ angular.module('myApp').controller('linkedInCtrl',
 
                             synonymsPromise.then(function (d) {
                                 var synonyms = d.data;
-                                console.log(synonyms);
+                                //console.log(synonyms);
                                 //$scope.terms = synonyms.term;
                                 //$scope.termsSynonyms = synonyms.termSynonyms;
 
-                                console.log($scope.terms);
+                                //console.log($scope.terms);
                                 //alert(synonyms.length);
 
                                 //alert($scope.term);
@@ -72,7 +72,7 @@ angular.module('myApp').controller('linkedInCtrl',
                                     //alert(synonyms.length);
 
                                     //alert(skillsWithSynonyms.indexOf($scope.terms));
-                                    console.log(skillsWithSynonyms);
+                                    //console.log(skillsWithSynonyms);
 
                                     if (skillsWithSynonyms.indexOf($scope.terms) == -1) skillsWithSynonyms.push($scope.terms);
                                     if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1) skillsWithSynonyms.push($scope.termsSynonyms);
@@ -84,11 +84,11 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                         }
-                        console.log(skillsWithSynonyms);
+                        //console.log(skillsWithSynonyms);
 
                         skillStr += skillsWithSynonyms[0];
 
-                        //alert(skillsWithSynonyms.length);
+                        alert(skillsWithSynonyms.length);
 
                         for (var i = 1; i < skillsWithSynonyms.length; i++) {
 
@@ -96,17 +96,17 @@ angular.module('myApp').controller('linkedInCtrl',
                             //alert(skillsWithSynonyms[i]);
 
                             skillStr += "," + skillsWithSynonyms[i];
-                            alert(skillStr);
+                            //alert(skillStr);
 
 
                         }
-                        
+                        alert(skillStr);
+
                         //var skills=result.values[0].skills.values;
                         //for(var i=0;i<skills.length;i++){
                         //    skillStr+=skills[i].skill.name+",";
 
 
-                        alert(skillStr);
 
                     }
                     catch(err){
