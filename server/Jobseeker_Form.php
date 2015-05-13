@@ -1094,7 +1094,7 @@ public function sendEmailToP(){
         $js_id = $GLOBALS['request']->$entity->$js_id;
 
 
-        $sql = 'select * from messages,jobseekers where to_id=' . $js_id . ' and jobseeker_id=from_id  group by from_id order by message_id desc limit 50';
+        $sql = 'select * from messages,jobseekers where messages.to_id=' . $js_id . ' and jobseekers.jobseeker_id=from_id';
         $result = $GLOBALS['db']->db_query($sql);
     }
 

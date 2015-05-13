@@ -31,12 +31,13 @@
 
 
 
-<div class="container">
+<div class="container"  ng-controller="historyMessageCtrl">
     <div class="row">
         <div class="col-sm-12">
             <h3>Messages History</h3>
         </div><!-- /col-sm-12 -->
     </div><!-- /row -->
+         <div  ng-repeat="history in MsgsHistory track by $index">
     <div class="row">
         <div class="col-sm-1">
             <div class="thumbnail">
@@ -47,16 +48,16 @@
         <div class="col-sm-5">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="#/viewProfile/">
-                        <div class="box box-warning" ng-repeat="history in MsgsHistory track by $index">
+                    <a href="#/jobseekers/{{history.from_id}}">
+
                         <strong>{{history.first_name}} {{history.last_name}}</strong> <span class="text-muted">Wrote a new message for you..</span>
-                            </div>
+
                     </a>
                 </div>
 
             </div><!-- /panel panel-default -->
         </div><!-- /col-sm-5 -->
-
+    </div>
 
     </div><!-- /row -->
 </div>

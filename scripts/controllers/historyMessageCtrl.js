@@ -1,29 +1,27 @@
 
 angular.module('myApp').controller('historyMessageCtrl',
-    function($rootScope, $scope, msgsRequestService, msgsEntitiesService, authenticationService) {
+    function( $scope, msgsRequestService, msgsEntitiesService, authenticationService) {
 
-       var js_id= authenticationService.userProfile.jobseekerId;
+        $scope.js_id= authenticationService.userProfile.jobseekerId;
 
         $scope.historyMessage = function () {
-            $scope.MsgsHistory=[
 
-            ];
-
-            var AllMsgsEntity = msgsEntitiesService.allMsgsEntity(js_id);
+            var AllMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id);
             var AllMsgsPromise = msgsRequestService.getAllMessage(AllMsgsEntity);
 
             msgsPromise.then(function (d) {
                 console.log(d);
-
-
                 $scope.MsgsHistory=d.data;
 
 
+            },
+                function (d) {
+                    swal({
+                        title: "Error!",
+                        text: "Something went wrong, please try again later",
+                        type: "error"
+                    });
+                });
 
-                console.log(d);
-                alert($scope.content);
-            });
         };
-
     });
-

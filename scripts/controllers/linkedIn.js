@@ -270,9 +270,6 @@ angular.module('myApp').controller('linkedInCtrl',
                 var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
 
 
-                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
-                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
-
                 msgsPromise.then(function (d) {
                     console.log(d);
 
