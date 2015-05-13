@@ -857,7 +857,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $lastSeenReminder=$row['lastSeenReminder'];
 
 
-        $sql='select remainderDate,eventTitle,jobId from events where jobseeker_id='.$js_id.' and eventId>'.$lastSeenReminder.' and remainderDate="'.$reminderDate. '"';
+        $sql='select remainderDate , eventTitle , jobId from events where jobseeker_id='.$js_id.' and eventId>'.$lastSeenReminder.' and remainderDate="'.$reminderDate. '"';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
 

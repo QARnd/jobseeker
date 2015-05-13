@@ -288,11 +288,14 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 remainderPromise.then(function (d) {
                     console.log(d);
-                    alert(d.data);
+                    //alert(d.data);
 
                     var reminders = d.data;
                     $scope.remindersNotifications=reminders;
                     $scope.reminderNoticount=reminders.length;
+
+
+
 
 
                 });
