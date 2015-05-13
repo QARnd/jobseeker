@@ -227,11 +227,11 @@
 
 
 
-
+                    <div ng-app='MyModule'>
 
                     <form class="navbar-form navbar-left" role="search" ng-controller="searchSeekersCtrl">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search" ng-model="search">
+                            <input auto-complete ui-items="names" type="text" class="form-control" placeholder="Search" ng-model="search">
                         </div>
                         <a href="#/jobseekers" type="submit" class="btn btn-info" ng-click="searchForSeekersByName(search)">Search</a>
 
@@ -239,6 +239,16 @@
                         <!--<button type="submit" class="btn btn-info" ng-click="redirect()">Search</button>-->
 
                         <!--<h3 class="timeline-header"><a href="#/search/:search">Search</a></h3>-->
+
+                        <!--<div ng-app='MyModule'>-->
+                            <!--<div ng-controller='DefaultCtrl'>-->
+                                <!--<input auto-complete ui-items="names" ng-model="selected">-->
+                                <!--selected = {{selected}}-->
+                            <!--</div>-->
+                        </div>
+
+
+
                     </form>
 
 

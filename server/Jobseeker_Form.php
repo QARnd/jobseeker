@@ -1132,7 +1132,7 @@ public function sendEmailToP(){
         $reminderDate='reminderDate';
         $reminderDate=$GLOBALS['request']->$entity->$reminderDate;
 
-        $sql='select remainderDate,eventTitle,jobId from events where remainderDate="'.$reminderDate. '"'.' and jobseeker_id='.$js_id;
+        $sql='select remainderDate,eventTitle,jobId from events where remainderDate<"'.$reminderDate. '"'.' and jobseeker_id='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
 
