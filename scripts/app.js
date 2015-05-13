@@ -33,6 +33,7 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/newsfeed', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
 
     $routeProvider.when('/msgshistory', {templateUrl: 'views/msgsHistory.html', controller: 'historyMessageCtrl'});
+    $routeProvider.when('/jobshistory', {templateUrl: 'views/jobsHistory.html', controller: 'jobsHistoryCtrl'});
 
 
 
