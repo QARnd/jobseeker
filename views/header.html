@@ -227,11 +227,11 @@
 
 
 
-                    <div ng-app='MyModule'>
+                    <div ng-app='myApp'>
 
                     <form class="navbar-form navbar-left" role="search" ng-controller="searchSeekersCtrl">
                         <div class="form-group">
-                            <input auto-complete ui-items="names" type="text" class="form-control" placeholder="Search" ng-model="search">
+                            <input auto-complete ui-items="fullName" type="text" class="form-control" placeholder="Search" ng-model="search">
                         </div>
                         <a href="#/jobseekers" type="submit" class="btn btn-info" ng-click="searchForSeekersByName(search)">Search</a>
 
@@ -245,11 +245,13 @@
                                 <!--<input auto-complete ui-items="names" ng-model="selected">-->
                                 <!--selected = {{selected}}-->
                             <!--</div>-->
-                        </div>
+
 
 
 
                     </form>
+                    </div>
+
 
 
 

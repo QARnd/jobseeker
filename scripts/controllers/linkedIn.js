@@ -288,7 +288,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 remainderPromise.then(function (d) {
                     console.log(d);
-                    alert(d.data);
+                    //alert(d.data);
 
                     var reminders = d.data;
                     $scope.remindersNotifications=reminders;
@@ -306,6 +306,9 @@ angular.module('myApp').controller('linkedInCtrl',
                 var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
 
 
+                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
+                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
+
                 msgsPromise.then(function (d) {
                     console.log(d);
 
@@ -318,7 +321,23 @@ angular.module('myApp').controller('linkedInCtrl',
                     //alert($scope.content);
                 });
 
+                $scope.allMsgsNotifications=[];
 
+
+                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
+                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
+
+                msgsPromise.then(function (d) {
+                    console.log(d);
+
+                    var allMsgsNotifications = d.data;
+                    $scope.allMsgsNotifications=allMsgsNotifications;
+                    $scope.msgsNoticount=allMsgsNotifications.length;
+
+
+                   console.log(d);
+                    //alert($scope.content);
+                });
 
                 $scope.commentNotifications=[];
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);

@@ -17,7 +17,20 @@ angular.module('servicesModule').factory('searchRequestService', function($http,
                 data: request
             });
             return searchPromise;
+        },
+
+        autoComplete: function () {
+            var request = {};
+            request.opcode = "autoCompleteRequest";
+            var autoCompletePromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return autoCompletePromise;
         }
+
 
 
     }});

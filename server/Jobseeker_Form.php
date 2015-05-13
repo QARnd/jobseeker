@@ -170,6 +170,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllRemaindersRequest':
                     $this->getRemindersHistory();
                     break;
+                case 'autoCompleteRequest':
+                    $this->autoComplete();
+                    break;
+
 
 
             }
@@ -682,6 +686,22 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         //delete from messageProvider
+    }
+
+
+    public function autoComplete(){
+
+
+
+        $sql='select first_name,last_name from jobseekers' ;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
     }
 
 

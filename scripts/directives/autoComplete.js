@@ -2,7 +2,7 @@
  * Created by rana on 5/13/2015.
  */
 
-angular.module('MyModule', []).directive('autoComplete', function($timeout) {
+angular.module('myApp', []).directive('autoComplete', function($timeout) {
     return function(scope, iElement, iAttrs) {
         iElement.autocomplete({
             source: scope[iAttrs.uiItems],
