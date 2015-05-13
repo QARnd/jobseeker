@@ -273,7 +273,16 @@ angular.module('myApp').controller('linkedInCtrl',
                 $scope.remindersNotifications=[];
                 //var js_id = authenticationService.userProfile.jobseekerId;
                 //alert($scope.js_id);
-                var remainderEntity = remainderEntityService.remainderEntity($scope.js_id);
+                var date = new Date();
+                var month=date.getMonth()+1;
+                if (month<10)
+                    month='0'+month;
+                var day=date.getDate();
+                if (day<10)
+                    day='0'+day;
+
+                var reminderDate=date.getFullYear()+ '-' + month + '-' + day;
+                var remainderEntity = remainderEntityService.remainderEntity($scope.js_id,reminderDate);
                 var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
 
 

@@ -847,6 +847,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $entity='Entity';
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
+        $reminderDate='reminderDate';
+        $reminderDate=$GLOBALS['request']->$entity->$reminderDate;
+
 
         $lastSeenReminder ='select lastSeenReminder from jobseekers where jobseeker_id='.$js_id;
         $idResult=$GLOBALS['db']->db_query($lastSeenReminder);
@@ -854,12 +857,11 @@ class Jobseeker_Form extends Jobseeker_DB {
         $lastSeenReminder=$row['lastSeenReminder'];
 
 
-        $sql='select remainderDate,eventTitle,jobId from events where jobseeker_id='.$js_id.' and eventId>'.$lastSeenReminder. ' order by eventId DESC ';
+        $sql='select remainderDate,eventTitle,jobId from events where jobseeker_id='.$js_id.' and eventId>'.$lastSeenReminder.' and remainderDate="'.$reminderDate. '"';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
 
         while($row = $GLOBALS['db']->db_assoc($result)){
-            if($row[0]==date("YYYY-mm-dd"))
                 array_push($total, $row);
         }
 
@@ -1117,6 +1119,32 @@ public function sendEmailToP(){
 
     }
 
+//    public function get_remainders(){
+//        $entity='Entity';
+//        $js_id='js_id';
+//        $js_id=$GLOBALS['request']->$entity->$js_id;
+//        $reminderDate='reminderDate';
+//        $reminderDate=$GLOBALS['request']->$entity->$reminderDate;
+//
+//
+//
+//
+//        $sql='select remainderDate,eventTitle,jobId from events where jobseeker_id='.$js_id.' and eventId>'.$lastSeenReminder. ' and remainderDate> $reminderDate order by eventId DESC ';
+//        $result=$GLOBALS['db']->db_query($sql);
+//        $total=array();
+//
+//        while($row = $GLOBALS['db']->db_assoc($result)){
+//            array_push($total, $row);
+//        }
+//
+//
+//
+//        print(json_encode($total));
+//
+//
+//
+//
+//    }
 
 
 
