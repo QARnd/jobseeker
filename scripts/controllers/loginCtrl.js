@@ -2,7 +2,7 @@
  * Created by GeniuCode Pointer on 3/5/2015.
  */
 angular.module('myApp')
-    .controller('loginCtrl', function ($scope,providerEntitiesService,providerRequestService) {
+    .controller('loginCtrl', function ($scope,providerEntitiesService,authenticationService,$location,providerRequestService) {
         /*
          if($scope.userProfile.data.loggedIn==true){
          $location.path("/newsFeed");
@@ -16,23 +16,35 @@ angular.module('myApp')
         },
             $scope.loginProvider = function(EmailP,passwordP) {
 
-            var loginProviderEntity = providerEntitiesService.loginProviderEntity(EmailP,passwordP);
+                var loginProviderEntity = providerEntitiesService.loginProviderEntity(EmailP,passwordP);
 
-            var loginProviderPromise = providerRequestService.loginProvider(loginProviderEntity);
+                var loginProviderPromise = providerRequestService.loginProvider(loginProviderEntity);
 
                 loginProviderPromise.then(function (d) {
-                var provider = d.data;
-                console.log(provider);
-            }, function (d) {
-                swal({
-                    title: "Error!",
-                    text: "Something went wrong, please try again later",
-                    type: "error",
-                    timer: 2000
-                });
-            });
 
-        },
+                    if(d.data!="err")
+                    {
+                        authenticationService.userProfile.provider_id=d.data.jobprovider_id;
+                        authenticationService.userProfile.data= d.data;
+                        authenticationService.userLoggedIn.status=true;
+                        $location.path("/newsfeedJob");
+
+                    }
+
+                    else{
+                        alert("error");
+                        $location.path("/login");
+                    }
+                }, function (d) {
+                    swal({
+                        title: "Error!",
+                        text: "Something went wrong, please try again later",
+                        type: "error",
+                        timer: 2000
+                    });
+                });
+
+            },
         $scope.sendMessageForP = function(pEmail,content) {
 
             var sendMessageForPEntity = providerEntitiesService.sendMessageForPEntity(pEmail,content);

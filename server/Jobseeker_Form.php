@@ -937,13 +937,19 @@ public function sendEmailToP(){
         $passwordP=$GLOBALS['request']->$entity->$passwordP;
         $sql='select * from jobprovider where Email="'.$EmailP.'" and password="'.$passwordP.'"';
         $result=$GLOBALS['db']->db_query($sql);
-        $row = $GLOBALS['db']->db_assoc($result);
-        $total=array();
-        if (mysql_num_rows($row)==0)
+        if (mysql_num_rows($result)==0)
         {
+            print(json_encode("err"));
+        }
+        else
+        {
+            print(json_encode($result));
+
 
         }
-        print(json_encode($total));
+
+
+
 
     }
     public function applyForJob()
