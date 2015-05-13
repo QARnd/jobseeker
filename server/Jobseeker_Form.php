@@ -1105,7 +1105,7 @@ public function sendEmailToP(){
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
-        $sql='select posts.id,posts.title,comments.comment_id,comments.fullname, jobseekers.pictureUrl from comments,posts,jobseekers where posts.jobseeker_id='.$js_id.' and comments.post_id=posts.id and comments.user_id=jobseekers.jobseeker_id order by posts.id desc';
+        $sql='select posts.id,posts.title,comments.comment_id,comments.fullname,jobseekers.pictureUrl from comments,posts,jobseekers where posts.jobseeker_id='.$js_id.' and comments.post_id=posts.id and comments.user_id=jobseekers.jobseeker_id order by posts.id desc';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
