@@ -42,8 +42,9 @@ angular.module('servicesModule').factory('providerRequestService', function($htt
             });
             return getAllMessagesPromise;
         },
-        loginProvider:function() {
+        loginProvider:function(loginProviderEntity) {
             var request = {};
+            request.Entity=loginProviderEntity;
             request.opcode = "loginProviderRequest";
             var loginProviderPromise=$http({
                 method : 'POST',
