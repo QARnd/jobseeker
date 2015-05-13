@@ -1074,13 +1074,21 @@ public function sendEmailToP(){
 
     public function getMsgsHistory()
     {
-        $entity = 'Entity';
-        $js_id = 'js_id';
-        $js_id = $GLOBALS['request']->$entity->$js_id;
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+
+        $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id  ';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
 
 
-        $sql = 'select * from messages,jobseekers where messages.to_id=' . $js_id . ' and jobseekers.jobseeker_id=from_id';
-        $result = $GLOBALS['db']->db_query($sql);
+
+
     }
 
 

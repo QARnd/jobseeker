@@ -4,14 +4,15 @@ angular.module('myApp').controller('historyMessageCtrl',
 
         $scope.js_id= authenticationService.userProfile.jobseekerId;
 
-        $scope.historyMessage = function () {
+
 
             var AllMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id);
             var AllMsgsPromise = msgsRequestService.getAllMessage(AllMsgsEntity);
 
-            msgsPromise.then(function (d) {
+            AllMsgsPromise.then(function (d) {
                 console.log(d);
                 $scope.MsgsHistory=d.data;
+                    alert(d.data)
 
 
             },
@@ -23,5 +24,5 @@ angular.module('myApp').controller('historyMessageCtrl',
                     });
                 });
 
-        };
+
     });

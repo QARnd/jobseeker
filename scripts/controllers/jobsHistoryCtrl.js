@@ -1,24 +1,27 @@
 
 angular.module('myApp').controller('jobsHistoryCtrl',
-    function($rootScope, $scope, msgsRequestService, msgsEntitiesService, authenticationService) {
+    function( $scope, notificationEntitiesService, notificationRequestService, authenticationService) {
 
-        var js_id= authenticationService.userProfile.jobseekerId;
+        $scope.js_id= authenticationService.userProfile.jobseekerId;
 
-        $scope.historyMessage = function () {
-            $scope.jobsHistory=[
-            ];
 
-            var jobsHistoryEntity = notificationEntitiesService.jobsHistoryEntity(js_id);
+
+            var jobsHistoryEntity = notificationEntitiesService.jobsHistoryEntity($scope.js_id);
             var jobsHistoryPromise = notificationRequestService.getjobsHistory(jobsHistoryEntity);
 
 
             jobsHistoryPromise.then(function (d) {
                 console.log(d);
                 $scope.jobsHistory=d.data;
-                console.log(d);
-
-            });
-        };
+              alert(d.data);
+            },
+                function (d) {
+                    swal({
+                        title: "Error!",
+                        text: "Something went wrong, please try again later",
+                        type: "error"
+                    });
+                });
 
     });
 
