@@ -149,9 +149,6 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'loginProviderRequest':
                     $this->loginProvider();
                     break;
-                case 'applyForJobRequest':
-                    $this->applyForJob();
-                    break;
                 case 'getSkillsWithSynonymsRequest':
                     $this->getSynonyms();
                     break;
@@ -723,6 +720,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $sql1='insert into jobNotification VALUES (NULL ,"New Job Oppurtunity With Similarity = '. $similarity .'%","'.date("Y-m-d H:i:s").'",'.$js_id.','.$JobId.')';
         $result=$GLOBALS['db']->db_query($sql1);
         print(json_encode($result));
+
+        applyForJob($JobId,$js_id,$jobTitle);
+
     }
 
 
@@ -965,41 +965,31 @@ public function sendEmailToP(){
         print(json_encode($total));
 
     }
-    public function applyForJob()
-    {   $entity='Entity';
-        $jobId='jobId';
-        $jobId=$GLOBALS['request']->$entity->$jobId;
-        $providerId='providerId';
-        $providerId=$GLOBALS['request']->$entity->$providerId;
-         $jobseeker_id='jobseeker_id';
-        $jobseeker_id=$GLOBALS['request']->$entity->$jobseeker_id;
-        $sql1='select Email from jobprovider where jobprovider_Id='.$providerId.'';
+    public function applyForJob($JobId,$js_id,$jobTitle)
+    {
+        $sql='select jobProvider from jobprovider where  JobId='.$$JobId.'';
+        $result=$GLOBALS['db']->db_query($sql);
+        $row = $GLOBALS['db']->db_assoc($result);
+
+        $sql1='select Email from jobprovider where jobprovider_Id='.$row[0].'';
         $result1=$GLOBALS['db']->db_query($sql1);
         $row1 = $GLOBALS['db']->db_assoc($result1);
-        $sql2='select jobTitle from job where job_id='.$jobId.'';
-        $result2=$GLOBALS['db']->db_query($sql2);
-        $row2 = $GLOBALS['db']->db_assoc($result2);
-        $sql3='select profileUrl from jobseekers where jobseeker_id='.$jobseeker_id.'';
+        $sql3='select profileUrl from jobseekers where jobseeker_id='.$js_id.'';
         $result3=$GLOBALS['db']->db_query($sql3);
         $row3 = $GLOBALS['db']->db_assoc($result3);
-        $sql4='select similarity from joblist where jobseekerId='.$jobseeker_id.'and jobId='.$jobId.'';
+        $sql4='select similarity from joblist where jobseekerId='.$js_id.'and jobId='.$JobId.'';
         $result4=$GLOBALS['db']->db_query($sql4);
         $row4 = $GLOBALS['db']->db_assoc($result4);
-        if ($row4==0){
+
             $to = $row1[0];
-            $subject = " New Apply for ".$row2[0]."  @ sho3'ol";
-            $txt = "You have new apply for".$row2[0]."from jobseeker with similarity ".$row4[0]."and this is his/her linkedIn profile".$row3[0]." ";
+            $subject = " New Apply for ".$jobTitle."  @ sho3'ol";
+            $txt = "You have new apply for".$jobTitle."from jobseeker with similarity ".$row4[0]."and this is his/her linkedIn profile".$row3[0]." ";
             $headers = "From: info@sho3'ol.com" . "\r\n" .
                 "CC: job@sho3'ol.com";
 
             mail($to,$subject,$txt,$headers);
-        }else{$to = $row1[0];
-            $subject = " New Apply for ".$row2[0]."  @ sho3'ol";
-            $txt = "You have new apply for".$row2[0]."from jobseeker with similarity <70 and this is his/her linkedIn profile".$row3[0]." ";
-            $headers = "From: info@sho3'ol.com" . "\r\n" .
-                "CC: job@sho3'ol.com";
-            mail($to,$subject,$txt,$headers);}
-        $sql='insert into appliesJob values(NULL,'.$jobId.','.$providerId.','.$jobseeker_id.')';
+
+        $sql='insert into appliesJob values(NULL,'.$JobId.','.$row[0].','.$js_id.')';
         $GLOBALS['db']->db_query($sql);
         print (json_encode("done"));
     }
@@ -1031,7 +1021,7 @@ public function sendEmailToP(){
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
-        $lastSeenMessageId='select $lastSeenMessageId from jobseekers where jobseeker_id='.$js_id;
+        $lastSeenMessageId='select lastSeenMessageId from jobseekers where jobseeker_id='.$js_id;
         $result=$GLOBALS['db']->db_query($lastSeenMessageId);
         $row = $GLOBALS['db']->db_assoc($result);
         $lastSeenMessageId=$row['lastSeenMessageId'];
@@ -1040,27 +1030,22 @@ public function sendEmailToP(){
 
         $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id and message_id>'.$lastSeenMessageId.' group by from_id order by message_id desc limit 50';
         $result=$GLOBALS['db']->db_query($sql);
-
-
-
-
-        $sql='select * from messages where message_id>'.$lastSeenMessageId;
-        $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
+        print(json_encode($total));
 
-        $messageId='select jobId from messages order by message_id DESC limit 1 ';
-        $result=$GLOBALS['db']->db_query($messageId);
-        $row = $GLOBALS['db']->db_assoc($result);
+        $messageId='select message_id from messages order by message_id DESC limit 1 ';
+        $result2=$GLOBALS['db']->db_query($messageId);
+        $row = $GLOBALS['db']->db_assoc($result2);
         $messageId=$row['messageId'];
 
 //        $last_id=$GLOBALS['db']->db_insid();
         $updateSql= 'update jobseekers set lastSeenMessageId='.$messageId.' where jobseeker_id='.$js_id;
-        $result=$GLOBALS['db']->db_query($updateSql);
+        $result1=$GLOBALS['db']->db_query($updateSql);
 
-        print(json_encode($total));
+
     }
     public function getCommentsNotifications(){
 

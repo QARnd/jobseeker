@@ -21,13 +21,8 @@ angular.module('servicesModule').factory('jobEntitiesService', function() {
             deleteJob.id=id;
             return deleteJob;
         },
-        applyForJobEntity:function(jobId,providerId,jobseeker_id){
-            var apply = {};     // new object
-            apply.jobId=jobId;
-            apply.providerId=providerId;
-            apply.jobseeker_id=jobseeker_id;
-            return apply;
-        },
+
+
         updateJobEntity: function(jobTitle,jobDescription,jobTag,jobId) {
             var jobUpdated = {};     // new object
             jobUpdated.jobTitle = jobTitle;
