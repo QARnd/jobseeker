@@ -39,7 +39,7 @@
             <h3>Jobs History</h3>
         </div><!-- /col-sm-12 -->
     </div><!-- /row -->
-    <div class="row">
+    <div class="row"  ng-repeat="history in jobsHistory track by $index">
         <div class="col-sm-1">
             <div class="thumbnail">
                 <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
@@ -49,9 +49,9 @@
         <div class="col-sm-5">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                        <div  ng-repeat="history in jobsHistory track by $index">
+                        <div>
                             <a href="#/newsfeedJob/{{history.jobId}}">
-                              <strong>{{history.content}}</strong> <span class="text-muted">Wrote a new message for you..</span>
+                              <strong>{{history.content}}</strong> <span class="text-muted"></span>
                             </a>
                         </div>
 
