@@ -10,10 +10,9 @@ angular.module('servicesModule').factory('msgsEntitiesService', function() {
 
         },
 
-        allMsgsEntity: function (js_id,countNot) {
+        allMsgsEntity: function (js_id) {
             var allNotification = {};     // new object
             allNotification.js_id = js_id;
-            allNotification.countNot = countNot;
             return allNotification;
 
         }

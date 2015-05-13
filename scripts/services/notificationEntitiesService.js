@@ -13,6 +13,13 @@ angular.module('servicesModule').factory('notificationEntitiesService', function
 
         },
 
+        jobsHistoryEntity: function (js_id) {
+            var jobsHistory = {};     // new object
+            jobsHistory.js_id = js_id;
+
+            return jobsHistory;
+
+        },
 
         pageScrollEntity:function(pageScrolls,js_id) {
             var notificationJob = {};     // new object

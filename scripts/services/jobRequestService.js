@@ -75,18 +75,8 @@ angular.module('servicesModule').factory('jobRequestsService', function($http,au
                 data: request
             });
             return postPromise;
-        },
-        applyForJob:function() {
-            var request = {};
-            request.opcode = " applyForJobRequest";
-            var applyPromise=$http({
-                method : 'POST',
-                url : authenticationService.deploymentLink.link,
-                //url: 'server/Jobseeker_Form.php',
-                data: request
-            });
-            return applyPromise;
         }
+
 
 
 

@@ -19,6 +19,20 @@ angular.module('servicesModule').factory('notificationRequestService', function(
         },
 
 
+        getjobsHistory: function (jobsHistoryEntity) {
+            var request = {};
+            request.opcode = "getJobsHistoryRequest";
+            request.Entity=jobsHistoryEntity;
+            var jobsHistoryPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return jobsHistoryPromise;
+        },
+
+
 
 
         getFromJobNotificationByPageNumber: function(scrollEntity) {
