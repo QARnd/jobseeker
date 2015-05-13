@@ -6,10 +6,9 @@ angular.module('servicesModule').factory('remainderEntityService', function() {
     return {
 
        remainderEntity: function (js_id) {
-            var   remainder = {};     // new object
+           var   remainder = {};     // new object
            remainder.js_id = js_id;
-
-            return   remainder;
+           return   remainder;
 
         }
     }

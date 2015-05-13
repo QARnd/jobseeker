@@ -263,6 +263,23 @@ angular.module('myApp').controller('linkedInCtrl',
                     //alert($scope.content);
                 });
 
+                $scope.remindersNotifications=[];
+                //var js_id = authenticationService.userProfile.jobseekerId;
+                //alert($scope.js_id);
+                var remainderEntity = remainderEntityService.remainderEntity($scope.js_id);
+                var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
+
+
+                remainderPromise.then(function (d) {
+                    console.log(d);
+                    alert(d.data);
+
+                    var reminders = d.data;
+                    $scope.remindersNotifications=reminders;
+                    $scope.reminderNoticount=reminders.length;
+
+
+                });
 
 
                 $scope.msgsNotifications=[];
@@ -311,16 +328,16 @@ angular.module('myApp').controller('linkedInCtrl',
                 });
             });
 
-            $scope.remainders=[
-
-            ];
-            var user_id= authenticationService.userProfile.user_id;
-            var remainderEntity =remainderEntityService.remainderEntity(user_id);
-            var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
-            remainderPromise.then(function (d) {
-                var  remainders = d.data;
-
-            });
+            //$scope.remainders=[
+            //
+            //];
+            //var user_id= authenticationService.userProfile.user_id;
+            //var remainderEntity =remainderEntityService.remainderEntity(user_id);
+            //var remainderPromise = remainderRequestService.getRemainders(remainderEntity);
+            //remainderPromise.then(function (d) {
+            //    var  remainders = d.data;
+            //
+            //});
         };
 
 

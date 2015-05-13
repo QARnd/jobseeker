@@ -35,9 +35,9 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/msgshistory', {templateUrl: 'views/msgsHistory.html', controller: 'historyMessageCtrl'});
     $routeProvider.when('/jobshistory', {templateUrl: 'views/jobsHistory.html', controller: 'jobsHistoryCtrl'});
 
+    $routeProvider.when('/remindershistory', {templateUrl: 'views/remindersHistory.html', controller: 'remindersHistoryCtrl'});
 
-
-
+    $routeProvider.when('/notihistory', {templateUrl: 'views/notiHistory.html', controller: 'notiHistoryCtrl'});
 
 
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});

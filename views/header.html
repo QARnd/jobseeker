@@ -121,6 +121,28 @@
 
 
 
+                        <li ng-controller="linkedInCtrl" class="dropdown messages-menu">
+                            <a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">
+                                <i class="fa fa-calendar" alt="Notifications"></i>
+                                <span class="label label-success noti_num">{{reminderNoticount}}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You Have <span class="noti_num">{{reminderNoticount}}</span> new reminders</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li ng-repeat="reminder in remindersNotifications track by $index">
+                                            <a href="#/jobseekers/{{reminder.jobId}}">
+                                                <span class="timeline-body" style="font-size: 12px;">New event with title {{reminder.eventTitle}} is waiting</span><br>
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
 
 
                         <!--<li ng-controller="linkedInCtrl" class="dropdown messages-menu">-->
@@ -183,8 +205,14 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#/jobshistory">
-                                                <span class="timeline-body" style="font-size: 14px;">jobsNotification History</span><br>
+                                            <a href="#/notihistory">
+                                                <span class="timeline-body" style="font-size: 14px;">Notifications History</span><br>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#/remindershistory">
+                                                <span class="timeline-body" style="font-size: 14px;">Reminders History</span><br>
                                             </a>
                                         </li>
 
