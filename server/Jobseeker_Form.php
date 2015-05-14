@@ -886,7 +886,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $lastSeenReminder=$row['lastSeenReminder'];
 
 
-        $sql='select remainderDate,eventTitle,jobId from events where jobseeker_id='.$js_id.' and eventId>'.$lastSeenReminder.' and remainderDate="'.$reminderDate. '"';
+        $sql='select remainderDate,eventTitle,jobId from events where jobseeker_id='.$js_id.'  and remainderDate="'.$reminderDate. '"';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
 
@@ -1078,27 +1078,27 @@ public function sendEmailToP(){
 
 
 
-      $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id and message_id>'.$lastSeenMessageId.' group by from_id order by message_id desc limit 50';
+      $sql='select * from messages,jobseekers where to_id='.$js_id.' and jobseeker_id=from_id and message_id>'.$lastSeenMessageId.' group by from_id order by message_id desc';
 
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
-
+        print(json_encode($total));
 
 
         $messageId='select message_id from messages order by message_id DESC limit 1 ';
         $result2=$GLOBALS['db']->db_query($messageId);
          $row = $GLOBALS['db']->db_assoc($result2);
-        $messageId=$row['messageId'];
+        $messageId=$row['message_id'];
 
         //        $last_id=$GLOBALS['db']->db_insid();
         $updateSql= 'update jobseekers set lastSeenMessageId='.$messageId.' where jobseeker_id='.$js_id;
 
        $result=$GLOBALS['db']->db_query($updateSql);
 
-        print(json_encode($total));
+
     }
 
 
