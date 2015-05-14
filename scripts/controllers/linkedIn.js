@@ -302,14 +302,12 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                 $scope.msgsNotifications=[];
-                var msgsEntity = msgsEntitiesService.msgsEntity($scope.js_id,countNot);
-                var msgsPromise = msgsRequestService.getNotifications(msgsEntity);
 
 
                 var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
                 var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
 
-                msgsPromise.then(function (d) {
+                allMsgsPromise.then(function (d) {
                     console.log(d);
 
                     var msgsNotifications = d.data;
@@ -321,23 +319,23 @@ angular.module('myApp').controller('linkedInCtrl',
                     //alert($scope.content);
                 });
 
-                $scope.allMsgsNotifications=[];
-
-
-                var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
-                var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
-
-                msgsPromise.then(function (d) {
-                    console.log(d);
-
-                    var allMsgsNotifications = d.data;
-                    $scope.allMsgsNotifications=allMsgsNotifications;
-                    $scope.msgsNoticount=allMsgsNotifications.length;
-
-
-                   console.log(d);
-                    //alert($scope.content);
-                });
+                //$scope.allMsgsNotifications=[];
+                //
+                //
+                //var allMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id,countNot);
+                //var allMsgsPromise = msgsRequestService.getAllNotifications(allMsgsEntity);
+                //
+                //msgsPromise.then(function (d) {
+                //    console.log(d);
+                //
+                //    var allMsgsNotifications = d.data;
+                //    $scope.allMsgsNotifications=allMsgsNotifications;
+                //    $scope.msgsNoticount=allMsgsNotifications.length;
+                //
+                //
+                //   console.log(d);
+                //    //alert($scope.content);
+                //});
 
                 $scope.commentNotifications=[];
                 var NotificationEntity = notificationEntitiesService.notificationEntity($scope.js_id,countNot);

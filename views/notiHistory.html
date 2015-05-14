@@ -38,13 +38,13 @@
             <h3>Notifications History</h3>
         </div><!-- /col-sm-12 -->
     </div><!-- /row -->
-    <div ng-repeat="notification in notifications">
+    <div ng-repeat="notification in notifications track by $index">
 
         <div class="row">
-            <!--<div class="col-sm-1">-->
-            <!--<div class="thumbnail">-->
+            <div class="col-sm-1">
+            <div class="thumbnail">
             <img class="img-responsive user-photo" src="{{notification.pictureUrl}}">
-            <!--</div>&lt;!&ndash; /thumbnail &ndash;&gt;-->
+            </div><!-- /thumbnail -->
         </div><!-- /col-sm-1 -->
 
         <div class="col-sm-5">
@@ -60,5 +60,5 @@
         </div><!-- /col-sm-5 -->
     </div>
 
-    <!--</div>&lt;!&ndash; /row &ndash;&gt;-->
+    </div><!-- /row -->
 </div>
