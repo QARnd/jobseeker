@@ -817,6 +817,11 @@ class Jobseeker_Form extends Jobseeker_DB {
         $GLOBALS['db']->db_query($sql);
 
 
+
+
+        $last_id=$GLOBALS['db']->db_insid();
+        $newEvent = array('eventId'=>$last_id,'remainderDate' => $remainderDate,'jobseeker_id' => $js_id,'eventTitle'=>$eventTitle, 'eventDetail'=>$eventDetail,'jobId'=>$jobId);
+        print (json_encode($newEvent));
     }
 
     public function get_events(){
