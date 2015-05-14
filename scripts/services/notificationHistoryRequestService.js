@@ -22,3 +22,4 @@ angular.module('servicesModule').factory('notificationHistoryRequestService', fu
 
 
     }});
+

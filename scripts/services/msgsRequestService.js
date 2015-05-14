@@ -14,6 +14,7 @@ angular.module('servicesModule').factory('msgsRequestService', function($http,au
             return notificationPromise;
         },
 
+
         getNotifications: function (msgsEntity) {
             var request = {};
             request.opcode = "getMsgsNotificationsRequest";

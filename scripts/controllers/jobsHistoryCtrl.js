@@ -4,8 +4,6 @@ angular.module('myApp').controller('jobsHistoryCtrl',
 
         $scope.js_id= authenticationService.userProfile.jobseekerId;
 
-
-
             var jobsHistoryEntity = notificationEntitiesService.jobsHistoryEntity($scope.js_id);
             var jobsHistoryPromise = notificationRequestService.getjobsHistory(jobsHistoryEntity);
 

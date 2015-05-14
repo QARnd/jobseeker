@@ -46,8 +46,7 @@ angular.module('myApp').controller('notificationJobLoadMoreCtrl',
 
         //}
 
-
-
     });
+
 
 

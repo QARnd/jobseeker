@@ -18,3 +18,4 @@ angular.module('servicesModule').factory('msgsEntitiesService', function() {
         }
     }
 });
+

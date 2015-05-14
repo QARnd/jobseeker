@@ -4,8 +4,6 @@ angular.module('myApp').controller('historyMessageCtrl',
 
         $scope.js_id= authenticationService.userProfile.jobseekerId;
 
-
-
             var AllMsgsEntity = msgsEntitiesService.allMsgsEntity($scope.js_id);
             var AllMsgsPromise = msgsRequestService.getAllMessage(AllMsgsEntity);
 

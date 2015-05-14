@@ -2,8 +2,6 @@
  * Created by rana on 4/4/2015.
  */
 
-
-
 angular.module('servicesModule').factory('commentEntitiesService', function() {
 
     return {

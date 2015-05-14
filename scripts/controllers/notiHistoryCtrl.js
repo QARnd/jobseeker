@@ -27,6 +27,4 @@ angular.module('myApp').controller('notiHistoryCtrl',
             });
         });
 
-
-
     });

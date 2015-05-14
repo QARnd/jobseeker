@@ -19,3 +19,4 @@ angular.module('servicesModule').factory('reminderHistoryRequestService', functi
         }
 
     }});
+

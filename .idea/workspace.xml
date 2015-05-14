@@ -2,6 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5bb5571-93ec-44ef-a7ee-769275590669" name="Default" comment="rana">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/commentEntitiesService.js" afterPath="$PROJECT_DIR$/scripts/services/commentEntitiesService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/commentJobEntitiesService.js" afterPath="$PROJECT_DIR$/scripts/services/commentJobEntitiesService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/commentJobRequestService.js" afterPath="$PROJECT_DIR$/scripts/services/commentJobRequestService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/commentRequestService.js" afterPath="$PROJECT_DIR$/scripts/services/commentRequestService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/header.html" afterPath="$PROJECT_DIR$/views/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/historyMessageCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/historyMessageCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/jobsHistory.html" afterPath="$PROJECT_DIR$/views/jobsHistory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/jobsHistoryCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/jobsHistoryCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/msgsEntitiesService.js" afterPath="$PROJECT_DIR$/scripts/services/msgsEntitiesService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/msgsHistory.html" afterPath="$PROJECT_DIR$/views/msgsHistory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/msgsRequestService.js" afterPath="$PROJECT_DIR$/scripts/services/msgsRequestService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/notiHistory.html" afterPath="$PROJECT_DIR$/views/notiHistory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/notiHistoryCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/notiHistoryCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/notificationEntitiesService.js" afterPath="$PROJECT_DIR$/scripts/services/notificationEntitiesService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/notificationHistoryEntitiesService.js" afterPath="$PROJECT_DIR$/scripts/services/notificationHistoryEntitiesService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/notificationHistoryRequestService.js" afterPath="$PROJECT_DIR$/scripts/services/notificationHistoryRequestService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/notificationJobLoadMoreCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/notificationJobLoadMoreCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/notificationRequestService.js" afterPath="$PROJECT_DIR$/scripts/services/notificationRequestService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/remainderEntityService.js" afterPath="$PROJECT_DIR$/scripts/services/remainderEntityService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/remainderRequestService.js" afterPath="$PROJECT_DIR$/scripts/services/remainderRequestService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/reminderHistoryCtrl.js" afterPath="$PROJECT_DIR$/scripts/controllers/reminderHistoryCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/reminderHistoryRequestService.js" afterPath="$PROJECT_DIR$/scripts/services/reminderHistoryRequestService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/remindersHistory.html" afterPath="$PROJECT_DIR$/views/remindersHistory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/services/remindersHistoryEntitiesService.js" afterPath="$PROJECT_DIR$/scripts/services/remindersHistoryEntitiesService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="1e9d11b2-e6ad-4cef-95a3-6380fbf5cd72" name="New changelist" comment="New changelist" />
@@ -28,132 +53,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="notificationJobLoadMoreCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/notificationJobLoadMoreCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.346154" vertical-offset="2764" max-vertical-offset="4505">
-              <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="986">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jobseeker_Form.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
+      <file leaf-file-name="notiHistoryCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/notiHistoryCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6042065" vertical-offset="11482" max-vertical-offset="14450">
-              <caret line="694" column="25" selection-start-line="694" selection-start-column="25" selection-end-line="694" selection-end-column="25" />
-              <folding>
-                <element signature="e#6#99#0#PHP" expanded="true" />
-                <marker date="1430844279427" expanded="true" signature="5330:5382" placeholder="select lastJ..jobseekers..." />
-                <marker date="1430844279427" expanded="true" signature="5550:5580" placeholder="select * fro..job..." />
-                <marker date="1430844279427" expanded="true" signature="5838:5902" placeholder="update jobse..." />
-                <marker date="1430844279427" expanded="true" signature="6436:6558" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="7108:7160" placeholder="select * fro..posts..." />
-                <marker date="1430844279427" expanded="true" signature="7620:7838" placeholder="select job.j..job..." />
-                <marker date="1430844279427" expanded="true" signature="8121:8165" placeholder="select * fro..posts..." />
-                <marker date="1430844279427" expanded="true" signature="8517:8552" placeholder="select * fro..posts..." />
-                <marker date="1430844279427" expanded="true" signature="8829:8856" placeholder="delete from ..." />
-                <marker date="1430844279427" expanded="true" signature="9278:9341" placeholder="update posts..." />
-                <marker date="1430844279427" expanded="true" signature="9792:9957" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="10317:10531" placeholder="select job.j..job..." />
-                <marker date="1430844279427" expanded="true" signature="10878:11075" placeholder="select job.j..job..." />
-                <marker date="1430844279427" expanded="true" signature="11343:11371" placeholder="delete from ..." />
-                <marker date="1430844279427" expanded="true" signature="11921:12032" placeholder="update job s..." />
-                <marker date="1430844279427" expanded="true" signature="13221:13273" placeholder="select * fro..jobseekers..." />
-                <marker date="1430844279427" expanded="true" signature="13480:13704" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="13750:14068" placeholder="update jobse..." />
-                <marker date="1430844279427" expanded="true" signature="14471:14567" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="15085:15239" placeholder="select * fro..messages..." />
-                <marker date="1430844279427" expanded="true" signature="15640:15684" placeholder="select * fro..jobseekers..." />
-                <marker date="1430844279427" expanded="true" signature="16263:16395" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="16860:16933" placeholder="select * fro..comments..." />
-                <marker date="1430844279427" expanded="true" signature="18015:18053" placeholder="delete from ..." />
-                <marker date="1430844279427" expanded="true" signature="18427:18488" placeholder="update comme..." />
-                <marker date="1430844279427" expanded="true" signature="19088:19222" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="19684:19758" placeholder="select * fro..jobComments..." />
-                <marker date="1430844279427" expanded="true" signature="20206:20247" placeholder="delete from ..." />
-                <marker date="1430844279427" expanded="true" signature="20624:20688" placeholder="update jobCo..." />
-                <marker date="1430844279427" expanded="true" signature="21292:21388" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="21627:21729" placeholder="select * fro..jobseekers..." />
-                <marker date="1430844279427" expanded="true" signature="22282:22359" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="22469:22510" placeholder="select jobTi..job..." />
-                <marker date="1430844279427" expanded="true" signature="22676:22841" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="23054:23232" placeholder="select jobli..joblist..." />
-                <marker date="1430844279427" expanded="true" signature="23054:23233" placeholder="select jobli..joblist..." />
-                <marker date="1430844279427" expanded="true" signature="23560:23721" placeholder="select jobli..joblist..." />
-                <marker date="1430844279427" expanded="true" signature="23560:23739" placeholder="select jobli..joblist..." />
-                <marker date="1430844279427" expanded="true" signature="24223:24416" placeholder="select count..joblist..." />
-                <marker date="1430844279427" expanded="true" signature="24687:24798" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="25003:25114" placeholder="insert into ..." />
-                <marker date="1430844279427" expanded="true" signature="25453:25516" placeholder="select * fro..events..." />
-                <marker date="1430844279427" expanded="true" signature="25577:25610" placeholder="delete from ..." />
-                <marker date="1430844279427" expanded="true" signature="25906:25939" placeholder="delete from ..." />
-                <marker date="1430844279427" expanded="true" signature="26291:26446" placeholder="update event..." />
-                <marker date="1430844279427" expanded="true" signature="26862:27017" placeholder="update event..." />
-                <marker date="1430844279427" expanded="true" signature="27165:27228" placeholder="select remai..events..." />
-                <marker date="1430844279427" expanded="true" signature="27564:27750" placeholder="select jobli..joblist..." />
-                <marker date="1430844279427" expanded="true" signature="28033:28219" placeholder="select jobli..joblist..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="singleJobView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/singleJobView.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3493" max-vertical-offset="4658">
-              <caret line="218" column="191" selection-start-line="218" selection-start-column="191" selection-end-line="218" selection-end-column="191" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="595">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="singlePostView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/singlePostView.html">
+      <file leaf-file-name="reminderHistoryCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/reminderHistoryCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2482">
-              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="799">
+              <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eventCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/eventCtrl.js">
+      <file leaf-file-name="getCommentsCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/getCommentsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1287" max-vertical-offset="2720">
-              <caret line="102" column="70" selection-start-line="102" selection-start-column="70" selection-end-line="102" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eventRequestService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/eventRequestService.js">
+      <file leaf-file-name="getNotificationCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/getNotificationCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1224">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eventEntitiesService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/services/eventEntitiesService.js">
+      <file leaf-file-name="headerCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/headerCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="867">
-              <caret line="17" column="23" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commentCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/commentCtrl.js">
+      <file leaf-file-name="historyMessageCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/historyMessageCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2958">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobsHistoryCtrl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/jobsHistoryCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29955947" vertical-offset="0" max-vertical-offset="544">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commentRequestService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/services/commentRequestService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messageJobProviderCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/messageJobProviderCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="561">
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -176,30 +170,62 @@
         <option value="$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/singleJobCtrl.js" />
         <option value="$PROJECT_DIR$/dist/css/Notification.css" />
-        <option value="$PROJECT_DIR$/views/header.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/linkedInAPI.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/server/Jobseeker_DB.php" />
         <option value="$PROJECT_DIR$/scripts/controllers/commentCtrl.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/linkedIn.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/newsfeedJobCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/services/addToJobListEntitiesService.js" />
         <option value="$PROJECT_DIR$/scripts/services/addToJobListRequestService.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/JobsListCtrl.js" />
-        <option value="$PROJECT_DIR$/views/newsfeedJobView.html" />
         <option value="$PROJECT_DIR$/views/singleJobView.html" />
         <option value="$PROJECT_DIR$/scripts/services/eventEntitiesService.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/eventCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/JobsListCtrl.js" />
+        <option value="$PROJECT_DIR$/views/newsfeedJobView.html" />
+        <option value="$PROJECT_DIR$/scripts/services/providerRequestService.js" />
+        <option value="$PROJECT_DIR$/views/createAccountView.html" />
+        <option value="$PROJECT_DIR$/scripts/controllers/createAccountCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/messageJobProviderCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/services/authenticationService.js" />
+        <option value="$PROJECT_DIR$/scripts/directives/nl2br.js" />
+        <option value="$PROJECT_DIR$/views/newsfeedView.html" />
+        <option value="$PROJECT_DIR$/scripts/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/controllers/linkedIn.js" />
         <option value="$PROJECT_DIR$/server/Jobseeker_Form.php" />
+        <option value="$PROJECT_DIR$/views/notiHistory.html" />
+        <option value="$PROJECT_DIR$/views/remindersHistory.html" />
+        <option value="$PROJECT_DIR$/views/jobsHistory.html" />
+        <option value="$PROJECT_DIR$/views/header.html" />
+        <option value="$PROJECT_DIR$/views/msgsHistory.html" />
+        <option value="$PROJECT_DIR$/scripts/services/notificationEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/msgsRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/notificationHistoryEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/notificationHistoryRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/notificationRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/reminderHistoryRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/remainderRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/remindersHistoryEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/remainderEntityService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/msgsEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/commentEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/commentJobEntitiesService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/commentJobRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/services/commentRequestService.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/notificationJobLoadMoreCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/notiHistoryCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/reminderHistoryCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/historyMessageCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/jobsHistoryCtrl.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="57" />
     <option name="y" value="-8" />
-    <option name="width" value="1040" />
-    <option name="height" value="744" />
+    <option name="width" value="1317" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -374,26 +400,216 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobseeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/senior/jobseeker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ididit" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FullScreen" value="false" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="SearchEverywhereHistoryKey" value="swal&#9;FILE&#9;file://C:/AppServ/www/jobseeker/libs/sweet-alert.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="820" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="150" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="139" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="145" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="824" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\AppServ\www\jobseeker" />
       <recent name="C:\AppServ\www\jobseeker\dist\tags" />
       <recent name="C:\AppServ\www\jobseeker\imgs" />
-      <recent name="C:\AppServ\www\jobseeker" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/index.html</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/app.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/controllers/linkedIn.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/controllers/searchSeekersCtrl.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/services/remainderEntityService.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/services/searchRequestService.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/server/Jobseeker_Form.php</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/views/header.html</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/controllers/notiHistoryCtrl.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/controllers/reminderHistoryCtrl.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/directives/autoComplete.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/services/notificationHistoryEntitiesService.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/services/notificationHistoryRequestService.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/services/reminderHistoryRequestService.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/scripts/services/remindersHistoryEntitiesService.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/views/notiHistory.html</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/views/remindersHistory.html</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with property conflicts" />
+          <option name="myStatusName" value="Will be merged with property conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="singleJobView.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/jobseeker/views/singleJobView.html">
@@ -420,15 +636,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="2">
@@ -808,34 +1024,106 @@
       <option name="project" value="LOCAL" />
       <updated>1430718735728</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Solving Bugs">
+      <created>1430943941499</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1430943941499</updated>
+    </task>
+    <task id="LOCAL-00092" summary="solving bugs">
+      <created>1431097911123</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1431097911123</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Test ..  + Solving bugs">
+      <created>1431161025592</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1431161025592</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Notifications">
+      <created>1431202171196</created>
+      <option name="number" value="00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1431202171196</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Solving Bugs&#10;">
+      <created>1431376910294</created>
+      <option name="number" value="00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1431376910294</updated>
+    </task>
+    <task id="LOCAL-00096" summary="history">
+      <created>1431379201312</created>
+      <option name="number" value="00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1431379201312</updated>
+    </task>
+    <task id="LOCAL-00097" summary="..">
+      <created>1431379348432</created>
+      <option name="number" value="00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1431379348432</updated>
+    </task>
+    <task id="LOCAL-00098" summary="History">
+      <created>1431379427670</created>
+      <option name="number" value="00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1431379427670</updated>
+    </task>
+    <task id="LOCAL-00099" summary="fix bugs">
+      <created>1431550748728</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1431550748728</updated>
+    </task>
+    <task id="LOCAL-00100" summary="aaaaa">
+      <created>1431552447575</created>
+      <option name="number" value="00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1431552447575</updated>
+    </task>
+    <task id="LOCAL-00101" summary="aaa">
+      <created>1431552971021</created>
+      <option name="number" value="00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1431552971021</updated>
+    </task>
+    <task id="LOCAL-00102" summary="solving bugs">
+      <created>1431628346602</created>
+      <option name="number" value="00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1431628346602</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="57" y="-8" width="1317" height="784" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35399672" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33571428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23289777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32496306" sideWeight="0.50038433" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25997046" sideWeight="0.49961567" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18238993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -853,17 +1141,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Message design + solve 1 bug in the server" />
-    <MESSAGE value="header - search" />
-    <MESSAGE value="Matching" />
-    <MESSAGE value="ee" />
-    <MESSAGE value="joblist" />
-    <MESSAGE value="jo" />
-    <MESSAGE value="comm" />
-    <MESSAGE value="com" />
-    <MESSAGE value="co" />
-    <MESSAGE value="mm" />
-    <MESSAGE value="mmss" />
     <MESSAGE value="modify" />
     <MESSAGE value="modi" />
     <MESSAGE value="ccc" />
@@ -878,15 +1155,22 @@
     <MESSAGE value="Load More For Job List is Done" />
     <MESSAGE value="requirements is Limit to 25 (better)" />
     <MESSAGE value="Edit Event is Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Event is Done" />
+    <MESSAGE value="Solving Bugs" />
+    <MESSAGE value="Test ..  + Solving bugs" />
+    <MESSAGE value="Notifications" />
+    <MESSAGE value="Solving Bugs&#10;" />
+    <MESSAGE value="history" />
+    <MESSAGE value=".." />
+    <MESSAGE value="History" />
+    <MESSAGE value="fix bugs" />
+    <MESSAGE value="aaaaa" />
+    <MESSAGE value="aaa" />
+    <MESSAGE value="solving bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="solving bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js</url>
-          <line>19</line>
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/scripts/controllers/commentCtrl.js</url>
           <line>83</line>
@@ -913,323 +1197,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/sendMessageView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2578" max-vertical-offset="3213">
-          <caret line="166" column="40" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/searchSeekersCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/searchPageView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="749" max-vertical-offset="1309">
-          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/sweet-alert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12801">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/headerCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="561">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/addPostCtrl1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/addJobCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/getNotificationCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/postRequestsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1564">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/jobEntitiesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="680">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/singlePostCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="454" max-vertical-offset="1071">
-          <caret line="49" column="13" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/notificationEntitiesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/Notification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.230769" vertical-offset="1296" max-vertical-offset="2584">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/notificationRequestService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24772313" vertical-offset="0" max-vertical-offset="549">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/getCommentsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="748">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69034606" vertical-offset="1644" max-vertical-offset="2312">
-          <caret line="119" column="39" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedInAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5747331" vertical-offset="119" max-vertical-offset="901">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/singleJobCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Jobseeker_DB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.846154" vertical-offset="507" max-vertical-offset="1377">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/css/profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5320285" vertical-offset="3628" max-vertical-offset="4233">
-          <caret line="231" column="17" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/css/AdminLTE.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/css/AdminLTE.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="69003">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/css/Notification.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6672598" vertical-offset="16" max-vertical-offset="1241">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/css/messageStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0" vertical-offset="2158" max-vertical-offset="2856">
-          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="539">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/authenticationCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/entitiesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1106" max-vertical-offset="1632">
-          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/linkedInService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="1241">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/remainderRequestService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2670" max-vertical-offset="3502">
-          <caret line="171" column="71" selection-start-line="171" selection-start-column="71" selection-end-line="171" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/remainderEntityService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/jobRequestService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8060837" vertical-offset="885" max-vertical-offset="1479">
-          <caret line="77" column="9" selection-start-line="66" selection-start-column="7" selection-end-line="77" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/directives/chatDir.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/commentJobCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="2924">
-          <caret line="84" column="56" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/newsfeedView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="3536" max-vertical-offset="5797">
-          <caret line="220" column="32" selection-start-line="220" selection-start-column="32" selection-end-line="220" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/addToJobListEntitiesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="612">
-          <caret line="20" column="54" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/services/addToJobListRequestService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49429658" vertical-offset="369" max-vertical-offset="935">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/newsfeedJobView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.153846" vertical-offset="4232" max-vertical-offset="5491">
-          <caret line="266" column="35" selection-start-line="266" selection-start-column="35" selection-end-line="266" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/JobsListCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedJobCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6921676" vertical-offset="1252" max-vertical-offset="2261">
-          <caret line="96" column="31" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/singlePostView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2482">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/singleJobView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3493" max-vertical-offset="4658">
-          <caret line="218" column="191" selection-start-line="218" selection-start-column="191" selection-end-line="218" selection-end-column="191" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/commentCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2958">
@@ -1242,7 +1209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1287" max-vertical-offset="2720">
           <caret line="102" column="70" selection-start-line="102" selection-start-column="70" selection-end-line="102" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,7 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="867">
           <caret line="17" column="23" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,74 +1223,450 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1224">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedJobCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1219" max-vertical-offset="2261">
+          <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/JobsListCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1258">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/newsfeedJobView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5155" max-vertical-offset="5916">
+          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/providerEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="816">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/providerRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="1309">
+          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/newsfeedCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="2329">
+          <caret line="52" column="28" selection-start-line="44" selection-start-column="11" selection-end-line="52" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/createAccountCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.16" vertical-offset="765" max-vertical-offset="1632">
+          <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/sendMessageCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/authenticationService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="10" column="107" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/less/skins/skin-red.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2380">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/AdminLTE.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.52" vertical-offset="9909" max-vertical-offset="69003">
+          <caret line="591" column="28" selection-start-line="591" selection-start-column="24" selection-end-line="591" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/directives/loginModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/directives/nl2br.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/createAccountView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/newsfeedView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3526" max-vertical-offset="6358">
+          <caret line="242" column="63" selection-start-line="242" selection-start-column="63" selection-end-line="242" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="901">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.346154" vertical-offset="2764" max-vertical-offset="4505">
-          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.730769" vertical-offset="2126" max-vertical-offset="4692">
+          <caret line="143" column="60" selection-start-line="143" selection-start-column="60" selection-end-line="143" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/linkedIn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5200" max-vertical-offset="6936">
+          <caret line="321" column="41" selection-start-line="321" selection-start-column="41" selection-end-line="321" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/Jobseeker_Form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6042065" vertical-offset="11482" max-vertical-offset="14450">
-          <caret line="694" column="25" selection-start-line="694" selection-start-column="25" selection-end-line="694" selection-end-column="25" />
+        <state vertical-scroll-proportion="159.88461" vertical-offset="19287" max-vertical-offset="20434">
+          <caret line="890" column="41" selection-start-line="890" selection-start-column="41" selection-end-line="890" selection-end-column="41" />
           <folding>
             <element signature="e#6#99#0#PHP" expanded="true" />
-            <marker date="1430844279427" expanded="true" signature="5330:5382" placeholder="select lastJ..jobseekers..." />
-            <marker date="1430844279427" expanded="true" signature="5550:5580" placeholder="select * fro..job..." />
-            <marker date="1430844279427" expanded="true" signature="5838:5902" placeholder="update jobse..." />
-            <marker date="1430844279427" expanded="true" signature="6436:6558" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="7108:7160" placeholder="select * fro..posts..." />
-            <marker date="1430844279427" expanded="true" signature="7620:7838" placeholder="select job.j..job..." />
-            <marker date="1430844279427" expanded="true" signature="8121:8165" placeholder="select * fro..posts..." />
-            <marker date="1430844279427" expanded="true" signature="8517:8552" placeholder="select * fro..posts..." />
-            <marker date="1430844279427" expanded="true" signature="8829:8856" placeholder="delete from ..." />
-            <marker date="1430844279427" expanded="true" signature="9278:9341" placeholder="update posts..." />
-            <marker date="1430844279427" expanded="true" signature="9792:9957" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="10317:10531" placeholder="select job.j..job..." />
-            <marker date="1430844279427" expanded="true" signature="10878:11075" placeholder="select job.j..job..." />
-            <marker date="1430844279427" expanded="true" signature="11343:11371" placeholder="delete from ..." />
-            <marker date="1430844279427" expanded="true" signature="11921:12032" placeholder="update job s..." />
-            <marker date="1430844279427" expanded="true" signature="13221:13273" placeholder="select * fro..jobseekers..." />
-            <marker date="1430844279427" expanded="true" signature="13480:13704" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="13750:14068" placeholder="update jobse..." />
-            <marker date="1430844279427" expanded="true" signature="14471:14567" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="15085:15239" placeholder="select * fro..messages..." />
-            <marker date="1430844279427" expanded="true" signature="15640:15684" placeholder="select * fro..jobseekers..." />
-            <marker date="1430844279427" expanded="true" signature="16263:16395" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="16860:16933" placeholder="select * fro..comments..." />
-            <marker date="1430844279427" expanded="true" signature="18015:18053" placeholder="delete from ..." />
-            <marker date="1430844279427" expanded="true" signature="18427:18488" placeholder="update comme..." />
-            <marker date="1430844279427" expanded="true" signature="19088:19222" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="19684:19758" placeholder="select * fro..jobComments..." />
-            <marker date="1430844279427" expanded="true" signature="20206:20247" placeholder="delete from ..." />
-            <marker date="1430844279427" expanded="true" signature="20624:20688" placeholder="update jobCo..." />
-            <marker date="1430844279427" expanded="true" signature="21292:21388" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="21627:21729" placeholder="select * fro..jobseekers..." />
-            <marker date="1430844279427" expanded="true" signature="22282:22359" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="22469:22510" placeholder="select jobTi..job..." />
-            <marker date="1430844279427" expanded="true" signature="22676:22841" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="23054:23232" placeholder="select jobli..joblist..." />
-            <marker date="1430844279427" expanded="true" signature="23054:23233" placeholder="select jobli..joblist..." />
-            <marker date="1430844279427" expanded="true" signature="23560:23721" placeholder="select jobli..joblist..." />
-            <marker date="1430844279427" expanded="true" signature="23560:23739" placeholder="select jobli..joblist..." />
-            <marker date="1430844279427" expanded="true" signature="24223:24416" placeholder="select count..joblist..." />
-            <marker date="1430844279427" expanded="true" signature="24687:24798" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="25003:25114" placeholder="insert into ..." />
-            <marker date="1430844279427" expanded="true" signature="25453:25516" placeholder="select * fro..events..." />
-            <marker date="1430844279427" expanded="true" signature="25577:25610" placeholder="delete from ..." />
-            <marker date="1430844279427" expanded="true" signature="25906:25939" placeholder="delete from ..." />
-            <marker date="1430844279427" expanded="true" signature="26291:26446" placeholder="update event..." />
-            <marker date="1430844279427" expanded="true" signature="26862:27017" placeholder="update event..." />
-            <marker date="1430844279427" expanded="true" signature="27165:27228" placeholder="select remai..events..." />
-            <marker date="1430844279427" expanded="true" signature="27564:27750" placeholder="select jobli..joblist..." />
-            <marker date="1430844279427" expanded="true" signature="28033:28219" placeholder="select jobli..joblist..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select lastJ..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..job..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select jobId..job..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update jobse..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..posts..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select job.j..job..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..posts..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..posts..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update posts..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select job.j..job..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select job.j..job..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update job s..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update jobse..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..messages..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..comments..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update comme..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..jobComments..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update jobCo..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select first..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select jobTi..job..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select jobli..joblist..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select lastS..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select jobNo..jobNotification..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select not_I..jobNotification..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update jobse..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..events..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update event..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select lastS..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select remai..events..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select event..events..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update jobse..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select jobli..joblist..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..messageJobprovider..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..jobprovider..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select Email..jobprovider..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select jobTi..job..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select profi..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select simil..joblist..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..Synonyms..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select $last..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..messages..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..messages..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..messages..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select messa..messages..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update jobse..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select lasts..jobseekers..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select posts..comments..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select comme..comments..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="update jobse..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select posts..comments..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select remai..events..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select remai..events..." />
+            <marker date="1431627937230" expanded="true" signature="-1:-1" placeholder="select * fro..messages..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/notiHistory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5" vertical-offset="505" max-vertical-offset="1156">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/remindersHistory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="238" max-vertical-offset="1122">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/jobsHistory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="527" max-vertical-offset="1190">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="1462" max-vertical-offset="5542">
+          <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#h5#0;n#a#0;n#li#1;n#ul#1;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#li#2;n#ul#1;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/msgsHistory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.692307" vertical-offset="758" max-vertical-offset="1190">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/notificationEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="663">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/msgsRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/notificationHistoryEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/notificationHistoryRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="527">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/notificationRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="787" max-vertical-offset="1258">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/reminderHistoryRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/remainderRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/remindersHistoryEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/remainderEntityService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/msgsEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentJobEntitiesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentJobRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/services/commentRequestService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/messageJobProviderCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="561">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/notificationJobLoadMoreCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="986">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/notiHistoryCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="595">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/reminderHistoryCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="799">
+          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/getCommentsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/getNotificationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="454">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/headerCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/historyMessageCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/jobsHistoryCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29955947" vertical-offset="0" max-vertical-offset="544">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

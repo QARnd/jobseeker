@@ -3,6 +3,7 @@
  */
 
 
+
 angular.module('servicesModule').factory('commentJobEntitiesService', function() {
 
     return {

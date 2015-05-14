@@ -39,6 +39,4 @@ angular.module('myApp').controller('reminderHistoryCtrl',
                 timer: 2000
             });
         });
-
-
     });

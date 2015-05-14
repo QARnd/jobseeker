@@ -30,3 +30,4 @@ angular.module('servicesModule').factory('notificationEntitiesService', function
         }
     }
 });
+

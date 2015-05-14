@@ -14,3 +14,4 @@ angular.module('servicesModule').factory('notificationHistoryEntitiesService', f
         }
     }
 });
+
