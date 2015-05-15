@@ -741,15 +741,44 @@ class Jobseeker_Form extends Jobseeker_DB {
 //        print(json_encode("Done"));
 
 
-        $jobTitle='select jobTitle from job where job.jobId='.$JobId;
+        $sql1='insert into jobNotification VALUES (NULL ,"New Job Oppurtunity With Similarity = '. $similarity .'%","'.date("Y-m-d H:i:s").'",'.$js_id.','.$JobId.')';
+        $result0=$GLOBALS['db']->db_query($sql1);
+        print(json_encode($result0));
+
+
+        $jobTitle='select jobTitle from job where jobId='.$JobId;
         $result=$GLOBALS['db']->db_query($jobTitle);
         $row = $GLOBALS['db']->db_assoc($result);
         $jobTitle=$row['jobTitle'];
 
+        $providerId='select jobProvider from job where jobId='.$JobId;
+        $result=$GLOBALS['db']->db_query($providerId);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $providerId=$row['jobProvider'];
 
-        $sql1='insert into jobNotification VALUES (NULL ,"New Job Oppurtunity With Similarity = '. $similarity .'%","'.date("Y-m-d H:i:s").'",'.$js_id.','.$JobId.')';
-        $result=$GLOBALS['db']->db_query($sql1);
-        print(json_encode($result));
+        $Email='select Email from jobprovider where jobprovider_Id='.$providerId.'';
+        $result=$GLOBALS['db']->db_query($Email);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $Email=$row['Email'];
+
+        $profileUrl='select profileUrl from jobseekers where jobseeker_id='.$js_id.'';
+        $result=$GLOBALS['db']->db_query($profileUrl);
+        $row = $GLOBALS['db']->db_assoc($result);
+        $profileUrl=$row['profileUrl'];
+
+
+                $to = $Email;
+                $subject = " New Apply for ".$jobTitle."  @ sho3'ol";
+                $txt = "You have new apply for".$jobTitle."from jobseeker with similarity ".$similarity."and this is his/her linkedIn profile".$profileUrl." ";
+                $headers = "From: info@sho3'ol.com" . "\r\n" .
+                    "CC: job@sho3'ol.com";
+
+                mail($to,$subject,$txt,$headers);
+
+            $sql3='insert into appliesJob values(NULL,'.$JobId.','.$providerId.','.$js_id.')';
+            $GLOBALS['db']->db_query($sql3);
+           // print (json_encode("done"));
+
     }
 
 
@@ -1005,44 +1034,7 @@ public function sendEmailToP(){
         print(json_encode($total));
 
     }
-    public function applyForJob()
-    {   $entity='Entity';
-        $jobId='jobId';
-        $jobId=$GLOBALS['request']->$entity->$jobId;
-        $providerId='providerId';
-        $providerId=$GLOBALS['request']->$entity->$providerId;
-         $jobseeker_id='jobseeker_id';
-        $jobseeker_id=$GLOBALS['request']->$entity->$jobseeker_id;
-        $sql1='select Email from jobprovider where jobprovider_Id='.$providerId.'';
-        $result1=$GLOBALS['db']->db_query($sql1);
-        $row1 = $GLOBALS['db']->db_assoc($result1);
-        $sql2='select jobTitle from job where job_id='.$jobId.'';
-        $result2=$GLOBALS['db']->db_query($sql2);
-        $row2 = $GLOBALS['db']->db_assoc($result2);
-        $sql3='select profileUrl from jobseekers where jobseeker_id='.$jobseeker_id.'';
-        $result3=$GLOBALS['db']->db_query($sql3);
-        $row3 = $GLOBALS['db']->db_assoc($result3);
-        $sql4='select similarity from joblist where jobseekerId='.$jobseeker_id.'and jobId='.$jobId.'';
-        $result4=$GLOBALS['db']->db_query($sql4);
-        $row4 = $GLOBALS['db']->db_assoc($result4);
-        if ($row4==0){
-            $to = $row1[0];
-            $subject = " New Apply for ".$row2[0]."  @ sho3'ol";
-            $txt = "You have new apply for".$row2[0]."from jobseeker with similarity ".$row4[0]."and this is his/her linkedIn profile".$row3[0]." ";
-            $headers = "From: info@sho3'ol.com" . "\r\n" .
-                "CC: job@sho3'ol.com";
 
-            mail($to,$subject,$txt,$headers);
-        }else{$to = $row1[0];
-            $subject = " New Apply for ".$row2[0]."  @ sho3'ol";
-            $txt = "You have new apply for".$row2[0]."from jobseeker with similarity <70 and this is his/her linkedIn profile".$row3[0]." ";
-            $headers = "From: info@sho3'ol.com" . "\r\n" .
-                "CC: job@sho3'ol.com";
-            mail($to,$subject,$txt,$headers);}
-        $sql='insert into appliesJob values(NULL,'.$jobId.','.$providerId.','.$jobseeker_id.')';
-        $GLOBALS['db']->db_query($sql);
-        print (json_encode("done"));
-    }
 
 
     public function getSynonyms(){
