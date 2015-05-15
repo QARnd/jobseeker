@@ -7,15 +7,15 @@
 angular.module('myApp').controller('eventCtrl',
     function($rootScope,$scope, eventEntitiesService, eventRequestService,$routeParams, authenticationService) {
 
+        $scope.events=[
 
+        ];
         $scope.getEvents=function(){
             var jobId=$routeParams.jobId;
             var js_id = authenticationService.userProfile.jobseekerId;
 
 
-            $scope.events=[
 
-            ];
             var getEventsEntity = eventEntitiesService.getEvent(jobId,js_id);
             var eventPromise =eventRequestService.getEvents(getEventsEntity);
 
@@ -47,25 +47,19 @@ angular.module('myApp').controller('eventCtrl',
             var js_id=authenticationService.userProfile.jobseekerId;
 
 
-            var eventEntity = eventEntitiesService.addEvent(jobId,js_id,$scope.eventTitle,$scope.eventDetail, $scope.remainderDate )
+            var eventEntity = eventEntitiesService.addEvent(jobId,js_id,$scope.eventTitle,$scope.eventDetail, $scope.remainderDate );
             var eventPromise = eventRequestService.addEvent(eventEntity);
 
 
             eventPromise.then(function (d) {
-                console.log(d);
+                console.log(d.data);
                 var event= d.data;
-                //$scope.jobId= event.jobId;
-                //$scope.js_id= event.js_id;
-                //$scope.eventTitle= event.eventTitle;
-                //$scope.eventDetail= event.eventDetail;
-                //$scope.remainderDate= event.remainderDate;
-                //
-                //
-                //
-                //$scope.jobComments.unshift({jobId:event.jobId,js_id:event.js_id,eventTitle:event.eventTitle,eventDetail:event.eventDetail,remainderDate:event.remainderDate,eventId:event.eventId});
-                //
-                //$scope.eventTitle="";
-                //$scope.eventDetail="";
+
+
+                $scope.events.unshift({eventId:event.eventId,jobseeker_id:event.jobseeker_id,eventTitle:event.eventTitle,eventDetail:event.eventDetail,remainderDate:event.remainderDate,jobId:event.jobId});
+
+                $scope.eventTitle="";
+                $scope.eventDetail="";
 
             }, function (d) {
                 swal({
