@@ -55,6 +55,7 @@ angular.module('myApp').controller('newsfeedCtrl',
 
 
                     //delete post
+
                     for (var i = 0; i < $rootScope.posts.length; i++) {
                         if ($rootScope.posts[i].id == postId) {
                             $rootScope.posts.splice(i, 1);
@@ -95,7 +96,7 @@ angular.module('myApp').controller('newsfeedCtrl',
                 console.log(d);
                 $('#loadMoreSpinner').hide();
                 $scope.pageScrolls=$scope.pageScrolls+1;
-                $scope.posts= $scope.posts.concat(d.data);
+                $rootScope.posts= $rootScope.posts.concat(d.data);
 
                 //$(window).bind('scroll', bindScroll);
 
