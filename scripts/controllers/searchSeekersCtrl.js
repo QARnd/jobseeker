@@ -14,7 +14,7 @@ angular.module('myApp').controller('searchSeekersCtrl',
             //alert($rootScope.autoComplete.length);
             for(var i= 0; i<$rootScope.autoComplete.length;i++){
                 //alert($rootScope.autoComplete[i].first_name);
-                $scope.fullName[i]=$rootScope.autoComplete[i].first_name+" "+$rootScope.autoComplete[i].last_name;
+                //$scope.fullName[i]=$rootScope.autoComplete[i].first_name+" "+$rootScope.autoComplete[i].last_name;
 
             }
 

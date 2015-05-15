@@ -42,7 +42,7 @@ angular.module('myApp').controller('linkedInCtrl',
                             //alert(skillStr);
 
                         }
-                        console.log(skillsWithSynonyms);
+                        //console.log(skillsWithSynonyms);
                         //alert(skillsWithSynonyms.length);
 
                         for (var j = 0; j < skillsWithSynonyms.length; j++) {
@@ -88,7 +88,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                         skillStr += skillsWithSynonyms[0];
 
-                        alert(skillsWithSynonyms.length);
+                        //alert(skillsWithSynonyms.length);
 
                         for (var i = 1; i < skillsWithSynonyms.length; i++) {
 
@@ -100,7 +100,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                         }
-                        alert(skillStr);
+                        //alert(skillStr);
 
                         //var skills=result.values[0].skills.values;
                         //for(var i=0;i<skills.length;i++){
@@ -113,21 +113,21 @@ angular.module('myApp').controller('linkedInCtrl',
                         skillStr='';
                     }
 
-
-                    var pictureUrl='';
-
-                    try{
-                       pictureUrl=result.values[0].pictureUrl;
-                    }
-
-                    catch(err){
-                        pictureUrl='https://ssl.gstatic.com/accounts/ui/avatar_2x.png';
-                    }
+                    //
+                    //var pictureUrl='';
+                    //
+                    //try{
+                    //   pictureUrl=result.values[0].pictureUrl;
+                    //}
+                    //
+                    //catch(err){
+                    //    pictureUrl='https://ssl.gstatic.com/accounts/ui/avatar_2x.png';
+                    //}
 
 
 
                     var userEntity=entitiesService.userEntity(result.values[0].firstName,result.values[0].lastName,
-                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,pictureUrl,skillStr,educationStr,result.values[0].summary,result.values[0].industry,result.values[0].location.name);
+                        result.values[0].emailAddress,result.values[0].id,result.values[0].publicProfileUrl,result.values[0].pictureUrl,skillStr,educationStr,result.values[0].summary,result.values[0].industry,result.values[0].location.name);
 
                     var userPromise=linkedinService.loginRequest(userEntity);
 
@@ -180,7 +180,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
         ///get last jobs
         $scope.getLastAddedJobs=function(skillStr){
-            alert(skillStr);
+            //alert(skillStr);
 
 
             var js_id= authenticationService.userProfile.user_id;
@@ -309,7 +309,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
                 allMsgsPromise.then(function (d) {
                     console.log(d);
-
+alert(d);
                     var msgsNotifications = d.data;
                     $scope.msgsNotifications=msgsNotifications;
                     $scope.msgsNoticount=msgsNotifications.length;
