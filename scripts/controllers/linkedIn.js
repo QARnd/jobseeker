@@ -140,6 +140,8 @@ angular.module('myApp').controller('linkedInCtrl',
                                 authenticationService.userProfile.jobseekerId=d.data.replace("\n","").replace("\r","").replace(" ","");
                                 authenticationService.userProfile.user_id=d.data.replace("\n","").replace("\r","").replace(" ","");
                                 authenticationService.userProfile.full_name=result.values[0].firstName+" "+result.values[0].lastName;
+                                authenticationService.userProfile.user_type=1;
+
 
                                 result.values[0].userId=d.data.jobseeker_id;
 
