@@ -30,7 +30,7 @@ angular.module('myApp').controller('linkedInCtrl',
                     $scope.getSkills = function () {
 
                         var js_id = authenticationService.userProfile.user_id;
-                        alert(js_id);
+                        //alert(js_id);
                         //alert($scope.user_id);
                         var getSkillsEntity = entitiesService.getSkillsEntity(js_id);
                         var skillsPromise =profileRequestService.getSkills(getSkillsEntity);
@@ -49,22 +49,23 @@ angular.module('myApp').controller('linkedInCtrl',
                             var skills=[];
 
                             //$scope.mySkills=$scope.mySkills.toLowerCase();
-                            skills = $scope.mySkills.replace('"','');
 
                             skills = $scope.mySkills.split(",");
+
                             //var skills = result.values[0].skills.values;
 
                             //skillsWithSynonyms[0]=skills[0].skill.name.toLowerCase();
                             //skillStr+=skillsWithSynonyms[0];
 
-                            for (var i = 0; i < skills.length; i++) {
-                                skillsWithSynonyms[i] = skills[i].toLowerCase();
-                                //skillStr+=","+skillsWithSynonyms[i];
-
-                                alert(skills[i].toLowerCase());
-                                //alert(skillStr);
-
-                            }
+                            //for (var i = 0; i < skills.length; i++) {
+                            //    skillsWithSynonyms[i] = skills[i].toLowerCase().replace('"','');
+                            //    //skillStr+=","+skillsWithSynonyms[i];
+                            //    //skillsWithSynonyms[i] = skills[i].replace('"','');
+                            //
+                            //    //alert(skillsWithSynonyms[i]);
+                            //    //alert(skillStr);
+                            //
+                            //}
                             //console.log(skillsWithSynonyms);
                             //alert(skillsWithSynonyms.length);
 
@@ -107,7 +108,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                             }
-                            //console.log(skillsWithSynonyms);
+                            console.log(skillsWithSynonyms);
 
                             skillStr += skillsWithSynonyms[0];
 
@@ -123,7 +124,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                             }
-                            //alert(skillStr);
+                            alert(skillStr);
 
                             //var skills=result.values[0].skills.values;
                             //for(var i=0;i<skills.length;i++){
