@@ -1155,7 +1155,7 @@ public function sendEmailToP(){
 
 
     }
-    
+
 
     public function getRemindersHistory(){
         $entity='Entity';
