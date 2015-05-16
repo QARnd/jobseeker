@@ -182,8 +182,8 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getSkillsRequest':
                     $this->getSkills();
                     break;
-                case 'viewProviderProfileRequest':
-                    $this->viewProviderProfile();
+                case 'updateSkillsRequest':
+                    $this->updateSkills();
                     break;
 
 
@@ -460,11 +460,11 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$row['jobseeker_id'];
         if (mysql_num_rows($result)==0)
         {
-            $sql='insert into jobseekers VALUES (NULL,"'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'.$skills.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$education.'","'.$summary.'","'.$industry.'","'.$location.'",0)';
+            $sql='insert into jobseekers(linkedinId,first_name,last_name,Email,profileUrl,pictureUrl,summary,industry,location) VALUES ("'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$summary.'","'.$industry.'","'.$location.'",0)';
 
         }
         else{
-            $sql='update jobseekers set first_name="'. $firstName.'", last_name="'. $lastName.'",Email="'.$emailAddress.'",skills="'.$skills.'",profileUrl="'. $publicProfileUrl.'",pictureUrl="'.$pictureUrl.'",educations="'.$education.'",summary="'.$summary.'",industry="'.$industry.'",location="'.$location.'" where linkedinId="'.$id.'"';
+            $sql='update jobseekers set first_name="'. $firstName.'", last_name="'. $lastName.'",Email="'.$emailAddress.'",profileUrl="'. $publicProfileUrl.'",pictureUrl="'.$pictureUrl.'",summary="'.$summary.'",industry="'.$industry.'",location="'.$location.'" where linkedinId="'.$id.'"';
         }
 
         $GLOBALS['db']->db_query($sql);
@@ -522,21 +522,6 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode($row));
 
     }
-
-    public function viewProviderProfile(){
-        $entity='Entity';
-        $jobprovider_id='jobprovider_id';
-        $jobprovider_id=$GLOBALS['request']->$entity->$jobprovider_id;
-
-        $sql='select * from jobprovider where jobprovider_id='.$jobprovider_id;
-        $result=$GLOBALS['db']->db_query($sql);
-
-        $row = $GLOBALS['db']->db_assoc($result);
-
-        print(json_encode($row));
-
-    }
-
     public function add_comment(){
 
         $entity='Entity';
@@ -1225,31 +1210,32 @@ public function sendEmailToP(){
     }
 
     public function getSkills(){
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
 
-
-        $sql='select skills from  jobseekers';
+        $sql=' select skills from jobseekers where jobseeker_id='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
-            array_push($total, $row);
-        }
+        $row = $GLOBALS['db']->db_assoc($result);
 
-        print(json_encode($total));
+        print(json_encode($row['skills']));
+
     }
 
-//    public function getSkills(){
-//
-//        $sql='select * from   Synonyms';
-//        $result=$GLOBALS['db']->db_query($sql);
-//        $total=array();
-//        while($row = $GLOBALS['db']->db_assoc($result)){
-//            array_push($total, $row);
-//        }
-//
-//        print(json_encode($total));
-//    }
+    public function updateSkills(){
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
+        $mySkills='mySkills';
+        $mySkills=$GLOBALS['request']->$entity->$mySkills;
+
+        $sql='update jobseekers set skills="'.$mySkills.'"  where jobseeker_id='.$js_id;
+        $result=$GLOBALS['db']->db_query($sql);
 
 
+        print(json_encode($result));
+
+    }
 
 
 

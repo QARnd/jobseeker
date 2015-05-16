@@ -122,7 +122,46 @@ angular.module('myApp').controller('viewProfileCtrl',
                 $scope.messages = d.data;
             });
 
-        }
+        };
+
+        $scope.updateSkills = function () {
+
+            var js_id = authenticationService.userProfile.user_id;
+            var mySkills=$scope.mySkills;
+            alert(js_id);
+            //alert($scope.user_id);
+            var updateSkillsEntity = entitiesService.updateSkillsEntity(js_id,mySkills);
+            var skillsPromise =profileRequestService.updateSkills(updateSkillsEntity);
+
+            skillsPromise.then(function (d) {
+                console.log(d.data);
+                swal({
+                    title: "Success!",
+                    text: "Skills Have been updated successfully",
+                    type: "success",
+                    timer: 3000
+                });
+            });
+
+        };
+
+        $scope.getSkills = function () {
+
+            var js_id = authenticationService.userProfile.user_id;
+            alert(js_id);
+            //alert($scope.user_id);
+            var getSkillsEntity = entitiesService.getSkillsEntity(js_id);
+            var skillsPromise =profileRequestService.getSkills(getSkillsEntity);
+
+            skillsPromise.then(function (d) {
+                console.log(d.data);
+                $scope.mySkills= d.data;
+            });
+
+        };
+
+        $scope.getSkills();
+
     });
 
 

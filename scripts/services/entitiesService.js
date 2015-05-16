@@ -82,7 +82,7 @@ angular.module('servicesModule').factory('entitiesService', function() {
             skills.skill = skill;
 
             return skills;
-        }
+        },
        // addMessageJobProviderEntity: function(emailSend,content) {
           //  var message = {};     // new object
         // message.emailSend=emailSend;
@@ -91,6 +91,22 @@ angular.module('servicesModule').factory('entitiesService', function() {
 
           //  return message;
       //  }
+
+        updateSkillsEntity: function(js_id,mySkills) {
+            var skills = {};     // new object
+            skills.js_id = js_id;
+            skills.mySkills = mySkills;
+
+            return skills;
+        },
+
+        getSkillsEntity: function(js_id) {
+            var skills = {};     // new object
+            skills.js_id = js_id;
+            return skills;
+        }
+
+
 
     };
 

@@ -40,6 +40,32 @@ angular.module('servicesModule').factory('profileRequestService', function($http
                 data: request
             });
             return messagePromise;
+        },
+
+        updateSkills: function(updateSkillsEntity) {
+            var request = {};
+            request.opcode = "updateSkillsRequest";
+            request.Entity = updateSkillsEntity;
+            var skillsPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return skillsPromise;
+        },
+
+        getSkills: function(getSkillsEntity) {
+            var request = {};
+            request.opcode = "getSkillsRequest";
+            request.Entity = getSkillsEntity;
+            var skillsPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return skillsPromise;
         }
 
 
