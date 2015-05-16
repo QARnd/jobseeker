@@ -14,7 +14,6 @@ angular.module('servicesModule').factory('searchEntitiesService', function() {
             return result;
         },
 
-
         providerSearchEntity: function (search) {
         var result1 = {};     // new object
         result1.search = search;

@@ -1173,7 +1173,6 @@ public function sendEmailToP(){
             array_push($total, $row);
         }
 
-
         print(json_encode($total));
     }
 

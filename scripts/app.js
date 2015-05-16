@@ -41,7 +41,6 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/notihistory', {templateUrl: 'views/notiHistory.html', controller: 'notiHistoryCtrl'});
 
 
-
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
 
    $routeProvider.otherwise({redirectTo: '/newsfeed'});

@@ -23,6 +23,7 @@ angular.module('myApp')
                 //var jsonStr=a[i];
                 //var json_parsed = JSON.parse(jsonStr);
 
+
                 var items = a[i].text; // an array
                 var item = items.toLowerCase();
                 var quer = query.toLowerCase();
