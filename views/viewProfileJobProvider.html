@@ -1,0 +1,230 @@
+<link href="dist/css/messageStyle.css" rel="stylesheet">
+
+
+<style>
+    .chat
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .chat li
+    {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+    }
+
+    .chat li.left .chat-body
+    {
+        margin-left: 60px;
+    }
+
+    .chat li.right .chat-body
+    {
+        margin-right: 60px;
+    }
+
+
+    .chat li .chat-body p
+    {
+        margin: 0;
+        color: #777777;
+    }
+
+    .panel .slidedown .glyphicon, .chat .glyphicon
+    {
+        margin-right: 5px;
+    }
+
+    .panel-body
+    {
+        overflow-y: scroll;
+        height: 250px;
+    }
+
+
+
+</style>
+<!--View Profile:-->
+
+<!--<input type="text" ng-model="jobSeekerId" placeholder="jobSeekerId">-->
+<!--<button   ng-click="viewProfile(); getMessages()" >View Profile</button>-->
+<!--<br/>-->
+
+<!--<button ng-click="toggle()">send message</button>-->
+<!--<div>-->
+
+<!--<br> First Name: {{first_name}}</br>-->
+<!--<br> Last Name: {{last_name}}</br>-->
+<!--<br> Email: {{Email}}</br>-->
+<!--<br> Profile Url: {{profileUrl}}</br>-->
+<!--<br> Picture Url: {{pictureUrl}}</br>-->
+<!--<br> Summary: {{summary}}</br>-->
+<!--<br> Location: {{location}}</br>-->
+<!--<br> Industry: {{industry}}</br>-->
+<!--<br> Location: {{location}}</br>-->
+<!--<br> </br>-->
+<!--Skills:-->
+<!--<ul>-->
+<!--<li ng-repeat='skill in skills'>-->
+<!--<br>{{skill}}</br>-->
+<!--</li>-->
+
+<!--</ul>-->
+
+<!--Educations:-->
+<!--<ul>-->
+<!--<li ng-repeat='education in educations'>-->
+<!--<br>  {{education}}</br>-->
+<!--</li>-->
+
+<!--</ul>-->
+<!--</div>-->
+
+
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+<link href="dist/css/profile.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <!--<div class="avatar">-->
+
+                    <!--<img alt="" src="{{pictureUrl}}"-->
+                         <!--class="img-circle" />-->
+                <!--</div>-->
+
+                <!--<div class="bottom">-->
+                    <!--<a class="btn btn-primary btn-linkedin btn-sm" href="{{profileUrl}}">-->
+                        <!--<i class="fa fa-linkedin"></i>-->
+                    <!--</a>-->
+                    <!--<button  class="btn btn-danger btn-sm" rel="publisher" ng-click="toggle()">-->
+                        <!--Messages-->
+                    <!--</button>-->
+
+                    <!--&lt;!&ndash;<chat title="Chat .." visible="showModal">&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<div class="chat-box center-block">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<div class="header">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;{{first_name}} {{last_name}}&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<div class="chat-box center-block">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<div class="input-box">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<textarea id="msg_content" ng-model="$parent.content" class="form-control msg_content" rows="2" placeholder="Enter message..."></textarea>&ndash;&gt;&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<button class="send_msg btn btn-danger sendBtn" ng-click="sendMessage()" >SEND A MESSAGE..</button>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<div class="messages">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<ul id="msgs">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<li  ng-repeat='message in messages track by $index'>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<span ng-show="message.from_id==myId" class="left" alt="{{message.sendate}}">{{message.content}}</span>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<span ng-show="message.from_id!=myId" class="right" alt="{{message.sendate}}">{{message.content}}</span>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<div class="clear"></div>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</li>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</ul>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<div class="clear"></div>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+
+
+
+
+                        <!--&lt;!&ndash;<center>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="container block-center" style="width: 100%">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-12">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="panel panel-primary">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="panel-heading" id="accordion">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<span class="glyphicon glyphicon-comment"></span> Chat&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="btn-group pull-right">&ndash;&gt;-->
+
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+
+                                                <!--&lt;!&ndash;<div class="panel-footer">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="input-group">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<input ng-model="$parent.content" id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span class="input-group-btn">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<button class="btn btn-warning btn-sm" id="btn-chat" ng-click="sendMessage()">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;Send&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                                <!--&lt;!&ndash;<div class="panel-body">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<ul class="chat">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<li class="clearfix" ng-repeat='message in messages track by $index'>&ndash;&gt;-->
+
+                                                        <!--&lt;!&ndash;<span class="chat-img pull-left">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<img  ng-show="message.from_id!=myId" src="{{pictureUrl}}" alt="User Avatar" class="img-circle" />&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<img  ng-show="message.from_id==myId" src="{{imgUrl}}" alt="User Avatar" class="img-circle" />&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="chat-body clearfix">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="header">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<strong class="primary-font" ng-show="message.from_id==myId"> Me</strong>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<strong class="primary-font" ng-show="message.from_id!=myId"> {{first_name}} {{last_name}}</strong>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<small class="pull-right text-muted">&ndash;&gt;-->
+
+                                                                        <!--&lt;!&ndash;<span class="glyphicon glyphicon-time"></span>{{message.sendate}}&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</small>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;{{message.content}}&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</center>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</chat>&ndash;&gt;-->
+
+
+
+                <!--</div>-->
+
+                <div class="info">
+                    <div class="title">
+                        {{Name}}
+                    </div>
+                    <span class="title">Email: </span><span class="desc">{{Email}}</span><br>
+                    <span class="title">Location: </span><span class="desc">{{location}}</span><br>
+                    <div class="title">Description </div><div class="desc">{{description}}</div>
+                </div>
+
+                <!--<a class="btn btn-primary btn-linkedin btn-sm" href="{{profileUrl}}">-->
+                    <!--Show More In Linked <i class="fa fa-linkedin"></i>-->
+                <!--</a>-->
+                <!---->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

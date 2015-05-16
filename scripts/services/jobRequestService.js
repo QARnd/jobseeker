@@ -75,9 +75,19 @@ angular.module('servicesModule').factory('jobRequestsService', function($http,au
                 data: request
             });
             return postPromise;
+        },
+
+        getSkills: function() {
+            var request = {};
+            request.opcode = "getSkillsRequest";
+            var skillsPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return skillsPromise;
         }
-
-
 
 
     }});

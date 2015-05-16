@@ -179,6 +179,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getJobsHistoryRequest':
                     $this->getJobsHistory();
                     break;
+                case 'getSkillsRequest':
+                    $this->getSkills();
+                    break;
+                case 'viewProviderProfileRequest':
+                    $this->viewProviderProfile();
+                    break;
 
 
 
@@ -516,6 +522,21 @@ class Jobseeker_Form extends Jobseeker_DB {
         print(json_encode($row));
 
     }
+
+    public function viewProviderProfile(){
+        $entity='Entity';
+        $jobprovider_id='jobprovider_id';
+        $jobprovider_id=$GLOBALS['request']->$entity->$jobprovider_id;
+
+        $sql='select * from jobprovider where jobprovider_id='.$jobprovider_id;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $row = $GLOBALS['db']->db_assoc($result);
+
+        print(json_encode($row));
+
+    }
+
     public function add_comment(){
 
         $entity='Entity';
@@ -1202,6 +1223,31 @@ public function sendEmailToP(){
 
         print(json_encode($total));
     }
+
+    public function getSkills(){
+
+
+        $sql='select skills from  jobseekers';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+
+        print(json_encode($total));
+    }
+
+//    public function getSkills(){
+//
+//        $sql='select * from   Synonyms';
+//        $result=$GLOBALS['db']->db_query($sql);
+//        $total=array();
+//        while($row = $GLOBALS['db']->db_assoc($result)){
+//            array_push($total, $row);
+//        }
+//
+//        print(json_encode($total));
+//    }
 
 
 
