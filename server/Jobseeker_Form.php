@@ -185,6 +185,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'updateSkillsRequest':
                     $this->updateSkills();
                     break;
+                case ' providerSearchRequest':
+                    $this-> providerSearch();
+                    break;
 
 
 
@@ -724,6 +727,23 @@ class Jobseeker_Form extends Jobseeker_DB {
         $search=$GLOBALS['request']->$entity->$search;
 
         $sql='select * from jobseekers where first_name LIKE "%' . $search .'%" or last_name LIKE "%' . $search .'%"' ;
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+    }
+
+    public function providerSearch(){
+
+        $entity='Entity';
+        $search='search';
+        $search=$GLOBALS['request']->$entity->$search;
+
+        $sql='select * from  jobprovider where Name LIKE "%'. $search .'%"' ;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
