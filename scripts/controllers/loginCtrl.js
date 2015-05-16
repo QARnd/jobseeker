@@ -21,6 +21,7 @@ angular.module('myApp')
                 var loginProviderPromise = providerRequestService.loginProvider(loginProviderEntity);
 
                 loginProviderPromise.then(function (d) {
+                    //alert(d.data);
 
                     if(d.data!="err")
                     {

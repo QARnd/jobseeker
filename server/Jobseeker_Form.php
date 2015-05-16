@@ -185,6 +185,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'updateSkillsRequest':
                     $this->updateSkills();
                     break;
+                case 'viewProviderProfileRequest':
+                    $this->viewProviderProfile();
+                    break;
+
+
+
 
 
 
@@ -1040,7 +1046,7 @@ public function sendEmailToP(){
         $total=array();
         if (mysql_num_rows($row)==0)
         {
-
+//            $total="err";
         }
         print(json_encode($total));
 
@@ -1234,6 +1240,21 @@ public function sendEmailToP(){
 
 
         print(json_encode($result));
+
+    }
+
+
+
+
+    public function viewProviderProfile(){
+        $entity='Entity';
+        $jobprovider_id='jobprovider_id';
+        $jobprovider_id=$GLOBALS['request']->$entity->$jobprovider_id;
+        $sql='select * from jobprovider where jobprovider_id='.$jobprovider_id;
+        $result=$GLOBALS['db']->db_query($sql);
+        $row = $GLOBALS['db']->db_assoc($result);
+
+        print(json_encode($row));
 
     }
 
