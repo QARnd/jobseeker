@@ -32,7 +32,6 @@ angular.module('servicesModule').factory('searchRequestService', function($http,
             return searchPromise;
         },
 
-
         ProSearchEntity: function (providerSearchEntity) {
             var request = {};
             request.opcode = "providerSearchRequest";

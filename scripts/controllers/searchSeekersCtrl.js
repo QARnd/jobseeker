@@ -54,6 +54,7 @@ angular.module('myApp').controller('searchSeekersCtrl',
                 $scope.searchedProvider = d.data;
 
 
+
             }, function (d) {
                 swal({
                     title: "Error!",
