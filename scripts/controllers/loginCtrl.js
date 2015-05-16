@@ -84,4 +84,39 @@ angular.module('myApp')
             $scope.showPostsModal = !$scope.showPostsModal;
 
         }
+        $scope.showJobsModal = false;
+        $scope.JobToggle = function(){
+            $scope.showJobsModal = !$scope.showJobsModal;
+
+        }
+        $scope.showEventsModal = false;
+        $scope.EventsToggle = function(){
+            $scope.showEventsModal = !$scope.showEventsModal;
+
+        }
+        $scope.showMatchingsModal = false;
+        $scope.MatchingToggle = function(){
+            $scope.showMatchingsModal = !$scope.showMatchingsModal;
+
+        }
+        $scope.showCommunicationModal = false;
+        $scope.CommunicationToggle = function(){
+            $scope.showCommunicationModal = !$scope.showCommunicationModal;
+
+        }
+        $scope.showLinkedinModal = false;
+        $scope.LinkedinToggle = function(){
+            $scope.showLinkedinModal = !$scope.showLinkedinModal;
+
+        }
+        $scope.showAboutModal = false;
+        $scope.AboutToggle = function(){
+            $scope.showAboutModal = !$scope.showAboutModal;
+
+        }
+        $scope.showContactUsModal = false;
+        $scope.ContactUsToggle = function(){
+            $scope.showContactUsModal = !$scope.showContactUsModal;
+
+        }
     });
