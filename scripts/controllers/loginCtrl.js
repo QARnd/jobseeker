@@ -21,6 +21,7 @@ angular.module('myApp')
                 var loginProviderPromise = providerRequestService.loginProvider(loginProviderEntity);
 
                 loginProviderPromise.then(function (d) {
+                    //alert(d.data);
 
                     if(d.data!="err")
                     {
@@ -66,10 +67,14 @@ angular.module('myApp')
         },
 
 
-
         $scope.showModalAccount = false;
         $scope.toggleAccount = function(){
             $scope.showModalAccount = !$scope.showModalAccount;
 
-        };
+        },
+        $scope.showPostsModal = false;
+        $scope.postsToggle = function(){
+            $scope.showPostsModal = !$scope.showPostsModal;
+
+        }
     });

@@ -7,8 +7,10 @@ angular.module('myApp').controller('viewProfileProviderCtrl',
     function($scope,$routeParams, providerProfileEntitiesService, providerProfileRequestService, authenticationService) {
 
         $scope.myId=authenticationService.userProfile.user_id;
-        $scope.pId=$routeParams.id;
+        //alert( $scope.myId);
 
+        $scope.pId=$routeParams.jobProvider;
+        //alert( $scope.pId);
         var profileEntity = providerProfileEntitiesService.profileProviderEntity($scope.pId);
 
         var profilePromise = providerProfileRequestService.viewProviderProfile(profileEntity);

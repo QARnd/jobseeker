@@ -26,10 +26,17 @@
         /* Firefox 29+, IE 8+, Chrome 10+, Safari 5.1+, Opera 9.5+, iOS 5+, Opera Mini Anything, Blackberry 10+, Android 4+ */
         box-sizing: border-box;
     }
-    body {
-        background: url(http://habrastorage.org/files/90a/010/3e8/90a0103e8ec749c4843ffdd8697b10e2.jpg);
+    /*body {*/
+        /*background: url(http://habrastorage.org/files/90a/010/3e8/90a0103e8ec749c4843ffdd8697b10e2.jpg);*/
+        /*text-align: center;*/
+        /*padding-top: 40px;*/
+    /*}*/
+
+    body{
+        background: url(http://mymaplist.com/img/parallax/back.png);
+        background-color: #444;
         text-align: center;
-        padding-top: 40px;
+        background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
     }
     .btn-nav {
         background-color: #fff;
@@ -106,45 +113,122 @@
 </style>
 
 
+        <!--Buttons-->
+<style>
+    body{margin-top:20px;background:#5a5a5a}
+    .ui-group-buttons .or{position:relative;float:left;width:.3em;height:1.3em;z-index:3;font-size:12px}
+    .ui-group-buttons .or:before{position:absolute;top:50%;left:50%;content:'or';background-color:#5a5a5a;margin-top:-.1em;margin-left:-.9em;width:1.8em;height:1.8em;line-height:1.55;color:#fff;font-style:normal;font-weight:400;text-align:center;border-radius:500px;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,0.1);box-shadow:0 0 0 1px rgba(0,0,0,0.1);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
+    .ui-group-buttons .or:after{position:absolute;top:0;left:0;content:' ';width:.3em;height:2.84em;background-color:rgba(0,0,0,0);border-top:.6em solid #5a5a5a;border-bottom:.6em solid #5a5a5a}
+    .ui-group-buttons .or.or-lg{height:1.3em;font-size:16px}
+    .ui-group-buttons .or.or-lg:after{height:2.85em}
+    .ui-group-buttons .or.or-sm{height:1em}
+    .ui-group-buttons .or.or-sm:after{height:2.5em}
+    .ui-group-buttons .or.or-xs{height:.25em}
+    .ui-group-buttons .or.or-xs:after{height:1.84em;z-index:-1000}
+    .ui-group-buttons{display:inline-block;vertical-align:middle}
+    .ui-group-buttons:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .ui-group-buttons .btn{float:left;border-radius:0}
+    .ui-group-buttons .btn:first-child{margin-left:0;border-top-left-radius:.25em;border-bottom-left-radius:.25em;padding-right:15px}
+    .ui-group-buttons .btn:last-child{border-top-right-radius:.25em;border-bottom-right-radius:.25em;padding-left:15px}
+</style>
 
+
+<h1 style="color: #ffffff">We Can Help You :)</h1>
 <div class="container">
     <div class="row">
         <div class="btn-group btn-group-justified">
             <div class="btn-group">
-                <button type="button" class="btn btn-nav" onclick="alert('hii')">
-                    <span class="glyphicon glyphicon-folder-close"></span>
-                    <p>Shopping</p>
-                </button>
-            </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-nav">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                    <p>Calendar</p>
+                <button type="button" class="btn btn-nav" ng-click="postsToggle()">
+                    <span class="glyphicon glyphicon-bell"></span>
+                    <p>Posts NewsFeed</p>
                 </button>
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-nav">
                     <span class="glyphicon glyphicon-globe"></span>
-                    <p>Network</p>
+                    <p>Jobs NewsFeed</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <p>Events</p>
                 </button>
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-nav">
                     <span class="glyphicon glyphicon-leaf"></span>
-                    <p>Ecology</p>
+                    <p>Matching</p>
                 </button>
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-nav">
                     <span class="glyphicon glyphicon-time"></span>
-                    <p>Statistics</p>
+                    <p>Communication</p>
                 </button>
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-nav">
-                    <span class="glyphicon glyphicon-bell"></span>
-                    <p>Events</p>
+                    <span class="glyphicon glyphicon-folder-close"></span>
+                    <p>Linkedin</p>
                 </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!--<div class="ui-group-buttons">-->
+                <!--<a href="http://www.jquery2dotnet.com" class="btn btn-success" role="button"><span class="glyphicon glyphicon-thumbs-up"></span></a>-->
+                <!--<div class="or"></div>-->
+                <!--<a href="http://www.jquery2dotnet.com" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-thumbs-down"></span></a>-->
+            <!--</div>-->
+            <!--<div class="ui-group-buttons">-->
+                <!--<a href="http://www.jquery2dotnet.com" class="btn btn-success" role="button"><span class="glyphicon glyphicon-floppy-disk"></span></a>-->
+                <!--<div class="or"></div>-->
+                <!--<a href="http://www.jquery2dotnet.com" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>-->
+            <!--</div>-->
+            <!--<br />-->
+            <!--<br />-->
+            <!--<div class="ui-group-buttons">-->
+                <!--<a href="http://www.jquery2dotnet.com" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok"></span> Sign Up</a>-->
+                <!--<div class="or"></div>-->
+                <!--<a href="http://www.jquery2dotnet.com" class="btn btn-default" role="button"><span class="glyphicon glyphicon-remove"></span> Reset</a>-->
+            <!--</div>-->
+            <br />
+            <br />
+            <div class="ui-group-buttons">
+                <button type="button" class="btn btn-primary btn-lg"  ng-click="toggle()">Login As Job Provider</button>
+                <div class="or or-lg"></div>
+                <button type="button" class="btn btn-success btn-lg" ng-click="toggleAccount()">Send a Message To Create New JobProvider Account</button>
+            </div>
+            <br />
+            <br />
+            <div class="ui-group-buttons">
+                <button type="button" class="btn btn-primary">About</button>
+                <div class="or"></div>
+                <button type="button" class="button btn btn-success">Contact Us</button>
+            </div>
+            <br />
+            <!--<br />-->
+            <!--<div class="ui-group-buttons">-->
+                <!--<button type="button" class="btn btn-primary btn-sm">Small button</button>-->
+                <!--<div class="or or-sm"></div>-->
+                <!--<button type="button" class="btn btn-success btn-sm">Small button</button>-->
+            <!--</div>-->
+            <!--<br />-->
+            <!--<br />-->
+            <!--<div class="ui-group-buttons">-->
+                <!--<button type="button" class="btn btn-primary btn-xs">Extra small button</button>-->
+                <!--<div class="or or-xs"></div>-->
+                <!--<button type="button" class="btn btn-success btn-xs">Extra small button</button>-->
             </div>
         </div>
     </div>
@@ -174,39 +258,25 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-<p>Sign in with your LinkedIn account?</p>
+<h3 style="color: #ffffff">Sign in with your LinkedIn account?</h3>
 <div style="margin-left:6px; "><script type="in/Login" ></script></div>
 <!--<div class="jumbotron" ng-show="userProfile.data.loggedIn==undefined && !userProfile.data.loggedIn">-->
 
 
 
-<div>
-    <button  class="btn btn-danger btn-sm" rel="publisher" ng-click="toggle()">
-        Login As JobProvider
-    </button>
-</div>
 
 <modal  title="Login As JobProvider" visible="showModal">
     <div class="form-group">
         <div class="form-group">
-            <label >Email address</label>
+            <label >Email Address</label>
             <input type="email" class="form-control"  ng-model="EmailP" placeholder="Enter email" />
         </div>
         <div class="form-group">
-            <label >password</label>
+            <label >Password</label>
             <input type="password" class="form-control" ng-model="passwordP" placeholder="Enter password" />
         </div>
         <button class="btn btn-primary btn-xs fa fa-edit center-block" ng-click="loginProvider(EmailP,passwordP)"> Submit</button>
+
 
 
 
@@ -218,11 +288,7 @@
 
 
 
-<div>
-    <button  class="btn btn-danger btn-sm" rel="publisher" ng-click="toggleAccount()">
-        Send a message to create new JobProvider account
-    </button>
-</div>
+
 
 <modal  title="Send a message to create new JobProvider account" visible="showModalAccount">
     <div class="form-group">
@@ -230,11 +296,11 @@
 
 
         <div class="form-group">
-            <label >Email address</label>
+            <label >Email Address</label>
             <input type="email" class="form-control" ng-model="pEmail"  placeholder="Enter email" />
         </div>
         <div class="form-group">
-            <label >content</label>
+            <label >Content</label>
             <textarea ng-model="content" class="form-control" rows="7" ></textarea>
 
         </div>
@@ -245,5 +311,23 @@
     </div>
 </modal>
 
+
 <!--</div>-->
+
+
+
+
+<modal  title="Posts NewsFeed" visible="showPostsModal">
+    <div class="form-group">
+
+
+
+        <div class="form-group">
+            <p>
+                bla bla bla
+                bla
+            </p>
+        </div>
+    </div>
+</modal>
 
