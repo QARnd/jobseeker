@@ -34,7 +34,26 @@ angular.module('myApp').controller('searchSeekersCtrl',
             searchPromise.then(function (d) {
 
                 console.log(d.data);
-                $rootScope.searchedSeekers = d.data;
+                $scope.searchedSeekers = d.data;
+
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error",
+                    timer: 2000
+                });
+            });
+
+            var providerSearchEntity = searchEntitiesService.providerSearchEntity(search);
+            var providerSearchPromise = searchRequestService.ProSearchEntity(providerSearchEntity);
+
+            providerSearchPromise.then(function (d) {
+
+                console.log(d.data);
+                $scope.searchedProvider = d.data;
+
+
 
             }, function (d) {
                 swal({

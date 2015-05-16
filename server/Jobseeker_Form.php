@@ -1155,8 +1155,7 @@ public function sendEmailToP(){
 
 
     }
-
-
+    
 
     public function getRemindersHistory(){
         $entity='Entity';
@@ -1172,7 +1171,6 @@ public function sendEmailToP(){
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
-
 
         print(json_encode($total));
     }

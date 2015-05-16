@@ -25,7 +25,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/companies/:jobProvider', {templateUrl: 'views/viewProfileJobProvider.html', controller: 'viewProfileProviderCtrl'});
 
-    $routeProvider.when('/jobseekers', {templateUrl: 'views/searchPageView.html', controller: 'searchSeekersCtrl'});
+    $routeProvider.when('/search', {templateUrl: 'views/searchPageView.html', controller: 'searchSeekersCtrl'});
 
     $routeProvider.when('/jobseekers/:id', {templateUrl: 'views/viewProfileView.html', controller: 'viewProfileCtrl'});
 
@@ -39,8 +39,6 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/remindershistory', {templateUrl: 'views/remindersHistory.html', controller: 'reminderHistoryCtrl'});
 
     $routeProvider.when('/notihistory', {templateUrl: 'views/notiHistory.html', controller: 'notiHistoryCtrl'});
-
-
 
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
 
