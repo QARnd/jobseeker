@@ -185,9 +185,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'updateSkillsRequest':
                     $this->updateSkills();
                     break;
-                case ' providerSearchRequest':
-                    $this-> providerSearch();
+                case 'viewProviderProfileRequest':
+                    $this->viewProviderProfile();
                     break;
+
+
+
 
 
 
@@ -737,23 +740,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
-    public function providerSearch(){
-
-        $entity='Entity';
-        $search='search';
-        $search=$GLOBALS['request']->$entity->$search;
-
-        $sql='select * from  jobprovider where Name LIKE "%'. $search .'%"' ;
-        $result=$GLOBALS['db']->db_query($sql);
-
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
-            array_push($total, $row);
-        }
-        print(json_encode($total));
-
-    }
-
     public function addToJobList(){
         $entity='Entity';
         $JobId='jobId';
@@ -1060,7 +1046,7 @@ public function sendEmailToP(){
         $total=array();
         if (mysql_num_rows($row)==0)
         {
-
+//            $total="err";
         }
         print(json_encode($total));
 
@@ -1254,6 +1240,21 @@ public function sendEmailToP(){
 
 
         print(json_encode($result));
+
+    }
+
+
+
+
+    public function viewProviderProfile(){
+        $entity='Entity';
+        $jobprovider_id='jobprovider_id';
+        $jobprovider_id=$GLOBALS['request']->$entity->$jobprovider_id;
+        $sql='select * from jobprovider where jobprovider_id='.$jobprovider_id;
+        $result=$GLOBALS['db']->db_query($sql);
+        $row = $GLOBALS['db']->db_assoc($result);
+
+        print(json_encode($row));
 
     }
 
