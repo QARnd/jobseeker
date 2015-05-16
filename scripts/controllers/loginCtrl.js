@@ -67,10 +67,14 @@ angular.module('myApp')
         },
 
 
-
         $scope.showModalAccount = false;
         $scope.toggleAccount = function(){
             $scope.showModalAccount = !$scope.showModalAccount;
 
-        };
+        },
+        $scope.showPostsModal = false;
+        $scope.postsToggle = function(){
+            $scope.showPostsModal = !$scope.showPostsModal;
+
+        }
     });
