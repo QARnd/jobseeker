@@ -126,6 +126,8 @@
 
 </style>
 
+
+
 <p><button ng-click="showAddPost()" class="btn btn-inverse">Add New Post</button></p>
 <center>
 
@@ -166,7 +168,7 @@
   <div class="row">
 
     <!--Newsfeed-->
-    <div class="col-sm-9">
+    <div class="col-sm-12">
 
 
         <!-- row -->
@@ -229,70 +231,70 @@
     <!--End Newsfeed-->
 
 
-    <div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">
+    <!--<div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">-->
 
-        <div ng-controller="linkedInCtrl" id="newsfeedJobContent">
+        <!--<div ng-controller="linkedInCtrl" id="newsfeedJobContent">-->
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
+            <!--&lt;!&ndash; Main content &ndash;&gt;-->
+            <!--<section class="content">-->
+                <!--<div class="row">-->
 
 
-                    <div class="col-md-12" id="newsfeedJob">
-                        <h1 class="box-title" style="font-family: sans-serif"> My Notifications..</h1>
-                        <!-- general form elements disabled -->
-                        <div class="box box-warning" ng-repeat="notification in jobsNotifications track by $index">
-                            <div class="box-header">
-                                <!--<h1 class="box-title" style="font-family: sans-serif"><a href="#/newsfeedJob/{{job.jobId}}"> {{job.jobTitle}}</a></h1>-->
-                                <div class="box-body">
+                    <!--<div class="col-md-12" id="newsfeedJob">-->
+                        <!--<h1 class="box-title" style="font-family: sans-serif"> My Notifications..</h1>-->
+                        <!--&lt;!&ndash; general form elements disabled &ndash;&gt;-->
+                        <!--<div class="box box-warning" ng-repeat="notification in jobsNotifications track by $index">-->
+                            <!--<div class="box-header">-->
+                                <!--&lt;!&ndash;<h1 class="box-title" style="font-family: sans-serif"><a href="#/newsfeedJob/{{job.jobId}}"> {{job.jobTitle}}</a></h1>&ndash;&gt;-->
+                                <!--<div class="box-body">-->
 
-                                    <div class="form-group">
+                                    <!--<div class="form-group">-->
 
-                                        <div class="timeline-body"  style="white-space: pre-line">
-                                            <h5>{{notification.content}}</h5>
-                                        </div>
-                                        <!--<div>-->
-                                            <!--<h5><b>Requirements:</b> {{job.jobTag | limitTo:25}}... </h5>-->
+                                        <!--<div class="timeline-body"  style="white-space: pre-line">-->
+                                            <!--<h5>{{notification.content}}</h5>-->
                                         <!--</div>-->
-                                        <!--<div>-->
-                                            <!--<h5> <b>Similarity:</b> {{job.similarity}}% </h5>-->
-                                        <!--</div>-->
-                                    </div>
+                                        <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<h5><b>Requirements:</b> {{job.jobTag | limitTo:25}}... </h5>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<h5> <b>Similarity:</b> {{job.similarity}}% </h5>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--</div>-->
 
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                </div>
-            </section>
-        </div>
-
-        <div ng-controller="notificationJobLoadMoreCtrl">
-
-
-
-            <center >
-
-                <button class="center-block btn btn-default" ng-click="loadMoreJobNotification()">Load More..</button>
-
-                <div class="container" id="loadMoreJobNotification">
-                    <!--<div class="spinner"></div>-->
-                    <div class="spinner border"></div>
-                    <!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
-                </div>
-
-                <!--<div class="container" id="loadMoreNotiSpinner">-->
-                <!--<!--<div class="spinner"></div>-->
-                <!--<div class="spinner border"></div>-->
-                <!--<!--<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>-->
                 <!--</div>-->
-            </center>
+            <!--</section>-->
+        <!--</div>-->
 
-        </div>
+        <!--<div ng-controller="notificationJobLoadMoreCtrl">-->
 
-    </div>
+
+
+            <!--<center >-->
+
+                <!--<button class="center-block btn btn-default" ng-click="loadMoreJobNotification()">Load More..</button>-->
+
+                <!--<div class="container" id="loadMoreJobNotification">-->
+                    <!--&lt;!&ndash;<div class="spinner"></div>&ndash;&gt;-->
+                    <!--<div class="spinner border"></div>-->
+                    <!--&lt;!&ndash;<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>&ndash;&gt;-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash;<div class="container" id="loadMoreNotiSpinner">&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<div class="spinner"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="spinner border"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<div class="spinner arrow"><div class="arrow1"></div><div class="arrow2"></div></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</center>-->
+
+        <!--</div>-->
+
+    <!--</div>-->
 
 
     <!--&lt;!&ndash;Notifications&ndash;&gt;-->

@@ -21,20 +21,27 @@ angular.module('myApp')
                 var loginProviderPromise = providerRequestService.loginProvider(loginProviderEntity);
 
                 loginProviderPromise.then(function (d) {
-                    //alert(d.data);
 
-                    if(d.data!="err")
+                    console.log(d.data);
+
+
+                    if(d.data==-1)
                     {
+                        swal({
+                            title: "Error!",
+                            text: "Something went wrong, please try again later",
+                            type: "error",
+                            timer: 5000
+                        });
+                        $location.path("/login");
+                    }
+
+                    else{
+                        authenticationService.userProfile.user_type=2;
                         authenticationService.userProfile.provider_id=d.data.jobprovider_id;
                         authenticationService.userProfile.data= d.data;
                         authenticationService.userLoggedIn.status=true;
                         $location.path("/newsfeedJob");
-
-                    }
-
-                    else{
-                        alert("error");
-                        $location.path("/login");
                     }
                 }, function (d) {
                     swal({
@@ -67,10 +74,14 @@ angular.module('myApp')
         },
 
 
-
         $scope.showModalAccount = false;
         $scope.toggleAccount = function(){
             $scope.showModalAccount = !$scope.showModalAccount;
 
-        };
+        },
+        $scope.showPostsModal = false;
+        $scope.postsToggle = function(){
+            $scope.showPostsModal = !$scope.showPostsModal;
+
+        }
     });

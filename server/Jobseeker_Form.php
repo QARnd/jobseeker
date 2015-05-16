@@ -1043,12 +1043,12 @@ public function sendEmailToP(){
         $sql='select * from jobprovider where Email="'.$EmailP.'" and password="'.$passwordP.'"';
         $result=$GLOBALS['db']->db_query($sql);
         $row = $GLOBALS['db']->db_assoc($result);
-        $total=array();
-        if (mysql_num_rows($row)==0)
+
+        if (mysql_num_rows($result)==0)
         {
-//            $total="err";
+            print(-1);
         }
-        print(json_encode($total));
+        else print(json_encode($row));
 
     }
 

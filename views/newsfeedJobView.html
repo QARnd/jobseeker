@@ -126,10 +126,10 @@
 
 </style>
 
-<p><button ng-click="showAddJob()" class="btn btn-inverse">Add New Job</button></p>
+<p><button ng-click="showAddJob()" class="btn btn-inverse"  ng-show="authenticationService.userProfile.user_type==2">Add New Job</button></p>
 <center>
 
-    <div ng-controller="addJobCtrl" id="addNewJob">
+    <div ng-controller="addJobCtrl" id="addNewJob"  ng-show="authenticationService.userProfile.user_type==2">
         <div class="row">
             <div class="col-md-12">
                 <!-- general form elements disabled -->
@@ -244,7 +244,7 @@
 
 
     <!--Notifications-->
-    <div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">
+    <div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto" ng-show="authenticationService.userProfile.user_type==1">
 
         <div ng-controller="JobsListCtrl" id="newsfeedJobContent">
 

@@ -7,6 +7,9 @@ angular.module('myApp').controller('newsfeedJobCtrl',
     function($rootScope,$scope, jobEntitiesService, jobRequestsService, authenticationService) {
         $('#loadMoreSpinner').hide();
         $('#addNewJob').hide();
+
+        alert(authenticationService.userProfile.user_type);
+
         console.log(authenticationService.userProfile.data);
         $scope.pageScrolls=1;
         $scope.jp_id= authenticationService.userProfile.provider_id;
