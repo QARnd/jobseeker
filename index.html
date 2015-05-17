@@ -91,6 +91,8 @@
         <div>
             <header ng-controller="headerCtrl" ng-include="'views/header.html'"
                     ng-show="userProfile.data.loggedIn"></header>
+            <header ng-include="'views/header2.html'"
+                    ng-show="providerLoggedIn.data.loggedIn"></header>
         </div>
     </div>
 </div>

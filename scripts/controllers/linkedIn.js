@@ -318,7 +318,7 @@ angular.module('myApp').controller('linkedInCtrl',
         };
 
 
-
+        var skillStr="";
         ///get last jobs
         $scope.getLastAddedJobs=function(skillStr){
             //alert(skillStr);
@@ -330,12 +330,13 @@ angular.module('myApp').controller('linkedInCtrl',
             var lastJobsEntity = entitiesService.lastJobsEntity(js_id);
 
             var jobsPromise = linkedinService.getAllJobsFromLastId(lastJobsEntity);
+            var skills ="";
 
             jobsPromise.then(function (d) {
                 var jobs= d.data;
                 //alert(skillStr);
                 skillStr=skillStr.toLowerCase();
-                var skills=skillStr.split(",");
+               skills=skillStr.split(",");
 
                 console.log(skills);
                 var c;
