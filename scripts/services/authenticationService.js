@@ -10,6 +10,7 @@ angular.module('servicesModule').
         return {
             userProfile : {data:"",jobseekerId:"", provider_id:"", user_id:"", full_name:"",providerData:"",user_type:""},
             userLoggedIn : {status:""},
+            providerLoggedIn : {status:""},
             jobs:{lastId:""},
             posts:{},
             deploymentLink:{link:'server/Jobseeker_Form.php'},

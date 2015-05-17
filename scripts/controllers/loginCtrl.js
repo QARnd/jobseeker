@@ -40,7 +40,8 @@ angular.module('myApp')
                         authenticationService.userProfile.user_type=2;
                         authenticationService.userProfile.provider_id=d.data.jobprovider_id;
                         authenticationService.userProfile.data= d.data;
-                        authenticationService.userLoggedIn.status=true;
+
+                        authenticationService.providerLoggedIn.status=true;
                         $location.path("/newsfeedJob");
                     }
                 }, function (d) {
