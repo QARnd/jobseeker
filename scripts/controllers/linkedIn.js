@@ -69,6 +69,19 @@ angular.module('myApp').controller('linkedInCtrl',
                             //console.log(skillsWithSynonyms);
                             //alert(skillsWithSynonyms.length);
 
+
+
+
+                            ///get synonyms
+                            //store in hash
+
+
+
+
+
+
+
+
                             for (var j = 0; j < skillsWithSynonyms.length; j++) {
                                 //alert(skillsWithSynonyms[j]);
                                 var x = skillsWithSynonyms[j];
@@ -118,7 +131,8 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                             }
-                            console.log(skillsWithSynonyms);
+                            alert("amoosha el n3'noosha");
+                            console.log("Esmat");
 
                             skillStr += skillsWithSynonyms[0];
 
@@ -335,7 +349,7 @@ angular.module('myApp').controller('linkedInCtrl',
             jobsPromise.then(function (d) {
                 var jobs= d.data;
                 //alert(skillStr);
-                skillStr=skillStr.toLowerCase();
+               skillStr=skillStr.toLowerCase();
                skills=skillStr.split(",");
 
                 console.log(skills);
