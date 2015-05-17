@@ -57,15 +57,15 @@ angular.module('myApp').controller('linkedInCtrl',
                             //skillsWithSynonyms[0]=skills[0].skill.name.toLowerCase();
                             //skillStr+=skillsWithSynonyms[0];
 
-                            //for (var i = 0; i < skills.length; i++) {
-                            //    skillsWithSynonyms[i] = skills[i].toLowerCase().replace('"','');
-                            //    //skillStr+=","+skillsWithSynonyms[i];
-                            //    //skillsWithSynonyms[i] = skills[i].replace('"','');
-                            //
-                            //    //alert(skillsWithSynonyms[i]);
-                            //    //alert(skillStr);
-                            //
-                            //}
+                            for (var i = 0; i < skills.length; i++) {
+                                skillsWithSynonyms[i] = skills[i].toLowerCase().replace('"','');
+                                //skillStr+=","+skillsWithSynonyms[i];
+                                //skillsWithSynonyms[i] = skills[i].replace('"','');
+
+                                //alert(skillsWithSynonyms[i]);
+                                //alert(skillStr);
+
+                            }
                             //console.log(skillsWithSynonyms);
                             //alert(skillsWithSynonyms.length);
 
@@ -96,10 +96,20 @@ angular.module('myApp').controller('linkedInCtrl',
                                         //alert(synonyms.length);
 
                                         //alert(skillsWithSynonyms.indexOf($scope.terms));
-                                        //console.log(skillsWithSynonyms);
+                                        console.log(skillsWithSynonyms);
 
-                                        if (skillsWithSynonyms.indexOf($scope.terms) == -1) skillsWithSynonyms.push($scope.terms);
-                                        if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1) skillsWithSynonyms.push($scope.termsSynonyms);
+                                        if (skillsWithSynonyms.indexOf($scope.terms) == -1)
+                                        {
+                                            skillsWithSynonyms.push($scope.terms);
+                                            //$scope.getSkillStr(skillsWithSynonyms[i]);
+
+                                        }
+                                        if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1)
+                                        {
+                                            skillsWithSynonyms.push($scope.termsSynonyms);
+                                            //$scope.getSkillStr(skillsWithSynonyms[i]);
+
+                                        }
                                         //alert(skillsWithSynonyms.length);
 
                                     }
@@ -124,7 +134,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                             }
-                            alert(skillStr);
+                            //alert(skillStr);
 
                             //var skills=result.values[0].skills.values;
                             //for(var i=0;i<skills.length;i++){
@@ -142,6 +152,12 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                     };
+
+                    //$scope.getSkillStr=function(synonyms){
+                    //
+                    //    skillStr +=synonyms;
+                    //    alert(skillStr);
+                    //}
 
                     //var skillsWithSynonyms = [];
                     //
