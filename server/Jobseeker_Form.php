@@ -188,7 +188,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'viewProviderProfileRequest':
                     $this->viewProviderProfile();
                     break;
-
+                case 'getSynonymsRequest':
+                    $this->getSynonym();
+                    break;
 
 
 
@@ -1198,17 +1200,17 @@ public function sendEmailToP(){
 
 
     public function getJobsHistory(){
-               $entity='Entity';
-                $js_id='js_id';
-                $js_id=$GLOBALS['request']->$entity->$js_id;
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
 
         //        $sql='select count(*) AS "counts", joblist.jobId, notifications.content, notifications.alertDate from joblist,notifications where notifications.notiToId='.$js_id.'and notifications.notiToId=joblist.jobseekerId order by joblist.jobId DESC limit'. $countNot;
-                $sql='select jobNotification.content,jobNotification.alertDate,jobNotification.jobId from jobNotification where jobNotification.notiToId='.$js_id;
-                $result=$GLOBALS['db']->db_query($sql);
-               $total=array();
-                while($row = $GLOBALS['db']->db_assoc($result)){
-                        array_push($total, $row);
-                    }
+        $sql='select jobNotification.content,jobNotification.alertDate,jobNotification.jobId from jobNotification where jobNotification.notiToId='.$js_id;
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
 
         print(json_encode($total));
     }
@@ -1256,6 +1258,22 @@ public function sendEmailToP(){
 
     }
 
+
+
+    public function getSynonym(){
+
+
+        $sql=' select * from Synonyms';
+        $result=$GLOBALS['db']->db_query($sql);
+//        $row = $GLOBALS['db']->db_assoc($result);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+
+        print(json_encode($total));
+
+    }
 
 
 }
