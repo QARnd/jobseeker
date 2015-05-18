@@ -7,7 +7,7 @@ angular.module('myApp').controller('searchSeekersCtrl',
 
         autoCompletePromise.then(function (d) {
 
-                console.log(d.data.jobseeker_id);
+                //console.log(d.data.jobseeker_id);
                 $rootScope.autoComplete = d.data;
 
             $scope.fullName=[];
@@ -23,7 +23,7 @@ angular.module('myApp').controller('searchSeekersCtrl',
 
 
 
-        })
+        });
 
         $scope.searchForSeekersByName=function(search) {
          var user_type = authenticationService.userProfile.user_type;
@@ -38,9 +38,10 @@ angular.module('myApp').controller('searchSeekersCtrl',
                //var user=d.data;
                // console.log(user.jobseeker_id);
                // if(d.data.jobprovider_id < 1000001){
-                var resultt= d.data.total1;
-                $scope.searchedSeekers = d.data.total1;
-                $scope.searchedProvider = d.data.total2;
+                var result= d.data;
+                console.log(result);
+                $rootScope.searchedSeekers = result.total1;
+                $rootScope.searchedProviders = result.total2;
                // }else{$scope.searchedProvider = d.data;}
 
             }, function (d) {
@@ -71,6 +72,6 @@ angular.module('myApp').controller('searchSeekersCtrl',
             //    });
             //});
         //}
-}
+         }
 
-    });
+        });
