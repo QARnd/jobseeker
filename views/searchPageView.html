@@ -43,16 +43,20 @@
 </style>
 
 
+<div ng-repeat="seeker in searchedSeekers track by $index">
+    1
+    </div>
 
-
-<div class="container">
+<div class="container" ng-controller="searchSeekersCtrl">
     <div class="row">
         <h1>
             Results ..
         </h1>
     </div>
+
+    <h1>Job Seekers</h1>
     <div class="row">
-        <div class="col-sm-3" ng-repeat="seeker in searchedSeekers">
+        <div  class="col-sm-3" ng-repeat="seeker in searchedSeekers track by $index">
             <div class="card">
                 <canvas class="header-bg" width="250" height="70"></canvas>
                 <div class="avatar">
@@ -69,17 +73,18 @@
 
     </div>
 
+    <hr width="80%" size="4px" align="center">
+    <h1>Companies</h1>
 
-    <div class="row">
-        <div class="col-sm-3" ng-repeat="provider in searchedProvider">
+    <div  class="row">
+        <div   class="col-sm-3" ng-repeat="provider in searchedProviders track by $index">
             <div class="card">
                 <canvas class="header-bg" width="250" height="70"></canvas>
 
                 <div class="content">
-                    <p>{{provider.Name}}</p>
+                    <h2>{{provider.Name}}</h2>
                     <p>{{provider.Email}}</p>
-                    <p>{{provider.description}}</p>
-                    <p>{{provider.location}}</p>
+                    <h2>{{provider.location}}</h2>
 
                     <p><a href="#/companies/{{provider.jobprovider_id}}"  class="btn btn-default">Contact</a></p>
                 </div>

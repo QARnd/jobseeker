@@ -110,6 +110,10 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'searchRequest':
                     $this->search();
                     break;
+                case 'providerSearchRequest':
+                    $this->providerSearch();
+                    break;
+
                 case'getAllJobsFromLastIdRequest':
                     $this->getAllJobsFromLastId();
                     break;
@@ -366,12 +370,14 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobDescription=$GLOBALS['request']->$entity->$jobDescription;
         $jobTag='jobTag';
         $jobTag=$GLOBALS['request']->$entity-> $jobTag;
-        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",1000007)';
+        $jp_id='jobProvider';
+        $jp_id=$GLOBALS['request']->$entity->$jp_id;
+        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",'.$jp_id.')';
         $GLOBALS['db']->db_query($sql);
 
 
         $last_id=$GLOBALS['db']->db_insid();
-        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobseeker_id'=>1,'jobTag'=>$jobTag);
+        $newPost = array('jobId'=>$last_id,'jobTitle' => $jobTitle,'jobDescription' => $jobDescription,'publishDate'=>date("Y-m-d H:i:s"), 'jobprovider_id'=>$jp_id,'jobTag'=>$jobTag);
         print (json_encode($newPost));
     }
 
@@ -731,14 +737,26 @@ class Jobseeker_Form extends Jobseeker_DB {
         $search='search';
         $search=$GLOBALS['request']->$entity->$search;
 
-        $sql='select * from jobseekers where first_name LIKE "%' . $search .'%" or last_name LIKE "%' . $search .'%"' ;
-        $result=$GLOBALS['db']->db_query($sql);
+        $sql1='select jobseeker_id,first_name,last_name,Email,pictureUrl,profileUrl from jobseekers where first_name LIKE "%' . $search .'%" or last_name LIKE "%' . $search .'%"' ;
+        $result1=$GLOBALS['db']->db_query($sql1);
 
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
-            array_push($total, $row);
-        }
-        print(json_encode($total));
+        $total1=array();
+
+            while($row1= $GLOBALS['db']->db_assoc($result1)){
+                array_push($total1,$row1);
+            }
+            $sql2='select jobprovider_id,Name,Email,description,location from jobprovider where Name LIKE "%'. $search .'%"' ;
+            $result2=$GLOBALS['db']->db_query($sql2);
+            $total2=array();
+            while($row2 = $GLOBALS['db']->db_assoc($result2)){
+                array_push($total2, $row2);
+            }
+//       $dd= $row1[0];
+//        $new = array('jobseeker_id'=>$dd,'first_name' => $row1[1],'last_name' => $row1[2],'Email'=>$row1[3], 'pictureUrl'=>$row1[4],'profileUrl'=>$row1[5],'jobprovider_id'=>$row2[0],'Name'=>$row2[1],'Email'=>$row2[2],'description'=>$row2[3],'location'=>$row2[4]);
+
+       $new = array('total1'=>$total1,'total2'=>$total2);
+            print(json_encode($new));
+
 
     }
 
@@ -1255,6 +1273,22 @@ public function sendEmailToP(){
         $row = $GLOBALS['db']->db_assoc($result);
 
         print(json_encode($row));
+
+    }
+    public function providerSearch(){
+
+               $entity='Entity';
+                $search='search';
+                $search=$GLOBALS['request']->$entity->$search;
+
+                $sql='select * from  jobprovider where Name LIKE "%'. $search .'%"' ;
+                $result=$GLOBALS['db']->db_query($sql);
+
+                $total=array();
+                while($row = $GLOBALS['db']->db_assoc($result)){
+                        array_push($total, $row);
+                    }
+        print(json_encode($total));
 
     }
 

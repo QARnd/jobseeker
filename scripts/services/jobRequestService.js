@@ -64,6 +64,19 @@ angular.module('servicesModule').factory('jobRequestsService', function($http,au
             });
             return jobPromise;
         },
+        checkValidity:function(checkEntity) {
+            var request = {};
+
+            request.opcode = "checkValidityRequest";
+            request.Entity =checkEntity;
+            var checkPromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return checkPromise;
+        },
         getAllJobsByPageNumber: function(pageScrolls) {
             var request = {};
             request.opcode = "getAllJobsByPageNumberRequest";
