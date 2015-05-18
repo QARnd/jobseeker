@@ -82,57 +82,57 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
 
-                            for (var j = 0; j < skillsWithSynonyms.length; j++) {
-                                //alert(skillsWithSynonyms[j]);
-                                var x = skillsWithSynonyms[j];
-                                var synonymsEntity = entitiesService.synonymsEntity(x);
-                                //alert("synonymsEntity");
+                            //for (var j = 0; j < skillsWithSynonyms.length; j++) {
+                            //    //alert(skillsWithSynonyms[j]);
+                            //    var x = skillsWithSynonyms[j];
+                            //    var synonymsEntity = entitiesService.synonymsEntity(x);
+                            //    //alert("synonymsEntity");
+                            //
+                            //    var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
+                            //    //alert("synonymsPromise");
+                            //
+                            //    synonymsPromise.then(function (d) {
+                            //        var synonyms = d.data;
+                            //        //console.log(synonyms);
+                            //        //$scope.terms = synonyms.term;
+                            //        //$scope.termsSynonyms = synonyms.termSynonyms;
+                            //
+                            //        //console.log($scope.terms);
+                            //        //alert(synonyms.length);
+                            //
+                            //        //alert($scope.term);
+                            //
+                            //        for (var i = 0; i < synonyms.length; i++) {
+                            //            $scope.terms = synonyms[i].term;
+                            //            $scope.termsSynonyms = synonyms[i].termSynonyms;
+                            //            //alert(i);
+                            //            //alert(synonyms.length);
+                            //
+                            //            //alert(skillsWithSynonyms.indexOf($scope.terms));
+                            //            console.log(skillsWithSynonyms);
+                            //
+                            //            if (skillsWithSynonyms.indexOf($scope.terms) == -1)
+                            //            {
+                            //                skillsWithSynonyms.push($scope.terms);
+                            //                //$scope.getSkillStr(skillsWithSynonyms[i]);
+                            //
+                            //            }
+                            //            if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1)
+                            //            {
+                            //                skillsWithSynonyms.push($scope.termsSynonyms);
+                            //                //$scope.getSkillStr(skillsWithSynonyms[i]);
+                            //
+                            //            }
+                            //            //alert(skillsWithSynonyms.length);
+                            //
+                            //        }
+                            //
+                            //    })
 
-                                var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
-                                //alert("synonymsPromise");
 
-                                synonymsPromise.then(function (d) {
-                                    var synonyms = d.data;
-                                    //console.log(synonyms);
-                                    //$scope.terms = synonyms.term;
-                                    //$scope.termsSynonyms = synonyms.termSynonyms;
-
-                                    //console.log($scope.terms);
-                                    //alert(synonyms.length);
-
-                                    //alert($scope.term);
-
-                                    for (var i = 0; i < synonyms.length; i++) {
-                                        $scope.terms = synonyms[i].term;
-                                        $scope.termsSynonyms = synonyms[i].termSynonyms;
-                                        //alert(i);
-                                        //alert(synonyms.length);
-
-                                        //alert(skillsWithSynonyms.indexOf($scope.terms));
-                                        console.log(skillsWithSynonyms);
-
-                                        if (skillsWithSynonyms.indexOf($scope.terms) == -1)
-                                        {
-                                            skillsWithSynonyms.push($scope.terms);
-                                            //$scope.getSkillStr(skillsWithSynonyms[i]);
-
-                                        }
-                                        if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1)
-                                        {
-                                            skillsWithSynonyms.push($scope.termsSynonyms);
-                                            //$scope.getSkillStr(skillsWithSynonyms[i]);
-
-                                        }
-                                        //alert(skillsWithSynonyms.length);
-
-                                    }
-
-                                })
-
-
-                            }
-                            alert("amoosha el n3'noosha");
-                            console.log("Esmat");
+                            //}
+                            //alert("amoosha el n3'noosha");
+                            //console.log("Esmat");
 
                             skillStr += skillsWithSynonyms[0];
 
