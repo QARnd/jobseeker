@@ -148,7 +148,7 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.getSkills = function () {
 
             var js_id = authenticationService.userProfile.user_id;
-            alert(js_id);
+            //alert(js_id);
             //alert($scope.user_id);
             var getSkillsEntity = entitiesService.getSkillsEntity(js_id);
             var skillsPromise =profileRequestService.getSkills(getSkillsEntity);
