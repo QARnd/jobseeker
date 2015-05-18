@@ -59,16 +59,16 @@ angular.module('myApp').controller('addJobCtrl',
 
         $scope.addJob = function () {
                 //alert($scope.title);
-                var jp_id=authenticationService.userProfile.jobseekerId;
-                //var company_name=authenticationService.userProfile.company_name;
+                var jp_id=authenticationService.userProfile.provider_id;
 
+            console.log(jp_id);
             console.log($scope.tags);
             var tags='';
             for(var i=0;i<$scope.tags.length;i++){
                 tags+=$scope.tags[i].text+",";
             }
             //alert(tags);
-           var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescription,tags);
+           var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescription,tags,jp_id);
            alert($scope.jobTitle);
 
            var jobPromise = jobRequestsService.addJob(jobEntity);

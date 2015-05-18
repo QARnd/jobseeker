@@ -7,7 +7,7 @@ angular.module('myApp').controller('searchSeekersCtrl',
 
         autoCompletePromise.then(function (d) {
 
-                console.log(d.data);
+                console.log(d.data.jobseeker_id);
                 $rootScope.autoComplete = d.data;
 
             $scope.fullName=[];
@@ -26,15 +26,22 @@ angular.module('myApp').controller('searchSeekersCtrl',
         })
 
         $scope.searchForSeekersByName=function(search) {
-
+         var user_type = authenticationService.userProfile.user_type;
+            //if(user_type==2){
             var searchEntity = searchEntitiesService.searchEntity(search);
 
             var searchPromise = searchRequestService.searchEntity(searchEntity);
 
             searchPromise.then(function (d) {
 
-                console.log(d.data);
-                $scope.searchedSeekers = d.data;
+
+               //var user=d.data;
+               // console.log(user.jobseeker_id);
+               // if(d.data.jobprovider_id < 1000001){
+                var resultt= d.data.total1;
+                $scope.searchedSeekers = d.data.total1;
+                $scope.searchedProvider = d.data.total2;
+               // }else{$scope.searchedProvider = d.data;}
 
             }, function (d) {
                 swal({
@@ -44,26 +51,26 @@ angular.module('myApp').controller('searchSeekersCtrl',
                     timer: 2000
                 });
             });
-
-            var providerSearchEntity = searchEntitiesService.providerSearchEntity(search);
-            var providerSearchPromise = searchRequestService.ProSearchEntity(providerSearchEntity);
-
-            providerSearchPromise.then(function (d) {
-
-                console.log(d.data);
-                $scope.searchedProvider = d.data;
-
-
-
-            }, function (d) {
-                swal({
-                    title: "Error!",
-                    text: "Something went wrong, please try again later",
-                    type: "error",
-                    timer: 2000
-                });
-            });
-        }
-
+//}else{
+            //var providerSearchEntity = searchEntitiesService.providerSearchEntity(search);
+            //var providerSearchPromise = searchRequestService.ProSearchEntity(providerSearchEntity);
+            //
+            //providerSearchPromise.then(function (d) {
+            //
+            //    console.log(d.data);
+            //    $scope.searchedProvider = d.data;
+            //
+            //
+            //
+            //}, function (d) {
+            //    swal({
+            //        title: "Error!",
+            //        text: "Something went wrong, please try again later",
+            //        type: "error",
+            //        timer: 2000
+            //    });
+            //});
+        //}
+}
 
     });

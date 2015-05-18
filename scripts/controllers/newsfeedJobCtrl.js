@@ -10,7 +10,7 @@ angular.module('myApp').controller('newsfeedJobCtrl',
 
         alert(authenticationService.userProfile.user_type);
 
-        console.log(authenticationService.userProfile.data);
+        console.log(authenticationService.userProfile.provider_id);
         $scope.pageScrolls=1;
         $scope.jp_id= authenticationService.userProfile.provider_id;
 
@@ -125,6 +125,26 @@ angular.module('myApp').controller('newsfeedJobCtrl',
 
         $scope.showAddJob=function(){
             $('#addNewJob').toggle('slow');
+            //var jobprovider_id=authenticationService.userProfile.provider_id;
+            //
+            //var checkEntity = jobEntitiesService.checkValidityEntity(jobprovider_id);
+            //
+            //var providerPromise = jobRequestsService.checkValidity(checkEntity);
+            //
+            //providerPromise.then(function (d) {
+            //    var provider = d.data;
+            //    if(provider=="true"){  $('#addNewJob').toggle('slow');}
+            //
+            //    console.log(provider);
+            //}, function (d) {
+            //    swal({
+            //        title: "Error!",
+            //        text: "Something went wrong, please try again later",
+            //        type: "error",
+            //        timer: 2000
+            //    });
+            //});
+
         }
 
     });

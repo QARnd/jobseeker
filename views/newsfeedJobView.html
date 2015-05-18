@@ -126,10 +126,12 @@
 
 </style>
 
+<p><button ng-click="showAddJob()" class="btn btn-inverse"  ng-hide="authenticationService.userProfile.user_type==1">Add New Job</button></p>
 <p><button ng-click="showAddJob()" class="btn btn-inverse"  ng-show="authenticationService.userProfile.user_type==2">Add New Job</button></p>
+
 <center>
 
-    <div ng-controller="addJobCtrl" id="addNewJob"  ng-show="authenticationService.userProfile.user_type==2">
+    <div ng-controller="addJobCtrl" id="addNewJob" >
         <div class="row">
             <div class="col-md-12">
                 <!-- general form elements disabled -->
