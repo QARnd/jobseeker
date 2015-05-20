@@ -370,9 +370,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobDescription=$GLOBALS['request']->$entity->$jobDescription;
         $jobTag='jobTag';
         $jobTag=$GLOBALS['request']->$entity-> $jobTag;
-        $jp_id='jobProvider';
+        $jp_id='jp_id';
         $jp_id=$GLOBALS['request']->$entity->$jp_id;
-        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",'.$jp_id.')';
+        $sql='insert into job(jobId,jobTitle,jobDescription,jobTag,publishDate,jobProvider) values(NULL,"'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",'.$jp_id.')';
         $GLOBALS['db']->db_query($sql);
 
 
