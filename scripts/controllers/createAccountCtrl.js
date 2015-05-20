@@ -11,6 +11,8 @@ angular.module('myApp').controller('createAccountCtrl',
             var createAccountPromise = providerRequestService.createAccount(accountEntity);
 
             createAccountPromise.then(function (d) {
+            var creatAcount=d.data;
+                console.log(creatAcount);
                 swal({
                     title: "Success!",
                     text: "Company Has been Added!",

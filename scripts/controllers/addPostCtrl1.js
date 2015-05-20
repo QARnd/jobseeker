@@ -2,7 +2,7 @@
 angular.module('myApp').controller('addPostCtrl',
     function($rootScope, $scope, entitiesService, postRequestsService, authenticationService) {
 
-            console.log(authenticationService.userProfile.jobseekerId);
+            console.log(authenticationService.userProfile.provider_id);
 
 
             $scope.addPost = function () {
