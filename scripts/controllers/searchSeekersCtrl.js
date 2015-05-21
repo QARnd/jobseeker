@@ -3,27 +3,27 @@ angular.module('myApp').controller('searchSeekersCtrl',
     function($scope,$rootScope, searchEntitiesService,searchRequestService, authenticationService) {
 
 
-        var autoCompletePromise = searchRequestService.autoComplete();
-
-        autoCompletePromise.then(function (d) {
-
-                //console.log(d.data.jobseeker_id);
-                $rootScope.autoComplete = d.data;
-
-            $scope.fullName=[];
-            //alert($rootScope.autoComplete.length);
-            for(var i= 0; i<$rootScope.autoComplete.length;i++){
-                //alert($rootScope.autoComplete[i].first_name);
-                //$scope.fullName[i]=$rootScope.autoComplete[i].first_name+" "+$rootScope.autoComplete[i].last_name;
-
-            }
+        //var autoCompletePromise = searchRequestService.autoComplete();
+        //
+        //autoCompletePromise.then(function (d) {
+        //
+        //        //console.log(d.data.jobseeker_id);
+        //        $rootScope.autoComplete = d.data;
+        //
+        //    $scope.fullName=[];
+        //    //alert($rootScope.autoComplete.length);
+        //    for(var i= 0; i<$rootScope.autoComplete.length;i++){
+        //        //alert($rootScope.autoComplete[i].first_name);
+        //        //$scope.fullName[i]=$rootScope.autoComplete[i].first_name+" "+$rootScope.autoComplete[i].last_name;
+        //
+        //    }
 
 
             //alert( $scope.fullName);
 
 
 
-        });
+        //});
 
         $scope.searchForSeekersByName=function(search) {
          var user_type = authenticationService.userProfile.user_type;

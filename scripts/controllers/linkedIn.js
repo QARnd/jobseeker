@@ -24,146 +24,146 @@ angular.module('myApp').controller('linkedInCtrl',
                     //}
 
 
-
-                    var skillStr='';
-
-                    $scope.getSkills = function () {
-
-                        var js_id = authenticationService.userProfile.user_id;
-                        //alert(js_id);
-                        //alert($scope.user_id);
-                        var getSkillsEntity = entitiesService.getSkillsEntity(js_id);
-                        var skillsPromise =profileRequestService.getSkills(getSkillsEntity);
-
-                        skillsPromise.then(function (d) {
-                            console.log(d.data);
-                            $scope.mySkills = d.data;
-                            alert($scope.mySkills);
-
-                            //
-                            //$scope.mySkills=$scope.mySkills.toLowerCase();
-                            //var skills=$scope.mySkills.split(",");
-
-
-                            var skillsWithSynonyms = [];
-                            var skills=[];
-
-                            //$scope.mySkills=$scope.mySkills.toLowerCase();
-
-                            skills = $scope.mySkills.split(",");
-
-                            //var skills = result.values[0].skills.values;
-
-                            //skillsWithSynonyms[0]=skills[0].skill.name.toLowerCase();
-                            //skillStr+=skillsWithSynonyms[0];
-
-                            for (var i = 0; i < skills.length; i++) {
-                                skillsWithSynonyms[i] = skills[i].toLowerCase().replace('"','');
-                                //skillStr+=","+skillsWithSynonyms[i];
-                                //skillsWithSynonyms[i] = skills[i].replace('"','');
-
-                                //alert(skillsWithSynonyms[i]);
-                                //alert(skillStr);
-
-                            }
-                            //console.log(skillsWithSynonyms);
-                            //alert(skillsWithSynonyms.length);
-
-
-
-
-                            ///get synonyms
-                            //store in hash
-
-
-
-
-
-
-
-
-                            for (var j = 0; j < skillsWithSynonyms.length; j++) {
-                                //alert(skillsWithSynonyms[j]);
-                                var x = skillsWithSynonyms[j];
-                                var synonymsEntity = entitiesService.synonymsEntity(x);
-                                //alert("synonymsEntity");
-
-                                var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
-                                //alert("synonymsPromise");
-
-                                synonymsPromise.then(function (d) {
-                                    var synonyms = d.data;
-                                    //console.log(synonyms);
-                                    //$scope.terms = synonyms.term;
-                                    //$scope.termsSynonyms = synonyms.termSynonyms;
-
-                                    //console.log($scope.terms);
-                                    //alert(synonyms.length);
-
-                                    //alert($scope.term);
-
-                                    for (var i = 0; i < synonyms.length; i++) {
-                                        $scope.terms = synonyms[i].term;
-                                        $scope.termsSynonyms = synonyms[i].termSynonyms;
-                                        //alert(i);
-                                        //alert(synonyms.length);
-
-                                        //alert(skillsWithSynonyms.indexOf($scope.terms));
-                                        console.log(skillsWithSynonyms);
-
-                                        if (skillsWithSynonyms.indexOf($scope.terms) == -1)
-                                        {
-                                            skillsWithSynonyms.push($scope.terms);
-                                            //$scope.getSkillStr(skillsWithSynonyms[i]);
-
-                                        }
-                                        if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1)
-                                        {
-                                            skillsWithSynonyms.push($scope.termsSynonyms);
-                                            //$scope.getSkillStr(skillsWithSynonyms[i]);
-
-                                        }
-                                        //alert(skillsWithSynonyms.length);
-
-                                    }
-
-                                })
-
-
-                            }
-
-                            skillStr += skillsWithSynonyms[0];
-
-                            //alert(skillsWithSynonyms.length);
-
-                            for (var i = 1; i < skillsWithSynonyms.length; i++) {
-
-                                //alert(skillsWithSynonyms.length);
-                                //alert(skillsWithSynonyms[i]);
-
-                                skillStr += "," + skillsWithSynonyms[i];
-                                //alert(skillStr);
-
-
-                            }
-                            //alert(skillStr);
-
-                            //var skills=result.values[0].skills.values;
-                            //for(var i=0;i<skills.length;i++){
-                            //    skillStr+=skills[i].skill.name+",";
-
-
-
-                            //catch(err){
-                            //    skillStr='';
-                            //}
-
-
-
-                        });
-
-
-                    };
+                    //
+                    //var skillStr='';
+                    //
+                    //$scope.getSkills = function () {
+                    //
+                    //    var js_id = authenticationService.userProfile.user_id;
+                    //    //alert(js_id);
+                    //    //alert($scope.user_id);
+                    //    var getSkillsEntity = entitiesService.getSkillsEntity(js_id);
+                    //    var skillsPromise =profileRequestService.getSkills(getSkillsEntity);
+                    //
+                    //    skillsPromise.then(function (d) {
+                    //        console.log(d.data);
+                    //        $scope.mySkills = d.data;
+                    //        alert($scope.mySkills);
+                    //
+                    //        //
+                    //        //$scope.mySkills=$scope.mySkills.toLowerCase();
+                    //        //var skills=$scope.mySkills.split(",");
+                    //
+                    //
+                    //        var skillsWithSynonyms = [];
+                    //        var skills=[];
+                    //
+                    //        //$scope.mySkills=$scope.mySkills.toLowerCase();
+                    //
+                    //        skills = $scope.mySkills.split(",");
+                    //
+                    //        //var skills = result.values[0].skills.values;
+                    //
+                    //        //skillsWithSynonyms[0]=skills[0].skill.name.toLowerCase();
+                    //        //skillStr+=skillsWithSynonyms[0];
+                    //
+                    //        for (var i = 0; i < skills.length; i++) {
+                    //            skillsWithSynonyms[i] = skills[i].toLowerCase().replace('"','');
+                    //            //skillStr+=","+skillsWithSynonyms[i];
+                    //            //skillsWithSynonyms[i] = skills[i].replace('"','');
+                    //
+                    //            //alert(skillsWithSynonyms[i]);
+                    //            //alert(skillStr);
+                    //
+                    //        }
+                    //        //console.log(skillsWithSynonyms);
+                    //        //alert(skillsWithSynonyms.length);
+                    //
+                    //
+                    //
+                    //
+                    //        ///get synonyms
+                    //        //store in hash
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //        for (var j = 0; j < skillsWithSynonyms.length; j++) {
+                    //            //alert(skillsWithSynonyms[j]);
+                    //            var x = skillsWithSynonyms[j];
+                    //            var synonymsEntity = entitiesService.synonymsEntity(x);
+                    //            //alert("synonymsEntity");
+                    //
+                    //            var synonymsPromise = linkedinService.getSkillsWithSynonyms(synonymsEntity);
+                    //            //alert("synonymsPromise");
+                    //
+                    //            synonymsPromise.then(function (d) {
+                    //                var synonyms = d.data;
+                    //                //console.log(synonyms);
+                    //                //$scope.terms = synonyms.term;
+                    //                //$scope.termsSynonyms = synonyms.termSynonyms;
+                    //
+                    //                //console.log($scope.terms);
+                    //                //alert(synonyms.length);
+                    //
+                    //                //alert($scope.term);
+                    //
+                    //                for (var i = 0; i < synonyms.length; i++) {
+                    //                    $scope.terms = synonyms[i].term;
+                    //                    $scope.termsSynonyms = synonyms[i].termSynonyms;
+                    //                    //alert(i);
+                    //                    //alert(synonyms.length);
+                    //
+                    //                    //alert(skillsWithSynonyms.indexOf($scope.terms));
+                    //                    console.log(skillsWithSynonyms);
+                    //
+                    //                    if (skillsWithSynonyms.indexOf($scope.terms) == -1)
+                    //                    {
+                    //                        skillsWithSynonyms.push($scope.terms);
+                    //                        //$scope.getSkillStr(skillsWithSynonyms[i]);
+                    //
+                    //                    }
+                    //                    if (skillsWithSynonyms.indexOf($scope.termsSynonyms) == -1)
+                    //                    {
+                    //                        skillsWithSynonyms.push($scope.termsSynonyms);
+                    //                        //$scope.getSkillStr(skillsWithSynonyms[i]);
+                    //
+                    //                    }
+                    //                    //alert(skillsWithSynonyms.length);
+                    //
+                    //                }
+                    //
+                    //            })
+                    //
+                    //
+                    //        }
+                    //
+                    //        skillStr += skillsWithSynonyms[0];
+                    //
+                    //        //alert(skillsWithSynonyms.length);
+                    //
+                    //        for (var i = 1; i < skillsWithSynonyms.length; i++) {
+                    //
+                    //            //alert(skillsWithSynonyms.length);
+                    //            //alert(skillsWithSynonyms[i]);
+                    //
+                    //            skillStr += "," + skillsWithSynonyms[i];
+                    //            //alert(skillStr);
+                    //
+                    //
+                    //        }
+                    //        //alert(skillStr);
+                    //
+                    //        //var skills=result.values[0].skills.values;
+                    //        //for(var i=0;i<skills.length;i++){
+                    //        //    skillStr+=skills[i].skill.name+",";
+                    //
+                    //
+                    //
+                    //        //catch(err){
+                    //        //    skillStr='';
+                    //        //}
+                    //
+                    //
+                    //
+                    //    });
+                    //
+                    //
+                    //};
 
 
 
@@ -273,6 +273,7 @@ angular.module('myApp').controller('linkedInCtrl',
                     //    pictureUrl='https://ssl.gstatic.com/accounts/ui/avatar_2x.png';
                     //}
 
+                    var skillStr='';
 
                     $scope.getSkills = function () {
                         var skillStr='';

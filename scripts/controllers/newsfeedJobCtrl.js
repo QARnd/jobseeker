@@ -8,7 +8,7 @@ angular.module('myApp').controller('newsfeedJobCtrl',
         $('#loadMoreSpinner').hide();
         $('#addNewJob').hide();
 
-        alert(authenticationService.userProfile.user_type);
+        //alert(authenticationService.userProfile.user_type);
 
         console.log(authenticationService.userProfile.provider_id);
         $scope.pageScrolls=1;
