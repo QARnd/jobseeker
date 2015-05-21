@@ -38,6 +38,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllPostsRequest':
                     $this->get_posts();
                     break;
+                case 'getAllPostsForMeRequest':
+                    $this->get_postsForMe();
+                    break;
                 case 'getAllPostsByPageNumberRequest':
                     $this->getAllPostsByPageNumber();
                     break;
@@ -1305,6 +1308,23 @@ public function sendEmailToP(){
             array_push($total, $row);
         }
 
+        print(json_encode($total));
+
+    }
+
+
+    public function get_postsForMe(){
+        $entity='Entity';
+        $jobseeker_id='jobseeker_id';
+        $jobseeker_id=$GLOBALS['request']->$entity->$jobseeker_id;
+
+        $sql='select * from posts  where jobseeker_id='.$jobseeker_id.'  desc limit 5';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
         print(json_encode($total));
 
     }

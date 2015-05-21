@@ -104,6 +104,12 @@ angular.module('servicesModule').factory('entitiesService', function() {
             var skills = {};     // new object
             skills.js_id = js_id;
             return skills;
+        },
+
+        getPostForMeEntity: function(js_id) {
+            var post = {};     // new object
+            post.js_id = js_id;
+            return post;
         }
 
 

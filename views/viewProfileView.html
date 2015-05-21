@@ -238,18 +238,6 @@
                     Show More In Linked <i class="fa fa-linkedin"></i>
                 </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
                 <br>
  <span ng-show="user_id==myId" class="bg-green">
                 <div class="form-group" >
@@ -262,6 +250,50 @@
 
                 </span>
                 </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- The time line -->
+                    <div  ng-repeat="post in myposts track by $index">
+                        <ul class="timeline">
+
+                            <!-- timeline time label -->
+                            <li class="time-label">
+                              <span ng-show="post.jobseeker_id==js_id" class="bg-green">
+                                <a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">This Is Me</a>
+                              </span>
+                              <span ng-hide="post.jobseeker_id==js_id" class="bg-blue">
+                                <a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">{{post.fullname}}</a>
+                              </span>
+                            </li>
+                            <!-- /.timeline-label -->
+                            <!-- timeline item -->
+                            <li    >
+                                <i class="fa fa-comment-o bg-blue"></i>
+                                <div class="timeline-item">
+                                    <span class="time"><i class="fa fa-clock-o"></i> {{post.publish_date}}</span>
+                                    <h3 class="timeline-header"><a href="#/newsfeed/{{post.id}}">{{post.title}}</a></h3>
+                                    <div class="timeline-body"  style="white-space: pre-line">
+                                        {{post.body}}
+                                    </div>
+                                    <div class='timeline-footer'>
+                                        <a class="btn btn-primary btn-xs" href="#/newsfeed/{{post.id}}">View Comments</a>
+                                        <a class="btn btn-danger btn-xs" ng-show="post.jobseeker_id==js_id" ng-click="deletePost(post.id)">delete</a>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
+
+                            <li>
+                                <i class="fa fa-clock-o bg-gray"></i>
+                            </li>
+                        </ul>
+                        <div>&nbsp</div>
+                    </div>
+                </div><!-- /.col -->
+            </div>
 
 
 
