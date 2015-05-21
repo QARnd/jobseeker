@@ -57,7 +57,7 @@ angular.module('myApp').controller('addJobCtrl',
 
         };
 
-        $scope.addJob = function () {
+        $rootScope.addJob = function () {
                 //alert($scope.title);
                 var jp_id=authenticationService.userProfile.provider_id;
 
@@ -69,12 +69,13 @@ angular.module('myApp').controller('addJobCtrl',
             }
             //alert(tags);
            var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescription,tags,jp_id);
-           alert($scope.jobTitle);
+
 
            var jobPromise = jobRequestsService.addJob(jobEntity);
 
            jobPromise.then(function (d) {
                 var jobs= d.data;
+               alert(jobs.jobId);
                 $scope.jobId= jobs.jobId;
                 $scope.jobTitle= jobs.jobTitle;
                 $scope.jobDescription= jobs.jobDescription;
