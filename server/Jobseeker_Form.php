@@ -195,6 +195,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getSynonymsRequest':
                     $this->getSynonym();
                     break;
+                case 'sendEventsRequest':
+                    $this->sendEvents();
+                    break;
 
 
 
@@ -703,7 +706,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $to = $email;
-        $subject = "Your New Account @ sho3'ol";
+        $subject = "Your New Account @ kitJobz";
         $txt = "You can enter our system using your email and this password: ".$password;
         $headers = "From: info@sho3'ol.com" . "\r\n" .
             "CC: job@sho3'ol.com";
@@ -712,6 +715,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         //delete from messageProvider
+
     }
 
 
@@ -1306,6 +1310,29 @@ public function sendEmailToP(){
         }
 
         print(json_encode($total));
+
+    }
+
+
+    public function sendEvents(){
+
+
+        $sql=' select * from events where remainderDate="'.date("Y-m-d").'"';
+        $result=$GLOBALS['db']->db_query($sql);
+//        $row = $GLOBALS['db']->db_assoc($result);
+
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            $content=$row["eventTitle"]+$row["eventDetail"];
+            $to="pointer.ptr@gmail.com";
+
+
+            $subject = $row["eventTitle"];
+            $txt = $content;
+            $headers = "From: info@sho3'ol.com" . "\r\n" .
+                "CC: job@sho3'ol.com";
+
+            mail($to,$subject,$txt,$headers);
+        }
 
     }
 
