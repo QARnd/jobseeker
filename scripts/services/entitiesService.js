@@ -110,6 +110,13 @@ angular.module('servicesModule').factory('entitiesService', function() {
             var post = {};     // new object
             post.js_id = js_id;
             return post;
+        },
+        pageProfileScrollEntity: function(pageScrolls,js_id) {
+            var postsProfile = {};     // new object
+        postsProfile.js_id = js_id;
+        postsProfile.pageScrolls = pageScrolls;
+
+            return postsProfile;
         }
 
 

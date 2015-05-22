@@ -147,6 +147,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getFromJobListByPageNumberRequest':
                     $this->getFromJobListByPageNumberRequest();
                     break;
+                case 'getAllPostsProfileByPageNumberRequest':
+                        $this->getAllPostsProfileByPageNumber();
+                        break;
                 case 'sendEmailToPRequest':
                     $this->sendEmailToP();
                     break;
@@ -270,24 +273,50 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function getAllPostsByPageNumber(){
-        $pageScrolls='pageScrolls';
-        $pageScrolls=$GLOBALS['request']->$pageScrolls;
+    public function getAllPostsByPageNumber()
+    {
+        $pageScrolls = 'pageScrolls';
+        $pageScrolls = $GLOBALS['request']->$pageScrolls;
 
-        $pageNum=abs(intval($pageScrolls));
-        $offset=$pageNum*5;
+        $pageNum = abs(intval($pageScrolls));
+        $offset = $pageNum * 5;
 
 
-        $sql='select * from posts order by id desc limit 5 offset '.$offset;
-        $result=$GLOBALS['db']->db_query($sql);
+        $sql = 'select * from posts order by id desc limit 5 offset ' . $offset;
+        $result = $GLOBALS['db']->db_query($sql);
 
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
+        $total = array();
+        while ($row = $GLOBALS['db']->db_assoc($result)) {
             array_push($total, $row);
         }
         print(json_encode($total));
 
+
     }
+
+    public function getAllPostsProfileByPageNumberRequest()
+    {
+        $pageScrolls = 'pageScrolls';
+        $pageScrolls = $GLOBALS['request']->$pageScrolls;
+
+        $js_id = '$js_id';
+        $js_id = $GLOBALS['request']->$js_id;
+        $pageNum = abs(intval($pageScrolls));
+        $offset = $pageNum * 5;
+
+
+        $sql = 'select * from posts where jobseeker_id='. $js_id.'order by id desc limit 5 offset ' . $offset;
+        $result = $GLOBALS['db']->db_query($sql);
+
+        $total = array();
+        while ($row = $GLOBALS['db']->db_assoc($result)) {
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+
+    }
+
 
     public function getAllJobsByPageNumber(){
         $pageScrolls='pageScrolls';

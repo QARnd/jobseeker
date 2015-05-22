@@ -3,11 +3,13 @@
  */
 
 angular.module('myApp').controller('viewProfileCtrl',
-    function($scope,$routeParams, entitiesService, profileRequestService, authenticationService) {
+    function($scope,$routeParams,$rootScope, entitiesService, profileRequestService,postRequestsService, authenticationService) {
 
         $scope.imgUrl=authenticationService.userProfile.data.pictureUrl;
         $scope.myId=authenticationService.userProfile.user_id;
         $scope.user_id=$routeParams.id;
+        $scope.pageScrolls=1;
+        $('#loadMore1').hide();
 
         var profileEntity = entitiesService.profileEntity($scope.user_id);
 
@@ -181,6 +183,34 @@ angular.module('myApp').controller('viewProfileCtrl',
         }
         $scope.getPosts();
 
+
+
+
+        $scope.loadMoreProfilePost=function(){
+            //alert("load");
+            $('#loadMore1').show();
+
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            var js_id = authenticationService.userProfile.user_id;
+            var scrollEntity = entitiesService.pageProfileScrollEntity($scope.pageScrolls,js_id);
+            var postForMePromise = postRequestsService.getAllPostsProfileByPageNumber(scrollEntity);
+
+            postForMePromise.then(function (d) {
+                console.log(d);
+                $('#loadMore1').hide();
+                $scope.pageScrolls=$scope.pageScrolls+1;
+                $rootScope.postsProfile= $rootScope.postsProfile.concat(d.data);
+
+                //$(window).bind('scroll', bindScroll);
+
+            }, function (d) {
+                swal({
+                    title: "Error!",
+                    text: "Something went wrong, please try again later",
+                    type: "error"
+                });
+            });
+        };
     });
 
 
