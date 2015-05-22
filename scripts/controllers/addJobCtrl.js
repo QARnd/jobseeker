@@ -8,32 +8,32 @@ angular.module('myApp').controller('addJobCtrl',
 
         var tagsPromise = jobRequestsService.getSkills();
 
-        tagsPromise.then(function (d) {
-            $scope.skills = d;
-            console.log($scope.skills);
-            //alert($scope.skills.length);
-
-            for (var i = 0; i < $scope.skills.length; i++) {
-                alert( $scope.skills[i]);
-                //console.log($scope.skills[i]);
-
-
-                var skillsArray = $scope.skills[i].toLowerCase();
-                skillsArray = skillsArray.split(",");
-
-
-                for (var i = 0; i < skillsArray.length; i++) {
-                    alert(skillsArray.length);
-
-                    if ($scope.allTags.indexOf(skillsArray[i]) == -1) $scope.allTags.push(skillsArray[i]);
-
-                    console.log($scope.allTags[i]);
-                }
-            }
-
-            //console.log(skillsArray);
-
-        });
+        //tagsPromise.then(function (d) {
+        //    $scope.skills = d;
+        //    console.log($scope.skills);
+        //    //alert($scope.skills.length);
+        //
+        //    for (var i = 0; i < $scope.skills.length; i++) {
+        //        alert( $scope.skills[i]);
+        //        //console.log($scope.skills[i]);
+        //
+        //
+        //        var skillsArray = $scope.skills[i].toLowerCase();
+        //        skillsArray = skillsArray.split(",");
+        //
+        //
+        //        for (var i = 0; i < skillsArray.length; i++) {
+        //            alert(skillsArray.length);
+        //
+        //            if ($scope.allTags.indexOf(skillsArray[i]) == -1) $scope.allTags.push(skillsArray[i]);
+        //
+        //            console.log($scope.allTags[i]);
+        //        }
+        //    }
+        //
+        //    //console.log(skillsArray);
+        //
+        //});
 
 
 
@@ -58,7 +58,7 @@ angular.module('myApp').controller('addJobCtrl',
 
         };
 
-        $scope.addJob = function () {
+        $rootScope.addJob = function () {
                 //alert($scope.title);
                 var jp_id=authenticationService.userProfile.provider_id;
 
@@ -70,12 +70,13 @@ angular.module('myApp').controller('addJobCtrl',
             }
             //alert(tags);
            var jobEntity = jobEntitiesService.jobEntity($scope.jobTitle,$scope.jobDescription,tags,jp_id);
-           alert($scope.jobTitle);
+
 
            var jobPromise = jobRequestsService.addJob(jobEntity);
 
            jobPromise.then(function (d) {
                 var jobs= d.data;
+               alert(jobs.jobId);
                 $scope.jobId= jobs.jobId;
                 $scope.jobTitle= jobs.jobTitle;
                 $scope.jobDescription= jobs.jobDescription;

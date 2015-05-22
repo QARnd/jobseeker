@@ -1,5 +1,8 @@
 
+<input style="top: 0px;" type="button" value="Send Events" ng-click="send_events()">
+
 <div ng-controller="messageJobProviderCtrl" class="row">
+
     <div  ng-init="getMessages()" class="col-md-12">
         <!-- The time line -->
         <div  ng-repeat="message in providerMessages track by $index">
