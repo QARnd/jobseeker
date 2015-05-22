@@ -126,8 +126,8 @@
 
 </style>
 
-<p><button ng-click="showAddJob()" class="btn btn-inverse"  ng-hide="authenticationService.userProfile.user_type==1">Add New Job</button></p>
-<!--<p><button ng-click="showAddJob()" class="btn btn-inverse"  ng-show="authenticationService.userProfile.user_type==2">Add New Job</button></p>-->
+
+<p><button ng-click="showAddJob()" class="btn btn-inverse"  ng-show="check()==2">Add New Job</button></p>
 
 <center>
 
@@ -161,7 +161,7 @@
                         </tags-input>
 
                         <div class="box-footer">
-                            <button class="btn btn-primary" ng-click="addJob()">Add Job</button>
+                            <button class="btn btn-primary" ng-click="addJob()" >Add Job</button>
                         </div>
 
                     </div>
@@ -246,7 +246,8 @@
 
 
     <!--Notifications-->
-    <div class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">
+
+        <div   ng-show="check()==1" class="col-sm-3" style="position:fixed; right: -2px; height:500px; overflow-x:auto">
 
         <div ng-controller="JobsListCtrl" id="newsfeedJobContent">
 

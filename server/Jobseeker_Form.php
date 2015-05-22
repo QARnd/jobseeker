@@ -373,9 +373,9 @@ class Jobseeker_Form extends Jobseeker_DB {
         $jobDescription=$GLOBALS['request']->$entity->$jobDescription;
         $jobTag='jobTag';
         $jobTag=$GLOBALS['request']->$entity-> $jobTag;
-        $jp_id='jobProvider';
+        $jp_id='jp_id';
         $jp_id=$GLOBALS['request']->$entity->$jp_id;
-        $sql='insert into job(jobTitle,jobDescription,jobTag,publishDate,jobProvider) values("'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",'.$jp_id.')';
+        $sql='insert into job(jobId,jobTitle,jobDescription,jobTag,publishDate,jobProvider) values(NULL,"'.$jobTitle.'","'.$jobDescription.'","'.$jobTag.'","'.date("Y-m-d H:i:s").'",'.$jp_id.')';
         $GLOBALS['db']->db_query($sql);
 
 
@@ -1315,10 +1315,10 @@ public function sendEmailToP(){
 
     public function get_postsForMe(){
         $entity='Entity';
-        $jobseeker_id='jobseeker_id';
-        $jobseeker_id=$GLOBALS['request']->$entity->$jobseeker_id;
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
 
-        $sql='select * from posts  where jobseeker_id='.$jobseeker_id.'  desc limit 5';
+        $sql='select * from posts  where jobseeker_id='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();
