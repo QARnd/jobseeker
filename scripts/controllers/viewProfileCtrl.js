@@ -6,7 +6,7 @@
 
 
 angular.module('myApp').controller('viewProfileCtrl',
-    function($scope,$routeParams, entitiesService, profileRequestService, authenticationService) {
+    function($scope,$routeParams, entitiesService, profileRequestService, authenticationService,$rootscope) {
 
         $scope.imgUrl=authenticationService.userProfile.data.pictureUrl;
         $scope.myId=authenticationService.userProfile.user_id;
@@ -112,7 +112,7 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.getMessages = function () {
 
             var from_id = authenticationService.userProfile.user_id;
-            //alert(from_id);
+            alert(from_id);
             //alert($scope.user_id);
             var messageEntity = entitiesService.getMessagesEntity(from_id,$scope.user_id);
             var messagePromise =profileRequestService.getMessages(messageEntity);
@@ -161,6 +161,22 @@ angular.module('myApp').controller('viewProfileCtrl',
         };
 
         $scope.getSkills();
+
+
+            var js_id = authenticationService.userProfile.user_id;
+            alert(js_id);
+            //alert($scope.user_id);
+            var getPostForMeEntity = entitiesService.getPostForMeEntity(js_id);
+            var postsPromise =profileRequestService.getPostForMe(getPostForMeEntity);
+
+            postsPromise.then(function (d) {
+                console.log(d.data);
+               $scope.myposts= d.data;
+            });
+
+
+
+
 
     });
 

@@ -38,6 +38,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllPostsRequest':
                     $this->get_posts();
                     break;
+                case 'getAllPostsForMeRequest':
+                    $this->get_postsForMe();
+                    break;
                 case 'getAllPostsByPageNumberRequest':
                     $this->getAllPostsByPageNumber();
                     break;
@@ -195,15 +198,6 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getSynonymsRequest':
                     $this->getSynonym();
                     break;
-                case 'sendEventsRequest':
-                    $this->sendEvents();
-                    break;
-                case 'getAppliedRequest':
-                    $this->getJobsApplier();
-                    break;
-
-
-
 
 
 
@@ -712,7 +706,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $to = $email;
-        $subject = "Your New Account @ kitJobz";
+        $subject = "Your New Account @ sho3'ol";
         $txt = "You can enter our system using your email and this password: ".$password;
         $headers = "From: info@sho3'ol.com" . "\r\n" .
             "CC: job@sho3'ol.com";
@@ -721,7 +715,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         //delete from messageProvider
-
     }
 
 
@@ -817,7 +810,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
                 mail($to,$subject,$txt,$headers);
 
-            $sql3='insert into appliesJob values(NULL,'.$JobId.','.$providerId.','.$js_id.','.$similarity.','.$profileUrl.')';
+            $sql3='insert into appliesJob values(NULL,'.$JobId.','.$providerId.','.$js_id.')';
             $GLOBALS['db']->db_query($sql3);
            // print (json_encode("done"));
 
@@ -1320,55 +1313,20 @@ public function sendEmailToP(){
     }
 
 
-    public function sendEvents(){
-
-
-        $sql=' select * from events where remainderDate="'.date("Y-m-d").'"';
-        $result=$GLOBALS['db']->db_query($sql);
-//        $row = $GLOBALS['db']->db_assoc($result);
-
-        while($row = $GLOBALS['db']->db_assoc($result)){
-            $content=$row["eventTitle"]+$row["eventDetail"];
-            $to="pointer.ptr@gmail.com";
-
-
-            $subject = $row["eventTitle"];
-            $txt = $content;
-            $headers = "From: info@sho3'ol.com" . "\r\n" .
-                "CC: job@sho3'ol.com";
-
-            mail($to,$subject,$txt,$headers);
-        }
-
-    }
-
-
-    public function getJobsApplier(){
+    public function get_postsForMe(){
         $entity='Entity';
-        $jp_id='js_id';
-        $jp_id=$GLOBALS['request']->$entity->$jp_id;
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
 
-        $lastSeenApplier='select lastSeenApplier from jobprovider where jobprovider_id='.$jp_id;
-        $idResult=$GLOBALS['db']->db_query($lastSeenApplier);
-        $row = $GLOBALS['db']->db_assoc($idResult);
-        $lastSeenApplier=$row['lastSeenApplier'];
-
-        $sql='select  appliesJob.jobId, joblist.similarity from appliesJob,joblist where jobNotification.notiToId='.$jp_id.' and appliesJob.jobseeker_id=joblist.jobseekerId and appliesJob.appliesJobId>'.$lastSeenApplier.' order by appliesJob.appliesJobId desc';
+        $sql='select * from posts  where jobseeker_id='.$js_id;
         $result=$GLOBALS['db']->db_query($sql);
+
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
-
-        $lastSeenApplier='select appliesJobId from appliesJob order by appliesJobId DESC limit 1 ';
-        $resultLastId=$GLOBALS['db']->db_query($lastSeenApplier);
-        $row = $GLOBALS['db']->db_assoc($resultLastId);
-        $lastSeenApplier=$row['appliesJobId'];
-
-        $updateSql= 'update jobprovider set lastSeenApplier='.$lastSeenApplier.' where 	jobprovider_id='.$jp_id;
-        $GLOBALS['db']->db_query($updateSql);
-
         print(json_encode($total));
+
     }
 
 
