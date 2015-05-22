@@ -9,7 +9,7 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.myId=authenticationService.userProfile.user_id;
         $scope.user_id=$routeParams.id;
         $scope.pageScrolls=1;
-        $('#loadMore1').hide();
+        $('#loadMoreProfilePosts').hide();
 
         var profileEntity = entitiesService.profileEntity($scope.user_id);
 
@@ -167,8 +167,8 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.getPosts = function () {
 
 
-            var js_id = authenticationService.userProfile.user_id;
-            //alert(js_id);
+            var js_id = $routeParams.id;
+            alert(js_id);
             //alert($scope.user_id);
             var getPostForMeEntity = entitiesService.getPostForMeEntity(js_id);
             var postsPromise = profileRequestService.getPostForMe(getPostForMeEntity);
@@ -188,16 +188,18 @@ angular.module('myApp').controller('viewProfileCtrl',
 
         $scope.loadMoreProfilePost=function(){
             //alert("load");
-            $('#loadMore1').show();
+            $('#loadMoreProfilePosts').show();
 
-            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
-            var js_id = authenticationService.userProfile.user_id;
+            //$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            var js_id =$routeParams.id;
+            //alert(js_id);
             var scrollEntity = entitiesService.pageProfileScrollEntity($scope.pageScrolls,js_id);
+            //alert($scope.pageScrolls);
             var postForMePromise = postRequestsService.getAllPostsProfileByPageNumber(scrollEntity);
 
             postForMePromise.then(function (d) {
                 console.log(d);
-                $('#loadMore1').hide();
+                $('#loadMoreProfilePosts').hide();
                 $scope.pageScrolls=$scope.pageScrolls+1;
                 $rootScope.postsProfile= $rootScope.postsProfile.concat(d.data);
 
@@ -211,6 +213,7 @@ angular.module('myApp').controller('viewProfileCtrl',
                 });
             });
         };
+
     });
 
 

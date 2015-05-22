@@ -294,13 +294,14 @@ class Jobseeker_Form extends Jobseeker_DB {
 
     }
 
-    public function getAllPostsProfileByPageNumberRequest()
+    public function getAllPostsProfileByPageNumber()
     {
+        $entity='Entity';
         $pageScrolls = 'pageScrolls';
-        $pageScrolls = $GLOBALS['request']->$pageScrolls;
+        $pageScrolls = $GLOBALS['request']->$entity->$pageScrolls;
 
         $js_id = '$js_id';
-        $js_id = $GLOBALS['request']->$js_id;
+        $js_id = $GLOBALS['request']->$entity->$js_id;
         $pageNum = abs(intval($pageScrolls));
         $offset = $pageNum * 5;
 
