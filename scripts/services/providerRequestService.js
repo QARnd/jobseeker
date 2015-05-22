@@ -7,48 +7,48 @@ angular.module('servicesModule').factory('providerRequestService', function($htt
     return {
 
 
-        sendMessageForP:function(sendEmailToPEntity) {
-    var request = {};
-    request.opcode = "sendEmailToPRequest";
-    request.Entity =sendEmailToPEntity;
-    var sendEmailToPPromise=$http({
-        method : 'POST',
-        url : authenticationService.deploymentLink.link,
-        //url: 'server/Jobseeker_Form.php',
-        data: request
-    });
-    return sendEmailToPPromise;
-},
-        createAccount: function(accountEntity) {
+        sendMessageForP: function (sendEmailToPEntity) {
+            var request = {};
+            request.opcode = "sendEmailToPRequest";
+            request.Entity = sendEmailToPEntity;
+            var sendEmailToPPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return sendEmailToPPromise;
+        },
+        createAccount: function (accountEntity) {
             var request = {};
             request.opcode = "createAccountRequest";
-            request.Entity =accountEntity;
-            var createAccountPromise=$http({
-                method : 'POST',
-                url : authenticationService.deploymentLink.link,
+            request.Entity = accountEntity;
+            var createAccountPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
             return createAccountPromise;
         },
-        getAllMessages:function() {
+        getAllMessages: function () {
             var request = {};
             request.opcode = "getAllMessagesFromPRequest";
-            var getAllMessagesPromise=$http({
-                method : 'POST',
-                url : authenticationService.deploymentLink.link,
+            var getAllMessagesPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
             return getAllMessagesPromise;
         },
-        loginProvider:function(loginProviderEntity) {
+        loginProvider: function (loginProviderEntity) {
             var request = {};
-            request.Entity=loginProviderEntity;
+            request.Entity = loginProviderEntity;
             request.opcode = "loginProviderRequest";
-            var loginProviderPromise=$http({
-                method : 'POST',
-                url : authenticationService.deploymentLink.link,
+            var loginProviderPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
@@ -56,18 +56,32 @@ angular.module('servicesModule').factory('providerRequestService', function($htt
         },
 
 
-        deleteMessage:function(deleteMessageEntity) {
+        deleteMessage: function (deleteMessageEntity) {
             var request = {};
             request.opcode = "deleteMessageFromProRequest";
-            request.Entity =deleteMessageEntity;
-            var deleteMessagePromise=$http({
-                method : 'POST',
-                url : authenticationService.deploymentLink.link,
+            request.Entity = deleteMessageEntity;
+            var deleteMessagePromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
                 //url: 'server/Jobseeker_Form.php',
                 data: request
             });
             return deleteMessagePromise;
-        }
+        },
 
+
+        getAppliers: function (appliedEntity) {
+            var request = {};
+            request.opcode = "getAppliedRequest";
+            request.Entity = appliedEntity;
+            var appliedPromise = $http({
+                method: 'POST',
+                url: authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return appliedPromise;
+
+        }
     }
 });

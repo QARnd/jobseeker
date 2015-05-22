@@ -367,6 +367,7 @@ angular.module('myApp').controller('linkedInCtrl',
                             for(var i=0;i<$scope.synonyms.length;i++){
                                 var key=$scope.synonyms[i].term,value=$scope.synonyms[i].termSynonyms;
                                 //alert(key+" "+value);
+                                //alert(synonymsHash[key]);
 
                                 if(synonymsHash["key"] != undefined )
                                     synonymsHash[key]=synonymsHash[key]+","+value;

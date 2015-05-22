@@ -97,7 +97,7 @@
 <link href="dist/css/profile.css" rel="stylesheet">
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
+<div class="container" ng-controller="viewProfileCtrl">
     <div class="row">
         <div class="col-lg-12">
 
@@ -225,7 +225,7 @@
 
                 </div>
 
-                <div class="info">
+                <div class="info" ng-controller="viewProfileCtrl">
                     <div class="title">
                         <a href="{{profileUrl}}">{{first_name}} {{last_name}}</a>
                     </div>
@@ -251,21 +251,24 @@
                 </span>
                 </div>
 
+
             <div class="row">
                 <div class="col-md-12">
+
+                    <span class="title"><font size="6">Posts:</font> </span><br>
                     <!-- The time line -->
                     <div  ng-repeat="post in myposts track by $index">
                         <ul class="timeline">
 
-                            <!-- timeline time label -->
-                            <li class="time-label">
-                              <span ng-show="post.jobseeker_id==js_id" class="bg-green">
-                                <a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">This Is Me</a>
-                              </span>
-                              <span ng-hide="post.jobseeker_id==js_id" class="bg-blue">
-                                <a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">{{post.fullname}}</a>
-                              </span>
-                            </li>
+                            <!--&lt;!&ndash; timeline time label &ndash;&gt;-->
+                            <!--<li class="time-label">-->
+                              <!--<span ng-show="post.jobseeker_id==js_id" class="bg-green">-->
+                                <!--<a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">This Is Me</a>-->
+                              <!--</span>-->
+                              <!--<span ng-hide="post.jobseeker_id==js_id" class="bg-blue">-->
+                                <!--<a href="#/jobseekers/{{post.jobseeker_id}}" style="color: white">{{post.fullname}}</a>-->
+                              <!--</span>-->
+                            <!--</li>-->
                             <!-- /.timeline-label -->
                             <!-- timeline item -->
                             <li    >
