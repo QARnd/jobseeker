@@ -198,6 +198,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'sendEventsRequest':
                     $this->sendEvents();
                     break;
+                case 'getAppliedRequest':
+                    $this->getJobsApplier();
+                    break;
+
+
+
 
 
 
@@ -811,7 +817,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
                 mail($to,$subject,$txt,$headers);
 
-            $sql3='insert into appliesJob values(NULL,'.$JobId.','.$providerId.','.$js_id.')';
+            $sql3='insert into appliesJob values(NULL,'.$JobId.','.$providerId.','.$js_id.','.$similarity.','.$profileUrl.')';
             $GLOBALS['db']->db_query($sql3);
            // print (json_encode("done"));
 
@@ -1334,6 +1340,35 @@ public function sendEmailToP(){
             mail($to,$subject,$txt,$headers);
         }
 
+    }
+
+
+    public function getJobsApplier(){
+        $entity='Entity';
+        $jp_id='js_id';
+        $jp_id=$GLOBALS['request']->$entity->$jp_id;
+
+        $lastSeenApplier='select lastSeenApplier from jobprovider where jobprovider_id='.$jp_id;
+        $idResult=$GLOBALS['db']->db_query($lastSeenApplier);
+        $row = $GLOBALS['db']->db_assoc($idResult);
+        $lastSeenApplier=$row['lastSeenApplier'];
+
+        $sql='select  appliesJob.jobId, joblist.similarity from appliesJob,joblist where jobNotification.notiToId='.$jp_id.' and appliesJob.jobseeker_id=joblist.jobseekerId and appliesJob.appliesJobId>'.$lastSeenApplier.' order by appliesJob.appliesJobId desc';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+
+        $lastSeenApplier='select appliesJobId from appliesJob order by appliesJobId DESC limit 1 ';
+        $resultLastId=$GLOBALS['db']->db_query($lastSeenApplier);
+        $row = $GLOBALS['db']->db_assoc($resultLastId);
+        $lastSeenApplier=$row['appliesJobId'];
+
+        $updateSql= 'update jobprovider set lastSeenApplier='.$lastSeenApplier.' where 	jobprovider_id='.$jp_id;
+        $GLOBALS['db']->db_query($updateSql);
+
+        print(json_encode($total));
     }
 
 
