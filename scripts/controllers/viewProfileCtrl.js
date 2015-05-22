@@ -2,54 +2,51 @@
  * Created by rana on 3/17/2015.
  */
 
-
-
-
 angular.module('myApp').controller('viewProfileCtrl',
-    function($scope,$routeParams, entitiesService, profileRequestService, authenticationService,$rootscope) {
+    function($scope,$routeParams, entitiesService, profileRequestService, authenticationService) {
 
         $scope.imgUrl=authenticationService.userProfile.data.pictureUrl;
         $scope.myId=authenticationService.userProfile.user_id;
         $scope.user_id=$routeParams.id;
 
-            var profileEntity = entitiesService.profileEntity($scope.user_id);
+        var profileEntity = entitiesService.profileEntity($scope.user_id);
 
-            var profilePromise = profileRequestService.viewProfile(profileEntity);
+        var profilePromise = profileRequestService.viewProfile(profileEntity);
 
-            profilePromise.then(function (d) {
+        profilePromise.then(function (d) {
 
-                console.log(d);
-                var profile= d.data;
-                $scope.jobSeekerId= profile.jobSeekerId;
-                $scope.first_name= profile.first_name;
-                $scope.last_name= profile.last_name;
-                $scope.Email= profile.Email;
-                $scope.profileUrl= profile.profileUrl;
-                $scope.pictureUrl= profile.pictureUrl;
-                $scope.summary= profile.summary;
-                $scope.location= profile.location;
-                $scope.industry= profile.industry;
-                $scope.educations="";
-                try{
-                    $scope.educations= profile.educations.split(',');
-                }catch(err){
+            console.log(d);
+            var profile= d.data;
+            $scope.jobSeekerId= profile.jobSeekerId;
+            $scope.first_name= profile.first_name;
+            $scope.last_name= profile.last_name;
+            $scope.Email= profile.Email;
+            $scope.profileUrl= profile.profileUrl;
+            $scope.pictureUrl= profile.pictureUrl;
+            $scope.summary= profile.summary;
+            $scope.location= profile.location;
+            $scope.industry= profile.industry;
+            $scope.educations="";
+            try{
+                $scope.educations= profile.educations.split(',');
+            }catch(err){
 
-                }
-                $scope.skills="";
-                try{
-                    $scope.skills=profile.skills.split(',');
-                }catch(err){
+            }
+            $scope.skills="";
+            try{
+                $scope.skills=profile.skills.split(',');
+            }catch(err){
 
-                }
+            }
 
-            }, function (d) {
-                swal({
-                    title: "Error!",
-                    text: "Something went wrong, please try again later",
-                    type: "error",
-                    timer: 2000
-                });
+        }, function (d) {
+            swal({
+                title: "Error!",
+                text: "Something went wrong, please try again later",
+                type: "error",
+                timer: 2000
             });
+        });
 
 
 
@@ -112,7 +109,7 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.getMessages = function () {
 
             var from_id = authenticationService.userProfile.user_id;
-            alert(from_id);
+            //alert(from_id);
             //alert($scope.user_id);
             var messageEntity = entitiesService.getMessagesEntity(from_id,$scope.user_id);
             var messagePromise =profileRequestService.getMessages(messageEntity);
@@ -128,7 +125,7 @@ angular.module('myApp').controller('viewProfileCtrl',
 
             var js_id = authenticationService.userProfile.user_id;
             var mySkills=$scope.mySkills;
-            alert(js_id);
+            //alert(js_id);
             //alert($scope.user_id);
             var updateSkillsEntity = entitiesService.updateSkillsEntity(js_id,mySkills);
             var skillsPromise =profileRequestService.updateSkills(updateSkillsEntity);
@@ -163,21 +160,28 @@ angular.module('myApp').controller('viewProfileCtrl',
         $scope.getSkills();
 
 
+
+
+        $scope.getPosts = function () {
+
+
             var js_id = authenticationService.userProfile.user_id;
-            alert(js_id);
+            //alert(js_id);
             //alert($scope.user_id);
             var getPostForMeEntity = entitiesService.getPostForMeEntity(js_id);
-            var postsPromise =profileRequestService.getPostForMe(getPostForMeEntity);
+            var postsPromise = profileRequestService.getPostForMe(getPostForMeEntity);
 
             postsPromise.then(function (d) {
                 console.log(d.data);
-               $scope.myposts= d.data;
+                $scope.myposts = d.data;
+
             });
 
 
-
-
+        }
+        $scope.getPosts();
 
     });
+
 
 
