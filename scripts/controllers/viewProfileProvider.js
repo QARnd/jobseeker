@@ -33,8 +33,24 @@ angular.module('myApp').controller('viewProfileProviderCtrl',
                 timer: 2000
             });
         });
+        var jobP=authenticationService.userProfile.provider_id;
+        var getJobsEntity = providerProfileEntitiesService.getJobsEntity(jobP);
+        console.log(jobP);
 
+        var getJobsPromise = providerProfileRequestService.getJobs(getJobsEntity);
 
+        getJobsPromise.then(function (d) {
+
+            var jobs= d.data;
+
+        }, function (d) {
+            swal({
+                title: "Error!",
+                text: "Something went wrong, please try again later",
+                type: "error",
+                timer: 2000
+            });
+        });
 
 
 

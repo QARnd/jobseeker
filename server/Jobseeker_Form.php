@@ -198,10 +198,12 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'sendEventsRequest':
                     $this->sendEvents();
                     break;
-
-
-
-
+                case 'getJobsForJobProviderRequest':
+                    $this->getJobsForJobProvider();
+                    break;
+                case 'getAppliesRequest':
+                    $this->getApplies();
+                    break;
 
             }
 
@@ -1334,7 +1336,40 @@ public function sendEmailToP(){
             mail($to,$subject,$txt,$headers);
         }
 
+
     }
+    public function getJobsForJobProvider(){
+
+
+        $entity='Entity';
+        $jp_id='jobprovider_id';
+        $jp_id=$GLOBALS['request']->$entity->$jp_id;
+
+        $sql='select * from job where jobProvider='.$jp_id;
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+
+        print(json_encode($total));
+    }
+    public function getApplies(){
+
+    $entity='Entity';
+    $job_id='jobId';
+    $job_id=$GLOBALS['request']->$entity->$job_id;
+
+    $sql='select * from appliesJob where jobId='.$job_id;
+    $result=$GLOBALS['db']->db_query($sql);
+    $total=array();
+    while($row = $GLOBALS['db']->db_assoc($result)){
+        array_push($total, $row);
+    }
+
+    print(json_encode($total));
+}
+
 
 
 }
