@@ -300,13 +300,13 @@ class Jobseeker_Form extends Jobseeker_DB {
         $pageScrolls = 'pageScrolls';
         $pageScrolls = $GLOBALS['request']->$entity->$pageScrolls;
 
-        $js_id = '$js_id';
+        $js_id = 'js_id';
         $js_id = $GLOBALS['request']->$entity->$js_id;
         $pageNum = abs(intval($pageScrolls));
         $offset = $pageNum * 5;
 
 
-        $sql = 'select * from posts where jobseeker_id='. $js_id.'order by id desc limit 5 offset ' . $offset;
+        $sql = 'select * from posts where jobseeker_id= '. $js_id.' order by id desc limit 5 offset ' . $offset;
         $result = $GLOBALS['db']->db_query($sql);
 
         $total = array();
@@ -1353,7 +1353,7 @@ public function sendEmailToP(){
         $js_id='js_id';
         $js_id=$GLOBALS['request']->$entity->$js_id;
 
-        $sql='select * from posts  where jobseeker_id='.$js_id;
+        $sql='select * from posts  where jobseeker_id='.$js_id. ' order by id desc limit 5 ';
         $result=$GLOBALS['db']->db_query($sql);
 
         $total=array();

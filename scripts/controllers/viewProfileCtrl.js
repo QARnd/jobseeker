@@ -168,14 +168,14 @@ angular.module('myApp').controller('viewProfileCtrl',
 
 
             var js_id = $routeParams.id;
-            alert(js_id);
+            //alert(js_id);
             //alert($scope.user_id);
             var getPostForMeEntity = entitiesService.getPostForMeEntity(js_id);
             var postsPromise = profileRequestService.getPostForMe(getPostForMeEntity);
 
             postsPromise.then(function (d) {
                 console.log(d.data);
-                $scope.myposts = d.data;
+                $rootScope.myposts = d.data;
 
             });
 
@@ -201,7 +201,8 @@ angular.module('myApp').controller('viewProfileCtrl',
                 console.log(d);
                 $('#loadMoreProfilePosts').hide();
                 $scope.pageScrolls=$scope.pageScrolls+1;
-                $rootScope.postsProfile= $rootScope.postsProfile.concat(d.data);
+                //alert($scope.pageScrolls);
+                $rootScope.myposts= $rootScope.myposts.concat(d.data);
 
                 //$(window).bind('scroll', bindScroll);
 
