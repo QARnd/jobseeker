@@ -114,4 +114,10 @@ angular.module('myApp').controller('createAccountCtrl',
                 }
             );
         };
+
+        $scope.showMembersModal = false;
+        $scope.membersToggle = function(){
+            $scope.showMembersModal = !$scope.showMembersModal;
+
+        }
     });
