@@ -12,9 +12,11 @@ angular.module('myApp').controller('createAccountCtrl',
             var createAccountPromise = accountRequestService.send_events();
 
             createAccountPromise.then(function (d) {
+
+                console.log(d);
                 swal({
                     title: "Success!",
-                    text: "Company Has been Added!",
+                    text: "Done!",
                     type: "success",
                     timer: 5000
                 });
