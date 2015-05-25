@@ -7,7 +7,7 @@
 angular.module('myApp').controller('eventCtrl',
     function($rootScope,$scope, eventEntitiesService, eventRequestService,$routeParams, authenticationService) {
 
-        $scope.events=[
+        $rootScope.events=[
 
         ];
         $scope.getEvents=function(){
@@ -21,7 +21,7 @@ angular.module('myApp').controller('eventCtrl',
 
             eventPromise.then(function (d) {
                 console.log(d);
-                $scope.events= d.data;
+                $rootScope.events= d.data;
                 //$scope.jobId= event.jobId;
                 //$scope.js_id= event.js_id;
                 //$scope.eventTitle= event.eventTitle;
@@ -54,9 +54,9 @@ angular.module('myApp').controller('eventCtrl',
             eventPromise.then(function (d) {
                 console.log(d.data);
                 var event= d.data;
+                console.log(event);
 
-
-                $scope.events.unshift({eventId:event.eventId,jobseeker_id:event.jobseeker_id,eventTitle:event.eventTitle,eventDetail:event.eventDetail,remainderDate:event.remainderDate,jobId:event.jobId});
+                $rootScope.events.unshift({eventId:event.eventId,jobseeker_id:event.jobseeker_id,eventTitle:event.eventTitle,eventDetail:event.eventDetail,remainderDate:event.remainderDate,jobId:event.jobId});
 
                 $scope.eventTitle="";
                 $scope.eventDetail="";
@@ -84,11 +84,11 @@ angular.module('myApp').controller('eventCtrl',
         };
 
         $scope.editEvent=function(editedEventId,editedEventDetail,editedEventTitle,editedRemainderDate){
-            for (var i=0;i<$scope.events.length;i++) {
-                if ($scope.events[i].eventId == editedEventId) {
-                    $scope.events[i].eventDetail = editedEventDetail;
-                    $scope.events[i].eventTitle = editedEventTitle;
-                    $scope.events[i].remainderDate = editedRemainderDate;
+            for (var i=0;i<$rootScope.events.length;i++) {
+                if ($rootScope.events[i].eventId == editedEventId) {
+                    $rootScope.events[i].eventDetail = editedEventDetail;
+                    $rootScope.events[i].eventTitle = editedEventTitle;
+                    $rootScope.events[i].remainderDate = editedRemainderDate;
                     break;
                 }
             }
@@ -124,9 +124,9 @@ angular.module('myApp').controller('eventCtrl',
 
 
                     //delete event
-                    for (var i = 0; i < $scope.events.length; i++) {
-                        if ($scope.events[i].eventId == eventId) {
-                            $scope.events.splice(i, 1);
+                    for (var i = 0; i < $rootScope.events.length; i++) {
+                        if ($rootScope.events[i].eventId == eventId) {
+                            $rootScope.events.splice(i, 1);
                             break;
                         }
                     }

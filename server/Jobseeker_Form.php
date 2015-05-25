@@ -918,9 +918,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $GLOBALS['db']->db_query($sql);
 
-
-
-
         $last_id=$GLOBALS['db']->db_insid();
         $newEvent = array('eventId'=>$last_id,'remainderDate' => $remainderDate,'jobseeker_id' => $js_id,'eventTitle'=>$eventTitle, 'eventDetail'=>$eventDetail,'jobId'=>$jobId);
         print (json_encode($newEvent));
@@ -972,7 +969,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $editedRemainderDate=$GLOBALS['request']->$entity->$editedRemainderDate;
 
 
-        $sql = 'update events set remainderDate="'.$editedRemainderDate.'" and eventTitle= "'.$editedEventTitle.'" and eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
+        $sql = 'update events set remainderDate="'.$editedRemainderDate.'", eventTitle= "'.$editedEventTitle.'",eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
         $GLOBALS['db']->db_query($sql);
         $newEvent = array('eventId'=>$editedEventId,'remainderDate' => $editedRemainderDate,'eventTitle' => $editedEventTitle,'eventDetail' => $editedEventDetail);
 
