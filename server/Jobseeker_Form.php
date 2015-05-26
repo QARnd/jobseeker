@@ -38,6 +38,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAllPostsRequest':
                     $this->get_posts();
                     break;
+                case 'getAllPostsForMeRequest':
+                    $this->get_postsForMe();
+                    break;
                 case 'getAllPostsByPageNumberRequest':
                     $this->getAllPostsByPageNumber();
                     break;
@@ -144,6 +147,9 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getFromJobListByPageNumberRequest':
                     $this->getFromJobListByPageNumberRequest();
                     break;
+                case 'getAllPostsProfileByPageNumberRequest':
+                        $this->getAllPostsProfileByPageNumber();
+                        break;
                 case 'sendEmailToPRequest':
                     $this->sendEmailToP();
                     break;
@@ -192,18 +198,25 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'viewProviderProfileRequest':
                     $this->viewProviderProfile();
                     break;
+
                 case 'getSynonymsRequest':
                     $this->getSynonym();
                     break;
-                case 'sendEventsRequest':
-                    $this->sendEvents();
+
+                case 'getAppliedRequest':
+                    $this->getJobsApplier();
                     break;
                 case 'getJobsForJobProviderRequest':
-                    $this->getJobsForJobProvider();
+                    $this->getJobsforPro();
                     break;
-                case 'getAppliesRequest':
-                    $this->getApplies();
+                     case 'getAppliesRequest':
+                    $this->getJobsApplies();
                     break;
+
+
+
+
+
 
             }
 
@@ -267,24 +280,51 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
 
-    public function getAllPostsByPageNumber(){
-        $pageScrolls='pageScrolls';
-        $pageScrolls=$GLOBALS['request']->$pageScrolls;
+    public function getAllPostsByPageNumber()
+    {
+        $pageScrolls = 'pageScrolls';
+        $pageScrolls = $GLOBALS['request']->$pageScrolls;
 
-        $pageNum=abs(intval($pageScrolls));
-        $offset=$pageNum*5;
+        $pageNum = abs(intval($pageScrolls));
+        $offset = $pageNum * 5;
 
 
-        $sql='select * from posts order by id desc limit 5 offset '.$offset;
-        $result=$GLOBALS['db']->db_query($sql);
+        $sql = 'select * from posts order by id desc limit 5 offset ' . $offset;
+        $result = $GLOBALS['db']->db_query($sql);
 
-        $total=array();
-        while($row = $GLOBALS['db']->db_assoc($result)){
+        $total = array();
+        while ($row = $GLOBALS['db']->db_assoc($result)) {
             array_push($total, $row);
         }
         print(json_encode($total));
 
+
     }
+
+    public function getAllPostsProfileByPageNumber()
+    {
+        $entity='Entity';
+        $pageScrolls = 'pageScrolls';
+        $pageScrolls = $GLOBALS['request']->$entity->$pageScrolls;
+
+        $js_id = 'js_id';
+        $js_id = $GLOBALS['request']->$entity->$js_id;
+        $pageNum = abs(intval($pageScrolls));
+        $offset = $pageNum * 5;
+
+
+        $sql = 'select * from posts where jobseeker_id= '. $js_id.' order by id desc limit 5 offset ' . $offset;
+        $result = $GLOBALS['db']->db_query($sql);
+
+        $total = array();
+        while ($row = $GLOBALS['db']->db_assoc($result)) {
+            array_push($total, $row);
+        }
+        print(json_encode($total));
+
+
+    }
+
 
     public function getAllJobsByPageNumber(){
         $pageScrolls='pageScrolls';
@@ -708,7 +748,7 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         $to = $email;
-        $subject = "Your New Account @ kitJobz";
+        $subject = "Your New Account @ sho3'ol";
         $txt = "You can enter our system using your email and this password: ".$password;
         $headers = "From: info@sho3'ol.com" . "\r\n" .
             "CC: job@sho3'ol.com";
@@ -717,7 +757,6 @@ class Jobseeker_Form extends Jobseeker_DB {
 
 
         //delete from messageProvider
-
     }
 
 
@@ -1316,59 +1355,83 @@ public function sendEmailToP(){
     }
 
 
-    public function sendEvents(){
+    public function get_postsForMe(){
+        $entity='Entity';
+        $js_id='js_id';
+        $js_id=$GLOBALS['request']->$entity->$js_id;
 
-
-        $sql=' select * from events where remainderDate="'.date("Y-m-d").'"';
+        $sql='select * from posts  where jobseeker_id='.$js_id. ' order by id desc limit 5 ';
         $result=$GLOBALS['db']->db_query($sql);
-//        $row = $GLOBALS['db']->db_assoc($result);
 
+        $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
-            $content=$row["eventTitle"]+$row["eventDetail"];
-            $to="pointer.ptr@gmail.com";
-
-
-            $subject = $row["eventTitle"];
-            $txt = $content;
-            $headers = "From: info@sho3'ol.com" . "\r\n" .
-                "CC: job@sho3'ol.com";
-
-            mail($to,$subject,$txt,$headers);
+            array_push($total, $row);
         }
-
+        print(json_encode($total));
 
     }
-    public function getJobsForJobProvider(){
 
 
+    public function getJobsApplier(){
         $entity='Entity';
-        $jp_id='jobprovider_id';
+        $jp_id='js_id';
         $jp_id=$GLOBALS['request']->$entity->$jp_id;
 
-        $sql='select * from job where jobProvider='.$jp_id;
+        $lastSeenApplier='select lastSeenApplier from jobprovider where jobprovider_id='.$jp_id;
+        $idResult=$GLOBALS['db']->db_query($lastSeenApplier);
+        $row = $GLOBALS['db']->db_assoc($idResult);
+        $lastSeenApplier=$row['lastSeenApplier'];
+
+        $sql='select  appliesJob.jobId, joblist.similarity from appliesJob,joblist where jobNotification.notiToId='.$jp_id.' and appliesJob.jobseeker_id=joblist.jobseekerId and appliesJob.appliesJobId>'.$lastSeenApplier.' order by appliesJob.appliesJobId desc';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
         }
 
+        $lastSeenApplier='select appliesJobId from appliesJob order by appliesJobId DESC limit 1 ';
+        $resultLastId=$GLOBALS['db']->db_query($lastSeenApplier);
+        $row = $GLOBALS['db']->db_assoc($resultLastId);
+        $lastSeenApplier=$row['appliesJobId'];
+
+        $updateSql= 'update jobprovider set lastSeenApplier='.$lastSeenApplier.' where 	jobprovider_id='.$jp_id;
+        $GLOBALS['db']->db_query($updateSql);
+
         print(json_encode($total));
     }
-    public function getApplies(){
 
+    public function getJobsforPro(){
     $entity='Entity';
-    $job_id='jobId';
-    $job_id=$GLOBALS['request']->$entity->$job_id;
+    $jp_id='jobprovider_id';
+    $jp_id=$GLOBALS['request']->$entity->$jp_id;
 
-    $sql='select * from appliesJob where jobId='.$job_id;
+    $sql='select * from job where jobprovider_id='.$jp_id;
     $result=$GLOBALS['db']->db_query($sql);
     $total=array();
     while($row = $GLOBALS['db']->db_assoc($result)){
         array_push($total, $row);
     }
 
+
     print(json_encode($total));
 }
+
+    public function getJobsApplies(){
+        $entity='Entity';
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$entity->$jobId;
+
+        $sql='select * from jobList,jobseekers where jobList.jobId='.$jobId.' and jobseekers.jobseekerId=jobseekers.jobseeker_id order by similarity desc';
+        $result=$GLOBALS['db']->db_query($sql);
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+        }
+
+
+        print(json_encode($total));
+    }
+
 
 
 
