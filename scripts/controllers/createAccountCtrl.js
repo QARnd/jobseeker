@@ -12,9 +12,11 @@ angular.module('myApp').controller('createAccountCtrl',
             var createAccountPromise = accountRequestService.send_events();
 
             createAccountPromise.then(function (d) {
+
+                console.log(d);
                 swal({
                     title: "Success!",
-                    text: "Company Has been Added!",
+                    text: "Done!",
                     type: "success",
                     timer: 5000
                 });
@@ -36,6 +38,8 @@ angular.module('myApp').controller('createAccountCtrl',
             var createAccountPromise = providerRequestService.createAccount(accountEntity);
 
             createAccountPromise.then(function (d) {
+            var creatAcount=d.data;
+                console.log(creatAcount);
                 swal({
                     title: "Success!",
                     text: "Company Has been Added!",
@@ -112,4 +116,10 @@ angular.module('myApp').controller('createAccountCtrl',
                 }
             );
         };
+
+        $scope.showMembersModal = false;
+        $scope.membersToggle = function(){
+            $scope.showMembersModal = !$scope.showMembersModal;
+
+        }
     });

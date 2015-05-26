@@ -3,8 +3,8 @@
 <script src="dist/js/Notification.js"></script>
 <style>
     img {
-        height: 65px;
-        width: 65px;
+        height: 50px;
+        width: 50px;
         /*margin-top: 5px;*/
     }
 </style>
@@ -188,6 +188,33 @@
                         </li>
 
 
+
+
+                        <!--<li ng-controller="loginCtrl" class="dropdown messages-menu">-->
+                            <!--<a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">-->
+                                <!--<i class="fa fa-star" alt="Notifications"></i>-->
+                                <!--<span class="label label-success noti_num">{{appliedNoticount}}</span>-->
+                            <!--</a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li class="header">You Have <span class="noti_num">{{appliedNoticount}}</span> new appliers</li>-->
+                                <!--<li>-->
+                                    <!--&lt;!&ndash; inner menu: contains the actual data &ndash;&gt;-->
+                                    <!--<ul class="menu">-->
+                                        <!--<li ng-repeat="applied in appliedNotifications track by $index">-->
+                                            <!--<a href="#/newsfeedJob/{{Applies.jobId}}">-->
+                                                <!--<span class="timeline-body" style="font-size: 12px;">A new candidate have applied to your job with similarity {{applied.similarity}}%</span><br>-->
+
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</li>-->
+
+                            <!--</ul>-->
+                        <!--</li>-->
+
+
+
+
                         <li ng-controller="linkedInCtrl" class="dropdown messages-menu">
                             <a href="javascript:void(0);" class="dropdown-toggle whatever" data-toggle="dropdown">
                                 <i class="fa fa-cog" alt="Notifications"></i>
@@ -227,6 +254,9 @@
                         </li>
 
                     </ul>
+
+
+
 
 
 
@@ -289,7 +319,7 @@
 						<!--</span>-->
                         <!--</li>-->
 
-                        <li><a ng-href="#/jobseekers/{{userProfile.user_id}}"><img alt="140x140" src="{{userProfile.data.pictureUrl}}"
+                        <li><a ng-href="#/jobseekers/{{userProfile.user_id}}"><img alt="60x60" src="{{userProfile.data.pictureUrl}}"
                                  class="img-circle" /></a></li>
                         <li><a ng-href="{{userProfile.data.publicProfileUrl}}">
                             <h5 style="margin-top: 3px;" class="text-left text-info ">
@@ -320,4 +350,6 @@
                 event.preventDefault();
             });
         </script>
+
+
 

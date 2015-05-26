@@ -38,6 +38,14 @@ angular.module('servicesModule').factory('providerEntitiesService', function() {
             var message = {};     // new object
             message.messageProId=messageProId;
             return message;
+        },
+
+
+        appliedEntity:function(jp_id){
+            var applied = {};     // new object
+            applied.jp_id=jp_id;
+            return applied;
         }
+
     }
 });

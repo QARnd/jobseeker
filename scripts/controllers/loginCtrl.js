@@ -54,6 +54,27 @@ angular.module('myApp')
                 });
 
             },
+
+
+            $scope.appliesNotifications=[];
+
+        var appliedEntity = providerEntitiesService.appliedEntity( authenticationService.userProfile.provider_id);
+        var NotificationPromise = providerRequestService.getAppliers(appliedEntity);
+
+        NotificationPromise.then(function (d) {
+            console.log(d);
+
+            var applied = d.data;
+            $scope.appliedNotifications=applied;
+            $scope.appliedNoticount=applied.length;
+
+
+
+        });
+
+
+
+
         $scope.sendMessageForP = function(pEmail,content) {
 
             var sendMessageForPEntity = providerEntitiesService.sendMessageForPEntity(pEmail,content);

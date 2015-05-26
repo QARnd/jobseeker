@@ -1,6 +1,7 @@
 
 angular.module('myApp').controller('addJobCtrl',
     function($rootScope,$scope, jobEntitiesService, jobRequestsService, authenticationService,$http,$q) {
+        console.log(authenticationService.userProfile.provider_id);
 
         $scope.allTags = [];
 

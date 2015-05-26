@@ -43,6 +43,19 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
             });
             return postPromise;
         },
+        getAllPostsProfileByPageNumber: function(scrollEntity) {
+            var request = {};
+            request.opcode = "getAllPostsProfileByPageNumberRequest";
+            request.Entity =scrollEntity;
+
+            var postProfilePromise=$http({
+                method : 'POST',
+                url : authenticationService.deploymentLink.link,
+                //url: 'server/Jobseeker_Form.php',
+                data: request
+            });
+            return postProfilePromise;
+        },
 
         updatePost: function(updatePostEntity) {
             var request = {};
@@ -82,5 +95,6 @@ angular.module('servicesModule').factory('postRequestsService', function($http,a
             });
             return postPromise;
         }
+
     }
 });
