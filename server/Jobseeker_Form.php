@@ -1405,7 +1405,7 @@ public function sendEmailToP(){
     $jp_id='jobprovider_id';
     $jp_id=$GLOBALS['request']->$entity->$jp_id;
 
-    $sql='select * from job where jobprovider_id='.$jp_id;
+    $sql='select * from job where jobProvider='.$jp_id;
     $result=$GLOBALS['db']->db_query($sql);
     $total=array();
     while($row = $GLOBALS['db']->db_assoc($result)){
@@ -1421,7 +1421,7 @@ public function sendEmailToP(){
         $jobId='jobId';
         $jobId=$GLOBALS['request']->$entity->$jobId;
 
-        $sql='select * from jobList,jobseekers where jobList.jobId='.$jobId.' and jobseekers.jobseekerId=jobseekers.jobseeker_id order by similarity desc';
+        $sql='select * from jobList,jobseekers where jobList.jobId='.$jobId.' and jobList.jobseekerId=jobseekers.jobseeker_id order by similarity desc';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
