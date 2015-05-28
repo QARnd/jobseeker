@@ -198,6 +198,7 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'viewProviderProfileRequest':
                     $this->viewProviderProfile();
                     break;
+
                 case 'getSynonymsRequest':
                     $this->getSynonym();
                     break;
@@ -205,8 +206,11 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getAppliedRequest':
                     $this->getJobsApplier();
                     break;
-                case 'sendEventsRequest':
-                    $this->sendEvents();
+                case 'getJobsForJobProviderRequest':
+                    $this->getJobsforPro();
+                    break;
+                     case 'getAppliesRequest':
+                    $this->getJobsApplies();
                     break;
 
 
@@ -918,6 +922,9 @@ class Jobseeker_Form extends Jobseeker_DB {
 
         $GLOBALS['db']->db_query($sql);
 
+
+
+
         $last_id=$GLOBALS['db']->db_insid();
         $newEvent = array('eventId'=>$last_id,'remainderDate' => $remainderDate,'jobseeker_id' => $js_id,'eventTitle'=>$eventTitle, 'eventDetail'=>$eventDetail,'jobId'=>$jobId);
         print (json_encode($newEvent));
@@ -969,7 +976,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $editedRemainderDate=$GLOBALS['request']->$entity->$editedRemainderDate;
 
 
-        $sql = 'update events set remainderDate="'.$editedRemainderDate.'", eventTitle= "'.$editedEventTitle.'",eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
+        $sql = 'update events set remainderDate="'.$editedRemainderDate.'" and eventTitle= "'.$editedEventTitle.'" and eventDetail= "'.$editedEventDetail.'" where eventId='.$editedEventId;
         $GLOBALS['db']->db_query($sql);
         $newEvent = array('eventId'=>$editedEventId,'remainderDate' => $editedRemainderDate,'eventTitle' => $editedEventTitle,'eventDetail' => $editedEventDetail);
 
@@ -1365,9 +1372,6 @@ public function sendEmailToP(){
     }
 
 
-
-
-
     public function getJobsApplier(){
         $entity='Entity';
         $jp_id='jp_id';
@@ -1396,28 +1400,40 @@ public function sendEmailToP(){
         print(json_encode($total));
     }
 
+    public function getJobsforPro(){
+    $entity='Entity';
+    $jp_id='jobprovider_id';
+    $jp_id=$GLOBALS['request']->$entity->$jp_id;
 
-    public function sendEvents(){
-        $sql=' select * from events,jobseekers where remainderDate="'.date("Y-m-d"). '" and events.jobseeker_id=jobseekers.jobseeker_id';
+    $sql='select * from job where jobprovider_id='.$jp_id;
+    $result=$GLOBALS['db']->db_query($sql);
+    $total=array();
+    while($row = $GLOBALS['db']->db_assoc($result)){
+        array_push($total, $row);
+    }
+
+
+    print(json_encode($total));
+}
+
+    public function getJobsApplies(){
+        $entity='Entity';
+        $jobId='jobId';
+        $jobId=$GLOBALS['request']->$entity->$jobId;
+
+        $sql='select * from jobList,jobseekers where jobList.jobId='.$jobId.' and jobseekers.jobseekerId=jobseekers.jobseeker_id order by similarity desc';
         $result=$GLOBALS['db']->db_query($sql);
-
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
             array_push($total, $row);
-            $to =$row['Email'];
-            $subject = $row['eventTitle'];
-            $txt = $row['eventDetail'];
-            $headers = "From: info@kitJobz.com" . "\r\n" .
-                "CC: job@kitJobz.com";
-
-            mail($to,$subject,$txt,$headers);
         }
+
+
         print(json_encode($total));
-
-
-
-
     }
+
+
+
 
 }
 

@@ -67,21 +67,9 @@ angular.module('servicesModule').factory('providerRequestService', function($htt
                 data: request
             });
             return deleteMessagePromise;
-        },
-
-
-        getAppliers: function (appliedEntity) {
-            var request = {};
-            request.opcode = "getAppliedRequest";
-            request.Entity = appliedEntity;
-            var appliedPromise = $http({
-                method: 'POST',
-                url: authenticationService.deploymentLink.link,
-                //url: 'server/Jobseeker_Form.php',
-                data: request
-            });
-            return appliedPromise;
-
         }
+
+
+
     }
 });

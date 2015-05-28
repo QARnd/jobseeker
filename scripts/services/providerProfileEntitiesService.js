@@ -10,6 +10,16 @@ angular.module('servicesModule').factory('providerProfileEntitiesService', funct
             var profile = {};     // new object
             profile.jobprovider_id = jobprovider_id;
             return profile;
+        },
+        getJobsEntity:function(jobprovider_id) {
+            var job = {};     // new object
+           job.jobprovider_id = jobprovider_id;
+            return job;
+        },
+        getApplies:function(jobId) {
+            var apply = {};     // new object
+            apply.jobId = jobId;
+            return apply;
         }
     };
 

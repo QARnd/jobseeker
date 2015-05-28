@@ -217,6 +217,31 @@
                     <div class="title">Description </div><div class="desc">{{description}}</div>
                 </div>
 
+                <div  ng-repeat="job in jobs track by $index">
+                    <ul class="timeline">
+
+                        <li >
+                            <i class="fa fa-comment-o bg-blue"></i>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#/newsfeedJob/{{job.jobId}}">{{job.jobTitle}}</a></h3>
+                                
+                            </div>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#/applies/{{job.jobId}}">Applies List</a></h3>
+
+                            </div>
+                        </li>
+
+
+
+
+                        <li>
+                            <i class="fa fa-clock-o bg-gray"></i>
+                        </li>
+                    </ul>
+                    <div>&nbsp</div>
+                </div>
+
                 <!--<a class="btn btn-primary btn-linkedin btn-sm" href="{{profileUrl}}">-->
                     <!--Show More In Linked <i class="fa fa-linkedin"></i>-->
                 <!--</a>-->

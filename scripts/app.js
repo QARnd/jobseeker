@@ -43,7 +43,8 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/notihistory', {templateUrl: 'views/notiHistory.html', controller: 'notiHistoryCtrl'});
 
     $routeProvider.when('', {templateUrl: 'views/newsfeedView.html', controller: 'newsfeedCtrl'});
-
+    $routeProvider.when('/applies/:jobId', {templateUrl: 'views/appliesView.html', controller:'appliesCtrl'});
    $routeProvider.otherwise({redirectTo: '/newsfeed'});
+
 }]);
 

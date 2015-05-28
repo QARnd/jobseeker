@@ -1,0 +1,36 @@
+<div class="row">
+
+    <!--Newsfeed-->
+    <div class="col-sm-9">
+
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- The time line -->
+                <div  ng-repeat="apply in applies track by $index">
+                    <ul class="timeline">
+
+                        <li    >
+                            <i class="fa fa-comment-o bg-blue"></i>
+                            <div class="timeline-item">
+                                <span class="time"><i class="fa fa-clock-o"></i> </span>
+                                <h3 class="timeline-header"><a href="#/companies/{{apply.jobProvider}}">{{apply.first_name}} with similarity {{apply.similarity}}</a></h3>
+
+                            </div>
+                        </li>
+
+
+
+
+
+                    </ul>
+
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+
+
+    </div>
+</div>
