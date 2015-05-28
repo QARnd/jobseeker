@@ -183,6 +183,48 @@ angular.module('myApp').controller('viewProfileCtrl',
         }
         $scope.getPosts();
 
+        $scope.deletePost=function(postId){
+            swal({
+                    title: "Are you sure?",
+                    text: "Delete!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete!",
+                    closeOnConfirm: true },
+                function() {
+                    var postPromise = postRequestsService.deletePost(postId);
+
+
+                    //delete post
+
+                    for (var i = 0; i < $rootScope.myposts.length; i++) {
+                        if ($rootScope.myposts[i].id == postId) {
+                            $rootScope.myposts.splice(i, 1);
+                            break;
+                        }
+                    }
+
+                    postPromise.then(function (d) {
+                        console.log(d);
+                        //swal({
+                        //    title: "SUCCESS",
+                        //    text: "Delete Done Successfully",
+                        //    type: "success"
+                        //});
+                        //$scope.getNewsFeed();
+
+                    }, function (d) {
+                        swal({
+                            title: "Error!",
+                            text: "Something went wrong, please try again later",
+                            type: "error"
+                        });
+                    });
+                }
+            );
+        };
+
 
 
 

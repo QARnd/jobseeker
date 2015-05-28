@@ -1370,7 +1370,7 @@ public function sendEmailToP(){
 
     public function getJobsApplier(){
         $entity='Entity';
-        $jp_id='js_id';
+        $jp_id='jp_id';
         $jp_id=$GLOBALS['request']->$entity->$jp_id;
 
         $lastSeenApplier='select lastSeenApplier from jobprovider where jobprovider_id='.$jp_id;
