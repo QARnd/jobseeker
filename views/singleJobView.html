@@ -140,7 +140,7 @@
 
     </div>
 
-    <center><p><button ng-click="showAddEvent()" class="btn btn-info">Add New Event</button></p></center>
+    <center><p><button ng-show="check()==1" ng-click="showAddEvent()" class="btn btn-info">Add New Event</button></p></center>
     <div ng-controller="eventCtrl" id="addNewEvent">
 
         <section class="content">
@@ -202,7 +202,7 @@
 
     </div>
 
-    <div ng-controller="eventCtrl" >
+    <div ng-show="check()==1" ng-controller="eventCtrl" >
 
         <section class="content">
             <div class="row">

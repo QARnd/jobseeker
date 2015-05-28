@@ -8,6 +8,17 @@ angular.module('myApp').controller('singleJobCtrl',
         $('#addNewEvent').hide();
         //hide the edit div
         $('#editJob').hide();
+        $scope.check=function(){
+            if (authenticationService.userProfile.user_type==1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        };
+
         $scope.jp_id= authenticationService.userProfile.provider_id;
         $scope.jobId=$routeParams.jobId;
 
