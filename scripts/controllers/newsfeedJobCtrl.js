@@ -8,6 +8,9 @@ angular.module('myApp').controller('newsfeedJobCtrl',
         $('#loadMoreSpinner').hide();
         $('#addNewJob').hide();
 
+        $rootScope.companyName=authenticationService.userProfile.companyName;
+        $rootScope.companyID=authenticationService.userProfile.provider_id;
+
         $scope.check=function(){
             if (authenticationService.userProfile.user_type==1)
             {

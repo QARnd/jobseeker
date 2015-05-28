@@ -5,6 +5,21 @@
 angular.module('myApp').controller('viewProfileCtrl',
     function($scope,$routeParams,$rootScope, entitiesService, profileRequestService,postRequestsService, authenticationService) {
 
+
+        $scope.check=function(){
+            if (authenticationService.userProfile.user_type==1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        };
+
+
+
+
         $scope.imgUrl=authenticationService.userProfile.data.pictureUrl;
         $scope.myId=authenticationService.userProfile.user_id;
         $scope.user_id=$routeParams.id;
@@ -49,9 +64,6 @@ angular.module('myApp').controller('viewProfileCtrl',
                 timer: 2000
             });
         });
-
-
-
 
 
 

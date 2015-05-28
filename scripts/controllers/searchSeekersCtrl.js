@@ -25,6 +25,18 @@ angular.module('myApp').controller('searchSeekersCtrl',
 
         //});
 
+
+        $scope.check=function(){
+            if (authenticationService.userProfile.user_type==1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        };
+
         $scope.searchForSeekersByName=function(search) {
          var user_type = authenticationService.userProfile.user_type;
             //if(user_type==2){

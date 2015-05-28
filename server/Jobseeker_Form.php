@@ -209,8 +209,11 @@ class Jobseeker_Form extends Jobseeker_DB {
                 case 'getJobsForJobProviderRequest':
                     $this->getJobsforPro();
                     break;
-                     case 'getAppliesRequest':
+                case 'getAppliesRequest':
                     $this->getJobsApplies();
+                    break;
+                case 'sendEventsRequest':
+                     $this->sendEvents();
                     break;
 
 
@@ -1432,6 +1435,27 @@ public function sendEmailToP(){
         print(json_encode($total));
     }
 
+    public function sendEvents(){
+         $sql=' select * from events,jobseekers where remainderDate="'.date("Y-m-d"). '" and events.jobseeker_id=jobseekers.jobseeker_id';
+        $result=$GLOBALS['db']->db_query($sql);
+
+        $total=array();
+        while($row = $GLOBALS['db']->db_assoc($result)){
+            array_push($total, $row);
+            $to =$row['Email'];
+            $subject = $row['eventTitle'];
+             $txt = $row['eventDetail'];
+             $headers = "From: info@kitJobz.com" . "\r\n" .
+               "CC: job@kitJobz.com";
+
+             mail($to,$subject,$txt,$headers);
+             }
+        print(json_encode($total));
+
+
+
+
+    }
 
 
 

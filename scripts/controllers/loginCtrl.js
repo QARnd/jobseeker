@@ -9,6 +9,8 @@ angular.module('myApp')
          }*/
 
 
+
+
         $scope.showModal = false;
         $scope.toggle = function(){
             $scope.showModal = !$scope.showModal;
@@ -40,6 +42,7 @@ angular.module('myApp')
                         authenticationService.userProfile.user_type=2;
                         authenticationService.userProfile.provider_id=d.data.jobprovider_id;
                         authenticationService.userProfile.data= d.data;
+                        authenticationService.userProfile.companyName= d.data.Name;
 
                         authenticationService.providerLoggedIn.status=true;
                         $location.path("/newsfeedJob");
@@ -141,4 +144,20 @@ angular.module('myApp')
             $scope.showContactUsModal = !$scope.showContactUsModal;
 
         }
+
+
+        $scope.logoutProvider = function() {
+            alert("rana");
+
+            delete authenticationService.userProfile.user_type;
+            delete authenticationService.userProfile.provider_id;
+            delete authenticationService.userProfile.data;
+            delete authenticationService.userProfile.companyName;
+            delete authenticationService.providerLoggedIn.status;
+
+
+
+            $location.path("/login");
+        };
+
     });

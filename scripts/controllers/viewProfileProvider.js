@@ -9,6 +9,18 @@ angular.module('myApp').controller('viewProfileProviderCtrl',
         $scope.myId=authenticationService.userProfile.user_id;
         //alert( $scope.myId);
 
+
+        $scope.check=function(){
+            if (authenticationService.userProfile.user_type==1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        };
+
         $scope.pId=$routeParams.jobProvider;
         //alert( $scope.pId);
         var profileEntity = providerProfileEntitiesService.profileProviderEntity($scope.pId);
