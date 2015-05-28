@@ -11,7 +11,7 @@ angular.module('myApp').controller('jobsHistoryCtrl',
             jobsHistoryPromise.then(function (d) {
                 console.log(d);
                 $scope.jobsHistory=d.data;
-              alert(d.data);
+              //alert(d.data);
             },
                 function (d) {
                     swal({

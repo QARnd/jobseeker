@@ -147,7 +147,7 @@ angular.module('myApp')
 
 
         $scope.logoutProvider = function() {
-            alert("rana");
+            //alert("rana");
 
             delete authenticationService.userProfile.user_type;
             delete authenticationService.userProfile.provider_id;

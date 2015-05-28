@@ -10,7 +10,7 @@ angular.module('myApp').controller('historyMessageCtrl',
             AllMsgsPromise.then(function (d) {
                 console.log(d);
                 $scope.MsgsHistory=d.data;
-                    alert(d.data)
+                    //alert(d.data)
 
 
             },
