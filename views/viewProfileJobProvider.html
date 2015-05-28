@@ -221,8 +221,8 @@
                     <div class="title">Description </div><div class="desc">{{description}}</div>
                 </div>
                 
-                <h3>yours jobs</h3>
-                <div  ng-repeat="job in jobs track by $index">
+                <h3>Our Positions</h3>
+                <div  ng-repeat="job in myJobs track by $index">
 
                     <ul class="timeline">
 
@@ -233,7 +233,7 @@
                                 
                             </div>
                             <div class="timeline-item">
-                                <h3 class="timeline-header"><a href="#/applies/{{job.jobId}}">Applies List</a></h3>
+                                <h3 class="timeline-header"><a href="#/applies/{{job.jobId}}">Candidates List For This Position</a></h3>
 
                             </div>
                         </li>

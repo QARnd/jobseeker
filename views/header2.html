@@ -1,3 +1,10 @@
+<div class="page-content" ng-show="check()==1">
+    <div ng-controller="authenticationCtrl">
+        <header ng-controller="headerCtrl" ng-include="'views/header.html'"
+                ng-show="userProfile.data.loggedIn"></header>
+
+    </div>
+</div>
 
 <div class="container" id="header" ng-show="check()==2 ">
     <div class="row clearfix">
@@ -10,7 +17,7 @@
                             class="icon-bar"></span><span class="glyphicon glyphicon-chevron-down"></span><span
                             class="icon-bar"></span>
                     </button>
-                    <a href="#/newsFeed"><img class="logo" src="imgs\logo.jpg"></a>
+                    <a href="#/newsFeed"><img class="logo" height="50px" width="50px" src="imgs\logo.jpg"></a>
                 </div>
 
                 <div class="collapse navbar-collapse"

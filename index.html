@@ -87,12 +87,9 @@
 <!--<img src="imgs\job_seeking.JPG" id="background-image" />-->
 <div class="page-content">
     <div ng-controller="authenticationCtrl">
-        <div>
-            <header ng-controller="headerCtrl" ng-include="'views/header.html'"
-                    ng-show="userProfile.data.loggedIn"></header>
-            <header ng-include="'views/header2.html'"
-                    ng-show="providerLoggedIn.data.loggedIn"></header>
-        </div>
+        <header ng-controller="headerCtrl" ng-include="'views/header.html'"
+                ng-show="userProfile.data.loggedIn"></header>
+
     </div>
 </div>
 

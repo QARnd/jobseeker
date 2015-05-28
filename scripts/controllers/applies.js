@@ -9,7 +9,7 @@ angular.module('myApp').controller('appliesCtrl',
             var appliesPromise =providerProfileRequestService.getApplies(appliesEntity);
         console.log($scope.jobId);
         appliesPromise.then(function (d) {
-
+                console.log(d.data);
                 $scope.applies= d.data;
 
 

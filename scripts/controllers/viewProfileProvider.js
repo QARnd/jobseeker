@@ -45,15 +45,17 @@ angular.module('myApp').controller('viewProfileProviderCtrl',
                 timer: 2000
             });
         });
-        var jobP=authenticationService.userProfile.provider_id;
+
+        $scope.myJobs=[];
+        var jobP=$scope.pId;
         var getJobsEntity = providerProfileEntitiesService.getJobsEntity(jobP);
-        console.log(jobP);
+        alert($scope.pId);
 
         var getJobsPromise = providerProfileRequestService.getJobs(getJobsEntity);
 
         getJobsPromise.then(function (d) {
-
-            var jobs= d.data;
+            console.log(d.data);
+            $scope.myJobs= d.data;
 
         }, function (d) {
             swal({
