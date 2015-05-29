@@ -11,6 +11,21 @@ angular.module('myApp').controller('newsfeedCtrl',
         $scope.pageScrolls=1;
         $scope.js_id= authenticationService.userProfile.jobseekerId;
 
+
+
+        $scope.check=function(){
+            if (authenticationService.userProfile.user_type==1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        };
+
+
+
         $scope.getNewsFeed=function(){
             $rootScope.posts=[
 
