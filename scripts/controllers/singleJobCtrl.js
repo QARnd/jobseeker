@@ -35,6 +35,7 @@ angular.module('myApp').controller('singleJobCtrl',
             $scope.jobTag= job.jobTag;
             $scope.providerId=job.providerId;
             $scope.publishDate=job.publishDate;
+            $scope.Name=job.Name;
 
 
         }, function (d) {

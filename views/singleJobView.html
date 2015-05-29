@@ -1,13 +1,15 @@
+<header ng-include="'views/header2.html'"></header>
+
 
 <div >
     <ul class="timeline" >
         <!-- timeline time label -->
         <li class="time-label">
-                      <span ng-show="jobseeker_id==jp_id" class="bg-green">
-                                <a href="#/companies/{{jobId}}" style="color: white">Our Company</a>
+                      <span ng-show="jobprovider_id==jp_id" class="bg-green">
+                                <a href="#/companies/{{jobId}}" style="color: white">{{Name}}</a>
                               </span>
-                              <span ng-hide="jobseeker_id==jp_id" class="bg-blue">
-                                <a href="#/companies/{{jobId}}" style="color: white">Our Company</a>
+                              <span ng-hide="jobprovider_id==jp_id" class="bg-blue">
+                                <a href="#/companies/{{jobId}}" style="color: white">{{Name}}</a>
                               </span>
         </li>
         <!-- /.timeline-label -->

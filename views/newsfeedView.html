@@ -126,9 +126,10 @@
 
 </style>
 
+<header ng-include="'views/header2.html'"></header>
 
 
-<p><button ng-click="showAddPost()" class="btn btn-inverse">Add New Post</button></p>
+<p><button ng-click="showAddPost()" class="btn btn-inverse" ng-show="check()==1">Add New Post</button></p>
 <center>
 
     <div ng-controller="addPostCtrl" id="addNewPost">
