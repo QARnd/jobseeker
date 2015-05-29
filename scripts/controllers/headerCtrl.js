@@ -2,7 +2,7 @@ angular.module('myApp')
     .controller('headerCtrl', function ($scope,authenticationService,initially) {
         //  $scope.userProfile=authenticationService.userProfile;
 
-      
+
 
         $scope.navPagesList = [
             { filterId: 1, name: 'Posts NewsFeed',target: 'newsfeed',show:'0'},

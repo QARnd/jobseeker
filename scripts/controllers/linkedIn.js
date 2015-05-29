@@ -276,6 +276,7 @@ angular.module('myApp').controller('linkedInCtrl',
                     var skillStr='';
 
                     $scope.getSkills = function () {
+                        alert("aa");
                         var skillStr='';
 
 
@@ -309,41 +310,70 @@ angular.module('myApp').controller('linkedInCtrl',
                             }
 
                             var synonymHash={};
-                            synonymHash=$scope.getSynonyms();
-                            console.log(synonymHash);
+                            $rootScope.skillsHash=[];
+                            $rootScope.synonymsHash={};
+
+                            var synonymsPromise= synonymsRequestService.getSynonyms();
+
+                            synonymsPromise.then(function (d) {
+                                console.log(d);
+                                $scope.synonyms= d.data;
+                                //console.log($scope.synonyms);
+
+
+                                for(var i=0;i<$scope.synonyms.length;i++){
+                                    var key=$scope.synonyms[i].term,value=$scope.synonyms[i].termSynonyms;
+                                    console.log(key+" "+value);
+                                    //alert(synonymsHash[key]);
+                                    if($rootScope.synonymsHash[key]!==undefined)
+                                        $rootScope.synonymsHash[key]=$rootScope.synonymsHash[key]+","+value.trim().toLowerCase();
+                                    else
+                                        $rootScope.synonymsHash[key]=value.trim();
+
+                                }
+                                alert(Object.keys($rootScope.synonymsHash).length);
+                                console.log($rootScope.synonymsHash);
+                                console.log("synonymsHash");
+
+                                var synCount=Object.keys($rootScope.synonymsHash).length;
+                                for (var j = 0; j < skills.length; j++) {
+
+                                    var skill = skills[j].toLowerCase().replace('"','');
+                                    //alert(skill);
+                                    //alert(synCount);
+                                    if($rootScope.synonymsHash.hasOwnProperty(skill))
+                                    {
+
+                                        console.log(skill);
+                                            synonymsArray=$rootScope.synonymsHash[skill].split(",");
+                                            for(var k= 0;k<synonymsArray.length;k++)
+                                            {
+                                                if (skillsWithSynonyms.indexOf(synonymsArray[k]) == -1)
+                                                    skillsWithSynonyms.push(synonymsArray[k]);
+
+                                            }
+                                    }
+
+
+                                }
+
+                                skillStr += skillsWithSynonyms[0];
+
+                                for (var i = 1; i < skillsWithSynonyms.length; i++) {
+
+                                    //alert(skillsWithSynonyms.length);
+                                    //alert(skillsWithSynonyms[i]);
+
+                                    skillStr += "," + skillsWithSynonyms[i];
+
+                                }
+                                //alert(skillStr);
+                            });
 
                             //console.log(skillsWithSynonyms);
                             //alert(skillsWithSynonyms.length);
 
-                            for (var j = 0; j < skills.length; j++) {
 
-                               if((skills[i]) in synonymHash)
-                               {
-                                   //alert(skills[i]);
-                                   synonymsArray=synonymHash(skills[i]).split(",");
-                                   //alert(synonymsArray);
-
-                                   for(var i= 0;i<synonymsArray.length;i++)
-                                   {
-                                       if (skillsWithSynonyms.indexOf(synonymsArray(i)) == -1)
-                                           skillsWithSynonyms.push(synonymsArray(i));
-
-                                   }
-                               }
-
-
-                            }
-
-                            skillStr += skillsWithSynonyms[0];
-
-                            for (var i = 1; i < skillsWithSynonyms.length; i++) {
-
-                                //alert(skillsWithSynonyms.length);
-                                //alert(skillsWithSynonyms[i]);
-
-                                skillStr += "," + skillsWithSynonyms[i];
-                                //alert(skillStr);
-                            }
                             //alert(skillStr);
                             $scope.getLastAddedJobs(skillStr);
 
@@ -366,20 +396,20 @@ angular.module('myApp').controller('linkedInCtrl',
 
                             for(var i=0;i<$scope.synonyms.length;i++){
                                 var key=$scope.synonyms[i].term,value=$scope.synonyms[i].termSynonyms;
-                                //alert(key+" "+value);
+                                console.log(key+" "+value);
                                 //alert(synonymsHash[key]);
+                                    if(synonymsHash[key]!=undefined)
+                                         synonymsHash[key]=synonymsHash[key]+","+value.trim();
+                                    else
+                                        synonymsHash[key]=value.trim();
 
-                                if(synonymsHash["key"] != undefined )
-                                    synonymsHash[key]=synonymsHash[key]+","+value;
-                                else
-                                    synonymsHash[key]=value;
                             }
+                            console.log(synonymsHash);
+                            console.log("synonymsHash");
+
+                            return synonymsHash;
                         });
-                        console.log(synonymsHash);
-
                         return synonymsHash;
-
-
                     }
 
 

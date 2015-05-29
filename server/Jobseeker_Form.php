@@ -1130,7 +1130,7 @@ public function sendEmailToP(){
 
 //        $sql='select termSynonyms from Synonyms where term= financial ';
 
-        $sql=' select * from Synonyms where term ="'. $skill. '" or termSynonyms ="' .$skill. '"';
+        $sql=' select * from Synonyms';
         $result=$GLOBALS['db']->db_query($sql);
         $total=array();
         while($row = $GLOBALS['db']->db_assoc($result)){
