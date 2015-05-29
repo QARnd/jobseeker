@@ -23,10 +23,13 @@
                 <div class="collapse navbar-collapse"
                      id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li ng-repeat="page in navPagesList" ng-click="select($index)"
-                            ng-class="{active: $index===selectedIndex}"><a
-                                href="#/{{page.target}}" data-toggle="collapse" data-target=".nav-collapse"
-                                ng-show="(userProfile.data.userType == page.show) || (page.show == 0)">{{page.name}}</a></li>
+                        <li ><a
+                                href="#/newsfeed" data-toggle="collapse" data-target=".nav-collapse"
+                                >NewsFeed</a></li>
+                        <li ><a
+                                href="#/newsfeedJob" data-toggle="collapse" data-target=".nav-collapse"
+                                >NewsFeed Job</a></li>
+
 
 
 

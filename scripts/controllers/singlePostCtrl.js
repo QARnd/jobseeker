@@ -11,6 +11,18 @@ angular.module('myApp').controller('singlePostCtrl',
         $scope.postId=$routeParams.postId;
 
 
+        $scope.check=function(){
+            if (authenticationService.userProfile.user_type==1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        };
+
+
         var postPromise = postRequestsService.getSinglePost($scope.postId);
 
 
