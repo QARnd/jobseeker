@@ -57,7 +57,7 @@ angular.module('myApp').controller('commentJobCtrl',
             {
                 user_id=authenticationService.userProfile.provider_id;
                 alert(user_id);
-                fullname=authenticationService.userProfile.comName;
+                fullname=authenticationService.userProfile.companyName;
                 alert(fullname);
             }
 
