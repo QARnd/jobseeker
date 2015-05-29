@@ -43,9 +43,24 @@ angular.module('myApp').controller('commentJobCtrl',
         $scope.addComment = function () {
             var jobId=$routeParams.jobId;
             //alert(postId);
-            var user_id=authenticationService.userProfile.user_id;
-            var fullname=authenticationService.userProfile.full_name;
-            alert(fullname);
+            var user_id="";
+            var fullname="";
+
+            if (authenticationService.userProfile.user_type==1)
+            {
+                user_id=authenticationService.userProfile.jobseekerId;
+                alert(user_id);
+                fullname=authenticationService.userProfile.full_name;
+                alert(fullname);
+            }
+            else
+            {
+                user_id=authenticationService.userProfile.provider_id;
+                alert(user_id);
+                fullname=authenticationService.userProfile.comName;
+                alert(fullname);
+            }
+
             var commentEntity = commentJobEntitiesService.addComment(jobId,$scope.content,user_id,fullname);
 
             var commentPromise = commentJobRequestService.addComment(commentEntity);
@@ -71,8 +86,10 @@ angular.module('myApp').controller('commentJobCtrl',
                     timer: 2000
                 });
             });
-        };
 
+
+
+        };
 
 
 
