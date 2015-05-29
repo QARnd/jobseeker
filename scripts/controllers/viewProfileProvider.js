@@ -10,6 +10,8 @@ angular.module('myApp').controller('viewProfileProviderCtrl',
         //alert( $scope.myId);
 
 
+
+        $scope.pId=$routeParams.jobProvider;
         $scope.check=function(){
             if (authenticationService.userProfile.user_type==1)
             {
@@ -17,11 +19,10 @@ angular.module('myApp').controller('viewProfileProviderCtrl',
             }
             else
             {
-                return 2;
+                return authenticationService.userProfile.provider_id;
             }
         };
 
-        $scope.pId=$routeParams.jobProvider;
         //alert( $scope.pId);
         var profileEntity = providerProfileEntitiesService.profileProviderEntity($scope.pId);
 
@@ -36,6 +37,7 @@ angular.module('myApp').controller('viewProfileProviderCtrl',
             $scope.Email= profile.Email;
             $scope.description= profile.description;
             $scope.location= profile.location;
+
 
         }, function (d) {
             swal({
