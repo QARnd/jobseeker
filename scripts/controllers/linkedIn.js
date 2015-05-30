@@ -1,6 +1,4 @@
-/**
- * Created by GeniuCode Pointer on 3/5/2015.
- */
+
 angular.module('myApp').controller('linkedInCtrl',
     function AppCtrl($scope,entitiesService,notificationRequestService,remainderRequestService,remainderEntityService,msgsRequestService,notificationEntitiesService,msgsEntitiesService,authenticationService,profileRequestService,addToJobListEntitiesService,addToJobListRequestService, $location, $rootScope, $http, linkedinService,synonymsRequestService) {
         $('#loadMoreJobNotification').hide();
@@ -276,7 +274,7 @@ angular.module('myApp').controller('linkedInCtrl',
                     var skillStr='';
 
                     $scope.getSkills = function () {
-                        alert("aa");
+                        //alert("aa");
                         var skillStr='';
 
 
@@ -331,7 +329,7 @@ angular.module('myApp').controller('linkedInCtrl',
                                         $rootScope.synonymsHash[key]=value.trim();
 
                                 }
-                                alert(Object.keys($rootScope.synonymsHash).length);
+                                //alert(Object.keys($rootScope.synonymsHash).length);
                                 console.log($rootScope.synonymsHash);
                                 console.log("synonymsHash");
 
@@ -367,7 +365,8 @@ angular.module('myApp').controller('linkedInCtrl',
                                     skillStr += "," + skillsWithSynonyms[i];
 
                                 }
-                                //alert(skillStr);
+                                console.log(skillStr);
+                                $scope.getLastAddedJobs(skillStr);
                             });
 
                             //console.log(skillsWithSynonyms);
@@ -375,7 +374,7 @@ angular.module('myApp').controller('linkedInCtrl',
 
 
                             //alert(skillStr);
-                            $scope.getLastAddedJobs(skillStr);
+
 
 
                         });

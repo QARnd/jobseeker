@@ -4,6 +4,7 @@ angular.module('myApp')
 
 
 
+
         $scope.navPagesList = [
             { filterId: 1, name: 'Posts NewsFeed',target: 'newsfeed',show:'0'},
             { filterId: 2, name: 'Jobs NewsFeed',target: 'newsfeedJob',show:'0'},

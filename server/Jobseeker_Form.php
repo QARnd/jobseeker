@@ -522,7 +522,7 @@ class Jobseeker_Form extends Jobseeker_DB {
         $js_id=$row['jobseeker_id'];
         if (mysql_num_rows($result)==0)
         {
-            $sql='insert into jobseekers(linkedinId,first_name,last_name,Email,profileUrl,pictureUrl,summary,industry,location) VALUES ("'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$summary.'","'.$industry.'","'.$location.'",0)';
+            $sql='insert into jobseekers(linkedinId,first_name,last_name,Email,profileUrl,pictureUrl,summary,industry,location) VALUES ("'.$id.'","'. $firstName.'","'. $lastName.'","'.$emailAddress.'","'. $publicProfileUrl.'","'.$pictureUrl.'","'.$summary.'","'.$industry.'","'.$location.'")';
 
         }
         else{

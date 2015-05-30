@@ -49,16 +49,16 @@ angular.module('myApp').controller('commentJobCtrl',
             if (authenticationService.userProfile.user_type==1)
             {
                 user_id=authenticationService.userProfile.jobseekerId;
-                alert(user_id);
+                //alert(user_id);
                 fullname=authenticationService.userProfile.full_name;
-                alert(fullname);
+                //alert(fullname);
             }
             else
             {
                 user_id=authenticationService.userProfile.provider_id;
-                alert(user_id);
+                //alert(user_id);
                 fullname=authenticationService.userProfile.companyName;
-                alert(fullname);
+                //alert(fullname);
             }
 
             var commentEntity = commentJobEntitiesService.addComment(jobId,$scope.content,user_id,fullname);

@@ -1,6 +1,4 @@
-/**
- * Created by GeniuCode Pointer on 3/5/2015.
- */
+
 angular.module('myApp')
     .controller('loginCtrl', function ($scope,providerEntitiesService,authenticationService,$location,providerRequestService) {
         /*

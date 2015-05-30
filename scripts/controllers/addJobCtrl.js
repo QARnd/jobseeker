@@ -76,7 +76,7 @@ angular.module('myApp').controller('addJobCtrl',
 
            jobPromise.then(function (d) {
                 var jobs= d.data;
-               alert(jobs.jobId);
+               //alert(jobs.jobId);
                 $scope.jobId= jobs.jobId;
                 $scope.jobTitle= jobs.jobTitle;
                 $scope.jobDescription= jobs.jobDescription;

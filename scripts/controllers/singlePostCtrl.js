@@ -1,6 +1,4 @@
-/**
- * Created by GeniuCode Pointer on 3/4/2015.
- */
+
 
 angular.module('myApp').controller('singlePostCtrl',
     function($scope, entitiesService, postRequestsService,$routeParams, authenticationService) {

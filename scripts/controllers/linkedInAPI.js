@@ -1,6 +1,4 @@
-/**
- * Created by GeniuCode Pointer on 3/5/2015.
- */
+
 //LinkedIn functions
 //Execute on load profile
 

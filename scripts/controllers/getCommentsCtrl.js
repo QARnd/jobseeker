@@ -1,6 +1,4 @@
-/**
- * Created by GeniuCode Pointer on 4/6/2015.
- */
+
 angular.module('myApp').controller('getCommentsCtrl',
     function($scope, entitiesService,commentEntitiesService, commentRequestService,$routeParams, authenticationService) {
         console.log(authenticationService.userProfile.data);
